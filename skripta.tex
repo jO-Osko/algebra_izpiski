@@ -1,0 +1,292 @@
+\documentclass[a4paper]{article}
+%AMDG
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{hyperref}
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{epigraph}
+\usepackage{pdftexcmds}
+\usepackage{fancyref, nameref}
+\usepackage{epigraph}
+\usepackage{cleveref}
+\usepackage{verbatim}
+
+\parindent=0pt
+
+
+% \epigraphsize{\small}% Default
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\makeatother
+
+
+\newcounter{environment:definition_counter}
+
+\newenvironment{definition}[1][\unskip]
+{\vspace{0.5cm}\refstepcounter{environment:definition_counter}\textbf{Definicija \arabic{environment:definition_counter}: \textbf{#1}}\itshape}
+{\bigskip}
+
+\newcounter{environment:theorem_counter}
+
+\newenvironment{theorem}[1][\unskip]
+{\refstepcounter{environment:theorem_counter}\textbf{Izrek \arabic{environment:theorem_counter}:\textit{#1}} \qquad}
+{\bigskip}
+
+\newcounter{environment:statement_counter}
+
+\newenvironment{statement}[1][\unskip]
+{\refstepcounter{environment:statement_counter}\textbf{Trditev \arabic{environment:statement_counter}:\textit{#1}} \qquad}
+{\bigskip}
+
+\newcounter{example:example_counter}
+
+\newenvironment{example}
+{\textbf{Primer:}\\}
+{\setcounter{example:example_counter}{0}}
+
+\newenvironment{example_case}
+{\refstepcounter{example:example_counter} \arabic{example:example_counter}.}
+{\\}
+
+\newenvironment{remark}
+{Opomba:}
+{}
+
+
+
+\begin{document}
+\title{Skripta za algebro2}
+\author{Filip Koprivec}
+\date{\today}
+\maketitle
+
+\epigraph{“If I find in myself desires which nothing in this world can satisfy, the only logical explanation is that I was made for another world.”}{--- \textup{C. S. Lewis}}
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\begin{comment}
+Start of text
+\end{comment}
+
+\section{Osnovne algebrske strukture}
+\subsection{Binarne operacije}
+\begin{definition}[Binarna Operacija]
+\label{def:binary_operation}
+(tudi dvočlena operacija) $\circ$ na množici $\mathcal{S}$ je preslikava iz $\mathcal{S} \times \mathcal{S} \  v \ \mathcal{S}$.\\ Torej $\circ : \mathcal{S} \times \mathcal{S} \ \to \ \mathcal{S}$
+\end{definition}
+
+\begin{example}
+Osnovna zgleda binranih operacij na $\mathbb{Z}$ sta:
+
+\begin{example_case}
+Seštevanje: $(n,m) \mapsto n+m$
+\end{example_case}
+\begin{example_case}
+Množenje: $(n,m) \mapsto n \times m$
+\end{example_case}
+
+\end{example}
+
+Skalarni produkt v $\mathbb{R}^{2}$ \textbf{ni} binarna operacija.
+
+Vektorski produkt v $\mathbb{R}^{3}$ \textbf{je} binarna operacija.
+\\\\
+\begin{definition}
+\label{def:asociative_operation}
+Operacija $\circ$ je \textbf{asociativna}, če ustreza enačbi
+\begin{equation}
+\label{eq:asociative_law}
+\forall x,y,z \in \mathcal{S}.\ (x \circ y) \circ z = x \circ (y \circ z)
+\end{equation}
+
+\end{definition}
+
+Enakost \ref{eq:asociative_law} imenujemo \textbf{Zakon o asociativnosti}\\
+Operacije, ki jih bomo obravnavali bodo praviloma asociativne.
+
+\begin{definition}
+\label{def:comutative_operation}
+Elementa $x,y \in \mathcal{S}$ \textbf{komutirata}, če velja 
+\begin{equation}
+\label{eq:comutative_law}
+\forall x,y \in \mathcal{S}. x \circ y = y \circ x
+\end{equation}
+Enakost \ref{eq:comutative_law} imenujemo \textbf{Zakon o komutativnosti}
+
+\end{definition}
+\begin{remark}
+Kadar je iz konteksta razvidno, o kateri operaciji govorimo, pogosto namesto "$\circ$ je komutativna rečemo tudi $\mathcal{S}$ je komutativna"
+\end{remark}
+
+\begin{example}
+\begin{example_case}
+Operacija + na $\mathbb{Z}$ je tako asociatitivna in komutativna
+\end{example_case}
+\begin{example_case}
+Operacija * na $\mathbb{Z}$ je tako asociatitivna in komutativna
+\end{example_case}
+\begin{example_case}
+Operacija - na $\mathbb{Z}$ \textbf{ni} niti asociativna niti komutativna
+\end{example_case}
+\begin{remark}
+Na opracijo odštevanja gledamo kot na izpeljano operacijo in ne kot na samostojna operacijo, saj jo vpeljemo preko seštevanja in pojma nasprotnega elementa.
+\end{remark}
+
+\begin{example_case}
+Naj bo $\mathcal{X}$ poljubna neprazna množica. Z $F(\mathcal{X})$ označimo množico vseh preslikav iz $\mathcal{X}$ v $\mathcal{X}$. Naj bosta $f, g \in \mathcal{X}$, potem je $(f,g) \mapsto f \circ g$ (kompozitum funkcij) binarna operacija na $F(\mathcal{X})$.
+
+\begin{remark}
+Operacija je asociativna, in kadar $|\mathcal{X}| \geq 2$ ni komutativna
+\end{remark}
+\end{example_case}
+\end{example}
+
+\begin{definition}
+\label{def:identity_element}
+Naj bo $\circ$ binarna operacija na na $\mathcal{S}$ in $e \in \mathcal{S}$. $e$ se imenuje \textbf{nevtralni element}, če velja 
+\begin{equation}
+\label{eq:identity_element}
+\forall x \in \mathcal{S}. e \circ x = x \circ e = x
+\end{equation}
+
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+$0$ je nevtralni element za seštevanje na $\mathbb{Z}$.
+\end{example_case}
+\begin{example_case}
+$1$ je nevtralni element za množenje na $\mathbb{Z}$.
+\end{example_case}
+\begin{example_case}
+$id_{x}$ (identična preslikava) je nevtralni element za $F(\mathcal{X})$
+\end{example_case}
+\end{example}
+
+\begin{remark}
+Nevtralni element nima zagotovljenega obstoja (recimo $+$ na $\mathbb{N}$ ali $*$ na sodih celih številih).
+\end{remark}
+
+\begin{statement}
+\label{st:identity_unique}
+Če nevtralni element obstaja je en sam
+\begin{proof}
+\label{pr:identity_unique}
+Naj bosta $f,e \in \mathcal{S}$ nevtralna elementa.
+$$e = e \circ f \text{\ \ // Ker je f nevtralni element}$$
+$$e \circ f = f \text{\ \ // Ker je e nevtralni element}$$
+$$e = f $$
+\end{proof}
+\end{statement}
+
+\begin{definition}
+\label{def:left_identity}
+Element $e'$ je \textbf{levi nevtralni element}, če velja:
+\begin{equation}
+\label{eq:left_identity_element}
+\forall x \in \mathcal{S}. e' \circ x = x
+\end{equation}
+\end{definition}
+
+\begin{definition}
+\label{def:right_identity}
+Element $e''$ je \textbf{desni nevtralni element}, če velja:
+\begin{equation}
+\label{eq:right_identity_element}
+\forall x \in \mathcal{S}. x \circ e'' = x
+\end{equation}
+\end{definition}
+
+\begin{remark}
+Levih in desnih nevtralnih elementov je lahko več
+
+\begin{example}
+\begin{example_case}
+$\circ : (x,y) \mapsto y$.
+
+Vsak element je levi nevtralni element
+\end{example_case}
+\begin{example_case}
+$0$ je desni nevtralni element za odštevanje v $\mathbb{Z}$
+\end{example_case}
+\end{example}
+\end{remark}
+
+\begin{statement}
+\label{st:identity_left_right_both}
+Naj bo za operacijo $\circ$ $e'$ levi nevtralni element, $e''$ pa desni nevtralni element. Tedaj velja $e' = e'' = e$(Sta si levi in desni nevtralni element enaka in je(sta) nevtralni element)
+\begin{proof}
+\label{pr:identity_left_right_both}
+$$e' = e' \circ e'' = e''$$
+\end{proof}
+\end{statement}
+
+\begin{definition}
+\label{def:inner_operation}
+Naj bo $\circ $ operacija na $\mathcal{S}$ in naj bo $\mathcal{T} \subseteq \mathcal{S}$. Rečemo, da je $\circ$ \textbf{notranja operacija na $\mathcal{T}$} ali da je množica \textbf{$\mathcal{T}$ zaprta za $\circ$ na $\mathcal{T}$} , če velja
+\begin{equation}
+\label{eq:inner_operation}
+\forall t, t' \in \mathcal{T}. t \circ t' \in \mathcal{T}
+\end{equation}
+
+\end{definition}
+
+\begin{example}
+Množica $\mathbb{N}$ je zaprta za operaciji $+$ in $*$, ni pa zaprta za operacijo $-$.
+\end{example}
+
+\begin{definition}
+\label{def:outer_operation}
+Preslikavi iz $\mathcal{K} \times \mathcal{S}$ v $\mathcal{S}$ kjer $\mathcal{K} != \mathcal{S}$ rečemo \textbf{Zunanja binarna operacija}
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+Množenje vektorja s skalarjem\\
+$(\lambda, \vec{x}) \mapsto \lambda\vec{x}$, kjer je $(K = \mathbb{R}, S = \mathbb{R}^n)$\\
+$\lambda (x_1, x_2, \dots , x_n) = (\lambda x_1, \lambda x_2, \dots ,\lambda x_n)$
+\end{example_case}
+\end{example}
+
+\subsection{Polgrupe in monoidi}
+
+\begin{definition}
+\label{def:algebraic_structure}
+\textbf{Algebrska struktura} je množica, opremljena z eno ali več operacijami (notranjimi ali zunanjimi), ki im ajo določene lastnosti
+\end{definition}
+
+\begin{definition}
+\label{def:semigroup}
+\textbf{Polgrupa} je par množice $\mathcal{S}$ skupaj z \textbf{asociativno binarno operacijo}. Pišemo: $(\mathcal{S}, \circ)$
+\end{definition}
+
+\begin{remark}
+Kadar je jasno o kateri operaciji govorimo, pogosto govorimo kar o polgrupi $\mathcal{S}$
+\end{remark}
+
+\begin{example}
+\begin{example_case}
+$(\mathbb{N}, +), \underbrace{(\mathbb{Z}, +), (\mathbb{Q}, +), (\mathbb{R}, +), (\mathbb{C}, +), (\mathbb{N}, *),\dots}_{Niso\ samo\ polgrupe\ ampak\ kar\ grupe}$
+\end{example_case}
+\end{example}
+\\
+\\
+Naj bo $(\mathcal{S}, \circ)$ polgrupa, po zakonu \ref{eq:asociative_law} o asociativnosti velja:
+$$\forall x,y,z \in \mathcal{S}.\ (x \circ y) \circ z = x \circ (y \circ z)$$zato lahko okepaje spuščamo in vse to pišemo kot $x \circ y \circ z$. 
+Kaj pa če imamo več kot tri elemente. Ali velja tudi:\\
+$(x_1 \circ x_2) \circ (x_3 \circ x_4) = ((x_1 \circ x_2) \circ x_3) \circ x_4 = x_1 \circ (x_2 (\circ x_3 \circ x_4)) = \dots$
+
+
+
+
+
+\end{document}
