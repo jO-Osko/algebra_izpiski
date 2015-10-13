@@ -41,7 +41,7 @@
 \newcounter{environment:statement_counter}
 
 \newenvironment{statement}[1][\unskip]
-{\refstepcounter{environment:statement_counter}\textbf{Trditev \arabic{environment:statement_counter}:\textit{#1}} \qquad}
+{\refstepcounter{environment:statement_counter}\textbf{Trditev \arabic{environment:statement_counter}:\textit{#1}}}
 {\bigskip}
 
 \newcounter{example:example_counter}
@@ -55,9 +55,12 @@
 {\\}
 
 \newenvironment{remark}
-{Opomba:}
+{\textbf{Opomba:}}
 {}
 
+\newenvironment{corollary}
+{\underline{\textbf{Posledica:}}}
+{}
 
 
 \begin{document}
@@ -284,6 +287,317 @@ Naj bo $(\mathcal{S}, \circ)$ polgrupa, po zakonu \ref{eq:asociative_law} o asoc
 $$\forall x,y,z \in \mathcal{S}.\ (x \circ y) \circ z = x \circ (y \circ z)$$zato lahko okepaje spuščamo in vse to pišemo kot $x \circ y \circ z$. 
 Kaj pa če imamo več kot tri elemente. Ali velja tudi:\\
 $(x_1 \circ x_2) \circ (x_3 \circ x_4) = ((x_1 \circ x_2) \circ x_3) \circ x_4 = x_1 \circ (x_2 (\circ x_3 \circ x_4)) = \dots$
+
+\begin{statement}
+\label{def:semigroup_asociativity_operation}
+Naj bo $(\mathcal{S}, \circ)$ polgrupa, $n \in \mathbb{N}$ in naj bo $x_1, x_2,\dots,x_n \in \mathcal{S}$. Tedaj je za vsak $n$ enakost izpolnjena na glede na postavitev oklepajev (izraz ima smisel, tudi kadar ne pišemo oklepajev).\\
+$x_1 \circ x_2 \circ \dots \circ x_n = (\dots(x_1 \circ x_2) \circ \dots \circ x_n) = x_1 \circ (x_2 (\circ \dots \circ x_n)\dots) = \dots$
+\end{statement}
+
+\begin{proof}
+\label{pr:semigroup_asociativity_operation}
+Zgolj skica dokaza\\
+Definirajmo:
+$x:= x_1 \circ (x_2 (\circ \dots \circ x_n)\dots)$ in \\
+$y:= $ naj bo kombinacija elementov $x_1 \dots x_n$, z drugače postavljenimi oklepaji\\
+Indukcija na $n$:\\
+$n \leq 3$: Očitno\\
+Ker $n \leq 2$ velja $y = \underbrace{(u)}_{x_1, \dots, x_k} \circ \underbrace{(v)}_{x_{k+1}, \dots, x_n}$ Iz $k < n$ sledi:\\ $ y = (x_1 \circ w) \circ v \underbrace{=}_{Asociativnost (\ref{eq:asociative_law})} x_1 \circ ( w \circ v) $\\
+Po I.P. ($w \circ v$ ima $n-1$ elementov):
+$x = x_1 \circ (x_2 \circ \dots \circ x_{n-1})$
+\end{proof}
+Zato lahko oklepaje izpuščamo in pišemo kar:
+$x_1 \circ x_2 \circ \dots \circ x_4$
+
+\begin{definition}
+\label{def:power_operation}
+\textbf{Potenca elementa $x$.} Naj bo  $n \in \mathbb{N} - \{0\}$ in $x \in \mathcal{S}$
+\begin{equation}
+\label{eq:power_operation_natural}
+x^n := \underbrace{x \circ x \circ \dots \circ x}_{n \text{elementov}}
+\end{equation} 
+\end{definition}
+
+\begin{remark}
+Brez asociativnosti ni definirano niti $x^3$
+\end{remark}
+
+\begin{remark}\\
+Očitno velja:\\
+$\forall n, m \in \mathbb{N}. x^n \circ x^m = x^{n+m}$ in \\
+$\forall n, m \in \mathbb{N}. (x^n)^m = x^{n m}$
+\end{remark}
+
+\begin{definition}
+\label{def:monoid}
+\textbf{Polgrupa} z \textbf{nevtralnim elementom} se imenuje \textbf{monoid}.
+\end{definition}
+\begin{example}
+\begin{example_case}
+$(\mathbb{N}, +)$ \textbf{ni} monoid, $(\mathbb{N} \cup \{0\}, +)$ pa je.
+\end{example_case}
+\begin{example_case}
+$(\mathbb{N}, *)$ je monoid
+\end{example_case}
+\begin{example_case}
+$(F(\mathcal{X}), \circ)$ je monoid, nevtralni element je $id_{\mathcal{X}}$
+\end{example_case}
+\end{example}
+
+\begin{definition}
+\label{def:left_inverse}
+Naj bo $( \mathcal{S}, \circ )$ monoid z nevtralnim elementom $e$. Element $y$ je \textbf{levi inverz}  elementa $x$, če velja: $y \circ x = e$.
+\end{definition}
+
+\begin{definition}
+\label{def:right_inverse}
+Naj bo $(\mathcal{S}, \circ)$ monoid z nevtralnim elementom $e$. Element $y$ je \textbf{desni inverz}  elementa $x$, če velja: $x \circ y = e$. 
+\end{definition}
+
+\begin{remark}
+Levi in desni inverz nimata zagotovljenega obstoja, če pa obstajata ni nujno, da sta enolično določena.
+\end{remark}
+
+\begin{example}
+\begin{example_case}
+$f \in F(\mathcal{X})$ ima levi inverz $\iff f$ je injektivna\\
+Če $f$ ni surjektivna ima lahko več levih inverzov, ki so izven $\mathcal{Z}_f$ lahko poljubno definirani.
+\end{example_case}
+\begin{example_case}
+$f \in F(\mathcal{X})$ ima desni inverz $\iff f$ je surjektivna
+\end{example_case}
+\begin{example_case}
+$f \in F(\mathcal{X})$ ima levi in desni inverz $\iff f$ je bijektivna
+\end{example_case}
+\end{example}
+
+\begin{definition}
+\label{def:inverse_element}
+Element $y $ iz monida $\mathcal{S}$ je inverz elementa $x$ Če velja:
+\begin{equation}
+x \circ y = y \circ x = e
+\end{equation}
+Elementu, ki ima inverz rečemo da je \textbf{obrnljiv} in njegov inverz označimo z $x^{-1}$(To ni čisto korektno, saj bomo šele malo naprej pokazali, da ima vsak element en sam inverz). In tako dobimo 
+\begin{equation}
+\label{eq:inverse_element}
+x \circ x^{-1} = x^{-1} \circ x = e
+\end{equation}
+\end{definition}
+
+\begin{remark}
+Če je operacija $\circ$ komutativna potem levi inverz, desni inverz in inverz za posamezen element sovpadajo
+\end{remark}
+\\
+\\
+\begin{statement}
+\label{st:inverse_left_right_both}
+Naj bo $(\mathcal{S}, \circ)$ monoid, Če je $y$ levi inverz elementa $x$ in je $z$ njegov desni inverz, potem $z=y=x^{-1}$
+\end{statement}
+\begin{proof}
+$y = y \circ e = y \circ (x \circ z) = (y \circ x) \circ z = e \circ z = z$
+\end{proof}
+\begin{corollary}
+Obrnljiv element monoida ima natanko en inverz.
+\end{corollary}
+
+\begin{corollary}
+Če je $x$ obrnljiv element monoida $\mathcal{S}$ potem iz $y \circ x = e$ sledi $x \circ y = e$.
+\end{corollary}
+\\
+\begin{statement}
+\label{st:pairwise_inverse}
+Če sta $x$ in $y$ obrnljiva, potem je obrnljiv tudi element $(x \circ y)$ in je njegov inverz $y^{-1} \circ x^{_1}$
+\end{statement}
+\begin{proof}
+\label{pr:pairwise_inverse}
+To je desni inverz:\\
+$(x \circ y)  \circ (y^{-1} \circ x^{-1}) = x \circ (y  \circ y^{-1}) \circ x^{-1} = x \circ e \circ x^{-1} = x \circ x^{-1} = e$\\
+in tudi levi inverz:\\
+$(y^{-1} \circ x^{-1}) \circ (x \circ y) = y^{-1} \circ (x^{-1} \circ x) \circ y = y^{-1} \circ e \circ y = y{-1} \circ y = e$
+\end{proof}
+\begin{remark}
+\label{rem:n_wise_inverse}
+Seveda velja za $n$ elementov
+\begin{equation}
+\label{eq:n_wise_inverse}
+(x_1 \circ  x_2 \circ \dots \circ x_n)^{-1} = x_{n}^{-1} \circ \dots \circ x_{2}^{-1} \circ x_{1}^{-1}
+\end{equation}
+\end{remark}
+
+\begin{example}
+\begin{example_case}
+$(\mathbb{N} \cup \{0\}, +)$: edini obrnljiv element je 0.
+\end{example_case}
+\begin{example_case}
+$(\mathbb{N}, *)$: edini obrnljiv element je 1
+\end{example_case}
+\begin{example_case}
+$(\mathbb{Z}, *)$: edina obrnljiva elementa sta 1 in -1 
+\end{example_case}
+\begin{example_case}
+$(\mathbb{Q}, *)$: Obrnljivi so vsi element razen 0
+\end{example_case}
+\begin{example_case}
+$(F(\mathcal{X}), \circ)$: obrnljive so vse bijektivne preslikave
+\end{example_case}
+\end{example}
+\begin{remark}
+Poseben primer zadnje formule kadar je $x$ obrnljiv je tudi:$(x^n)^{-1} = (x^{-1})^n$ za $n \in \mathbb{N}$
+\end{remark}
+
+\begin{definition}
+\label{def:integer_power}
+\begin{equation}
+\label{eq:integer_power}
+n \in \mathbb{N}. x^{-n} := (x^n)^{-1} = (x^{-1})^n
+\end{equation}
+\end{definition}
+
+\begin{definition}
+\label{def:null_power}
+\begin{equation}
+\label{eq:null_power}
+x^0 := e
+\end{equation}
+
+\end{definition}
+
+Tako kadar je $x$ \textbf{obrnljiv} veljata enačbi
+
+\begin{equation}
+\label{eq:sum_of_powers}
+\forall n, m \in \mathbb{Z}. x^n \circ x^m = x^{n+m}
+\end{equation}
+
+\begin{equation}
+\label{eq:product_of_powers}
+\forall n, m \in \mathbb{Z}. (x^n)^m = x^{n m}
+\end{equation}
+
+\begin{statement}
+\label{st:reduction_rule}
+Če je $x$ obrnljiv element monida $\mathcal{S}$ potm velja:
+\begin{equation}
+\label{eq:reduction_rule}
+x \circ y = x \circ z \implies y = z
+\end{equation}
+In tudi
+\begin{equation}
+\label{eq:reduction_rule2}
+y \circ x = z \circ x \implies y = z
+\end{equation}
+\begin{proof}
+$$x \circ y = x \circ z \implies x^{-1} \circ x \circ y = x^{-1} \circ x \circ z \implies y = z$$
+Druga enačba podobno
+\end{proof}
+\end{statement}
+
+\begin{remark}
+Iz enačbe $x \circ y = z \circ x$ v splošnem \textbf{ne} sledi $y = z$
+\end{remark}
+
+\subsection{Grupe}
+\begin{definition}
+\label{def:group}
+\textbf{Monoid} v katerem je \textbf{vsak element obrnljiv}, se imenuje \textbf{grupa}. Grupa, v kateri je vsaka operacija komutativna se umenuje \textbf{komutativna grupa} ali \textbf{Abelova grupa}.
+\end{definition}
+
+Grupe delim na komutativne in nekomutativne(glede na lastnosti operacije) ter na končne in neskončne(glede na število elementov).
+
+\begin{example}
+\begin{example_case}
+$(\mathbb{Z}, +)$, $(\mathbb{Q}, +)$,$(\mathbb{R}, +)$,$(\mathbb{C}, +)$
+\end{example_case}
+\begin{example_case}
+$(\mathbb{N} \cup \{0\}, +)$ \textbf{ni} grupa
+\end{example_case}
+\begin{example_case}
+$(\mathbb{R}, *)$: \textbf{ni} grupa, ker 0 ni obrnljiv
+\end{example_case}
+\end{example}
+
+\begin{remark}
+Vsak monoid 'skriva' grupo.
+\end{remark}
+
+\begin{definition}
+\label{def:monoid_invertible_elements}
+S \textbf{$\mathcal{S}^*$} označujemo množico vseh obrnljivih elementov monoida $\mathcal{S}$.
+\end{definition}
+
+\begin{statement}
+\label{st:subgroup_of_monoid}
+Če je $\mathcal{S}$ monoid je $\mathcal{S}$ grupa.
+\end{statement}
+
+\begin{proof}
+\label{pr:subgroup_of_monid}
+$x, y \in \mathcal{S}^* \implies x \circ y \in \mathcal{S}^*$ // Obrnljiv je tudi njun produkt, torej je množica je zaprta za $*$ \\
+Ker je $*$ asociativen na $\mathcal{S}$ je asociativen tudi na $\mathcal{S}^*$\\
+$e \in \mathcal{S}^*$ saj je enota inverz sami sebi\\
+$x \in \mathcal{S}^* \implies x^{-1} \in \mathcal{S}^*$ // Inverz inverza je kar element sam
+\end{proof}
+
+\begin{example}
+\begin{example_case}
+$(\mathbb{N} \cup \{0\}, +)$: $(\mathbb{N} \cup \{0\}, +)^* = {0}$
+\end{example_case}
+\begin{example_case}
+$(\mathbb{Z}, +)$: $(\mathbb{Z}, +)^* = {-1,1}$ 
+\end{example_case}
+\begin{example_case}
+$(\mathbb{Q}, *)$: $(\mathbb{Q}, *)^* = \mathbb{Q} - {0}$
+\end{example_case}
+\begin{remark}
+Grupam z enim elementom pravimo \textbf{trivialne} grupe.
+\end{remark}
+
+\begin{example_case}
+$(F(\mathcal{X}), \circ)$: $(F(\mathcal{X}), \circ)^* = \{f: \mathcal{X} \to \mathcal{X} | f \ \text{je bijekcija}\}$
+\end{example_case}
+\end{example}
+
+\begin{definition}
+\label{def:symetric_group}
+Množico $Sim(\mathcal{X})$ imenujemo \textbf{simetrična grupa} (množice $\mathcal{X}$). 
+\begin{equation}
+\label{eq:general_symetric_group}
+Sim(\mathcal{X}) := \{f: \mathcal{X} \to \mathcal{X} | f \ \text{je bijekcija}\}
+\end{equation}
+Njene emelente(bijektiven preslikave iz $\mathcal{X}$ v $\mathcal{X}$ pa imenujemo \textbf{permutacaije} (množice $\mathcal{X}$).
+\end{definition}
+
+\begin{remark}
+Če je množica končna jo praviloma označimo z $\{1,2,\dots, n\}$, njej pripadajočo grupo permutacij pa z
+\begin{equation}
+\label{eq:finite_symetric_group}
+\mathcal{S}_n := Sim(\{1,2,\dots,n\})
+\end{equation}
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
