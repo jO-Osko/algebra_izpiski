@@ -11,6 +11,7 @@
 \usepackage{epigraph}
 \usepackage{cleveref}
 \usepackage{verbatim}
+\usepackage{enumitem}
 
 \parindent=0pt
 
@@ -61,6 +62,8 @@
 \newenvironment{corollary}
 {\underline{\textbf{Posledica:}}}
 {}
+
+\newcommand{\subscript}[2]{$#1 _ #2$}
 
 
 \begin{document}
@@ -476,7 +479,7 @@ Tako kadar je $x$ \textbf{obrnljiv} veljata enačbi
 
 \begin{statement}
 \label{st:reduction_rule}
-Če je $x$ obrnljiv element monida $\mathcal{S}$ potm velja:
+Če je $x$ obrnljiv element monida $\mathcal{S}$ potem velja \textbf{pravilo krajšanja}:
 \begin{equation}
 \label{eq:reduction_rule}
 x \circ y = x \circ z \implies y = z
@@ -497,10 +500,32 @@ Iz enačbe $x \circ y = z \circ x$ v splošnem \textbf{ne} sledi $y = z$
 \end{remark}
 
 \subsection{Grupe}
+
+\textbf{Dogovor:} V grupi bomo namesto $\circ$ uporabljali kar operacijo 'krat', torej se bo operacija imanovala kar množenje. Prav tako bomo izpuščali operator, ko bo le mogoče in pisali kar $xy$.
+
+Tako $xy$ imenujemo 'produkt' $x$ in $y$ nevtrali element pa označimo z $1$ in mu rečemo kar \underline{enota}.
+
 \begin{definition}
 \label{def:group}
 \textbf{Monoid} v katerem je \textbf{vsak element obrnljiv}, se imenuje \textbf{grupa}. Grupa, v kateri je vsaka operacija komutativna se umenuje \textbf{komutativna grupa} ali \textbf{Abelova grupa}.
 \end{definition}
+
+Ki je ekvivalenta bolj čisti definiciji:
+
+\begin{definition}
+\label{def:group_clean}
+Množica $\mathbb{G}$ skupaj z binarno operacijo $* : \mathbb{G} \times \mathbb{G} \to \mathbb{G},\\ (x,y) \mapsto xy$ je \textbf{grupa} če zanjo velja:
+\begin{enumerate}[label=\subscript{G}{\arabic*}:]
+\item $$\forall x,y,z \in \mathbb{G}. \ (xy)z = x(yz)$$
+\item $$\exists 1 \in \mathbb{G}. \ \forall x \in \mathbb{G}. \ 1x = x1 = x$$
+\item $$\forall x \in \mathbb{G}. \ \exists x^{-1} \in \mathbb{G}. \  xx^{-1} = x^{-1}x = 1$$
+\end{enumerate}
+Če velja tudi:
+$$\forall x,y \in \mathbb{G}. \ xy = yx$$
+Potem grupo $\mathbb{G}$ imanujemo \textbf{Abelova} grupa.
+\end{definition}
+
+
 
 Grupe delim na komutativne in nekomutativne(glede na lastnosti operacije) ter na končne in neskončne(glede na število elementov).
 
@@ -575,10 +600,35 @@ Njene emelente(bijektiven preslikave iz $\mathcal{X}$ v $\mathcal{X}$ pa imenuje
 \end{equation}
 \end{remark}
 
+Včasih bomo operacije na grupah vendarle označevali s $+$ ('seštevanje'). Taki grupi bomo rekli \textbf{aditivna grupa}. Nevtralni element bomo označevali z $0$ in inverzni elment pa bom oimenovali 'nasprotni element' in ga označevali z $-x$. Namesto $x+(-y)$ bom tako pisali $x-y$ (razlika $x$ in $y$). S tem smo v aditivno grupo vpeljeli odštevanje. Prav tako bom namesto $x^n$ pisali $nx$. 
 
+Primer takih grup so Abelove grupe. ($x+y = y+x$)
 
+\subsection{Kolobarji}
+$\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ so aditivne grupe, v katerih je naravno definirano tudi množenje, za katerega so monoidi.
 
+\begin{definition}
+\label{def:ring}
+Množica $\mathcal{K}$,, skupaj z binarnima operacijama seštevanja $+ : (x,y) \mapsto x+y$ in množenja $* : (x,y) \mapsto xy$ se imenuje \textbf{kolobar} če velja
+\begin{enumerate}[label=\subscript{K}{\arabic*}:]
+\item $(K, +)$ je \textbf{Abelova grupa}
+\item $(K, *)$ je \textbf{monoid}
+\item Izpolnjena sta oba distributivnostna zakona
+\begin{equation}
+\label{eq:left_distributive_law}
+\forall x,y,z \in \mathcal{K}. \ z(x+y) = zx + zy
+\end{equation}
+\begin{equation}
+\label{eq:right_distributive_law}
+\forall x,y,z \in \mathcal{K}. \ (x+y)z = xz + yz
+\end{equation}
 
+\begin{remark}
+Oba zakona potrebujemo zaradi ne nujne komutativnosti množenja v monoidu
+\end{remark}
+\end{enumerate}
+
+\end{definition}
 
 
 
