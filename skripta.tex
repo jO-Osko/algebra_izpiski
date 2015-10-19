@@ -13,6 +13,9 @@
 \usepackage{verbatim}
 \usepackage{enumitem}
 
+\usepackage{tikz}
+
+
 \parindent=0pt
 
 
@@ -609,7 +612,7 @@ $\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ so aditivne grupe, v katerih je
 
 \begin{definition}
 \label{def:ring}
-Množica $\mathcal{K}$,, skupaj z binarnima operacijama seštevanja $+ : (x,y) \mapsto x+y$ in množenja $* : (x,y) \mapsto xy$ se imenuje \textbf{kolobar} če velja
+Množica $\mathcal{K}$ skupaj z binarnima operacijama seštevanja $+ : (x,y) \mapsto x+y$ in množenja $* : (x,y) \mapsto xy$ se imenuje \textbf{kolobar} če velja
 \begin{enumerate}[label=\subscript{K}{\arabic*}:]
 \item $(K, +)$ je \textbf{Abelova grupa}
 \item $(K, *)$ je \textbf{monoid}
@@ -630,25 +633,266 @@ Oba zakona potrebujemo zaradi ne nujne komutativnosti množenja v monoidu
 
 \end{definition}
 
+\begin{remark}
+Poznamo tudi kolobarje brez enote(kjer je $(\mathcal{K}, *)$ zgolj monoid. Recimo $$2\mathbb{Z} := \{2n | n\in \mathbb{Z}\}$$
+\end{remark}
 
+\begin{statement}
+V poljubnem kolobarju veljajo naslednje lastnosti:
+\begin{enumerate}[label=(\alph*)]
+\item 
+$$\forall x \in \mathcal{K}. \ 0x = x0 = 0$$
+\begin{proof}
+$$0x = (0 + 0)x = 0x + 0x$$
+$$\Downarrow$$
+$$0 = 0x$$
+Podobno za $x0=0$
+\end{proof}
+\item 
+$$\forall x,y \in \mathcal{K}. \ (-x)y = x(-y) = -(xy)$$
+\begin{proof}
+$$0 = 0y = (x+(-y))y = xy + (-x)y$$
+$$\Downarrow$$
+$$-(xy) = (-x)y$$
+\end{proof}
+\item
+$$\forall x,y,z \in \mathcal{K}. \ x(y-z) = xy -xz  \ \land \ (y-z)x = yx -zx$$
+\begin{proof}
+$$x(y-z) = x(y+(-z)) = xy + x(-z)$$
+Podobno za drugo stran
+\end{proof}
+\item 
+$$\forall x,y \in \mathcal{K}. \ (-x)(-y) = xy$$
+\begin{proof}
+$$(-x)(-y) = -(x(-y)) = -(-xy) = xy$$
+\end{proof}
+\item
+$$\forall x \in \mathcal{K}. \ (-1)x = x(-1) = -x$$
+Sledi iz (b) če vzamemo $y=-1$
+\end{enumerate}
+\end{statement}
 
+Kolobar K je \textbf{komutativen}, če za množenje velja zakon komutativnosti (\ref{eq:comutative_law}).
+\\
 
+\begin{tikzpicture}[sibling distance=15em,
+  every node/.style = {shape=rectangle, rounded corners,
+    draw, align=center,
+    top color=white, bottom color=blue!20}]]
+  \node {Kolobarji}
+    child { node {Komutativni kolobarji}
+      child { node {Polja} }
+      child { node {Kolobarji, ki niso polja} }
+    }
+    child { node {Nekomutativni \\ kolobarji} };
+\end{tikzpicture}
+\\
+\\
+\begin{example}
+\begin{example_case}
+$\mathbb{Z}$ (tipičen primer kolobarja)
+\end{example_case}
+\begin{example_case}
+$\mathbb{Q}, \mathbb{R}, \mathbb{C}$ (to niso tipični primeri kolobarjev, saj so kar polja)
+\end{example_case}
+\begin{example_case}
+\textbf{Trivialni} ali \textbf{ničelni kolobar}:
+$$\{0\}$$
+\end{example_case}
+\begin{statement}
+$$\text{Kolobar} \ \mathcal{K} \ \text{je ničelen} \iff 1=0$$
 
+\begin{proof}\leavevmode \\
+$\implies$: Očitno\\
+$\impliedby$: $\forall x \in \mathcal{K}. \ x = 1x = 0x = 0$
+\end{proof}
+\end{statement}
+\begin{example_case}
+Matrični kolobarji ($M_{n}(\mathbb{R})$, $M_{n}(\mathbb{C})$) z običajnim seštevanjem in množenjem,
+$$0 =
+	\underbrace{\begin{bmatrix} 
+		0 & 0 & \cdots & 0 \\
+		0 & \ddots & \ddots & \vdots \\
+		\vdots & \ddots & \ddots & 0 \\
+		0 & \cdots & 0 & 0		
+	\end{bmatrix}}_n; \ 
+		1 =	\underbrace{\begin{bmatrix} 
+		0 & 0 & \cdots & 0 \\
+		0 & \ddots & \ddots & \vdots \\
+		\vdots & \ddots & \ddots & 0 \\
+		0 & \cdots & 0 & 0
+	\end{bmatrix}}_n
+$$
+Ta kolobar je nekomutativen za $n \geq 2$\\
+$ A = \begin{bmatrix}
+		1 & 0 \\
+		0 & 0
+	  \end{bmatrix}
+$;
+$ B = \begin{bmatrix}
+		0 & 1 \\
+		0 & 0
+	  \end{bmatrix}
+$	
+$\implies$
+$AB = B, \ BA = 0$ \\
+$A$ in $B$ ne komutirata, prav tako pa smo videlo da je lahko produkt dveh neničelnih elementov $0$.
+\end{example_case}
 
+\begin{definition}
+\label{def:left_zero_divisor}
+Element $x \neq 0$ kolobarja $\mathcal{K}$, je \textbf{levi deljitelj niča}, če obstaja tak $y \neq 0, \in  \mathcal{K}$, da velja: $xy = 0$.
+\end{definition}
 
+\begin{definition}
+\label{def:right_zero_divisor}
+Element $x \neq 0$ kolobarja $\mathcal{K}$, je \textbf{desni deljitelj niča}, če obstaja tak $y \neq 0, \in  \mathcal{K}$, da velja: $yx = 0$.
+\end{definition}
 
+\begin{definition}
+Element $x$ je \textbf{delitelj niča}, če je \textbf{hkrati levi in desni delitelj niča}.
+\end{definition}
 
+\begin{remark}
+\begin{equation}
+\label{eq:left_zero_divisor_iff_right}
+\mathcal{K} \ \text{ima leve deljitelje niča} \iff \mathcal{K} \  \text{ima desne deljitelje niča}
+\end{equation}
+\begin{proof}\leavevmode \\
+$\implies$: Obstajata taka $y != 0, x != 0$, imamo dve možnosti
+\begin{enumerate}
+\item $xy=0 \implies$ Dokaz je končan
+\item $xy \neq 0$: $x(yx) = 0$ in je $yx$ desni deljitelj niča 
+\end{enumerate} 
+$\impliedby$: Podobno
+\end{proof}
+\end{remark}
 
+V \textbf{Kolobarju brez deliteljev niča} velja:
+\begin{equation}
+\label{eq:xy_is_zero_implies_one_zero}
+\forall x,y \in \mathcal{K}. \ xy = 0 \implies x = 0 \lor y = 0
+\end{equation}
 
+V takih kolobarjih velja pravilo krajšanja:
+$$ xy = xz \land x  \neq 0 \implies y = z$$
+$$ yx = zx \land x  \neq 0 \implies y = z$$
+$$ xy = xz \iff x(y-z) = 0$$
+$$ yx = zx \iff (y-z)x = 0$$
+\end{example}
 
+Kolobar je monoid za množenje zato lahko goviromo o obrnljivih elementih.
+\begin{example}
+\begin{example_case}
+V $\mathbb{Z}$ sta obrnljiva $1, -1$.
+\end{example_case}
+\begin{example_case}
+V $\mathbb{Q}, \mathbb{R}, \mathbb{C}$ so obrnljivi vsi elementi razen $0$
+\end{example_case}
+\end{example}
 
+\begin{definition}
+\label{def:skew_field}
+Kolobar, v katerem $1 \neq 0$ in v katerem so \textbf{vsi neničelni elementi obrnljivi} se imenuje \textbf{obseg}.
+\end{definition}
 
+\begin{definition}
+\label{def:field}
+Komutativni obseg se imenuje \textbf{polje}
+\end{definition}
 
+\begin{example}
+\begin{example_case}
+$\mathbb{Q}, \mathbb{R}, \mathbb{C}$, so polja
+\end{example_case}
+\begin{example_case}
+Nekomutativne obsege bomo dodali kasneje
+\end{example_case}
+\end{example}
 
+\begin{statement}
+\label{st:invertible_element_is_not_zero_divisor}
+Obrnljiv element kolobarja ni levi(ali desni) delitelj niča.\\
+Obsegi so zato kolobarji brez deliteljev niča.
+\end{statement}
+\begin{proof}
+$x$ je obrnljiv: $xy=0$\\
+$y = 1y = (x^{-1}x)y =  x^{-1}(xy) = x^{-1}0 = 0$ Torej $x$ ni deljitelj niča.
+\end{proof}
 
+\subsection{Vektorski prostori}
 
+\begin{definition}
+\label{def:vector_space}
+Naj bo $\mathcal{F}$ polje. Množica $\mathcal{V}$ skpaj z (notranjo) binarno operacijo seštevanje $+: \mathcal{V} \times \mathcal{V} \to \mathcal{V}$ in zunanjo binarno operacijo $\mathcal{F} \times \mathcal{V} \to \mathcal{V}$ imenovano \textbf{množenje s skalarji} in označeno z $(\lambda, v) \mapsto \lambda v$ se imenuje \textbf{vektorski prostor nad poljem $\mathcal{F}$}, če zanj velja:
+\begin{enumerate}[label=\subscript{V}{\arabic*}:]
+\item Za seštevanje je $\mathcal{V}$ Abelova grupa
+\item Velja distributivnost v vektorskem faktorju
+\begin{equation}
+\label{eq:vector_space_vector_distributivity}
+\forall \lambda \in \mathcal{F}. \  \forall u,v \in \mathcal{V}. \ \lambda(u+v) = \lambda u + \lambda v
+\end{equation}
+\item Velja distributivnost v skalarnem faktorju
+\begin{equation}
+\label{eq:vector_space_scalar_distributivity}
+\forall \lambda, \mu \in \mathcal{F}. \  \forall v \in \mathcal{V}. \ (\lambda +\mu)v = \lambda v + \mu v
+\end{equation}
+\item Velja zakon homogenosti
+\begin{equation}
+\label{eq:vector_space_homogenous}
+\forall \lambda, \mu \in \mathcal{F}. \  \forall v \in \mathcal{V}. \ (\lambda \mu)v = \lambda( \mu v)
+\end{equation}
+\item Enota
+\begin{equation}
+\label{eq:vector_space_unit}
+ \forall v \in \mathcal{V}. \ 1v = v
+\end{equation}
+\end{enumerate}
+\end{definition}
 
+Za vsak vektorski prostor očitno veljajo naslednje trditve
 
+\begin{itemize}
+\item $$\forall \lambda \in \mathcal{F}. \ \lambda 0 = 0$$
+\item $$\forall u,v \in \mathcal{V}. \  0x = 0$$
+\item $$\forall \lambda, \mu \in \mathcal{F}. \  \lambda \mu = 0 \implies \lambda = 0 \lor \mu = 0$$
+\item $$\forall \lambda, \mu \in \mathcal{F}. \ (-\lambda) \mu = \lambda(- \mu) = -(\lambda \mu) $$
+\end{itemize}
+
+\begin{remark}
+Elementom polja $\mathcal{F}$ pravimo \textbf{skalarji}, elementom $\mathcal{V}$ pa vektorji
+\end{remark}
+
+\begin{itemize}
+\item $\mathcal{F} = \mathbb{R}$: Realni vektorski prostor
+\item $\mathcal{F} = \mathbb{C}$: Kompleksni vektorski prostor
+
+\end{itemize}
+
+\begin{example}
+\begin{example_case}
+Splošni prostor $\mathcal{F}^n$, kjer vpeljemo operacji:\\
+\textbf{Sešetavnje}
+\begin{equation}
+\label{eq:vector_space_addition}
+(u_1, u_2, \dots , u_n) + (v_1, v_2, \dots, v_n) \mapsto (u_1 + v_1, u_2 + v_2, \dots, u_n + v_n)
+\end{equation}
+\textbf{Množenje s skalarjem}
+\begin{equation}
+\label{eq:vector_space_scalar_multiplication}
+\lambda (u_1, u_2, \dots , u_n) \mapsto (\lambda u_1 , \lambda u_2 , \dots, \lambda u_n)
+\end{equation}
+\end{example_case}
+\begin{example_case}
+Trivialni vektorski prostor: $\{0\}$
+\end{example_case}
+\begin{example_case}
+Vektorski prostor polniomov stopnje največ $n$, kjer seštevanje in množenje definiramo na običajen način
+\end{example_case}
+\begin{example_case}
+$\mathbb{C}$ je vektorksi prostor nad $\mathbb{R}$ ( za $+$ je Abelova grupa, množenje pa definiramo po komponentah, tako je nad $\mathbb{C}$ to $2$-dimenzionalen, nad $\mathbb{R}$ pa $1$-dimenzionalen)
+\end{example_case}
+\end{example}
 
 
 
