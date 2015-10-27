@@ -890,7 +890,280 @@ Trivialni vektorski prostor: $\{0\}$
 Vektorski prostor polniomov stopnje največ $n$, kjer seštevanje in množenje definiramo na običajen način
 \end{example_case}
 \begin{example_case}
-$\mathbb{C}$ je vektorksi prostor nad $\mathbb{R}$ ( za $+$ je Abelova grupa, množenje pa definiramo po komponentah, tako je nad $\mathbb{C}$ to $2$-dimenzionalen, nad $\mathbb{R}$ pa $1$-dimenzionalen)
+$\mathbb{C}$ je vektorski prostor nad $\mathbb{R}$ ( za $+$ je Abelova grupa, množenje pa definiramo po komponentah, tako je nad $\mathbb{C}$ to $2$-dimenzionalen, nad $\mathbb{R}$ pa $1$-dimenzionalen)
+\end{example_case}
+\end{example}
+
+\subsection{Algebre}
+Mnogi pomembni primeri kolobarjev so hkrati tudi vektorski prostori, dejansko so algebre
+
+\begin{definition}
+\label{def:algebra}
+Naj bo $\mathcal{F}$ polje (komutativen obseg). Množica $\mathcal{A}$ skupaj z (notranjima) binarnima operacijama $+$ (seštevanje) in $*$ (množenje) ter zunanjo binarno operacijo $\mathcal{F} \times \mathcal{A} \to \mathcal{A}$ (množenje s skalarji) je \textbf{Algebra na poljem $\mathcal{F}$ ali $\mathcal{F}$-algebra}, če velja:
+\begin{enumerate}[label=\subscript{V}{\arabic*}:]
+\item Za seštevanje in množenje s skalarji je $\mathcal{A}$ vektorski prostor
+\item Za množenje je $\mathcal{A}$ monid
+\item Veljata neke vrste levi in desni distributivnostni zakon
+$$\forall x,y,z \in \mathcal{A}. \ \forall \lambda, \mu \in \mathcal{F}. \ (\lambda x + \mu y) z = \lambda(xz) + \mu(yz)$$
+$$\forall x,y,z \in \mathcal{A}. \ \forall \lambda, \mu \in \mathcal{F}. \ z(\lambda x + \mu y) = \lambda(zx) + \mu(zy)$$
+
+\begin{remark}
+Za $\lambda = \mu = 1$ je to navadna distributivnost. Torje je Algebra kolobar, ki je hkrati vekroski prostor, v katerem velja še:
+$$\lambda(xz) = (\lambda x)z = x(\lambda z)$$
+\end{remark}
+
+\end{enumerate}
+
+\end{definition}
+
+
+\begin{example}
+\begin{example_case}
+Vektorski prostor $\mathcal{F}^n$ postane algebra, če definiramo množenje, najlažje kar po komponentah:
+\begin{equation}
+\label{eq:vector_space_to_algebra_component_mulitplication}
+(x_1, x_2, \dots, x_n) (y_1, y_2, \dots, y_n) \mapsto (x_1 y_1,, x_2 y_2, \dots, x_n y_n)
+\end{equation} 
+\end{example_case}
+\begin{example_case}
+Kolobar $M_n(\mathbb{R})$ postane algebra, če definiramo množenje s skalarji
+\begin{equation}
+\label{eq:matrix_scalar_multiplication}
+\lambda (a_{ij}) = (\lambda a_{ij})
+\end{equation}
+\end{example_case}
+\begin{example_case}
+Vektorski prostor polinomov postane algebra, če vpeljemo množenje polinomov na standardni način
+\end{example_case}
+\end{example}
+
+\begin{remark}
+'Teorija kolobarjev' in 'teorija kolobarjev in algeber' se razlikujeta zgolj v povdarku.
+\end{remark}
+
+\subsection{Podgrupe, podkolobarji in druge podstrukture}
+$(\mathbb{R}, +)$ in $(\mathbb{C}, +)$ sta različni strukturi, a očitno povezani Abelovi grupi. Operacija je seštevanje in $\mathbb{R} \subseteq \mathbb{C}$. Rečemo: $(\mathbb{R}, +)$ je podgrupa $(\mathbb{C}, +)$. \\
+Podobno rečemo 
+$(\mathbb{R}, +, *)$ je podkolobar $(\mathbb{C}, +, *)$\\
+In ker sta to tudi polji rečemo kar kar $(\mathbb{R}, +, *)$ je podpolje $(\mathbb{C}, +, *)$\\
+
+\subsubsection{Podgrupe}
+\begin{definition}
+\label{def:subgroup}
+\textbf{Neprazna} podmnožica $\mathcal{H}$ grupe $\mathcal{G}$ je \textbf{podgrupa} grupe $\mathcal{G}$, če je za isto operacijo(zožitev na $\mathcal{H} \times \mathcal{H}$) tudi sama grupa. 
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+Vsaka grupa $\mathcal{G}$ ima vsaj dve podgrupi: $\mathcal{G}$ in $\{1\}$\\
+\begin{remark}
+$\{1\}$ se imenuje \textbf{trivialna podgrupa}
+\end{remark}
+
+\begin{remark}
+Vsaka od $\mathcal{G}$ različna podgrupa se imenuja \textbf{prava podgrupa}
+\end{remark}
+\end{example_case}
+
+\end{example}
+
+\begin{statement}
+\label{st:subgroup_equivalent_defintions}
+Za naprazno podmnožico $\mathcal{H}$ grupe $\mathcal{G}$ so naslednje trditve ekvivalentene:
+\begin{enumerate}[label=(\roman*)]
+\item $$\mathcal{H} \ \text{je podgrupa} \ \mathcal{G}$$
+\item $$\forall x,y \in \mathcal{H}. \ x y^{-1} \in \mathcal{H}$$ 
+\item $$\forall x,y \in \mathcal{H}. \ x y \in \mathcal{H} \land x^{-1} \in \mathcal{H}$$ 
+\end{enumerate}
+\end{statement}
+\begin{proof}
+\label{pr:subgroup_equivalent_defintions}\leavevmode \\
+(i) $\implies$ (ii) : Očitno iz definicije da je $\mathcal{H}$ grupa \\
+(ii) $\implies$ (iii) : \\
+$$x \in \mathcal{H} \Longrightarrow 1 = x x^{-1} \in \mathcal{H} \Longrightarrow x^{-1} = 1 x^{-1} \in \mathcal{H} \ \text{// Zaprta za inverz}$$
+$$x,y \in \mathcal{H} \Longrightarrow x y = x (y^{-1})^{-1} \in \mathcal{H} \ \text{Zaprta za poljubna dva}$$
+(iii) $\implies$ (i):\\
+Očitno zaprata za množenje, asociativna, ker velja na večji množici ($\mathcal{G}$)
+$$1 = x x^{-1} \in \mathcal{H}$$
+$$x \in \mathcal{H} \implies x^{-1} \in \mathcal{H}$$
+\end{proof}
+
+Govorimo 'grupa $\mathcal{H}$' ali 'podgrupa $\mathcal{H}$' označimo:
+
+$$\mathcal{H} \leq \mathcal{G}$$
+
+\begin{example}
+\begin{example_case}
+$\mathbb{R} - \{0\}$ je podgrupa $(\mathbb{C}-\{0\})$
+\end{example_case}
+\begin{example_case}
+$\{x \in \mathbb{R} | x < 0\}$ je podgrupa $(\mathbb{C}-\{0\})$
+\end{example_case}
+\begin{example_case}
+$\{1, -1, i, -i\}$ je podgrupa $(\mathbb{C}-\{0\})$
+\end{example_case}
+\begin{example_case}
+$\{z \in \mathbb{C} | \ |z| = 1\}$ je podgrupa $(\mathbb{C}-\{0\})$
+\end{example_case}
+\begin{example_case}
+$\{x \in \mathbb{R} | \ |x| > 1\}$ \textbf{ni} podgrupa $(\mathbb{C}-\{0\})$
+\end{example_case}
+\begin{example_case}
+$\{z \in \mathbb{C} - \{0\} | \ |z| \leq 1\}$ \textbf{ni} podgrupa $(\mathbb{C}-\{0\})$
+\end{example_case}
+\end{example}
+
+\begin{remark}\\
+V aditivni grupi velja \\(ii) :  $\forall x,y \in \mathcal{H}. \ x - y \in \mathcal{H}$ in \\
+(iii): $\forall x,y \in \mathcal{H}. \ x + y \in \mathcal{H} \land -x \in \mathcal{H}$
+\end{remark}
+\\
+
+\begin{example}
+Pogdgrupe $(\mathbb{Z}, +)$\\
+\begin{example_case}
+Trivialna primera podgrup sta $\mathbb{Z}$ in $\{0\}$
+\end{example_case}
+\begin{example_case}
+$2\mathbb{Z} = \{2n | n \in \mathbb{Z}\}$
+\end{example_case}
+\begin{example_case}
+$k\mathbb{Z} = \{kn | n \in \mathbb{Z}\}$ // $k \in \mathbb{Z}$
+\end{example_case}
+\end{example}
+
+\begin{definition}
+\label{def:conjugate_elements_group}
+Elementa $a, b$ iz grupe $\mathcal{G}$ sta si \textbf{konjugirana}, če velja:
+\begin{equation}
+\label{eq:conjugate_element_group}
+\exists c \in \mathcal{G}. \ b = c a c^{-1}
+\end{equation}
+\begin{remark}
+Relacija 'elementa sta si konjugirana' je ekvivalenčna
+\end{remark}
+\end{definition}
+
+\begin{definition}
+\label{def:conjugate_subgroup}
+Če je $c \in \mathcal{H} \leq \mathcal{G}$ je 
+\begin{equation}
+\label{eq:conjugate_subgroup}
+c \mathcal{H} c^{-1} := \{ chc^{-1} | \ h \in \mathcal{H}\}
+\end{equation}
+\textbf{konjugirana podgrupa} podgrupe $\mathcal{H}$.
+\end{definition}
+
+\begin{statement}
+\label{st:conjugate_subgroup_is_subgroup}
+$$chc^{-1} c h' c^{-1} = c\underbrace{hh'}_{\in \mathcal{H}}c^{-1} \in \mathcal{H}$$
+$$(chc^{-1})^{-1}  = (c^{-1})^{-1}h^{-1}c^{-1} = c \underbrace{h^{-1}}_{ \in \mathcal{H}} c^{-1} \in \mathcal{H}$$
+\end{statement}
+
+\begin{remark}
+Pojem konjugiranih podgrup ima smisel v nekomutativnih grupah
+\end{remark}
+
+\subsubsection{Podkolobarji}
+
+\begin{definition}
+\label{def:sub_ring}
+Podmonžica $\mathcal{L}$ kolobarja $\mathcal{K}$ je \textbf{podkolobar} kolobarja $\mathcal{K}$, če vsebuje enoto (1) kolobarja $\mathcal{K}$ in če je kolobar za isti operaciji. 
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+$\mathcal{L} = \{ \begin{bmatrix}
+		x & 0 \\
+		0 & 0
+	  \end{bmatrix} | \ x \in \mathbb{R}\}$\\
+	  Sicer je kolobar za isti operaciji, a ne podeduje enote(ima svojo) torej \textbf{ni} podkolobar
+\end{example_case}
+\end{example}
+
+\begin{statement}
+\label{st:sub_ring_closed_for_inverse}
+Podmnožica $\mathcal{L}$ kolobarja $\mathcal{K}$ je podkolobar natanko tedaj, ko velja
+\begin{equation}
+\label{eq:sub_ring_closed_for_inverse}
+1 \in \mathcal{L} \land 
+\forall x, y \in \mathcal{L}. \ x-y \in \mathcal{L}
+\end{equation}
+\end{statement}
+
+\begin{proof}\leavevmode \\
+\label{pr:sub_ring_closed_for_inverse}
+$\implies$: Sledi iz definicije\\
+$\impliedby$ Iz predpostavke sledi, da je $\mathcal{L}$ podgrupa za $+$.\\ Prav tako je $(\mathcal{L}, *)$ monoid\\ Izpolnjevanje distributivnih zakonov pa sledi iz tega da so izpolnjeni tudi na $\mathcal{K}$
+\begin{remark}
+Uporabili smo tridtev (\ref{st:subgroup_equivalent_defintions}) in (ii) pogoj zamenjali z (iii)
+\end{remark}
+\end{proof}
+
+\begin{example}
+\begin{example_case}
+Kolobar $\mathbb{Z}$ je podkolobar $\mathbb{Q}$.
+\end{example_case}
+\begin{example_case}
+Kolobar $\mathbb{Q}$ je podkolobar $\mathbb{R}$.
+\end{example_case}
+\end{example}
+
+\subsubsection{Podprostori}
+\begin{definition}
+\label{def:vector_subspace}
+Podmnožica $\mathcal{U}$ vektorskega prostora $\mathcal{V}$ je \textbf{podprostor} $\mathcal{V}$, če je za isti operaciji tudi sama vektorski prostor.
+\end{definition}
+
+\begin{statement}
+Za neprazno podmnožico $\mathcal{U}$ vektorskega prostora $\mathcal{V}$ so naslednje trditve ekvivalentne
+\begin{enumerate}[label=(\roman*)]
+\item $$\mathcal{U} \ \text{je podprostor} \ \mathcal{V}$$
+\item $$\forall x, y \in \mathcal{U}. \ \forall \lambda, \mu \in \mathcal{F}. \ \lambda x + \mu y \in \mathcal{U}$$
+\item $$\forall x, y, \in \mathcal{U}. \  x + y \in \mathcal{U} \land \forall x \in \mathcal{U}. \  \forall \lambda \in \mathcal{F}. \ \lambda x  \in \mathcal{U}$$
+\end{enumerate}	
+\end{statement}
+
+\begin{proof}
+Očitno
+\end{proof}
+
+\begin{example}
+Edini podprostori vektorskega prostora $\mathbb{R}^3$ so:
+\begin{itemize}
+\item $\{0\}$, $\mathbb{R}^3$
+\item premice skozi izhodišče
+\item ravnine skozi izhodišče
+\end{itemize}
+\end{example}
+
+\subsubsection{Podalgebre}
+\begin{definition}
+\label{def:subalgebra}
+Podmnožica $\mathcal{B}$ algebre $\mathcal{A}$ je \textbf{podalgebra} $\mathcal{A}$, če je za iste operacije tudi sama algebra in vsebuje enoto (1) iz algebre $\mathcal{A}$.
+\end{definition}
+
+\begin{statement}
+Neprazna podmnožica $\mathcal{B}$ algebre $\mathcal{A}$ je \textbf{podalgebra} algebre $\mathcal{A}$ natanko tedaj ko zanjo velja:
+\begin{equation}
+\label{eq:is_subalgebra}
+1 \in \mathcal{B} \land \forall x, y \in \mathcal{B}. \ \forall \lambda \in \mathcal{F}. \ \underbrace{x+y, \lambda x}_{podprostor}, xy \in \mathcal{B}
+\end{equation}
+Torej je zaprta za seštevanje, množenje in množenje s skalarji
+\end{statement}
+
+\begin{proof}
+Enako kot za podkolobarje
+\end{proof}
+
+\begin{example}
+\begin{example_case}
+$A = \mathcal{M}_2(\mathbb{R})$
+$B = \{ \begin{bmatrix}
+		a_{11} & a_{12} \\
+		0 	   & a_{22}
+	  \end{bmatrix} | a_{ij} \in \mathbb{R} \}$
+\leavevmode
 \end{example_case}
 \end{example}
 
