@@ -1167,7 +1167,226 @@ $B = \{ \begin{bmatrix}
 \end{example_case}
 \end{example}
 
+\subsubsection{Podpolje}
 
+\begin{definition}
+\label{def_subfield}
+Podmoćica $\mathcal{F}$ polja $\mathcal{E}$ je \textbf{podpolje} polja $\mathcal{E}$, če je za isti operaciji tudi sama polje
+\end{definition}
+
+\begin{remark}
+Podpolje nujno vsebuje isto enoto $1$ kot polje $\mathcal{E}$, naj bo $e \in \mathcal{F}$ enota.
+$e^2 = e \implies e(\underbrace{1}_{enota \ \mathcal{E}}-e) = 0$ Ker v poljih ni deliteljev niča, velja $e=1$.
+\end{remark}
+
+\begin{statement}
+Podmnožica $\mathcal{F} \neq \{0\}$ polja $\mathcal{E}$ je podpolje natanko tedaj ko velja
+\begin{equation}
+\label{eq:subfield_equivalent_definition}
+\forall x, y \in \mathcal{F}. \ xy, x-y \in \mathcal{F} \land 0 \neq x \in \mathcal{F}. \ x^{-1} \in \mathcal{F} 
+\end{equation}
+\end{statement}
+
+\begin{proof}Podobno kot prej
+
+\end{proof}
+
+Praši muhata!!!!!
+
+
+\begin{definition}
+\label{def:field_extension}
+Polje $\mathcal{E}$ je \textbf{razširitev} polja $\mathcal{F}$ če je $\mathcal{F}$ podpolje $\mathcal{E}$.
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+$\mathbb{R}$ je podpolje $\mathbb{C}$
+\end{example_case}
+\begin{example_case}
+$\mathbb{C}$ je razširitev $\mathbb{R}$, ki je razširitev $\mathbb{Q}$
+\end{example_case}
+\end{example}
+
+
+\subsubsection{Logične operacije nad (pod)strukturami}
+Če so $\mathcal{H}_i$ podgrupe grupe $\mathcal{G}$ je tudi njihov presek $\cap \mathcal{H}_i$ podgrupa.
+
+\begin{remark}
+Družina $\mathcal{H}_i$ je \textbf{lahko končna ali neskončna} torej poljubna
+\end{remark}\\
+
+\textbf{Presek} algebrskih struktur (podgrup, podkolobarjev, podprostorov, podalgeber, podpolji) \textbf{ohrani lastnosti} te algebrseke strukture.\\
+
+\textbf{Unija} algebrskih struktur praviloma \textbf{ne ohrani} lastnosti te lagebrske strukture.
+
+\begin{example}
+\begin{example_case}
+$2\mathbb{Z} = \{2n | n \in \mathbb{Z}\}$ in $3\mathbb{Z} = \{3n | n \in \mathbb{Z}\}$ sta podgrupi $\mathbb{Z}$, njuna unija pa ni podgrupa(saj ni grupa), ker $2+3=5 \notin 2\mathbb{Z} \cup 3\mathbb{Z}$
+\end{example_case}
+\end{example}
+
+\subsection{Generatorji}
+$\mathbb{R}^3$ je generiran z vektorji: $(1,0,0), (0,1,0), (0,0,1)$. Edini podprostor, ki te vektorje vsebuje je namreč $\mathbb{R}^3$ sam. Seveda je generiran tudi z drugimi vektorji: $(1,1,0), (0,1,0), (0,0,1)$.\\
+Vekotrja $(1,0,0),(0,1,0)$ pa generirata ravnino: $z=0$.
+
+\subsubsection{Generatorji grup}
+Naj bo $\mathcal{X}$ neprazna podmnožica grupe $\mathcal{G}$, Vzemimo množico vseh elementov oblike $x_1 x_2 \dots x_n$, kjer velja $x, x^{-1} \in \mathcal{X}$ in jo označimo z $<\mathcal{X}>$.
+ 
+Če je $\mathcal{X} = \{y_1, y_2, \dots , y_n\}$ pišemo tudi $\mathcal{X} = <y_1, y_2, \dots , y_n>$. 
+
+Tako $<x,y>$ sestoji iz elementov kot so: $1, x, y, x^2, x^3, x^{-1}, x^{-2}, x^{-1}y, y^{-1}, x^5y^{-1}x^3y^{-3}xy^2, \dots$
+\textbf{Opazimo}, da je $<\mathcal{X}>$ podgrupa
+$$u,v \in <x> \implies uv \in <\mathcal{X}> \land u^{-1} \in <x>$$
+$(x_1,\dots, x_n)^{-1} = x_{1}^{-1} \dots x_n^{-1}$, ki vsebuje množico $\mathcal{X}$.
+
+Velja pa tudi obratno: vsaka podgrupa grupe $\mathcal{G}$, ki vsebuje $\mathcal{X}$ vsebuje tudi to podgrupo($<\mathcal{X}>$).
+
+Torej je $<\mathcal{X}>$ najmanjša podgrupa, ki vsebuje $\mathcal{X}$. Pravimo ji \textbf{podgrupa, generirana z $\mathcal{X}$}.
+
+Če velja $<\mathcal{X}> = \mathcal{G}$, rečemo, da je $\mathcal{G}$ generirana z množico $\mathcal{X}$, elemente iz $\mathcal{X}$ pa imenujemo \textbf{generatorji} grupe $\mathcal{G}$, množici $\mathcal{X}$ pa \textbf{množica generatorjev}.\\
+
+\begin{example}
+\begin{example_case}
+$\mathbb{Q}^+$ je grupa za množenje. Velja: $<\mathbb{N}> = \mathbb{Q}^+$, ker $<2,3> = \{2^i 3^j | i,j \in \mathbb{Z}\}$
+\end{example_case}
+\end{example}
+
+\begin{remark}
+V aditivni grupi $<\mathcal{X}>$ za komponiranje elementov uporabljamo drugo operacijo, vse ostalo ostane isto.
+\end{remark}\\
+
+\begin{example}
+\begin{example_case}
+Grupa $(\mathbb{Z}, +)$ je generirana z $<1>$ in prav tako zudi z $<-1>$. Velja $\mathbb{Z} = <1> = <-1>$.
+\end{example_case}
+\end{example}
+
+\begin{remark}
+Grupe generirane z enim samim elementom imenujemo \textbf{ciklične}.($<2> = <4,6> = 2\mathbb{Z}$)
+
+\end{remark}
+
+Cilj je poiskati najmanjše množice generatorjev(očitno $<\mathcal{G}> = \mathcal{G}$).
+
+\begin{definition}
+\label{def:finitly_generated_group}
+Grupa je \textbf{končno generirana} če je generirana s kako končno množico.
+\end{definition}
+
+\subsubsection{Generatorji kolobarja}
+Naj bo $\mathcal{K}$ kolobar, $\emptyset \neq \mathcal{X} \subseteq \mathcal{K}$.
+
+Označimo z $\overline{\mathcal{X}}$ podgrupo za seštevanje $\mathcal{K}$, ki vsebuje vse produkte elementov iz $\mathcal{X} \cup \{1\}$.
+
+Opazimo: $\overline{\mathcal{X}}$ je podkolobar, ki vsebuje $\mathcal{X}$ in je vsebovan v vsakem podkolobarju, ki $\mathcal{X}$ vsebuje. Zato mu rečemo \textbf{podkolobar generiran z množico $\mathcal{X}$}.
+
+\begin{example}
+\begin{example_case}
+$\mathcal{K} = \mathbb{C}$
+\begin{itemize}
+\item $\overline{\{1\}} = \mathbb{Z}$
+\item $\overline{\{i\}} = \{ n + mi | n,m \in \mathbb{Z}\} = \mathbb{Z}[i]$ (Kolobar \textbf{Gaussovih celih števil})
+\end{itemize}\leavevmode
+\end{example_case}
+\end{example}
+
+\begin{remark}
+Pojme, kot so \textbf{generator kolobarja, končno generiran kolobar,\dots} definiramo enako kot za grupo.
+\end{remark}
+
+\subsubsection{Generatorji vektorskih prostorov}
+
+\begin{definition}
+\label{def:linear_combination}
+Naj bo $\mathcal{V}$ vektorski prostor nad $\mathcal{F}$. Vsakemu vektorju $v$ oblike
+\begin{equation}
+\label{eq:linear_combination}
+v = \lambda_1 v_1 + \dots + \lambda_n v_n; \lambda_i \in \mathcal{F} \land v_i \in \mathcal{V}
+\end{equation}
+pravimo \textbf{linearna kombinacija} vektorjev $v_1, v_2, \dots, v_n$.
+\end{definition}
+
+
+\begin{definition}
+\label{def:linear_spang_enerated}Naj bo 
+$\emptyset \neq \mathcal{X} \subseteq \mathcal{V}$. Podprostor generiran z $\mathcal{X}$, torej podprostor, ki $\mathcal{X}$ vsebuje in je vsebovan v vsakem podprostoru, ki vsebuje $\mathcal{X}$ je množica $\mathcal{L}(\mathcal{X})$, vseh linearnih kombinacij vektorjev iz $\mathcal{X}$, $\mathcal{L}(\mathcal{X})$ imenujemo \textbf{linearna lupina množice $\mathcal{X}$}.
+\end{definition}
+
+
+\begin{definition}
+Naj bo $\mathcal{X}$ množica generatorjev za $\mathcal{V}$ tedaj $\mathcal{X}$ imenujemo \textbf{ogrodje $\mathcal{V}$}, velja še $\mathcal{L}(\mathcal{X}) = \mathcal{V}$.
+\end{definition}
+
+\begin{remark}
+Posebnost vektorskega prostora je v tem, da imamo pojem \textbf{linearne neodvisnosti}, preko katerega vpeljemo pojem \textbf{baze} vektorskega prostora.
+\end{remark}
+
+
+\subsubsection{Generatorji algeber}
+
+\begin{definition}
+\label{def:subalgebra_generated}
+Naj bo $\mathcal{A}$ algebra na $\mathcal{F}$, naj bo $\emptyset \neq \mathcal{X} \subseteq \mathcal{A}$. \textbf{Podalgebra generirana z $\mathcal{X}$} je množica, ki sestoji iz elementov $x$ oblike
+\begin{equation}
+\label{eq:subalgebra_generated_element}
+x = \lambda1 x_{11} x_{12} \dots x_{1n_1} + \dots + \lambda_r x_{r1} x_{rn_r}; \lambda_i \in \mathcal{F} \land x_i \in \mathcal{X} \cup \{1\}
+\end{equation}
+\end{definition}
+
+
+
+\begin{example}
+\begin{example_case}
+$\mathcal{A} = \mathcal{M}_2(\mathbb{R})$ 
+\begin{itemize}
+\item Podalgebra generirana z:
+
+$e_{11} = \begin{bmatrix}
+		1 & 0 \\
+		0 & 0
+	  \end{bmatrix}$, 
+$e_{22} = \begin{bmatrix}
+		0 & 0 \\
+		0 & 1
+	  \end{bmatrix}$
+	  
+je algebra diagonalnih matrik: 
+$$\begin{bmatrix}
+	   \lambda & 0 \\
+		0 & \mu
+		
+	  \end{bmatrix}; \lambda, \mu \in \mathbb{R}$$ 
+\item Podalgebra generirana z:
+
+$e_{11} = \begin{bmatrix}
+		0 & 1 \\
+		0 & 0
+	  \end{bmatrix}$, 
+$e_{22} = \begin{bmatrix}
+		0 & 0 \\
+		1 & 0
+	  \end{bmatrix}$
+	  
+pa je celotna algebra $\mathcal{M}_2(\mathbb{R})$.(torej je generirana samo z dvema elementoma!)
+
+Ker velja:
+
+$e_{12} e_{21} = e_{11}$ in $e_{21} e_{12} = e_{22}$, vidimo, da $e_{12}, e_{21}$ generirata algebro $\mathcal{M}_2(\mathbb{R})$.  
+$\{e_{12}, e_{21}, e_{11}, e_{22} \}$ je baza algebre $\mathcal{M}_2(\mathbb{R})$
+
+\begin{remark}
+
+Za primerjavo: podkolobar $\mathcal{M}_2(\mathbb{R})$ generiran z $e_{12}$ in $e_{21}$ pa je 
+
+$\mathcal{M}_2(\mathbb{Z})= \begin{bmatrix}
+		u_{11} & u_{12} \\
+		u_{21} & u_{22}
+	  \end{bmatrix}; u_{ij} \in \mathbb{Z}$
+\end{remark}
+\end{itemize}\leavevmode
+\end{example_case}
+\end{example}
 
 
 \end{document}
