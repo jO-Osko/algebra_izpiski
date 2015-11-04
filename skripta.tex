@@ -70,7 +70,7 @@
 
 
 \begin{document}
-\title{Skripta za algebro2}
+\title{Skripta za algebro 2}
 \author{Filip Koprivec}
 \date{\today}
 \maketitle
@@ -126,9 +126,14 @@ Operacije, ki jih bomo obravnavali bodo praviloma asociativne.
 \label{def:comutative_operation}
 Elementa $x,y \in \mathcal{S}$ \textbf{komutirata}, če velja 
 \begin{equation}
+x,y \in \mathcal{S}. x \circ y = y \circ x
+\end{equation}
+Če za poljubna dva elementa iz $\mathcal{S}$ velja
+\begin{equation}
 \label{eq:comutative_law}
 \forall x,y \in \mathcal{S}. x \circ y = y \circ x
 \end{equation}
+pravimo, da je operacija $\circ$ komutativna.
 Enakost \ref{eq:comutative_law} imenujemo \textbf{Zakon o komutativnosti}
 
 \end{definition}
@@ -187,7 +192,7 @@ Nevtralni element nima zagotovljenega obstoja (recimo $+$ na $\mathbb{N}$ ali $*
 
 \begin{statement}
 \label{st:identity_unique}
-Če nevtralni element obstaja je en sam
+Če nevtralni element obstaja, je en sam.
 \begin{proof}
 \label{pr:identity_unique}
 Naj bosta $f,e \in \mathcal{S}$ nevtralna elementa.
@@ -232,7 +237,7 @@ $0$ je desni nevtralni element za odštevanje v $\mathbb{Z}$
 
 \begin{statement}
 \label{st:identity_left_right_both}
-Naj bo za operacijo $\circ$ $e'$ levi nevtralni element, $e''$ pa desni nevtralni element. Tedaj velja $e' = e'' = e$(Sta si levi in desni nevtralni element enaka in je(sta) nevtralni element)
+Naj bo za operacijo $\circ$ $e'$ levi nevtralni element, $e''$ pa desni nevtralni element. Tedaj velja $e' = e'' = e$ (Sta si levi in desni nevtralni element enaka in je(sta) nevtralni element)
 \begin{proof}
 \label{pr:identity_left_right_both}
 $$e' = e' \circ e'' = e''$$
@@ -270,7 +275,7 @@ $\lambda (x_1, x_2, \dots , x_n) = (\lambda x_1, \lambda x_2, \dots ,\lambda x_n
 
 \begin{definition}
 \label{def:algebraic_structure}
-\textbf{Algebrska struktura} je množica, opremljena z eno ali več operacijami (notranjimi ali zunanjimi), ki im ajo določene lastnosti
+\textbf{Algebrska struktura} je množica, opremljena z eno ali več operacijami (notranjimi ali zunanjimi), ki imajo določene lastnosti
 \end{definition}
 
 \begin{definition}
@@ -284,7 +289,7 @@ Kadar je jasno o kateri operaciji govorimo, pogosto govorimo kar o polgrupi $\ma
 
 \begin{example}
 \begin{example_case}
-$(\mathbb{N}, +), \underbrace{(\mathbb{Z}, +), (\mathbb{Q}, +), (\mathbb{R}, +), (\mathbb{C}, +), (\mathbb{N}, *),\dots}_{Niso\ samo\ polgrupe\ ampak\ kar\ grupe}$
+$(\mathbb{N}, +), \underbrace{(\mathbb{Z}, +), (\mathbb{Q}, +), (\mathbb{R}, +), (\mathbb{C}, +),\dots}_{Niso\ samo\ polgrupe\ ampak\ kar\ grupe}$
 \end{example_case}
 \end{example}
 \\
@@ -310,10 +315,10 @@ Indukcija na $n$:\\
 $n \leq 3$: Očitno\\
 Ker $n \leq 2$ velja $y = \underbrace{(u)}_{x_1, \dots, x_k} \circ \underbrace{(v)}_{x_{k+1}, \dots, x_n}$ Iz $k < n$ sledi:\\ $ y = (x_1 \circ w) \circ v \underbrace{=}_{Asociativnost (\ref{eq:asociative_law})} x_1 \circ ( w \circ v) $\\
 Po I.P. ($w \circ v$ ima $n-1$ elementov):
-$x = x_1 \circ (x_2 \circ \dots \circ x_{n-1})$
+$x = x_1 \circ (x_2 \circ \dots \circ x_{n})$
 \end{proof}
 Zato lahko oklepaje izpuščamo in pišemo kar:
-$x_1 \circ x_2 \circ \dots \circ x_4$
+$x_1 \circ x_2 \circ \dots \circ x_n$
 
 \begin{definition}
 \label{def:power_operation}
@@ -419,7 +424,7 @@ Obrnljiv element monoida ima natanko en inverz.
 To je desni inverz:\\
 $(x \circ y)  \circ (y^{-1} \circ x^{-1}) = x \circ (y  \circ y^{-1}) \circ x^{-1} = x \circ e \circ x^{-1} = x \circ x^{-1} = e$\\
 in tudi levi inverz:\\
-$(y^{-1} \circ x^{-1}) \circ (x \circ y) = y^{-1} \circ (x^{-1} \circ x) \circ y = y^{-1} \circ e \circ y = y{-1} \circ y = e$
+$(y^{-1} \circ x^{-1}) \circ (x \circ y) = y^{-1} \circ (x^{-1} \circ x) \circ y = y^{-1} \circ e \circ y = y^{-1} \circ y = e$
 \end{proof}
 \begin{remark}
 \label{rem:n_wise_inverse}
@@ -506,11 +511,11 @@ Iz enačbe $x \circ y = z \circ x$ v splošnem \textbf{ne} sledi $y = z$
 
 \textbf{Dogovor:} V grupi bomo namesto $\circ$ uporabljali kar operacijo 'krat', torej se bo operacija imanovala kar množenje. Prav tako bomo izpuščali operator, ko bo le mogoče in pisali kar $xy$.
 
-Tako $xy$ imenujemo 'produkt' $x$ in $y$ nevtrali element pa označimo z $1$ in mu rečemo kar \underline{enota}.
+Tako $xy$ imenujemo 'produkt' $x$ in $y$, nevtralni element pa označimo z $1$ in mu rečemo kar \underline{enota}.
 
 \begin{definition}
 \label{def:group}
-\textbf{Monoid} v katerem je \textbf{vsak element obrnljiv}, se imenuje \textbf{grupa}. Grupa, v kateri je vsaka operacija komutativna se umenuje \textbf{komutativna grupa} ali \textbf{Abelova grupa}.
+\textbf{Monoid} v katerem je \textbf{vsak element obrnljiv}, se imenuje \textbf{grupa}. Grupa, v kateri vsaka dva elementa komutirata, se imenuje \textbf{komutativna grupa} ali \textbf{Abelova grupa}.
 \end{definition}
 
 Ki je ekvivalenta bolj čisti definiciji:
@@ -555,7 +560,7 @@ S \textbf{$\mathcal{S}^*$} označujemo množico vseh obrnljivih elementov monoid
 
 \begin{statement}
 \label{st:subgroup_of_monoid}
-Če je $\mathcal{S}$ monoid je $\mathcal{S}$ grupa.
+Če je $\mathcal{S}$ monoid je $\mathcal{S}^*$ grupa.
 \end{statement}
 
 \begin{proof}
@@ -574,7 +579,7 @@ $(\mathbb{N} \cup \{0\}, +)$: $(\mathbb{N} \cup \{0\}, +)^* = {0}$
 $(\mathbb{Z}, +)$: $(\mathbb{Z}, +)^* = {-1,1}$ 
 \end{example_case}
 \begin{example_case}
-$(\mathbb{Q}, *)$: $(\mathbb{Q}, *)^* = \mathbb{Q} - {0}$
+$(\mathbb{Q}, *)$: $(\mathbb{Q}, *)^* = \mathbb{Q} - \{0\}$
 \end{example_case}
 \begin{remark}
 Grupam z enim elementom pravimo \textbf{trivialne} grupe.
@@ -603,7 +608,7 @@ Njene emelente(bijektiven preslikave iz $\mathcal{X}$ v $\mathcal{X}$ pa imenuje
 \end{equation}
 \end{remark}
 
-Včasih bomo operacije na grupah vendarle označevali s $+$ ('seštevanje'). Taki grupi bomo rekli \textbf{aditivna grupa}. Nevtralni element bomo označevali z $0$ in inverzni elment pa bom oimenovali 'nasprotni element' in ga označevali z $-x$. Namesto $x+(-y)$ bom tako pisali $x-y$ (razlika $x$ in $y$). S tem smo v aditivno grupo vpeljeli odštevanje. Prav tako bom namesto $x^n$ pisali $nx$. 
+Včasih bomo operacije na grupah vendarle označevali s $+$ ('seštevanje'). Taki grupi bomo rekli \textbf{aditivna grupa}. Nevtralni element bomo označevali z $0$, inverzni elment pa bomo imenovali 'nasprotni element' in ga označevali z $-x$. Namesto $x+(-y)$ bom tako pisali $x-y$ (razlika $x$ in $y$). S tem smo v aditivno grupo vpeljeli odštevanje. Prav tako bom namesto $x^n$ pisali $nx$. 
 
 Primer takih grup so Abelove grupe. ($x+y = y+x$)
 
@@ -634,7 +639,7 @@ Oba zakona potrebujemo zaradi ne nujne komutativnosti množenja v monoidu
 \end{definition}
 
 \begin{remark}
-Poznamo tudi kolobarje brez enote(kjer je $(\mathcal{K}, *)$ zgolj monoid. Recimo $$2\mathbb{Z} := \{2n | n\in \mathbb{Z}\}$$
+Poznamo tudi kolobarje brez enote (kjer je $(\mathcal{K}, *)$ zgolj monoid). Recimo $$2\mathbb{Z} := \{2n | n\in \mathbb{Z}\}$$
 \end{remark}
 
 \begin{statement}
@@ -717,10 +722,10 @@ $$0 =
 		0 & \cdots & 0 & 0		
 	\end{bmatrix}}_n; \ 
 		1 =	\underbrace{\begin{bmatrix} 
-		0 & 0 & \cdots & 0 \\
+		1 & 0 & \cdots & 0 \\
 		0 & \ddots & \ddots & \vdots \\
 		\vdots & \ddots & \ddots & 0 \\
-		0 & \cdots & 0 & 0
+		0 & \cdots & 0 & 1
 	\end{bmatrix}}_n
 $$
 Ta kolobar je nekomutativen za $n \geq 2$\\
@@ -756,15 +761,15 @@ Element $x$ je \textbf{delitelj niča}, če je \textbf{hkrati levi in desni deli
 \begin{remark}
 \begin{equation}
 \label{eq:left_zero_divisor_iff_right}
-\mathcal{K} \ \text{ima leve deljitelje niča} \iff \mathcal{K} \  \text{ima desne deljitelje niča}
+\mathcal{K} \ \text{ima leve deljitelje niča} \iff \mathcal{K} \  \text{ima deljitelje niča}
 \end{equation}
 \begin{proof}\leavevmode \\
-$\implies$: Obstajata taka $y != 0, x != 0$, imamo dve možnosti
+$\implies$: Obstajata taka $y \neq 0, x \neq 0$, da je $xy = 0$. Imamo dve možnosti
 \begin{enumerate}
-\item $xy=0 \implies$ Dokaz je končan
-\item $xy \neq 0$: $x(yx) = 0$ in je $yx$ desni deljitelj niča 
+\item $yx=0 \implies$ Dokaz je končan.
+\item $yx \neq 0$: $x(yx) = 0 = (yx)y$ in je $yx$ desni deljitelj niča .
 \end{enumerate} 
-$\impliedby$: Podobno
+$\impliedby$: Očitno.
 \end{proof}
 \end{remark}
 
@@ -824,7 +829,7 @@ $y = 1y = (x^{-1}x)y =  x^{-1}(xy) = x^{-1}0 = 0$ Torej $x$ ni deljitelj niča.
 
 \begin{definition}
 \label{def:vector_space}
-Naj bo $\mathcal{F}$ polje. Množica $\mathcal{V}$ skpaj z (notranjo) binarno operacijo seštevanje $+: \mathcal{V} \times \mathcal{V} \to \mathcal{V}$ in zunanjo binarno operacijo $\mathcal{F} \times \mathcal{V} \to \mathcal{V}$ imenovano \textbf{množenje s skalarji} in označeno z $(\lambda, v) \mapsto \lambda v$ se imenuje \textbf{vektorski prostor nad poljem $\mathcal{F}$}, če zanj velja:
+Naj bo $\mathcal{F}$ polje. Množica $\mathcal{V}$ skupaj z (notranjo) binarno operacijo seštevanje $+: \mathcal{V} \times \mathcal{V} \to \mathcal{V}$ in zunanjo binarno operacijo $\mathcal{F} \times \mathcal{V} \to \mathcal{V}$ imenovano \textbf{množenje s skalarji} in označeno z $(\lambda, v) \mapsto \lambda v$, se imenuje \textbf{vektorski prostor nad poljem $\mathcal{F}$}, če zanj velja:
 \begin{enumerate}[label=\subscript{V}{\arabic*}:]
 \item Za seštevanje je $\mathcal{V}$ Abelova grupa
 \item Velja distributivnost v vektorskem faktorju
@@ -890,12 +895,12 @@ Trivialni vektorski prostor: $\{0\}$
 Vektorski prostor polniomov stopnje največ $n$, kjer seštevanje in množenje definiramo na običajen način
 \end{example_case}
 \begin{example_case}
-$\mathbb{C}$ je vektorski prostor nad $\mathbb{R}$ ( za $+$ je Abelova grupa, množenje pa definiramo po komponentah, tako je nad $\mathbb{C}$ to $2$-dimenzionalen, nad $\mathbb{R}$ pa $1$-dimenzionalen)
+$\mathbb{C}$ je vektorski prostor nad $\mathbb{R}$ ( za $+$ je Abelova grupa, množenje pa definiramo po komponentah, tako je nad $\mathbb{R}$ to $2$-dimenzionalen, nad $\mathbb{C}$ pa $1$-dimenzionalen)
 \end{example_case}
 \end{example}
 
 \subsection{Algebre}
-Mnogi pomembni primeri kolobarjev so hkrati tudi vektorski prostori, dejansko so algebre
+Mnogi pomembni primeri kolobarjev so hkrati tudi vektorski prostori, dejansko so algebre.
 
 \begin{definition}
 \label{def:algebra}
@@ -908,7 +913,7 @@ $$\forall x,y,z \in \mathcal{A}. \ \forall \lambda, \mu \in \mathcal{F}. \ (\lam
 $$\forall x,y,z \in \mathcal{A}. \ \forall \lambda, \mu \in \mathcal{F}. \ z(\lambda x + \mu y) = \lambda(zx) + \mu(zy)$$
 
 \begin{remark}
-Za $\lambda = \mu = 1$ je to navadna distributivnost. Torje je Algebra kolobar, ki je hkrati vekroski prostor, v katerem velja še:
+Za $\lambda = \mu = 1$ je to navadna distributivnost. Torej je algebra kolobar, ki je hkrati vekroski prostor, v katerem velja še:
 $$\lambda(xz) = (\lambda x)z = x(\lambda z)$$
 \end{remark}
 
@@ -950,7 +955,7 @@ In ker sta to tudi polji rečemo kar kar $(\mathbb{R}, +, *)$ je podpolje $(\mat
 \subsubsection{Podgrupe}
 \begin{definition}
 \label{def:subgroup}
-\textbf{Neprazna} podmnožica $\mathcal{H}$ grupe $\mathcal{G}$ je \textbf{podgrupa} grupe $\mathcal{G}$, če je za isto operacijo(zožitev na $\mathcal{H} \times \mathcal{H}$) tudi sama grupa. 
+\textbf{Neprazna} podmnožica $\mathcal{H}$ grupe $\mathcal{G}$ je \textbf{podgrupa} grupe $\mathcal{G}$, če je za isto operacijo (zožitev na $\mathcal{H} \times \mathcal{H}$) tudi sama grupa. 
 \end{definition}
 
 \begin{example}
@@ -1040,25 +1045,25 @@ Elementa $a, b$ iz grupe $\mathcal{G}$ sta si \textbf{konjugirana}, če velja:
 \exists c \in \mathcal{G}. \ b = c a c^{-1}
 \end{equation}
 \begin{remark}
-Relacija 'elementa sta si konjugirana' je ekvivalenčna
+Relacija 'elementa sta si konjugirana' je ekvivalenčna.
 \end{remark}
 \end{definition}
 
-\begin{definition}
+\begin{statement}
 \label{def:conjugate_subgroup}
-Če je $c \in \mathcal{H} \leq \mathcal{G}$ je 
+Če je $c \in \mathcal{H} \leq \mathcal{G}$, je 
 \begin{equation}
 \label{eq:conjugate_subgroup}
 c \mathcal{H} c^{-1} := \{ chc^{-1} | \ h \in \mathcal{H}\}
 \end{equation}
 \textbf{konjugirana podgrupa} podgrupe $\mathcal{H}$.
-\end{definition}
+\end{statement}
 
-\begin{statement}
+\begin{proof}
 \label{st:conjugate_subgroup_is_subgroup}
 $$chc^{-1} c h' c^{-1} = c\underbrace{hh'}_{\in \mathcal{H}}c^{-1} \in \mathcal{H}$$
 $$(chc^{-1})^{-1}  = (c^{-1})^{-1}h^{-1}c^{-1} = c \underbrace{h^{-1}}_{ \in \mathcal{H}} c^{-1} \in \mathcal{H}$$
-\end{statement}
+\end{proof}
 
 \begin{remark}
 Pojem konjugiranih podgrup ima smisel v nekomutativnih grupah
@@ -1068,7 +1073,7 @@ Pojem konjugiranih podgrup ima smisel v nekomutativnih grupah
 
 \begin{definition}
 \label{def:sub_ring}
-Podmonžica $\mathcal{L}$ kolobarja $\mathcal{K}$ je \textbf{podkolobar} kolobarja $\mathcal{K}$, če vsebuje enoto (1) kolobarja $\mathcal{K}$ in če je kolobar za isti operaciji. 
+Podmonžica $\mathcal{L}$ kolobarja $\mathcal{K}$ je \textbf{podkolobar} kolobarja $\mathcal{K}$, če vsebuje enoto \{1\} kolobarja $\mathcal{K}$ in če je kolobar za isti operaciji. 
 \end{definition}
 
 \begin{example}
@@ -1077,7 +1082,7 @@ $\mathcal{L} = \{ \begin{bmatrix}
 		x & 0 \\
 		0 & 0
 	  \end{bmatrix} | \ x \in \mathbb{R}\}$\\
-	  Sicer je kolobar za isti operaciji, a ne podeduje enote(ima svojo) torej \textbf{ni} podkolobar
+	  Sicer je kolobar za isti operaciji, a ne podeduje enote (ima svojo), torej \textbf{ni} podkolobar.
 \end{example_case}
 \end{example}
 
@@ -1140,7 +1145,7 @@ Edini podprostori vektorskega prostora $\mathbb{R}^3$ so:
 \subsubsection{Podalgebre}
 \begin{definition}
 \label{def:subalgebra}
-Podmnožica $\mathcal{B}$ algebre $\mathcal{A}$ je \textbf{podalgebra} $\mathcal{A}$, če je za iste operacije tudi sama algebra in vsebuje enoto (1) iz algebre $\mathcal{A}$.
+Podmnožica $\mathcal{B}$ algebre $\mathcal{A}$ je \textbf{podalgebra} $\mathcal{A}$, če je za iste operacije tudi sama algebra in vsebuje enoto \{1\} iz algebre $\mathcal{A}$.
 \end{definition}
 
 \begin{statement}
@@ -1158,7 +1163,7 @@ Enako kot za podkolobarje
 
 \begin{example}
 \begin{example_case}
-$A = \mathcal{M}_2(\mathbb{R})$
+$A = \mathcal{M}_2(\mathbb{R})$, 
 $B = \{ \begin{bmatrix}
 		a_{11} & a_{12} \\
 		0 	   & a_{22}
@@ -1176,7 +1181,7 @@ Podmoćica $\mathcal{F}$ polja $\mathcal{E}$ je \textbf{podpolje} polja $\mathca
 
 \begin{remark}
 Podpolje nujno vsebuje isto enoto $1$ kot polje $\mathcal{E}$, naj bo $e \in \mathcal{F}$ enota.
-$e^2 = e \implies e(\underbrace{1}_{enota \ \mathcal{E}}-e) = 0$ Ker v poljih ni deliteljev niča, velja $e=1$.
+$e^2 = e \implies e(\underbrace{1}_{enota \ \mathcal{E}}- \ e) = 0$ Ker v poljih ni deliteljev niča, velja $e=1$.
 \end{remark}
 
 \begin{statement}
@@ -1188,11 +1193,8 @@ Podmnožica $\mathcal{F} \neq \{0\}$ polja $\mathcal{E}$ je podpolje natanko ted
 \end{statement}
 
 \begin{proof}Podobno kot prej
-
+	
 \end{proof}
-
-Praši muhata!!!!!
-
 
 \begin{definition}
 \label{def:field_extension}
@@ -1222,7 +1224,7 @@ Družina $\mathcal{H}_i$ je \textbf{lahko končna ali neskončna} torej poljubna
 
 \begin{example}
 \begin{example_case}
-$2\mathbb{Z} = \{2n | n \in \mathbb{Z}\}$ in $3\mathbb{Z} = \{3n | n \in \mathbb{Z}\}$ sta podgrupi $\mathbb{Z}$, njuna unija pa ni podgrupa(saj ni grupa), ker $2+3=5 \notin 2\mathbb{Z} \cup 3\mathbb{Z}$
+$2\mathbb{Z} = \{2n | n \in \mathbb{Z}\}$ in $3\mathbb{Z} = \{3n | n \in \mathbb{Z}\}$ sta podgrupi $\mathbb{Z}$, njuna unija pa ni podgrupa (saj ni grupa), ker $2+3=5 \notin 2\mathbb{Z} \cup 3\mathbb{Z}$
 \end{example_case}
 \end{example}
 
@@ -1248,7 +1250,10 @@ Torej je $<\mathcal{X}>$ najmanjša podgrupa, ki vsebuje $\mathcal{X}$. Pravimo 
 
 \begin{example}
 \begin{example_case}
-$\mathbb{Q}^+$ je grupa za množenje. Velja: $<\mathbb{N}> = \mathbb{Q}^+$, ker $<2,3> = \{2^i 3^j | i,j \in \mathbb{Z}\}$
+$\mathbb{Q}^+$ je grupa za množenje. Velja: $<\mathbb{N}> = \mathbb{Q}^+$
+\end{example_case}
+\begin{example_case}
+$<2,3> = \{2^i 3^j | i,j \in \mathbb{Z}\}$
 \end{example_case}
 \end{example}
 
@@ -1310,12 +1315,12 @@ pravimo \textbf{linearna kombinacija} vektorjev $v_1, v_2, \dots, v_n$.
 
 \begin{definition}
 \label{def:linear_spang_enerated}Naj bo 
-$\emptyset \neq \mathcal{X} \subseteq \mathcal{V}$. Podprostor generiran z $\mathcal{X}$, torej podprostor, ki $\mathcal{X}$ vsebuje in je vsebovan v vsakem podprostoru, ki vsebuje $\mathcal{X}$ je množica $\mathcal{L}(\mathcal{X})$, vseh linearnih kombinacij vektorjev iz $\mathcal{X}$, $\mathcal{L}(\mathcal{X})$ imenujemo \textbf{linearna lupina množice $\mathcal{X}$}.
+$\emptyset \neq \mathcal{X} \subseteq \mathcal{V}$. Podprostor generiran z $\mathcal{X}$, torej podprostor, ki $\mathcal{X}$ vsebuje in je vsebovan v vsakem podprostoru, ki vsebuje $\mathcal{X}$, je množica $\mathcal{L}(\mathcal{X})$, vseh linearnih kombinacij vektorjev iz $\mathcal{X}$, $\mathcal{L}(\mathcal{X})$ imenujemo \textbf{linearna lupina množice $\mathcal{X}$}.
 \end{definition}
 
 
 \begin{definition}
-Naj bo $\mathcal{X}$ množica generatorjev za $\mathcal{V}$ tedaj $\mathcal{X}$ imenujemo \textbf{ogrodje $\mathcal{V}$}, velja še $\mathcal{L}(\mathcal{X}) = \mathcal{V}$.
+Naj bo $\mathcal{X}$ množica generatorjev za $\mathcal{V}$, tedaj $\mathcal{X}$ imenujemo \textbf{ogrodje $\mathcal{V}$}. Velja še $\mathcal{L}(\mathcal{X}) = \mathcal{V}$.
 \end{definition}
 
 \begin{remark}
@@ -1330,7 +1335,7 @@ Posebnost vektorskega prostora je v tem, da imamo pojem \textbf{linearne neodvis
 Naj bo $\mathcal{A}$ algebra na $\mathcal{F}$, naj bo $\emptyset \neq \mathcal{X} \subseteq \mathcal{A}$. \textbf{Podalgebra generirana z $\mathcal{X}$} je množica, ki sestoji iz elementov $x$ oblike
 \begin{equation}
 \label{eq:subalgebra_generated_element}
-x = \lambda1 x_{11} x_{12} \dots x_{1n_1} + \dots + \lambda_r x_{r1} x_{rn_r}; \lambda_i \in \mathcal{F} \land x_i \in \mathcal{X} \cup \{1\}
+x = \lambda_1 x_{11} x_{12} \dots x_{1n_1} + \dots + \lambda_r x_{r1} x_{rn_r}; \lambda_i \in \mathcal{F} \land x_i \in \mathcal{X} \cup \{1\}
 \end{equation}
 \end{definition}
 
@@ -1356,7 +1361,7 @@ $$\begin{bmatrix}
 	   \lambda & 0 \\
 		0 & \mu
 		
-	  \end{bmatrix}; \lambda, \mu \in \mathbb{R}$$ 
+	  \end{bmatrix}; \ \lambda, \mu \in \mathbb{R}$$ 
 \item Podalgebra generirana z:
 
 $e_{11} = \begin{bmatrix}
@@ -1368,7 +1373,7 @@ $e_{22} = \begin{bmatrix}
 		1 & 0
 	  \end{bmatrix}$
 	  
-pa je celotna algebra $\mathcal{M}_2(\mathbb{R})$.(torej je generirana samo z dvema elementoma!)
+pa je celotna algebra $\mathcal{M}_2(\mathbb{R})$ (torej je generirana samo z dvema elementoma).
 
 Ker velja:
 
