@@ -39,7 +39,7 @@
 \newcounter{environment:theorem_counter}
 
 \newenvironment{theorem}[1][\unskip]
-{\refstepcounter{environment:theorem_counter}\textbf{Izrek \arabic{environment:theorem_counter}:\textit{#1}} \qquad}
+{\refstepcounter{environment:theorem_counter}\textbf{Izrek \arabic{environment:theorem_counter}:\textit{#1}} \\}
 {\bigskip}
 
 \newcounter{environment:statement_counter}
@@ -1406,6 +1406,217 @@ $\mathcal{M}_2(\mathbb{Z})= \begin{bmatrix}
 \end{itemize}\leavevmode
 \end{example_case}
 \end{example}
+
+\subsubsection{Generatorji podpolji}
+\begin{definition}
+\label{def:subfield_generated}
+Naj bo $\mathcal{X} \neq \emptyset$ podmnožica polja $\mathcal{F}$. \textbf{Podpolje generirano z $\mathcal{X}$} je množica
+\begin{equation}
+\label{eq:subfield_genrated_element}
+\{uv^{-1} | u,v \in \mathcal{X} \land v \neq 0\}
+\end{equation}
+\end{definition}
+
+\begin{remark}
+Podkolobar $\overline{\mathcal{X}}$ generiran z $\mathcal{X}$ ni nujno polje.
+\end{remark}
+
+Očitno vsako podpolje, ki $\mathcal{X}$ vsebuje, vsebuje tudi podpolje generirano z $\mathcal{X}$, toda zakaj ta množica je podpolje?.
+
+Pomembno je dokazati, da je podgrupa za seštevaje(zaprtost za množenje, inverz, in 1 so očitne)
+\begin{statement}
+\label{st:generated_subfield_is_subgroup}
+$$uv^{-1} - wz^{-1} = \underbrace{(uz - vw)}_{\in \overline{\mathcal{X}}} \underbrace{(vz)^{-1}}_{\in \overline{\mathcal{X}}}$$
+\end{statement} 
+
+\begin{example}
+$\mathcal{F} = \mathbb{C}$
+
+\begin{example_case}
+$\mathcal{X} = \{1\}$ Podpolje generirano z $\mathcal{X}$ je $\mathbb{Q}$, medtem, ko $\overline{\mathcal{X}} = \mathbb{Z}$
+Vsako podpolje $\mathbb{C}$ vsebuje $1$ in zato vsako podpolje vsebuje tudi $\mathbb{Q}$
+\end{example_case}
+\begin{example_case}
+$\mathcal{X} = {i}$:  $\overline{\mathcal{X}} = \mathbb{Z}[i]$(Gaussova cela števila), podpolje generirano z $\mathcal{X}$ je 
+\begin{equation}
+\label{eq:rational_imag_generated}
+\mathbb{Q}[i] := \{p + qi | p,q \in \mathbb{Q}\}
+\end{equation}
+\end{example_case}
+\end{example}
+
+\begin{remark}
+Med drugim smo pokazali, da najmanjša podgrupa(podkolobar $\dots$), ki vsebuje dano množico res obstaja. Zadevo poa lahko dokažemo tudi hitreje, tako da vzamemo presek vseh podstruktur, ki to strukturo vsebujejo.
+\end{remark}
+
+\subsection{Direktni produkti in vsote}
+Iz danih struktur lahko konstruiramo nove na različne načine.
+\subsubsection{Direktni produkti grup}
+
+\begin{definition}
+\label{def:outer_direct_product_of_groups}
+Naj bodo $\mathcal{G}_1, \dots, \mathcal{G}_n$ grupe. Grupi $$\mathcal{G} := \mathcal{G}_1 \times \dots \times \mathcal{G}_n$$ ki jo dobimo kot kartezični produkt teh grup pravimo \textbf{(zunanji) direktni produkt}.
+\end{definition}
+
+\begin{remark}
+Da je ta struktura res grupa operacijo definiramo po komponentah. Brez težav se prepričamo da je to res grupa.
+$$(x_1, x_2, \dots, x_n) * (y_1, y_2, \dots, y_n) := (x_1 y_1, x_2 y_2, \dots, x_n y_n)$$
+Očitno:
+$$1 = (1,1, \dots, 1)$$
+$$(x_1, x_2, \dots, x_n)^{-1} = (x_1^{-1}, x_2^{-1}, \dots, x_n^{-1})$$
+\end{remark}
+
+\begin{remark}
+Če so vse grupe v produktu aditivne, potem namesto $\mathcal{G} := \mathcal{G}_1 \times \dots \times \mathcal{G}_n$ pišemo $\mathcal{G} := \mathcal{G}_1 \oplus \dots \oplus \mathcal{G}_n$ in govorimo o \textbf{(zunanji) direktni vsoti grup}.
+\end{remark}
+
+\subsubsection{Direktni produkti kolobarjev}
+
+\begin{definition}
+\label{def:outer_direct_product_of_rings}
+Naj bodo $\mathcal{K}_1, \dots, \mathcal{K}_n$ kolobarji. Kolobarju $$\mathcal{K} := \mathcal{K}_1 \times \dots \times \mathcal{K}_n$$ ki ga dobimo kot kartezični produkt teh kolobarjev pravimo \textbf{(zunanji) direktni produkt}.
+\end{definition}
+
+\begin{remark}
+Da je ta struktura res kolobar operacijo definiramo po komponentah. Brez težav se prepričamo da je to res kolobar.
+$$(x_1, x_2, \dots, x_n) + (y_1, y_2, \dots, y_n) := (x_1 + y_1, x_2 + y_2, \dots, x_n + y_n)$$
+$$(x_1, x_2, \dots, x_n) * (y_1, y_2, \dots, y_n) := (x_1 y_1, x_2 y_2, \dots, x_n y_n)$$
+\end{remark}
+
+\begin{remark}
+Temu rečemo tudi \textbf{direktna (zunanja) vsota kolobarjev}.
+\end{remark}
+
+\subsubsection{Direktna vsota vektorskih prostorov}
+
+\begin{definition}
+\label{def:direct_sum_of_vector_spaces}
+Naj bodo $\mathcal{V}_1, \dots, \mathcal{V}_n$ vektorski prostori nad $\mathcal{F}$. Vektorskemu prostoru $$\mathcal{V} := \mathcal{V}_1 \times \dots \times \mathcal{V}_n$$ ki ga dobimo kot kartezični produkt teh vektorskih prostorov pravimo \textbf{direktna vsota} prostorov $\mathcal{V}_1, \dots, \mathcal{V}_n$ in ga označujemo kot $\mathcal{V}_1 \oplus \dots \oplus \mathcal{V}_n$.
+\end{definition}
+
+\begin{remark}
+Da je ta struktura res vektorski prostor operacijo definiramo po komponentah. Brez težav se prepričamo da je to res vektorski prostor.
+$$(x_1, x_2, \dots, x_n) + (y_1, y_2, \dots, y_n) := (x_1 + y_1, x_2 + y_2, \dots, x_n + y_n)$$
+$$\lambda(x_1, x_2, \dots, x_n) := (\lambda x_1, \lambda x_2, \dots, \lambda x_n)$$
+\end{remark}
+
+\begin{remark}
+$\mathcal{F}^{n}$ je direktna vsota $n$-kopij enorazsežnega prostora $\mathcal{F}$
+\end{remark}
+
+
+
+\subsubsection{Direktni produkt algebr}
+
+\begin{definition}
+\label{def:direct_product_of_vector_algebras}
+Naj bodo $\mathcal{A}_1, \dots, \mathcal{A}_n$ algebre nad $\mathcal{F}$. Algebri $$\mathcal{A} := \mathcal{A}_1 \times \dots \times \mathcal{A}_n$$ ki jo dobimo kot kartezični produkt teh algebr pravimo \textbf{direktni produkt}.
+\end{definition}
+
+\begin{remark}
+Da je ta struktura res algebra operacijo definiramo po komponentah. Brez težav se prepričamo da je to res algebra.
+$$(x_1, x_2, \dots, x_n) + (y_1, y_2, \dots, y_n) := (x_1 + y_1, x_2 + y_2, \dots, x_n + y_n)$$
+$$(x_1, x_2, \dots, x_n) * (y_1, y_2, \dots, y_n) := (x_1 y_1, x_2 y_2, \dots, x_n y_n)$$
+$$\lambda(x_1, x_2, \dots, x_n) := (\lambda x_1, \lambda x_2, \dots, \lambda x_n)$$
+\end{remark}
+
+\begin{remark}
+Lahko govorimo tudi o direktnem produktu(direktni vsoti) neskončne družine struktur
+\end{remark}
+
+\begin{example}
+\begin{example_case}
+$\mathbb{R}$ glejmo kot algebro nar $\mathbb{R}$. Direktni produkt števno kopij z operacijami po komponentah je algebra $\mathbb{R} \times \mathbb{R} \times \dots$.
+
+Operacije po komponentah točno sovpadajo z operacijamo po komponentah za zaporedja. To je torej algebra realnih zaporedij.
+\end{example_case}
+\begin{example_case}
+Naj bodo $\mathcal{F}_1, \dots, \mathcal{F}_n$ polja nad ne nujno istimi kolobarji. Definiramo operacije po komponentah in opazimo, da za $n \geq 2$ ima direktni produkt(polj ali kolobarjev) delitelje niča.
+$$(x_1, 0, \dots , 0) * (0, x_2, x_3, \dots, x_n) = 0$$
+\end{example_case}
+
+\end{example}
+
+\section{Primeri grup in kolobarjev}
+\subsection{Cela števila}
+Ker so $\mathbb{N}$ zgolj polgrupa za $+$ imamo v algebri raje $\mathbb{Z}$.
+
+\begin{definition}
+\label{def:total_ordering}
+Množica $\mathcal{A}$ je dobro zadostuje \textbf{načelu dobre urejenosti} če vsaka neprazna podmnožica množice $\mathcal{A}$ vsebuje najmanjši element.
+\end{definition}
+
+\begin{remark}
+Je ekvivalentno:
+
+Če v množici $\mathcal{A}$, ki ustreza načelu dobre urejenosti množica $\mathcal{B} \subseteq \mathcal{A}$ nima najmanjšega elementa, potem velja $\mathcal{B} = \emptyset$
+\end{remark}
+
+\begin{statement}
+$\mathbb{N}$ ustrezajo načelo dobre urejenosti.
+\end{statement}
+\begin{proof}\leavevmode\\
+Z indukcijo na $n$:
+$n=1$: $1 \notin \mathbb{N}$
+
+$n \implies n+1$: $1 \notin \mathbb{N}, 2 \notin \mathbb{N}, \dots, n \notin \mathbb{N} \underbrace{\implies}_{\text{Ker nima najmanjšega elementa}} n+1 \notin \mathbb{N}$
+\end{proof}
+
+Isto velja po indukciji tudi za $\mathbb{N} \cup \{0\}$, $\mathbb{N} \cup \{0, -1\}$, $\mathbb{N} \cup \{0, -1, -2\}$ $\dots$
+
+
+Torej: Vsaka nerpazna navzdol omejena podmnožica $\mathbb{Z}$ vsebuje najmanjše število.
+
+Analogno: Vsaka neprazna navzgor omejena podmnožica $\mathbb{Z}$ vsebuje največje število.
+\\
+
+\begin{theorem}[Osnovni izrek o deljenju]
+Za poljubna $m,n \in \mathbb{Z}$ obstajata taki števili $p,q \in \mathbb{Z}$, da velja:
+$$m = qn + r \land 0 \leq r < n$$
+\end{theorem}
+
+\begin{proof}
+Vpeljimo
+$$\mathcal{S}_{(n,m)} := \{k \in \mathbb{Z} | kn \leq m\}$$
+Če $\mathcal{S} = \emptyset $ $\checkmark$ 
+$\mathcal{S}$ je navzgor omejena, ker lahko najdemo tako število $k$, tako da je $kn > m$ in to velja tudi za vsako od $k$ večje število, zato $\mathcal{S}$ vsebuje največje število $q$. Tako velja
+$$qn \leq m \ \ // \ \text{saj} \ q \in \mathcal{S}$$
+$$(q + 1)n \leq m \ \ // \ \text{saj} \ (q + 1) \notin \mathcal{S}$$
+$$r:= m-qn \leq 0$$
+$$qn + n > m \ \ // \ \text{torej} \ n > r$$
+\end{proof}
+
+\begin{remark}
+$r$ imenujemo \textbf{ostanek} pri deljenju $m$ z $n$.
+\end{remark}
+\\
+
+$(\mathbb{Z}, +)$
+Primeri podgrup
+
+\begin{example}
+\begin{example_case}
+Trivialni primeri: $\{0\}$, $\mathbb{Z}$
+\end{example_case}
+\begin{example_case}
+$n\mathbb{Z} = \{nk | k \in \mathbb{Z}\}$ // $n \in \mathbb{Z}$ je podgrupa za seštevanje
+
+\begin{remark}
+Ker $n\mathbb{Z} = (-n)\mathbb{Z}$, praviloma izberemo $n \in \mathbb{N}$
+\end{remark}
+\end{example_case}
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
