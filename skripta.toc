@@ -1,0 +1,28 @@
+\select@language {slovene}
+\contentsline {section}{\numberline {1}Osnovne algebrske strukture}{3}{section*.1}
+\contentsline {subsection}{\numberline {1.1}Binarne operacije}{3}{section*.2}
+\contentsline {subsection}{\numberline {1.2}Polgrupe in monoidi}{5}{section*.2}
+\contentsline {subsection}{\numberline {1.3}Grupe}{8}{section*.2}
+\contentsline {subsection}{\numberline {1.4}Kolobarji}{10}{section*.2}
+\contentsline {subsection}{\numberline {1.5}Vektorski prostori}{13}{section*.2}
+\contentsline {subsection}{\numberline {1.6}Algebre}{14}{section*.2}
+\contentsline {subsection}{\numberline {1.7}Podgrupe, podkolobarji in druge podstrukture}{15}{section*.2}
+\contentsline {subsubsection}{\numberline {1.7.1}Podgrupe}{15}{section*.3}
+\contentsline {subsubsection}{\numberline {1.7.2}Podkolobarji}{17}{section*.3}
+\contentsline {subsubsection}{\numberline {1.7.3}Podprostori}{17}{section*.3}
+\contentsline {subsubsection}{\numberline {1.7.4}Podalgebre}{18}{section*.3}
+\contentsline {subsubsection}{\numberline {1.7.5}Podpolje}{18}{section*.3}
+\contentsline {subsubsection}{\numberline {1.7.6}Logi\IeC {\v c}ne operacije nad (pod)strukturami}{19}{section*.3}
+\contentsline {subsection}{\numberline {1.8}Generatorji}{19}{section*.3}
+\contentsline {subsubsection}{\numberline {1.8.1}Generatorji grup}{19}{section*.4}
+\contentsline {subsubsection}{\numberline {1.8.2}Generatorji kolobarja}{20}{section*.4}
+\contentsline {subsubsection}{\numberline {1.8.3}Generatorji vektorskih prostorov}{20}{section*.4}
+\contentsline {subsubsection}{\numberline {1.8.4}Generatorji algeber}{21}{section*.4}
+\contentsline {subsubsection}{\numberline {1.8.5}Generatorji podpolji}{22}{section*.4}
+\contentsline {subsection}{\numberline {1.9}Direktni produkti in vsote}{22}{section*.4}
+\contentsline {subsubsection}{\numberline {1.9.1}Direktni produkti grup}{22}{section*.5}
+\contentsline {subsubsection}{\numberline {1.9.2}Direktni produkti kolobarjev}{23}{section*.5}
+\contentsline {subsubsection}{\numberline {1.9.3}Direktna vsota vektorskih prostorov}{23}{section*.5}
+\contentsline {subsubsection}{\numberline {1.9.4}Direktni produkt algebr}{24}{section*.5}
+\contentsline {section}{\numberline {2}Primeri grup in kolobarjev}{24}{section*.5}
+\contentsline {subsection}{\numberline {2.1}Cela \IeC {\v s}tevila}{24}{section*.6}
