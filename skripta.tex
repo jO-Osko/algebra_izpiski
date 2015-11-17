@@ -67,7 +67,7 @@
 {}
 
 %should rethink this
-\newtheorem{lemma}{Lemma}
+\newtheorem{lemma}{Lema}
 
 \newcommand{\subscript}[2]{$#1 _ #2$}
 
@@ -1458,11 +1458,11 @@ Iz danih struktur lahko konstruiramo nove na različne načine.
 
 \begin{definition}
 \label{def:outer_direct_product_of_groups}
-Naj bodo $\mathcal{G}_1, \dots, \mathcal{G}_n$ grupe. Grupi $$\mathcal{G} := \mathcal{G}_1 \times \dots \times \mathcal{G}_n$$ ki jo dobimo kot kartezični produkt teh grup pravimo \textbf{(zunanji) direktni produkt}.
+Naj bodo $\mathcal{G}_1, \dots, \mathcal{G}_n$ grupe. Grupi $$\mathcal{G} := \mathcal{G}_1 \times \dots \times \mathcal{G}_n$$ ki jo dobimo kot kartezični produkt teh grup, pravimo \textbf{(zunanji) direktni produkt}.
 \end{definition}
 
 \begin{remark}
-Da je ta struktura res grupa operacijo definiramo po komponentah. Brez težav se prepričamo da je to res grupa.
+Da je ta struktura res grupa, operacijo definiramo po komponentah. Brez težav se prepričamo, da je to res grupa.
 $$(x_1, x_2, \dots, x_n) * (y_1, y_2, \dots, y_n) := (x_1 y_1, x_2 y_2, \dots, x_n y_n)$$
 Očitno:
 $$1 = (1,1, \dots, 1)$$
@@ -1498,7 +1498,7 @@ Naj bodo $\mathcal{V}_1, \dots, \mathcal{V}_n$ vektorski prostori nad $\mathcal{
 \end{definition}
 
 \begin{remark}
-Da je ta struktura res vektorski prostor operacijo definiramo po komponentah. Brez težav se prepričamo da je to res vektorski prostor.
+Da je ta struktura res vektorski prostor, operacijo definiramo po komponentah. Brez težav se prepričamo, da je to res vektorski prostor.
 $$(x_1, x_2, \dots, x_n) + (y_1, y_2, \dots, y_n) := (x_1 + y_1, x_2 + y_2, \dots, x_n + y_n)$$
 $$\lambda(x_1, x_2, \dots, x_n) := (\lambda x_1, \lambda x_2, \dots, \lambda x_n)$$
 \end{remark}
@@ -1513,11 +1513,11 @@ $\mathcal{F}^{n}$ je direktna vsota $n$-kopij enorazsežnega prostora $\mathcal{
 
 \begin{definition}
 \label{def:direct_product_of_vector_algebras}
-Naj bodo $\mathcal{A}_1, \dots, \mathcal{A}_n$ algebre nad $\mathcal{F}$. Algebri $$\mathcal{A} := \mathcal{A}_1 \times \dots \times \mathcal{A}_n$$ ki jo dobimo kot kartezični produkt teh algebr pravimo \textbf{direktni produkt}.
+Naj bodo $\mathcal{A}_1, \dots, \mathcal{A}_n$ algebre nad $\mathcal{F}$. Algebri $$\mathcal{A} := \mathcal{A}_1 \times \dots \times \mathcal{A}_n$$ ki jo dobimo kot kartezični produkt teh algebr, pravimo \textbf{direktni produkt}.
 \end{definition}
 
 \begin{remark}
-Da je ta struktura res algebra operacijo definiramo po komponentah. Brez težav se prepričamo da je to res algebra.
+Da je ta struktura res algebra, operacijo definiramo po komponentah. Brez težav se prepričamo, da je to res algebra.
 $$(x_1, x_2, \dots, x_n) + (y_1, y_2, \dots, y_n) := (x_1 + y_1, x_2 + y_2, \dots, x_n + y_n)$$
 $$(x_1, x_2, \dots, x_n) * (y_1, y_2, \dots, y_n) := (x_1 y_1, x_2 y_2, \dots, x_n y_n)$$
 $$\lambda(x_1, x_2, \dots, x_n) := (\lambda x_1, \lambda x_2, \dots, \lambda x_n)$$
@@ -1542,21 +1542,21 @@ $$(x_1, 0, \dots , 0) * (0, x_2, x_3, \dots, x_n) = 0$$
 
 \section{Primeri grup in kolobarjev}
 \subsection{Cela števila}
-Ker so $\mathbb{N}$ zgolj polgrupa za $+$ imamo v algebri raje $\mathbb{Z}$.
+Ker so $\mathbb{N}$ zgolj polgrupa za $+$, imamo v algebri raje $\mathbb{Z}$.
 
 \begin{definition}
 \label{def:total_ordering}
-Množica $\mathcal{A}$ je dobro zadostuje \textbf{načelu dobre urejenosti} če vsaka neprazna podmnožica množice $\mathcal{A}$ vsebuje najmanjši element.
+Množica $\mathcal{A}$ zadostuje \textbf{načelu dobre urejenosti}, če vsaka neprazna podmnožica množice $\mathcal{A}$, vsebuje najmanjši element.
 \end{definition}
 
 \begin{remark}
 Je ekvivalentno:
 
-Če v množici $\mathcal{A}$, ki ustreza načelu dobre urejenosti množica $\mathcal{B} \subseteq \mathcal{A}$ nima najmanjšega elementa, potem velja $\mathcal{B} = \emptyset$
+Če v množici $\mathcal{A}$, ki ustreza načelu dobre urejenosti, množica $\mathcal{B} \subseteq \mathcal{A}$ nima najmanjšega elementa, potem velja $\mathcal{B} = \emptyset$
 \end{remark}
 
 \begin{statement}
-$\mathbb{N}$ ustrezajo načelo dobre urejenosti.
+$\mathbb{N}$ ustreza načelu dobre urejenosti.
 \end{statement}
 \begin{proof}\leavevmode\\
 Z indukcijo na $n$:
@@ -1565,7 +1565,7 @@ $n=1$: $1 \notin \mathbb{N}$
 $n \implies n+1$: $1 \notin \mathbb{N}, 2 \notin \mathbb{N}, \dots, n \notin \mathbb{N} \underbrace{\implies}_{\text{Ker nima najmanjšega elementa}} n+1 \notin \mathbb{N}$
 \end{proof}
 
-Isto velja po indukciji tudi za $\mathbb{N} \cup \{0\}$, $\mathbb{N} \cup \{0, -1\}$, $\mathbb{N} \cup \{0, -1, -2\}$ $\dots$
+Po indukciji isto velja tudi za $\mathbb{N} \cup \{0\}$, $\mathbb{N} \cup \{0, -1\}$, $\mathbb{N} \cup \{0, -1, -2\}$ $\dots$
 
 
 Torej: Vsaka neprazna navzdol omejena podmnožica $\mathbb{Z}$ vsebuje najmanjše število.
@@ -1584,7 +1584,7 @@ $$\mathcal{S}_{(n,m)} := \{k \in \mathbb{Z} | kn \leq m\}$$
 Če $\mathcal{S} = \emptyset $ $\checkmark$ 
 $\mathcal{S}$ je navzgor omejena, ker lahko najdemo tako število $k$, tako da je $kn > m$ in to velja tudi za vsako od $k$ večje število, zato $\mathcal{S}$ vsebuje največje število $q$. Tako velja
 $$qn \leq m \ \ // \ \text{saj} \ q \in \mathcal{S}$$
-$$(q + 1)n \leq m \ \ // \ \text{saj} \ (q + 1) \notin \mathcal{S}$$
+$$(q + 1)n > m \ \ // \ \text{saj} \ (q + 1) \notin \mathcal{S}$$
 $$r:= m-qn \leq 0$$
 $$qn + n > m \ \ // \ \text{torej} \ n > r$$
 \end{proof}
@@ -1631,7 +1631,7 @@ $n\mathbb{Z}$ je podgrupa $\implies (nk - nl) = n(k-l) \in n\mathbb{Z}$
 
 \begin{definition}
 \label{def:divisor_integers}
-Naj bosta $m,k \in \mathbb{Z}$, šečemo, da \textbf{$k$ deli $m$} (pišemo tudi $k|m$), če obstaja tak $q \in \mathbb{Z}$, da velja $m = qk$.
+Naj bosta $m,k \in \mathbb{Z}$. Rečemo, da \textbf{$k$ deli $m$} (pišemo tudi $k|m$), če obstaja tak $q \in \mathbb{Z}$, da velja $m = qk$.
 \end{definition}
 
 \begin{remark}
@@ -1660,29 +1660,29 @@ $$(h+k) - (h' + k') = (h - h') + (k - k') \in \mathcal{H} + \mathcal{K}$$
 \end{proof}
 
 \begin{theorem}
-\label{th:existance_of_gcd}Za vsak par celih števil $m,n$, od katerih vsaj eno ni enako $0$ obstaja največji skupni delitelj $d$, ki ga označimo z $gcd(m,n)$, in je oblike $d= mx + ny$ za neka $x,y \in \mathbb{Z}$.
+\label{th:existance_of_gcd}Za vsak par celih števil $m,n$, od katerih vsaj eno ni enako $0$, obstaja največji skupni delitelj $d$, ki ga označimo z $gcd(m,n)$, in je oblike $d= mx + ny$ za neka $x,y \in \mathbb{Z}$.
 \end{theorem}
 
 \begin{proof}
 $m\mathbb{Z}$ in $n\mathbb{Z}$ sta podgrupi $\mathbb{Z}$, zato je tudi njuna vsota podgrupa. Po opombi zgoraj obstaja tak $d \in \mathbb{N}$, da velja $d\mathbb{Z} = m\mathbb{Z} + n\mathbb{Z}$ in ker eno izmed $m,n$ ni $0$ velja $d \neq 0$. Torej velja\\
 $d = mx + ny$ za neka $x,y \in \mathbb{Z}$ Torej velja:\\ $d \mathbb{Z} \supseteq n\mathbb{Z} \implies m \in m\mathbb{Z} \subseteq d\mathbb{Z} \implies d|m$ in podobno za $n$.
-Dokazali smo, da je delitelj, potrebno je še dokazati da je največji.\\
+Dokazali smo, da je $d$ skupni delitelj števil $m$ in $n$. Potrebno je še dokazati, da je največji.\\
 Naj velja $c|m$ in $c|n$, potem $m=cz$ in $n=cw$.\\
 Vemo da $d = mx + ny = c(zx + wy) \implies c|d$
 \end{proof}
 
 \begin{remark}
-Dokaz za to se pojavi že v Evklidovi knjigi elementi, približno 300 let pr. Kr.
+Dokaz za to se pojavi že v Evklidovi knjigi Elementi, približno 300 let pr. Kr.
 \end{remark}
 
 \begin{definition}
 \label{def:coprime_integers}
-Števili $m,n \in \mathbb{Z}$, ne obe enaki $0$ sta si \textbf{tuji}, če je njun največji skupni delitelj enak $1$. 
+Števili $m,n \in \mathbb{Z}$, ne obe enaki $0$, sta si \textbf{tuji}, če je njun največji skupni delitelj enak $1$. 
 \end{definition}
 
 
 \begin{corollary}
-Celi števili $m,n$ sta si tuji natanko tedaj, ko obstajata taki celi števili $x,y$, da zadostita enačbi:
+Celi števili $m,n$ sta si tuji natanko tedaj, ko obstajata taki celi števili $x,y$, ki zadostita enačbi:
 $$1=mx + ny$$
 \end{corollary}
 
@@ -1693,7 +1693,7 @@ $c|m \land c|n \implies c|1$ Torej je njun največji skupni delitelj 1 in sta si
 \end{proof}
 
 \begin{remark}
-Splošneje lahko definiramo največji skupni delitelj števil $n_1, n_2, \dots, n_k \in \mathbb{Z}$ na enak način ter njegovo eksistenco dokažemo na enak način($d=n_1x_1 + n_2x_2 + \dots n_kx_k$). To seveda ne pomeni, da so si števila paroma tuja($2,3,6$ so si tuja, ne pa tudi paroma tuja).
+Splošneje lahko definiramo največji skupni delitelj števil $n_1, n_2, \dots, n_k \in \mathbb{Z}$ na enak način ter njegovo eksistenco dokažemo na enak način ($d=n_1x_1 + n_2x_2 + \dots n_kx_k$). To seveda ne pomeni, da so si števila paroma tuja ($2,3,6$ so si tuja, ne pa tudi paroma tuja).
 \end{remark}
 
 \begin{definition}
@@ -1709,8 +1709,8 @@ $$p |mn \implies p|m \lor p|n$$
 
 \begin{proof}
 Predpostavimo, da $p\nmid m$.\\
-$gcd(p,m) = 1 \implies 1 = px + my \implies n = pxn + \underbrace{mn}_{pz}y = p(xn + zy)$
-In podobno za drugo možnost.
+$gcd(p,m) = 1 \implies 1 = px + my \implies n = pxn + \underbrace{mn}_{pz}y = p(xn + zy)$ \\
+Podobno za drugo možnost.
 \end{proof}
 
 \begin{remark}
@@ -1718,29 +1718,29 @@ Tudi ta dokaz je bil poznan že Evklidu.
 \end{remark}
 
 \begin{theorem}[Osnovni izrek aritmetike]
-\label{th:fundamental_theroem_of_arithmetics}Vsako naravno število $n \geq 2$ lahko napišemo kot produkt praštevil. Ta zapis je do vrstnega reda faktorjev enoličen.
+\label{th:fundamental_theroem_of_arithmetics}Vsako naravno število $n \geq 2$ lahko napišemo kot produkt praštevil. Ta zapis je do vrstnega reda faktorjev natančno enoličen.
 \end{theorem}
 
 \begin{proof}
 Indukcija na $n$:\\
 $n = 2 \ \checkmark$\\
 $n-1 \implies n$\\
-Če je $n$ praštevilo je dokaz zaključen. Če ni, ima vsaj dva delitelja ki nista $1$ ali $p$(lahko sta enaka)\\
+Če je $n$ praštevilo je dokaz zaključen. Če ni, ima vsaj dva delitelja ki nista $1$ ali $p$ (lahko sta enaka).\\
 $n = kl;\  l,k < n$ \\
 Po indukcijski predpostavki sta $l$ in $k$ produkta praštevil, torej je tudi $p$ produkt praštevil.\\
 In še edinost zapisa:\\
 $n = p_1 * p_2 * \dots * p_r = q_1 * q_2 * \dots * q_s$, produkt samih praštevil\\
-$p_1 | q_1 * q_2 * \dots * q_s$ torej po lemi (\ref{lem:prime_divisibility}) deli enega natančno enega izmed faktorjev $q$. Brez škode za splošnost: $p_1|q_1 \underbrace{\implies}_{\text{ker sta praštevili}} p_1 = q_1$ Krajšamo s $p_1$ in nadaljujemo dokler ne pridemo do $1=1$.\\
-Če pa imamo $s > r \implies q_{r+1}\dots q_s = 1$ kar pa je protislovje.
+$p_1 | q_1 * q_2 * \dots * q_s$ torej po lemi (\ref{lem:prime_divisibility}) deli natančno enega izmed faktorjev $q_i$. Brez škode za splošnost: $p_1|q_1 \underbrace{\implies}_{\text{ker sta praštevili}} p_1 = q_1$ Krajšamo s $p_1$ in nadaljujemo dokler ne pridemo do $1=1$.\\
+Če pa imamo $s > r \implies q_{r+1}\dots q_s = 1$, kar pa je protislovje.
 \end{proof}
 
 \begin{theorem}
 \label{th:infinite_number_of_primes}
-Množica praštevil je neskončna
+Množica praštevil je neskončna.
 \end{theorem}
 
 \begin{proof}
-Predpostavimo, da jih je končno, torej da so $p_1, p_2, \dots, p_n$ vsa praštevila. Tedaj $p_1*p_2*\dots * p_n + 1$ ni praštevilo in je zato gotovo deljivo z nekim praštevilom $p_i$\\
+Predpostavimo, da jih je končno, torej da so $p_1, p_2, \dots, p_n$ vsa praštevila. Tedaj $p_1*p_2*\dots * p_n + 1$ ni praštevilo in je zato gotovo deljivo z nekim praštevilom $p_i$.\\
 $p_1*p_2*\dots * p_n + 1 = k*p_1 \implies p_i(k - p_1*p_2*\dots *p_{i-1} * p_{i+1} * \dots * p_n) = 1$, protislovje.
 \end{proof}
 
@@ -1748,7 +1748,7 @@ $p_1*p_2*\dots * p_n + 1 = k*p_1 \implies p_i(k - p_1*p_2*\dots *p_{i-1} * p_{i+
 
 \begin{definition}
 \label{def:modulo_congruent}
-Celi števili $a$ in $b$ sta \textbf{kongruenti modulo $n$} če $$n|(a-b)$$
+Celi števili $a$ in $b$ sta \textbf{kongruenti modulo $n$}, če $$n|(a-b)$$
 \end{definition}
 
 \begin{example}
@@ -1767,7 +1767,7 @@ $$a \equiv a' \ (\textrm{mod}\ n) \land b \equiv b' \ (\textrm{mod}\ n) \implies
 
 \begin{proof}
 $$(a+b) - (a' + b') = \underbrace{(a-a') + (b-b')}_{\text{sta si kongruentna}}$$
-$$(ab) - (a' b') = \underbrace{b(a-a') + a(b-b')}_{\text{sta su kongruentna}}$$
+$$(ab) - (a' b') = \underbrace{b(a-a') + a(b-b')}_{\text{sta si kongruentna}}$$
 \end{proof}
 
 \begin{statement}
@@ -1781,7 +1781,7 @@ Tranzitivna:\\
 $a \equiv b \ (\textrm{mod}\ n)$ in $b \equiv c \ (\textrm{mod}\ n)$ $\implies c-a = \underbrace{(c-b) + (b-a)}_{\text{sta si kongruentna}}$
 \end{proof}
 
-Ker je relacija ekvivalentna lahko vpeljemo ekvivačne razrede $[a]$.
+Ker je relacija ekvivalenčna, lahko vpeljemo ekvivalenčne razrede. Z $[a]$ označimo ekvivalenčni razred, ki mu pripada $a$.
 
 \begin{definition}
 \label{def:equivalence_classes_modulo}
@@ -1790,10 +1790,10 @@ $$\underbrace{[0]}_{\text{števila deljiva z }n} , \underbrace{[1]}_{\text{ostan
 in jih označimo z $\mathbb{Z}_n$.
 \end{definition}
 
-Potrebno je preveriti še dobro definiranost za operacije.
+Potrebno je preveriti še dobro definiranost operacij.
 
 \begin{statement}
-Če v množici $\mathbb{Z}_n$ vpeljemo sešetevanje:
+Če v množici $\mathbb{Z}_n$ vpeljemo seštevanje:
 \begin{equation}
 \label{eq:def_modulo_adition}
 [a] + [b] := [a+b]
@@ -1812,7 +1812,7 @@ Nevtralni element:
 $$0 = [0]$$
 Nasprotni element:
 $$-[a] = [-a]$$
-Komutativonst:
+Komutativnost:
 $$[a] + [b] = [a+b] = [b+a] = [b] + [a]$$
 \end{proof}
 
