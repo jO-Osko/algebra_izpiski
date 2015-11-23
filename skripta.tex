@@ -1816,16 +1816,245 @@ Komutativnost:
 $$[a] + [b] = [a+b] = [b+a] = [b] + [a]$$
 \end{proof}
 
+
+\begin{statement}
+Aditivna grupa $\mathbb{Z}_n$ postane $\mathbb{Z}_n$ \textbf{komutativen kolobar} če vpeljemo moženje s predpisom:
+\begin{equation}
+\label{eq:def_modulo_group_multiplication}
+[a]*[b] := [a*b]
+\end{equation}
+\end{statement}
+
+\begin{proof}\leavevmode\\
+Dobra definiranost sledi iz leme(\ref{lem:modulo_equivalence_addition}), asociativnost in distributivnost pokažemo kot pri sešetevanju(se sklicujemo na te lastnosti v celih številih).\\
+Enota: $[1]$
+\end{proof}
+
+
+\begin{remark}
+Da oznake poenostavimo namesto $[a], 0 \leq a \leq n-1$ pišemo kar $a$, in tako $\mathbb{Z}_n = \{0,1, \dots, n-1\}$, pri čemero moramo obdržati v mislih, da to niso 'prava' cela števila.
+\end{remark}
+
+Vsoto $a+b$ izračunamo tako, da pogledamo ostanek pri deljenju običajne vsote, podobno s produktom.
+
+\begin{example}
+\begin{example_case}
+V $\mathbb{Z}_{12}$: $3+4 = 7$ in $3+11 = 2 + 1*12 = 2$ ter $3*7 = 9$ in $3*8 = 0$.\\
+$\mathbb{Z}_n$ ima torej lahko delitelje niča. Očitno je to res vedno kadar je $n$ sestavljeno število. Če pa je $n$ praštevilo pa to ni res, še več, $\mathbb{Z}_p$ je polje.
+\end{example_case}
+\end{example}
+
+\begin{definition}
+\label{def:full_ring}
+Komutativen kolobar brez deliteljev niča se imenuje \textbf{cel kolobar}.
+\end{definition}
+
+\begin{example}
+$\underbrace{\mathbb{Z}}_{\text{cel kolobar, ki ni polje}}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$
+\end{example}
+
+
+\begin{statement}
+\label{st:finite_full_ring_is_field}
+Končen cel kolobar je polje.
+\end{statement}
+
+\begin{proof}Naj bo $\mathcal{K}$ končen cel kolobar. $0\neq a \in \mathcal{K} \implies a\ \text{je obrnljiv}$, naj bo $f: \mathcal{K} \to \mathcal{K}, f(x) = ax$, očitno $1 \in \mathcal{Z}_f$\\ Pokazati pa je potrebno surjektivnost $f$, kar je v končnem polju ekvivalentno njeni injektivnosti.\\
+$ax = ax \underbrace{\implies}_{\text{cel kolobar}} x=y$ torej $a(x-y) = 0 \land a \neq 0 \implies x = y$\\
+Komutativnost(eksistenca levenga inverza $\implies$ eksistenca desnega inverza $\implies$ eksistenca inverza)
+\end{proof}
+
+\begin{remark}
+Izkaže se, da končnih nekomutativnih obsegov ni(dokaz je netrivialen).
+\end{remark}
+
+\begin{corollary}
+Za vsako praštevilo $p$ je $\mathbb{Z}_p$ polje.
+\end{corollary}
+
+\begin{proof}
+Zadošča pokazati, da $\mathbb{Z}_p$ ni deliteljev niča.\\
+$a,b \in \mathbb{Z}_p, ab=0$ Torej je v običanjem produktu $ab$ večkratnik $p$, zato po lemi(\ref{lem:prime_divisibility}) $p$ deli vsaj eno, ker pa $a,b \in \{0,1,\dots, p-1\}$ velja $a = 0 \lor b=0$
+\end{proof}
+
+\subsection{Obseg kvaternionov}
+Pojavi se naravno vprašanje, kako nadeljevati zaporedje:
+$$\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C} \subset \ ?$$
+
+\begin{definition}
+\label{def:quaternion_element}
+
+Vzemimo $4$-razsežen vektorski prostor nad $\mathbb{R}$, označimo ga z $\mathbb{H}$, njegovo bazo pa z $\{1, i, j, k\}$, tako dobimo značilni element
+\begin{equation}
+\label{eq:quaternion_element}
+h := \lambda_0 + \lambda_1 i + \lambda_2 j + \lambda_3 k, \ \lambda_i \in \mathbb{R}
+\end{equation}
+Seštevanje in množenje s skalarji uvedemo enako kot pri normalnem $4$ razsežnem vektorskem prostoru. Elemente $\mathbb{H}$ imenujemo kvaternioni.
+\end{definition}
+
+\begin{remark}
+$\mathbb{H}$ izhaja iz njihovega odkritelja Sir Williama Rowana Hamiltona.
+\end{remark}
+
+\begin{definition}
+\label{def:quaternion_multiplication}
+Množenje cpelejemo po kosih in sicer: $1$ je enota za množenje, za druge pa velja:
+\begin{equation}
+\label{eq:quaternion_multiplication}
+i^2 = j^2 = k^2 = -1
+\end{equation}
+Iz teh sledi: $$ij = -ji = k, jk = -kj = i, ki = -ik = j$$
+\end{definition}
+%A to spominja na vektorski produkt?, sej more, ker so kvaternioni pogoj za obstoj vektroskega produkta v 3d
+Ko poznamo množenje baznih elementov lahko množimo tudi vse ostale.
+\\
+\\
+\begin{statement}
+S tako definiranim množenjem postane prostor $\mathbb{H}$ ne samo kolobar ampak tudi algebra nad $\mathbb{R}$.
+\end{statement}
+
+\begin{remark}
+Preverimo po definiciji.
+\end{remark}
+
+\begin{definition}
+\label{def:conjuagate_quaternion}
+\begin{equation}
+\label{eq:conjugate_quaternion}
+\overline{h} := \lambda_0 - \lambda_1 i - \lambda_2 j - \lambda_3 k
+\end{equation}
+\end{definition}
+
+\begin{statement}
+\label{st:inverse_quaternion}
+vsak neničelen kvaternion je obrnljiv in zanj velja 
+\begin{equation}
+\label{eq:inverse_quaternion}
+h^{-1} = \frac{\overline{h}}{h\overline{h}}
+\end{equation}
+\end{statement}
+
+
+\begin{proof}
+
+Izračunamo:
+
+$h \overline{h} = \lambda_0 + \lambda_1^2 + \lambda_2^2 + \lambda_3^2$\\
+$h \neq 0 \implies h \overline{h} \in \mathbb{R} - \{0\}$, zato je vsak neničelen kvaternion obrnljiv.
+in velja
+$$h^{-1} = \frac{\overline{h}}{h\overline{h}}$$
+\end{proof}
+
+\begin{remark}
+$\mathbb{H}$ je tako nekomutativen obseg.
+\end{remark}
+
+Lahkopa uporabljamo tudi drugačen zapis:
+$\lambda_0 + \lambda_1 i + \lambda_2 j + \lambda_3 k $ pišemo $$(\lambda_0, \vec{u}), \vec{u} = \lambda_1 i + \lambda_2 j + \lambda_3 k$$
+Množenje se tako glasi:
+\begin{equation}
+\label{eq:quaterion_vector_multiplication}
+(\lambda_0, \vec{u}) * (\mu_0, \vec{v}) = (\lambda_0 \mu_0 - \vec{u} \vec{v}, \lambda_0\vec{v} + \mu_0\vec{u} + \vec{u} \times \vec{v})
+\end{equation}
+
+\begin{remark}
+Množica $\{\pm 1, \pm i, \pm j, \pm k\}$ je antikomutativna grupa za množenje z osmimi elementi, ki ji rečemo tudi \textbf{kvaternionska grupa}.
+\end{remark}
+
+
+\subsection{Kolobar matrik}
+$\mathcal{M}_n(\mathbb{R})$ in $\mathcal{M}_n(\mathbb{C})$ sta kolobarja(celo algebri).\\
+
+
+\begin{statement}
+Za vsak kolobar $\mathcal{K}$ je množica $\mathcal{M}_n(\mathcal{K})$ kolobar nad $\mathcal{K}$ za običajno seštevanje in množenje matrik.
+\end{statement}
+
+\begin{proof}
+Preverimo po definiciji. $\mathcal{K}$ je lahko celo nekomutativen. Enota in ničelen element sta enaka kot pri $\mathcal{M}_n(\mathbb{R})$.
+\end{proof}
+
+$\mathcal{M}_n(\mathcal{K})$ je nekomutativen za $n \geq 2$ (za $n=1$ je kolobar matrik kar $\mathcal{K}$)
+
+
+\begin{definition}
+\label{def:idempotent_ring}
+Element $e$ kolobarja $\mathcal{K}$ je \textbf{idempotent} če zanj velja:
+\begin{equation}
+\label{eq:def_idempotent}
+e^2 =  e
+\end{equation}
+\end{definition}
+
+\begin{definition}
+\label{def:nullpotent_ring}
+Element $a$ kolobarja $\mathcal{K}$ je \textbf{nilpotent} če zanj velja:
+\begin{equation}
+\label{eq:def_nullpotent}
+\exists n \in \mathbb{N}. \ a^n =  0
+\end{equation}
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+Vsaka diagonalna matrika, z $0$ in $1$ na diagonali je idempotent.
+\end{example_case}
+\begin{example_case}
+Vsaka strogo zgoraj(ali spodaj) trikotna matrika je nilpotentna.
+\end{example_case}
+\end{example}
+
+\begin{statement}
+Naj bo $\mathcal{K}$ kolobar brez deliteljev niča, in naj bo $e \in \mathcal{K}$ idempotent. Velja: $e = 1 \lor e = 0$.
+\end{statement}
+
+\begin{proof}
+$e^2 = e \implies e(1-e) = 0 \underbrace{\implies}_{\text{ker nima deliteljev niča}} e = 1 \lor e = 0$
+\end{proof}
+
+\begin{statement}
+$e$ je idempotent $\iff$ $1-e$ je idempotent
+\end{statement}
+
+\begin{proof}
+Račun.
+\end{proof}
+
+
+Če je $\mathcal{K}$ algebra na poljem $\mathcal{F}$, tudi kolobar $\mathcal{M}_n(\mathcal{K})$ potem postane algebra, če definiramo:
+$$\lambda (a_{ij}) := (\lambda a_{ij})$$
+
+Poseben primer: $\mathcal{M}_n(\mathcal{F})$ je algebra na $\mathcal{F}$, $dim(\mathcal{M}_n(\mathcal{K})= n^2$
+
+
+\subsection{Kolobar funkcij}
+
+Naj bo $\mathcal{X}$ množica in naj bo $\mathcal{K} = \{ f : \mathcal{X} \to \mathbb{R}\}$\\
+
+$\mathcal{K}$ postane kolbar, če definiramo običajno seštevanje in množenje funkcij:
+$$(f+g)(x) := f(x) + g(x) $$
+$$(f*g)(x) := f(x) * g(x) $$
+Skupaj z enoto: $e(x) = 1$ in nasprotnim elementom: $(-f)(x) = -f(x)$ 
+
+Če vpeljemo še množenje s skalarji:
+$$(\lambda f) (x) := \lambda f(x)$$
+
+Če je $\mathcal{X} = [a,b]$ ali $\mathbb{R}$, ipd., lahko govorimo o kolobarju.
+
+\begin{example}
+\begin{example_case}
+$\mathcal{C}(x) = \{f: \mathcal{X} \to \mathcal{R} | \ f \ \text{zvezna} \}$ je kolobar, saj so vsote, in produkti zveznih funkcij spet zvezni. Ne samo to, je tudi algebra.
+\end{example_case}
+\end{example}
+
+
+
+
+
+
+
 \end{document}
 
 
 
 
-
-
-
-
-
-
-
-\end{document}
