@@ -956,6 +956,7 @@ $(\mathbb{R}, +, *)$ je podkolobar $(\mathbb{C}, +, *)$\\
 In ker sta to tudi polji rečemo kar kar $(\mathbb{R}, +, *)$ je podpolje $(\mathbb{C}, +, *)$\\
 
 \subsubsection{Podgrupe}
+
 \begin{definition}
 \label{def:subgroup}
 \textbf{Neprazna} podmnožica $\mathcal{H}$ grupe $\mathcal{G}$ je \textbf{podgrupa} grupe $\mathcal{G}$, če je za isto operacijo (zožitev na $\mathcal{H} \times \mathcal{H}$) tudi sama grupa. 
@@ -2046,6 +2047,271 @@ $$(\lambda f) (x) := \lambda f(x)$$
 $\mathcal{C}(x) = \{f: \mathcal{X} \to \mathcal{R} | \ f \ \text{zvezna} \}$ je kolobar, saj so vsote, in produkti zveznih funkcij spet zvezni. Ne samo to, je tudi algebra.
 \end{example_case}
 \end{example}
+
+Poznamo več primerov kolobarjev funkcij:
+\begin{itemize}
+\item Odvedljivih funkcij
+\item omejenih funkcij 
+\item integrabilnih funkcij 
+\item polinomov (nima deliteljev niča).
+\item $\dots$
+\end{itemize}
+
+Če v te kolobarje vpeljemo še množenje s skalarji:
+\begin{equation}
+\label{eq:def_scala_multiplication_functions}
+(\lambda f) (x) = \lambda f(x)
+\end{equation}
+
+postanejo vsi ti kolobarji tudi algebre.
+\\
+\\
+Na podoben način vpeljemo tudi kolobar (algebro) zaporedij $\mathcal{X} = \mathbb{N} \to \mathcal{A}$, kjer so vse operacije definirane po komponentah (seštevanje, množenje, množenje s skalarjem). Ter različne podalgebre (konvergentna zaporedja, omejena zaporedja...).
+
+\begin{example}
+\begin{example_case}
+V algebri zveznih funkcij ($\mathcal{C}(\mathbb{R})$) je podalgebra generirana z $id(x) = x$ ravno algebra polinomov.
+\end{example_case}
+\end{example}
+
+
+\subsection{Kolobar polinomov ene spremenljivke}
+Vajeni smo, da je polinom funkcija, v algebri polinomov pa polinom obravnavamo kot formalen izraz.
+
+\begin{definition}
+\label{def:polynomial_in_algebra}
+Polimon $p$ nad kolobarjem $\mathcal{K}$ je izraz oblike:
+\begin{equation}
+\label{eq:polynomial_in_algebra}
+p(X) = a_0 + a_1 X + a_2 X^2 + \dots + a_n X^n, \  a_n \neq 0
+\end{equation}
+Kjer so $a_i \in \mathcal{K}$ t.i. koeficienti tega polinoma. 
+\begin{itemize}
+\item $a_0$ imenujemo \textbf{prosti (ali konstantni) člen}
+\item $a_n$ (zadnji neničelen člen) imenujemo \textbf{vodilni člen (koeficient)}
+\item $X$ imenujemo \textbf{spremenljivka}, a dejanski igra le formalno vlogo kot simbol
+\end{itemize}
+\end{definition}
+
+Alternativno lahko polinom definiramo tudi kot
+
+\begin{definition}
+\label{def:polynomial_in_algebra_alternative_definition}
+Polinom $p$ nad kolobarjem $\mathcal{K}$ je zaporedje elementov iz $\mathcal{K}$, ki je od nekega mesta naprej ničelno
+\begin{equation}
+\label{eq:def_polynomial_in_algebra_alterantive_definition}
+p(n): \mathbb{N} \to \mathcal{K}, \ \exists n \in \mathbb{N}. \forall m \in \mathbb{N}. \ m > n \implies p(m) = 0 
+\end{equation}
+Torej:
+$$p = (a_0, a_1, \dots , a_n, 0, 0, \dots )$$
+Vendar pa ta definicija ni udobna za množenje.
+\end{definition}
+
+Da si prihranimo čas pri zapisu spuščamo ničelne koeficiente: 
+$$0 + 3X + 0x^2 - 5X = 3X - 5X^3$$
+
+Udoben pa se nam zdi tudi zapis
+$$p(X) = \sum_{k \geq 0} a_k X^k$$
+Kjer se zavedamo, da od nekje naprej so vsi $a_k$ enaki $0$.
+
+\begin{definition}[Seštevanje polinomov]
+\label{def:polynomial_summation}
+\begin{equation}
+\label{eq:def_polynomial_equation}
+\sum_{k \geq 0} a_k X^k + \sum_{k \geq 0} b_k X^k := \sum_{k \geq 0} (a_k + b_k) X^k
+\end{equation}
+\end{definition}
+
+\begin{definition}[Množenje polinomov]
+\label{def:polynomial_multiplication}
+\begin{equation}
+\label{eq:def_polynomial_multiplication}
+(\sum_{k \geq 0} a_k X^k) * (\sum_{k \geq 0} b_k X^k) := \sum_{k \geq 0} c_k X^k
+\end{equation}
+Kjer velja $c_k = a_0 b_k + a_1 b_{k-1} + \dots + a_n b_0$
+\end{definition}
+
+\begin{remark}
+V ozadju smo uporabili $(a_i X^i) * (b_j X^j) = (a_i b_j) X^{i+j}$ in distributivnost seštevanja.
+\end{remark}
+
+\begin{definition}[Stopnja polimoma]
+\label{def:polymonial_degree}
+\begin{equation}
+\label{eq:def_polynomial_degree}
+st(p(X)) = min\{n \in \mathbb{N} | \ \forall m \in \mathbb{N}. \ m > n \implies a_m = 0 \}
+\end{equation}
+Torej indeks zadnjega neničelnega koeficienta.
+\end{definition}
+
+\begin{remark}
+Polinom $0$ nima definirane stopnje, a jo občano definiramo kot $-1$ ali $-\infty$.
+\end{remark}
+
+Množico polinomov skupaj s tema dvema operacijama bomo od sedaj naprej označevali z $K[x]$. Preveriti to je rutinsko.
+
+\begin{definition}
+\label{def:constant_polynomial}
+\textbf{Konstanten polinom} je polinom stopnje $0$ ali pa polinom $0$.
+\end{definition}
+
+Hitro opezimo nekatere lastnosti:
+\begin{itemize}
+\item Če $\mathcal{K}$ nima deliteljev niča jih prav tako nima tudi $\mathcal{K}[X]$ in velja:
+$$st(f(X)g(X)) = st(f(X)) + st(g(X))$$
+\item $\mathcal{K}$ je komutativen $\iff$ $\mathcal{K}[X]$ je komutativen.
+\end{itemize}
+
+\begin{definition}
+\label{def:special_polynomial}
+\begin{itemize}
+\item \textbf{Linearni polinom} $:=$ polinom stopnje $1$
+\item \textbf{Kvadratni polinom} $:=$ polinom stopnje $2$
+\item \textbf{Kubični polinom} $:=$ polinom stopnje $3$
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Vrednost polinoma]
+\label{def:polynomial_value}
+$p(X) = a_0 + a_1 X + a_2 X^2 + \dots + a_n X^n$ v elementu $x \in \mathcal{K}$ ima vrednost 
+\begin{equation}
+p(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \in \mathcal{K}
+\end{equation}
+Tako vsak polinom $F(X)$ porodi \textbf{polinomsko funkcijo}
+$$x \mapsto f(x)$$
+\end{definition}
+
+\begin{remark}
+Polimonska funkcija je seveda natanko določena s polinomom, naravno se nam porodi vprašanje ali je polinom natančno določen s polinomsko funkcijo, kar pa ni vedno res.
+\end{remark}
+
+\begin{example}
+$$p(X) = X + X^2 \in \mathbb{Z}_2$$
+porodi funkcijo $ \mathbb{Z}_2 \to \mathbb{Z}_2$ za katero velja:
+$$0 \mapsto 0$$
+$$1 \mapsto 1^2 + 1^2 = 0$$
+Enako funkcijo pa nam porodi tudi polinom $0$. Očitno polinomska funkcija ne določa polinoma.
+\end{example}
+\\
+\\
+\begin{remark}
+V $\mathbb{R}[X]$, $\mathbb{C}[X]$ pa je razlika med polinomom in polinomsko funkcijo zgolj formalna.
+\end{remark}
+\\
+\\
+Če je $\mathcal{K} \subseteq \mathcal{L}$ ($\mathcal{K}$ je podkolobar $\mathcal{L}$) in velja $f(X) \in \mathcal{K}[X]$, lahko izračunamo $f(x)$ tudi za $x \in \mathcal{L}$.
+
+
+\begin{definition}[Ničla polinoma]\\
+$x \in \mathcal{K}$ je \textbf{ničla (koren)} polinoma $f(X)$, če velja $f(x) = 0$. 
+\end{definition}
+
+\begin{remark}
+Polinom nima nujno ničel, recimo $X^2 + 1 \in \mathbb{R}[X]$ nima ničel v $\mathbb{R}$, jih pa ima v $\mathbb{C}$.
+\end{remark}
+
+
+Če je $\mathcal{K}$ algebra nad $\mathcal{F}$ tudi $\mathcal{K}[X]$ postane algebra nad $\mathcal{F}$. če definiramo množenje s skalarjem.
+
+\begin{definition}
+\label{def:polynomial_scalar_multiplication}
+\begin{equation}
+\label{eq:def_polynomial_scalar_multiplication}
+(\lambda f)(X) := \lambda a_0 + \lambda a_1 X + \lambda a_2 X^2 + \dots + \lambda a_n X^n
+\end{equation}
+\end{definition}
+
+\begin{remark}
+Če si še enkrat pogledamo definicijo množenja polinomov (\ref{eq:def_polynomial_multiplication}) in pozabimo na pogoj, da so od nekje naprej vsi členi enaki $0$ potem govorimo o \textbf{kolobarju pormalnih potenčnih vrst}, ki ga označimo z $$\mathcal{K}[[X]]^k$$ 
+\end{remark}
+
+\subsection{Kolobar polinomov več spremenljivk}
+
+Preprost primer polinoma več spremenljivk:
+$$f(X, Y) = 2X^4Y^2 - 3XY + 7X + 2Y + 3$$
+
+Zgornji primer je sestavljenih iz $4$-ih členov, ki jih imenujemo \textbf{monomi}, s stopnjami: $6,2,1,1,0$
+
+Stopnja polinoma pa je največja stopnja monomov torej $st(f(X,Y)) = 9$
+
+\begin{definition}
+Kolobar polinomov dveh spremenljivk je $$(\mathcal{K}[X])[Y]$$
+in ga označimo kot $\mathcal{K}[X, Y]$.
+\end{definition}
+
+Elementi $\mathcal{K}[X, Y]$ so torej :
+
+$$\sum_{l \geq 0} (\sum_{k \geq 0} a_k X^k) Y^l$$
+Po dogovoru oklepaje kar izpuščamo in pišemo kar
+
+$$\sum_{l \geq 0} \sum_{k \geq 0} a_{kl} X^k Y^l, \ a_{kl} \in \mathcal{K}$$
+
+\begin{remark}
+Ker je kolobar komutativen je vseeno v kakšnem vrstnem redu definiramo polinom ($(\mathcal{K}[X])[Y]$ je vsebinsko enak $(\mathcal{K}[Y])[X]$).
+\end{remark}
+\\
+\\
+\begin{remark}
+Induktivno definiramo tudi polnom $n$ spremenljivk
+$$\mathcal{K}[X_1, X_2, \dots X_n] := (\mathcal{K}[X_1, X_2, \dots X_{n-1}])[X_n]$$
+\end{remark}
+
+Polinomi z več spremenljivkami se študirajo v algebraični geometriji.
+
+\begin{example}
+\begin{example_case}
+$$X_1^2 + X_2^2 + X_3^2 - 1$$
+Ničle tega polinoma so sfere.
+\end{example_case}
+\begin{example_case}
+$$X_1^n + X_2^n - X_3^n$$
+za $n \geq 3$ v $\mathbb{N}^3$ nima ničel (gre za zadnji Fermatov izrek, ki je bil dokazan leta 1995) 
+\end{example_case}
+\end{example}
+
+
+\subsection{Simetrična grupa}
+
+\begin{definition}
+Simetrična grupa $\mathcal{S}_n$ za $n \in \mathbb{N}$ je grupa permutacij množice $\{1,2, \dots , n\}$. In element te grupe zapišemo kot
+\[
+  a = \bigl(\begin{smallmatrix}
+    1 & 2  & \cdots & n \\
+    i_1 & i_2 & \cdots & i_n
+  \end{smallmatrix}\bigr)
+\]
+\end{definition}
+
+\begin{remark}
+Očitno
+$$|\mathcal{S}_n| = n!$$
+\end{remark}
+
+\begin{definition}
+\label{def:transposition}
+\textbf{Transpozicija} zamenja dva elementa in jo zapišemo kot $(i,j)$, kjer sta $i$ in $j$ elementa, ki se med sabo zamenjata.
+\end{definition}
+
+\begin{theorem}
+Vsako permutacijo se da zapisati kot produt transpozicij.
+\end{theorem}
+
+\begin{proof}
+Algebra 1.
+\end{proof}
+
+\begin{statement}
+Če je permutacija enaka produktu sodega(lihega) števila transpozicij je tudi drug način zapisa te permutacije sod(lih)
+\end{statement}
+
+$$sgn(\sigma \rho) = sgn(\sigma) sgn(\rho)$$
+
+Sode permutacije tvorijo podgrupo. To podgrupo imenujemo \textbf{alternirajoča podgrupa} in jo označimo z $A_n$.
+
+
+
+
+
 
 
 
