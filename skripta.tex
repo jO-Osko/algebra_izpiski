@@ -12,6 +12,7 @@
 \usepackage{cleveref}
 \usepackage{verbatim}
 \usepackage{enumitem}
+\usepackage[nomessages]{fp}
 
 \usepackage{tikz}
 
@@ -70,6 +71,16 @@
 \newtheorem{lemma}{Lema}
 
 \newcommand{\subscript}[2]{$#1 _ #2$}
+
+\newcommand{\twopartdef}[4]
+{
+	\left\{
+		\begin{array}{ll}
+			#1 & \mbox{; } #2 \\
+			#3 & \mbox{; } #4
+		\end{array}
+	\right.
+}
 
 
 \begin{document}
@@ -2308,19 +2319,325 @@ $$sgn(\sigma \rho) = sgn(\sigma) sgn(\rho)$$
 
 Sode permutacije tvorijo podgrupo. To podgrupo imenujemo \textbf{alternirajoča podgrupa} in jo označimo z $A_n$.
 
+\begin{definition}
+\label{def:permuation_cycle}
+Permutacijo oblike: $i_{j_1} \mapsto i_{j_2}, i_{j_2} \mapsto i_{j_3}, \dots , i_{j_{k-1}} \mapsto i_{j_k}$ imenujemo $k-$cikel in ga označimo z $(i_{j_1}, i_{j_2}, \dots, i_{j_k})$ (Zavrti zgolj nekatere elemente, ostale pa pusti pri miru)
+\end{definition}
+
+\begin{definition}
+$2-$cikel imenujemo transpozicija
+\end{definition}
 
 
+\begin{remark}
+Ni težko opaziti, da lahko vsako permutacijo zapišemo kot produkt disjunktnih ciklov.
+\end{remark}
+
+\subsection{Diedrska grupa}
+
+\begin{tikzpicture}
+\def \SIZE {2}
+
+\draw (0,0) -- (\SIZE,0) -- (\SIZE,\SIZE) -- (0,\SIZE) -- (0,0);
+\node[text width=0.5cm] at (0,0) {$1$};
+\node[text width=0.5cm] at (0,\SIZE) {$4$};
+\node[text width=0.5cm] at (\SIZE.3,\SIZE) {$3$};
+\node[text width=0.5cm] at (\SIZE.3,0) {$2$};
+\end{tikzpicture}
+
+\begin{definition}
+Simetrija kvadrata je ustrezna permutacija oglišč.
+\end{definition}
+
+\begin{remark}
+To si lahko predstavljamo kot da vzamemo kvadrat iz ravnine ga v prostoru vrtimo okoli poljubnih osi, ter ga položimo nazaj, tako da so oglišča na mestih, kjer so bila že prej(vendar ne nujno na istih mestih kot isto oglišče prej).
+\end{remark}
+\\
+\\
+\begin{remark}
+Očitno je produkt(kompozitum) simetrij enak produktu ustreznih permutacij in je spet simetrije kvadrata.(To je tako, kot da bi zaporedoma izvajali te operacije)
+\end{remark}
+\\
+\\
+\begin{remark}
+Opazimo, da je inverz simetrije prav tako simetrija, ki vrne kvadrat nazaj v prejšnjo lego
+\end{remark}
+\\
+\\
+\begin{example}
+\begin{example_case}
+Naj bo $r$ rotacija kvadrata za $\frac{\pi}{2}$ v pozitivni smeri(v nasprotni smeri urinega kazalca), ustreza ji cikel $(1,2,3,4)$.
+\\
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\def \SIZE {2}
+\def \MARGINLEFT {5}
+
+\FPeval{\MARGINPLUSSIZE}{\SIZE + \MARGINLEFT}
+\FPeval{\MARGINPLUSSIZEPLUSNUMBER}{\MARGINPLUSSIZE + 0.3}
+\FPeval{\SIZEHALF}{\SIZE / 2}
+
+\draw (0,0) -- (\SIZE,0) -- (\SIZE,\SIZE) -- (0,\SIZE) -- (0,0);
+\node[text width=0.5cm] at (0,0) {$1$};
+\node[text width=0.5cm] at (0,\SIZE) {$4$};
+\node[text width=0.5cm] at (\SIZE.3,\SIZE) {$3$};
+\node[text width=0.5cm] at (\SIZE.3,0) {$2$};
+
+\node[] (LEFT) at (\SIZE *4/3, \SIZE/2) {}; 
+
+\draw (\MARGINLEFT,0) -- (\MARGINPLUSSIZE,0) -- (\MARGINPLUSSIZE,\SIZE) -- (\MARGINLEFT,\SIZE) -- (\MARGINLEFT,0);
+\node[text width=0.5cm] at (\MARGINLEFT,0) {$4$};
+\node[text width=0.5cm] at (\MARGINLEFT,\SIZE) {$3$};
+\node[text width=0.5cm] at (\MARGINPLUSSIZEPLUSNUMBER,\SIZE) {$2$};
+\node[text width=0.5cm] at (\MARGINPLUSSIZEPLUSNUMBER,0) {$1$};
+
+\node[] (RIGHT) at (\MARGINLEFT *7/8 , \SIZE/2) {};
+
+\draw [->] (LEFT) -- (RIGHT) node [draw=none,midway,above=0.1cm] {$r$};
+
+\end{tikzpicture}
+\caption{Rotacija za $\frac{\pi}{2}$}
+\end{figure}
+Vidimo:
+$r^2 = $ vrtenje za $\pi$, $r^3 = $ vrtenje za $\frac{3}{2}\pi$, $r^4 = $ vrtenje za $0 = id$
+\end{example_case}
+
+\begin{example_case}
+Naj bo $z$ 'obračanje na glavo', tej simetriji ustreza permutacija: $z = (1 2) (3 4)$ 
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\def \SIZE {2}
+\def \MARGINLEFT {5}
+
+\FPeval{\MARGINPLUSSIZE}{\SIZE + \MARGINLEFT}
+\FPeval{\MARGINPLUSSIZEPLUSNUMBER}{\MARGINPLUSSIZE + 0.3}
+\FPeval{\SIZEHALF}{\SIZE / 2}
+
+\draw (0,0) -- (\SIZE,0) -- (\SIZE,\SIZE) -- (0,\SIZE) -- (0,0);
+\node[text width=0.5cm] at (0,0) {$1$};
+\node[text width=0.5cm] at (0,\SIZE) {$4$};
+\node[text width=0.5cm] at (\SIZE.3,\SIZE) {$3$};
+\node[text width=0.5cm] at (\SIZE.3,0) {$2$};
+
+\draw[dashed] (\SIZE/2, - 0.5) -- (\SIZE/2, \SIZE + 0.5);
+
+\node[] (LEFT) at (\SIZE *4/3, \SIZE/2) {}; 
+
+\draw (\MARGINLEFT,0) -- (\MARGINPLUSSIZE,0) -- (\MARGINPLUSSIZE,\SIZE) -- (\MARGINLEFT,\SIZE) -- (\MARGINLEFT,0);
+\node[text width=0.5cm] at (\MARGINLEFT,0) {$2$};
+\node[text width=0.5cm] at (\MARGINLEFT,\SIZE) {$3$};
+\node[text width=0.5cm] at (\MARGINPLUSSIZEPLUSNUMBER,\SIZE) {$4$};
+\node[text width=0.5cm] at (\MARGINPLUSSIZEPLUSNUMBER,0) {$1$};
+
+\node[] (RIGHT) at (\MARGINLEFT *7/8 , \SIZE/2) {};
+
+\draw [->] (LEFT) -- (RIGHT) node [draw=none,midway,above=0.1cm] {$z$};
 
 
+\end{tikzpicture}
+\caption{Obračanje na glavo(zrcaljenje prek simetrijske osi)}
+\end{figure}
+\leavevmode
+\end{example_case}
+
+\end{example}
+
+\begin{remark}
+Očitno simetrijska grupa ni komutativna($zr \neq rz$)
+\end{remark}
+
+\begin{definition}
+\label{def:dihedral_group}
+Diedrska grupa reda $2n$ je simetrijska grupa pravilnega $n-$kotnika.
+\begin{equation}
+\label{eq:def_dihedral_group}
+\mathcal{D}_{2n} := \{1, r, r^2, \dots, r^{n-1}, z, zr, zr^2, \dots, zr^{n-1}\}
+\end{equation}
+Kjer velja:
+$$k \ \text{je rotacija v pozitivni smeri za} \ \frac{\pi}{n}$$
+Hitro pa opazimo: $r^n = 1, z^2 = 1, (rz)^2 = 1, |D_{2n}| = 2n$
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+$D_8$ je grupa simetrij kvadrata
+\end{example_case}
+\begin{example_case}
+$D_4$ je grupa simetrij pravokotnika, ki ni kvadrat
+\end{example_case}
+\begin{example_case}
+$D_2 = \{1,r\}$
+\end{example_case}
+\end{example}
+
+\begin{remark}
+Opazimo, da je splošna diedrska grupa generirana z rotacijo in zrcaljenjem ($r, z$)
+\end{remark}
+
+\begin{remark}
+Diedrsko grupo reda $2n \geq 3$ si lahko predstavljamo kot podgrupo simetrične grupe $\mathcal{S}_n$
+\end{remark}
+
+\subsection{Linearne grupe}
+Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. Tedaj je $( \mathcal{M}_n(\mathcal{F}), *)$ monoid(ni pa grupa, ker niso vsi elementi obrnljivi)
+
+\begin{definition}
+\label{def:general_linear_group}
+\end{definition}
+Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje, \textbf{splošna linearna grupa} je 
+\begin{equation}
+\label{eq:def_general_linear_group}
+\mathcal{G}\mathcal{L}_n := M_n(\mathcal{F})^* = \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) | \ A \ \text{je obrnljiva}\}
+\end{equation}
+
+\begin{equation*}
+\mathcal{G}\mathcal{L}n := M_n(\mathcal{F})^* = \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) | \ det(\mathcal{A}) \neq 0\}
+\end{equation*}
+
+\begin{remark}
+Če bi imeli matrike zgolj nad kolobarjem bi potrebovali vsaj komutativnost, da bi bila determinanta sploh smiselna($ad-bc = da -bc$)
+\end{remark}
+
+\begin{definition}
+\label{def:special_linear_group}
+
+Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje, \textbf{specialna linearna grupa} je 
+\begin{equation}
+\label{eq:def_special_linear_group}
+\mathcal{S}\mathcal{L}_n := \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) | \ det(\mathcal{A}) = 1\}
+\end{equation}
+\end{definition}
 
 
+\begin{definition}
+\label{def:orthogonal_linear_group}
+
+Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje, \textbf{ortogonalna (linearna) grupa} je 
+\begin{equation}
+\label{eq:def_orthogonal_linear_group}
+\mathcal{O}_n := \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) |  \ \mathcal{A}\mathcal{A}^* = \mathcal{A}^*\mathcal{A} = \mathcal{I}\}
+\end{equation}
+Kjer $\mathcal{A}^*$ označuje transponirano konjugirano matriko % TODO: add reference to operation definition
+\end{definition}
+
+\begin{definition}
+\label{def:unitary_linear_group}
+
+Naj bo $n \in \mathbb{N}$, \textbf{unitarna (linearna) grupa} je 
+\begin{equation}
+\label{eq:def_unitary_linear_group}
+\mathcal{U}_n := \{ \mathcal{A} \in \mathcal{M}_n(\mathbb{C}) |  \ \mathcal{A}\mathcal{A}^* = \mathcal{A}^*\mathcal{A} = \mathcal{I}\}
+\end{equation}
+\end{definition}
+
+\begin{definition}
+\label{def:special_orthogonal_linear_group}
+Naj bo $n \in \mathbb{N}$, \textbf{specialna ortogonalna (linearna) grupa} je 
+\begin{equation}
+\label{eq:def_special_orthogonal_linear_group}
+\mathcal{S}\mathcal{O}_n := \{ \mathcal{A} \in \mathcal{O}_n(\mathbb{C}) |  \ det(\mathcal{A}) = 1\}
+\end{equation}
+\end{definition}
+
+\begin{definition}
+\label{def:special_unitary_linear_group}
+Naj bo $n \in \mathbb{N}$, \textbf{unitarna (linearna) grupa} je 
+\begin{equation}
+\label{eq:def_special_unitary_linear_group}
+\mathcal{S}\mathcal{U}_n := \{ \mathcal{A} \in \mathcal{U}_n(\mathbb{C}) |  \ det(\mathcal{A}= 1\}
+\end{equation}
+\end{definition}
+
+\begin{definition}
+\label{def:special_unitary_linear_group}
+Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje, \textbf{simplektična (linearna) grupa} je 
+\begin{equation}
+\label{eq:def_special_unitary_linear_group}
+\mathcal{S}p_n(\mathcal{F}) := \{ \mathcal{A} \in \mathcal{M}_{2n}(\mathcal{F}) |  \ \mathcal{A} \mathcal{J} \mathcal{A}^* = \mathcal{A}^* \mathcal{J} \mathcal{A} = \mathcal{I}\}
+\end{equation}
+Kjer 
+$$\mathcal{J}= \begin{bmatrix}
+		0 & \mathcal{I}_n \\
+		-\mathcal{I}_n & 0
+	  \end{bmatrix} $$
+\end{definition}
+
+\section{Homomorfizni in kvocientne strukture}
+
+\subsection{Izomorfizmi grup, ciklične grupe}
+
+\begin{definition}
+\label{def:group_isomorphism}
+Naj bosta $(\mathcal{G}_1, *)$ in $(\mathcal{G}_2, *)$ grupi. Grupi $\mathcal{G}_1$ in $\mathcal{G}_2$ sta \textbf{izomorfni}, če obstaja taka bijektivna preslikava $ \varphi \mathcal{G}_1 \to \mathcal{G}_2$ da velja:
+\begin{equation}
+\label{eq:def_group_isomosphism}
+\forall g_1, g_2 \in \mathcal{G}_1. \ \varphi(g_1 * g_2) = \varphi(g_1) * \varphi(g_2)
+\end{equation}
+Pišemo:
+$$\mathcal{G}_1 \cong \mathcal{G}_2$$
+\end{definition}
+
+\begin{remark}
+Če je katera izmed grup (ali pa obe) aditivna primerno spremenimo operacijo.
+\end{remark}
+
+\begin{remark}
+Če imamo končni grupi, ki sta si izomorfni, potem sta njuni tabeli 'enaki'.
+
+$\varphi : \mathcal{G}_1 \to \mathcal{G}_2, \ \text{izomorfizem} $, potem $\mathcal{G}_2 = \{\varphi(g_1), \varphi(g_2), \dots, \varphi(g_n) \}, g_i \in \mathcal{G}_1$
+
+Torej se $g_i$ in $\varphi(g_i)$ v tablah pojavita na istem mestu.
+\\
+\\
+\end{remark}
 
 
+\begin{example}
+% Make this a bit nicer
+Grupna tabela za $(\mathbb{Z}_4, +)$\\
+\begin{tabular}{c || c | c | c | c}
+	+ & 0 & 1 & 2 & 3 \\ \hline 
+	\hline
+	0 & 0 & 1 & 2 & 3 \\ \hline
+	1 & 1 & 2 & 3 & 4 \\ \hline
+	2 & 2 & 3 & 0 & 1 \\ \hline
+	3 & 3 & 0 & 1 & 2 \\ 
+\end{tabular}
+\\
+\\
+$\mathcal{U}_4 = \{1, i, -1, -i\}$  s tabelo\\
+\begin{tabular}{c || c | c | c | c}
+	*  & 1  & i  & -1 & -i \\ \hline 
+	\hline
+	1  & 1  & i  & -1 & -1 \\ \hline
+	i  & i  & -1 & -i & 1  \\ \hline
+	-1 & -1 & -i & 1  & i  \\ \hline
+	-i & -i & 1  & i  & -1 \\ 
+\end{tabular}
 
 
+\end{example}
+
+Tabeli se nam zdita sumljivo podobni $0 \sim 1, 1 \sim i, 2 \sim -1, 3 \sim -i$, sej nastopajo na istih mestih.
+
+Če si pogledamo splošno grupo $(\mathbb{Z}_n, +)$ in $\mathcal{U}_n := \{ z \in \mathbb{C} | \ z^n = 1\}  \underbrace{= \{1, a, a^2, \dots, a^{n-1}}_{a = cos(\frac{2\pi}{n}) + i sin(\frac{2\pi}{n})}\}$
+Vidimo: $$a_i * a_j = \twopartdef{a_{i+j}}{i+j < n}
+								 {a_{i+j-n}}{i+j \geq n}$$
+V čemer prepoznamo seštevanje v $\mathbb{Z}_n$
+\\
+
+\begin{statement}
+$$\mathcal{U}_n \cong \mathbb{Z}_n$$
+\end{statement}
+
+\begin{proof}
+$$\varphi: \mathcal{U}_n \to \mathbb{Z}_n$$
+$$\varphi: z_i \mapsto i$$
+$\varphi$ je bijekcija in $\varphi(z_i * z_j) = \varphi(z_i) + \varphi(z_j)$, torej sta si grupi izomorfni.
+\end{proof}
 
 \end{document}
-
-
-
-
