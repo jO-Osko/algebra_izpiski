@@ -285,7 +285,7 @@ Množica $\mathbb{N}$ je zaprta za operaciji $+$ in $*$, ni pa zaprta za operaci
 
 \begin{definition}
 \label{def:outer_operation}
-Preslikavi iz $\mathcal{K} \times \mathcal{S}$ v $\mathcal{S}$ kjer $\mathcal{K} != \mathcal{S}$ rečemo \textbf{Zunanja binarna operacija}
+Preslikavi iz $\mathcal{K} \times \mathcal{S}$ v $\mathcal{S}$ kjer $\mathcal{K} \neq \mathcal{S}$ rečemo \textbf{Zunanja binarna operacija}
 \end{definition}
 
 \begin{example}
@@ -460,6 +460,10 @@ Seveda velja za $n$ elementov
 \end{equation}
 \end{remark}
 
+\begin{remark}
+Poseben primer, kadar je $x$ obrnljiv je tudi: $(x^n)^{-1} = (x^{-1})^n$ za $n \in \mathbb{N}$
+\end{remark}
+
 \begin{example}
 \begin{example_case}
 $(\mathbb{N} \cup \{0\}, +)$: edini obrnljiv element je 0.
@@ -477,9 +481,7 @@ $(\mathbb{Q}, *)$: Obrnljivi so vsi element razen 0
 $(F(\mathcal{X}), \circ)$: obrnljive so vse bijektivne preslikave
 \end{example_case}
 \end{example}
-\begin{remark}
-Poseben primer zadnje formule kadar je $x$ obrnljiv je tudi:$(x^n)^{-1} = (x^{-1})^n$ za $n \in \mathbb{N}$
-\end{remark}
+
 
 \begin{definition}
 \label{def:integer_power}
@@ -1921,10 +1923,10 @@ $\mathbb{H}$ izhaja iz njihovega odkritelja Sir Williama Rowana Hamiltona.
 
 \begin{definition}
 \label{def:quaternion_multiplication}
-Množenje cpelejemo po kosih in sicer: $1$ je enota za množenje, za druge pa velja:
+Množenje vpelejemo po kosih in sicer: $1$ je enota za množenje, za druge pa velja:
 \begin{equation}
 \label{eq:quaternion_multiplication}
-i^2 = j^2 = k^2 = -1
+i^2 = j^2 = k^2 = ijk = -1
 \end{equation}
 Iz teh sledi: $$ij = -ji = k, jk = -kj = i, ki = -ik = j$$
 \end{definition}
@@ -2244,7 +2246,7 @@ Polinom nima nujno ničel, recimo $X^2 + 1 \in \mathbb{R}[X]$ nima ničel v $\ma
 \end{definition}
 
 \begin{remark}
-Če si še enkrat pogledamo definicijo množenja polinomov (\ref{eq:def_polynomial_multiplication}) in pozabimo na pogoj, da so od nekje naprej vsi členi enaki $0$ potem govorimo o \textbf{kolobarju pormalnih potenčnih vrst}, ki ga označimo z $$\mathcal{K}[[X]]^k$$ 
+Če si še enkrat pogledamo definicijo množenja polinomov (\ref{eq:def_polynomial_multiplication}) in pozabimo na pogoj, da so od nekje naprej vsi členi enaki $0$ potem govorimo o \textbf{kolobarju formalnih potenčnih vrst}, ki ga označimo z $$\mathcal{K}[[X]]^k$$ 
 \end{remark}
 
 \subsection{Kolobar polinomov več spremenljivk}
@@ -2343,6 +2345,8 @@ $2-$cikel imenujemo transpozicija
 \begin{remark}
 Ni težko opaziti, da lahko vsako permutacijo zapišemo kot produkt disjunktnih ciklov.
 \end{remark}
+% Except that this was 2 hours long proof in linear algebra.
+
 
 \subsection{Diedrska grupa}
 
@@ -2556,18 +2560,18 @@ Naj bo $n \in \mathbb{N}$, \textbf{specialna ortogonalna (linearna) grupa} je
 
 \begin{definition}
 \label{def:special_unitary_linear_group}
-Naj bo $n \in \mathbb{N}$, \textbf{unitarna (linearna) grupa} je 
+Naj bo $n \in \mathbb{N}$, \textbf{specialna unitarna (linearna) grupa} je 
 \begin{equation}
 \label{eq:def_special_unitary_linear_group}
-\mathcal{S}\mathcal{U}_n := \{ \mathcal{A} \in \mathcal{U}_n(\mathbb{C}) |  \ det(\mathcal{A}= 1\}
+\mathcal{S}\mathcal{U}_n := \{ \mathcal{A} \in \mathcal{U}_n(\mathbb{C}) |  \ det(\mathcal{A})= 1\}
 \end{equation}
 \end{definition}
 
 \begin{definition}
-\label{def:special_unitary_linear_group}
+\label{def:simplectic_unitary_linear_group}
 Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje, \textbf{simplektična (linearna) grupa} je 
 \begin{equation}
-\label{eq:def_special_unitary_linear_group}
+\label{eq:def_simplectic_unitary_linear_group}
 \mathcal{S}p_n(\mathcal{F}) := \{ \mathcal{A} \in \mathcal{M}_{2n}(\mathcal{F}) |  \ \mathcal{A} \mathcal{J} \mathcal{A}^* = \mathcal{A}^* \mathcal{J} \mathcal{A} = \mathcal{I}\}
 \end{equation}
 Kjer 
@@ -2583,7 +2587,7 @@ $$\mathcal{J}= \begin{bmatrix}
 
 \begin{definition}
 \label{def:group_isomorphism}
-Naj bosta $(\mathcal{G}_1, *)$ in $(\mathcal{G}_2, *)$ grupi. Grupi $\mathcal{G}_1$ in $\mathcal{G}_2$ sta \textbf{izomorfni}, če obstaja taka bijektivna preslikava $ \varphi \mathcal{G}_1 \to \mathcal{G}_2$ da velja:
+Naj bosta $(\mathcal{G}_1, *)$ in $(\mathcal{G}_2, *)$ grupi. Grupi $\mathcal{G}_1$ in $\mathcal{G}_2$ sta \textbf{izomorfni}, če obstaja taka bijektivna preslikava $ \varphi : \mathcal{G}_1 \to \mathcal{G}_2$ da velja:
 \begin{equation}
 \label{eq:def_group_isomosphism}
 \forall g_1, g_2 \in \mathcal{G}_1. \ \varphi(g_1 * g_2) = \varphi(g_1) * \varphi(g_2)
@@ -2639,7 +2643,7 @@ Torej se $g_i$ in $\varphi(g_i)$ v tablah pojavita na istem mestu.
 
 Tabeli se nam zdita sumljivo podobni $0 \sim 1, 1 \sim i, 2 \sim -1, 3 \sim -i$, saj nastopajo na istih mestih.
 
-Če si pogledamo splošno grupo $(\mathbb{Z}_n, +)$ in $\mathcal{U}_n := \{ z \in \mathbb{C} | \ z^n = 1\}  \underbrace{= \{1, a, a^2, \dots, a^{n-1}}_{a = cos(\frac{2\pi}{n}) + i sin(\frac{2\pi}{n})}\}$
+Če si pogledamo splošno grupo $(\mathbb{Z}_n, +)$ in $\mathcal{U}_n := \{ z \in \mathbb{C} | \ z^n = 1\} = \underbrace{\{1, a, a^2, \dots, a^{n-1}}_{a = cos(\frac{2\pi}{n}) + i sin(\frac{2\pi}{n})}\}$
 Vidimo: $$a_i * a_j = \twopartdef{a_{i+j}}{i+j < n}
 								 {a_{i+j-n}}{i+j \geq n}$$
 V čemer prepoznamo seštevanje v $\mathbb{Z}_n$
