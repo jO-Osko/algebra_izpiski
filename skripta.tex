@@ -2621,7 +2621,7 @@ Torej se $g_i$ in $\varphi(g_i)$ v tablah pojavita na istem mestu.
 			+ & 0 & 1 & 2 & 3 \\ \hline 
 			\hline
 			0 & 0 & 1 & 2 & 3 \\ \hline
-			1 & 1 & 2 & 3 & 4 \\ \hline
+			1 & 1 & 2 & 3 & 0 \\ \hline
 			2 & 2 & 3 & 0 & 1 \\ \hline
 			3 & 3 & 0 & 1 & 2 \\ 
 		\end{tabular}
@@ -2632,7 +2632,7 @@ Torej se $g_i$ in $\varphi(g_i)$ v tablah pojavita na istem mestu.
 		\begin{tabular}{c || c | c | c | c}
 			*  & 1  & i  & -1 & -i \\ \hline 
 			\hline
-			1  & 1  & i  & -1 & -1 \\ \hline
+			1  & 1  & i  & -1 & -i \\ \hline
 			i  & i  & -1 & -i & 1  \\ \hline
 			-1 & -1 & -i & 1  & i  \\ \hline
 			-i & -i & 1  & i  & -1 \\ 
@@ -2658,5 +2658,189 @@ $$\varphi: \mathcal{U}_n \to \mathbb{Z}_n$$
 $$\varphi: z_i \mapsto i$$
 $\varphi$ je bijekcija in $\varphi(z_i * z_j) = \varphi(z_i) + \varphi(z_j)$, torej sta si grupi izomorfni.
 \end{proof}
+
+\begin{statement}
+Če je $\varphi : \mathcal{G} \to \mathcal{G}_1$ izomorfizem je tudi $\varphi^{-1}: \mathcal{G}_1 \to \mathcal{G}$ izomorfizem.
+\end{statement}
+
+\begin{proof}
+Ker je $\varphi$ injektivna je dovolj pokazati:
+$\varphi(\varphi^{-1}(uv)) = uv = \varphi(\varphi^{-1}(u)) \varphi(\varphi^{-1}(v)) = \underbrace{\varphi(\varphi^{-1}(u) \varphi^{-1}(v))}_{\text{Ker je } \varphi \ \text{homeomorfizem}}$
+\end{proof}
+
+
+\begin{example}
+\begin{example_case}
+$\mathcal{G} \cong \mathcal{G}$ Izomorfizem je kar identiteta
+\end{example_case}
+\begin{example_case}
+$(\mathbb{R}, +) \cong (\mathbb{R}_+, *)$, kjer $\varphi: x \mapsto e^x$
+\end{example_case}
+\begin{example_case}
+$(\mathbb{Z}, +) \cong (n\mathbb{Z}, +)$, kjer $\varphi: x \mapsto nx$, to velja za $n \geq 1$
+\end{example_case}
+\end{example}
+
+\begin{definition}
+\label{def:cyclic_group}
+%Already defined in remark, but no problem
+Grupi, ki je generirana z enim samim elementom pravimo \textbf{ciklična grupa}.
+
+\end{definition}
+
+Če je $\mathcal{G}$ generirana z $a$ pišemo: $\mathcal{G} = <a>$
+
+\begin{example}
+\begin{example_case}
+$<a> = \{ a^n | \ n \in \mathbb{Z}\}$ za množenje
+\end{example_case}
+\begin{example_case}
+$<a> = \{ na | \ n \in \mathbb{Z}\}$ za seštevanje
+\end{example_case}
+\begin{example_case}
+$<1> = <-1> = (\mathbb{Z}, +)$
+\end{example_case}
+\begin{example_case}
+$<1> = (\mathbb{Z}_n, +)$, podgrupa $(\mathbb{Z}, +)$
+\end{example_case}
+\begin{example_case}
+$<i> = <-1> = \{1,i, -1,-i\} = \mathcal{U}_4$
+\end{example_case}
+\end{example}
+
+
+\begin{theorem}
+Naj bo $\mathcal{G}$ ciklična grupa:
+\begin{enumerate}[label=(\alph*)]
+\item Če je $\mathcal{G}$ neskončna je izomorfna $(\mathbb{Z}, +)$
+\item Če je $\mathcal{G}$ končna je izomorfna $(\mathbb{Z}_n, +)$ za nek $n \in \mathbb{N}$
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Naj bo $a$ generator grupe $\mathcal{G}$\\
+1. $\forall n \in \mathbb{Z}. \forall m \in \mathbb{Z}. \ m \neq n \implies a^n \neq a^m$\\
+Torej je grupa neskončna, dokazujemo: $\mathcal{G} \cong (\mathbb{Z}, +)$\\
+Vzemimo: $\varphi : \mathbb{Z} \to \mathcal{G}, n \mapsto a^n$, ki je zaradi predpostavke injektivna in surjektivna, ker  generira $a^n$ generira grupo. Prav tako pa velja:\\
+$\varphi(n+m) = \underbrace{a^{n+m} = a^n + a^m}_{(\ref{eq:sum_of_powers})} = \varphi(n) *\varphi(m)$ in je torej izomorfizem.\\ 
+2. $\exists m \in \mathcal{N}. \ \exists n \neq m \in \mathbb{N}. \ a^n = a^m$\\
+Torej $a^{n-m} = 1 \iff \exists s \in \mathbb{N}. \ a^s = 1$.\\
+Če $n = 1$, potem $\mathcal{G} = \{1\}$ in je izomorfna $(\mathbb{Z}_1, +)$\\
+Naj bo $n$ sedaj najmanjše tako naravno število($a^n = 1, a^k \neq 1, 0 < k < n$)\\
+Očitno so si elementi $1, a, a^2, \dots a^{n-1}$ različni, saj smo tako izbrali $n$, torej je $|\mathcal{G}| \geq n$.\\
+Za drugo smer pa vzemimo $x=a^m \in \mathcal{G}$, $m = qn +r, 0 \leq r \leq n-1$.\\
+Torej $x = a^m = a^{qn+r} = (a^n)^q * a^r = a^r \implies |\mathcal{G}| \leq n$\\
+Iz zgornjih ugotovitev velja: $|\mathcal{G}| = n$
+$z_i = a^i$ in $\varphi(z_i) = i$ kar pa je izomorfizem. 
+\end{proof}
+
+\begin{corollary}
+Če je $\mathcal{G}$ poljubna grupa tako vsak element generira ciklično podgrupo ($<a> = \{a^n | \ n \in \mathbb{Z}\}$).
+\end{corollary}
+
+\begin{definition}
+\label{def:order_of_group}
+Naj bo $a$ element grupe $\mathcal{G}$. Če bostaja tak $s \in \mathbb{N}$, da velja $a^s = 1$ ( $1$ je enota grupe), rečemo da ima $a$ \textbf{končen red}, najmanjšemu naravnemu številu s to lastnostjo pravimo \textbf{red elementa} $a$. Če pa takega elementa ni, potem pravimo, da ima $a$ \textbf{neskončen red}.
+\end{definition}
+
+\begin{statement}\ 
+$red(a) = | <a>$
+\end{statement}
+
+\begin{proof}
+$red(a) = n \iff a^n = 1 \land a^k \neq 1, 1 \leq k < n$\\
+$<a> = \{1,a, a^2, \dots, a^{n-1}\} \implies |<a>| = n$
+\end{proof}
+
+\begin{remark}
+Če je $\mathcal{G}$ grupa za seštevanje je red elementa tak najmanjši $n \in \mathbb{N}$, da $na = 0$. 
+\end{remark}
+
+\begin{example}
+\begin{example_case}
+V vsaki grupi ima enota red $1$.
+\end{example_case}
+\begin{example_case}
+V $(\mathbb{Z}, +)$ imajo vsi elementi razem $0$ neskončen red.
+\end{example_case}
+\begin{example_case}
+$\mathbb{Z}_4$, $1$ in $3$ imata red $4$, $2$ ima red $2$.
+\end{example_case}
+\begin{example_case}
+$\mathcal{D}_4$(Simetrije pravokotnika, ki ni kvadrat) imajo vsi razen enote red $2$
+\end{example_case}
+\end{example}
+
+\begin{remark}
+Očitno izomorfizmi ohranjajo red elementov
+\end{remark}
+
+\begin{remark}
+$\mathbb{Z}_4$ in $\mathcal{D}_4$ nista izomorfni. Je pa res, da velja: $$\mathcal{D}_4 \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$$
+\end{remark}
+
+\subsection{Izomorfnost vektorskih prostorov}
+
+\begin{definition}
+\label{def:vector_space_isomorphism}
+Naj bosta $\mathcal{V}$ in $\mathcal{V}'$ vektorska prostora nad istim poljem $\mathcal{F}$. Vektorski prostor $\mathcal{V}$ je izomorfen $\mathcal{V}'$, če obstaja bijektivna linearna preslikava $\varphi: \mathcal{V} \to \mathcal{V}'$. To preslikavo imenujemo izomorfizem vektorskih prostorov.
+\end{definition}
+
+\begin{theorem}
+Končno razsežna vektorska prostora sta si izomorfna natanko tedaj, ko imata enako dimenzijo.
+\end{theorem}
+
+
+\begin{proof}
+$\implies$\\
+Naj ima $\mathcal{V}$ dimezijo $n$ in bazo: $\{b_1, b_2, \dots, b_n\}$.\\
+Naj bo $\lambda_1 \varphi(b_1) + \dots + \lambda_n \varphi(b_n) = 0$ za neke $\lambda_i \in \mathcal{F}$\\ Ker je $\varphi$ linearna in injektivna velja:\\
+$\varphi(\lambda_1 b_1 + \lambda_2 b_2 + \dots + \lambda_n b_n) = 0$\\
+Ker so si bazni vektorji neodvisni so vsi skaraji ničelni: $\lambda_i = 0 $.\\
+Tako smo dobili linearno neodvisne vektorje, pokazati moramo še, da so tudi ogrodje.\\
+Ker $\varphi$ je surjektivna velja: $v' \in \mathcal{V}' = \varphi(v)$ za poljuben $v'$.\\
+$v' = \lambda_1\varphi(b_1) + \dots + \lambda_n\varphi(b_n)$, vidimo da ima $\mathcal{V}'$ linearno ogrodje z močjo $n$ ($\varphi(b_1), \dots, \varphi(b_n)$).\\
+Tako smo dobili linearno ogrodje neodvisnih vektorjev, ki je torej baza z močjo $n$. Dimenzija $\mathcal{V}'$ je torej $n$, enaka $\mathcal{V}$.
+\\
+$\impliedby$\\
+Vzemimo $\{b_1, b_2, \dots, b_n\}$ za bazo $\mathcal{V}$ in  $\{b'_1, b'_2, \dots, b'_n\}$ za bazo $\mathcal{V}'$.\\
+Definirajmo:\\
+$\varphi(\lambda_1 b_1 + \lambda_2 b_2 + \dots + \lambda_n b_n) = \lambda_1 b'_1 + \lambda_2 b'_2 + \dots + \lambda_n b'_n$\\
+Potrebno je zgolj še preveriti, da je to bijektivna linearna preslikava.
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
