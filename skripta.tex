@@ -94,7 +94,7 @@
 \lfoot{Skripta za Algebro 2}
 \rfoot{Filip Koprivec}
 
-\begin{document}
+\begin{document}	
 \title{Skripta za algebro 2}
 \author{Filip Koprivec}
 \date{\today}
@@ -1435,13 +1435,13 @@ $\mathcal{M}_2(\mathbb{Z})= \begin{bmatrix}
 \end{example_case}
 \end{example}
 
-\subsubsection{Generatorji podpolji}
+\subsubsection{Generatorji podpolj}
 \begin{definition}
 \label{def:subfield_generated}
 Naj bo $\mathcal{X} \neq \emptyset$ podmnožica polja $\mathcal{F}$. \textbf{Podpolje generirano z $\mathcal{X}$} je množica
 \begin{equation}
 \label{eq:subfield_genrated_element}
-\{uv^{-1} | u,v \in \mathcal{X} \land v \neq 0\}
+\{uv^{-1} | u,v \in \overline{\mathcal{X}} \land v \neq 0\}
 \end{equation}
 \end{definition}
 
@@ -1451,7 +1451,7 @@ Podkolobar $\overline{\mathcal{X}}$ generiran z $\mathcal{X}$ ni nujno polje.
 
 Očitno vsako podpolje, ki $\mathcal{X}$ vsebuje, vsebuje tudi podpolje generirano z $\mathcal{X}$, toda zakaj ta množica je podpolje?.
 
-Pomembno je dokazati, da je podgrupa za seštevaje(zaprtost za množenje, inverz, in 1 so očitne)
+Pomembno je dokazati, da je podgrupa za seštevaje (zaprtost za množenje, inverz, in 1 so očitne)
 \begin{statement}
 \label{st:generated_subfield_is_subgroup}
 $$uv^{-1} - wz^{-1} = \underbrace{(uz - vw)}_{\in \overline{\mathcal{X}}} \underbrace{(vz)^{-1}}_{\in \overline{\mathcal{X}}}$$
@@ -1474,7 +1474,7 @@ $\mathcal{X} = {i}$:  $\overline{\mathcal{X}} = \mathbb{Z}[i]$(Gaussova cela št
 \end{example}
 
 \begin{remark}
-Med drugim smo pokazali, da najmanjša podgrupa(podkolobar $\dots$), ki vsebuje dano množico res obstaja. Zadevo pa lahko dokažemo tudi hitreje, tako da vzamemo presek vseh podstruktur, ki to strukturo vsebujejo.
+Med drugim smo pokazali, da najmanjša podgrupa (podkolobar $\dots$), ki vsebuje dano množico, res obstaja. Zadevo pa lahko dokažemo tudi hitreje, tako da vzamemo presek vseh podstruktur, ki to strukturo vsebujejo.
 \end{remark}
 
 \subsection{Direktni produkti in vsote}
@@ -1502,11 +1502,11 @@ $$(x_1, x_2, \dots, x_n)^{-1} = (x_1^{-1}, x_2^{-1}, \dots, x_n^{-1})$$
 
 \begin{definition}
 \label{def:outer_direct_product_of_rings}
-Naj bodo $\mathcal{K}_1, \dots, \mathcal{K}_n$ kolobarji. Kolobarju $$\mathcal{K} := \mathcal{K}_1 \times \dots \times \mathcal{K}_n$$ ki ga dobimo kot kartezični produkt teh kolobarjev pravimo \textbf{(zunanji) direktni produkt}.
+Naj bodo $\mathcal{K}_1, \dots, \mathcal{K}_n$ kolobarji. Kolobarju $$\mathcal{K} := \mathcal{K}_1 \times \dots \times \mathcal{K}_n$$ ki ga dobimo kot kartezični produkt teh kolobarjev, pravimo \textbf{(zunanji) direktni produkt}.
 \end{definition}
 
 \begin{remark}
-Da je ta struktura res kolobar operacijo definiramo po komponentah. Brez težav se prepričamo da je to res kolobar.
+Da je ta struktura res kolobar, operacijo definiramo po komponentah. Brez težav se prepričamo, da je to res kolobar.
 $$(x_1, x_2, \dots, x_n) + (y_1, y_2, \dots, y_n) := (x_1 + y_1, x_2 + y_2, \dots, x_n + y_n)$$
 $$(x_1, x_2, \dots, x_n) * (y_1, y_2, \dots, y_n) := (x_1 y_1, x_2 y_2, \dots, x_n y_n)$$
 \end{remark}
@@ -1519,7 +1519,7 @@ Temu rečemo tudi \textbf{direktna (zunanja) vsota kolobarjev}.
 
 \begin{definition}
 \label{def:direct_sum_of_vector_spaces}
-Naj bodo $\mathcal{V}_1, \dots, \mathcal{V}_n$ vektorski prostori nad $\mathcal{F}$. Vektorskemu prostoru $$\mathcal{V} := \mathcal{V}_1 \times \dots \times \mathcal{V}_n$$ ki ga dobimo kot kartezični produkt teh vektorskih prostorov pravimo \textbf{direktna vsota} prostorov $\mathcal{V}_1, \dots, \mathcal{V}_n$ in ga označujemo kot $\mathcal{V}_1 \oplus \dots \oplus \mathcal{V}_n$.
+Naj bodo $\mathcal{V}_1, \dots, \mathcal{V}_n$ vektorski prostori nad $\mathcal{F}$. Vektorskemu prostoru $$\mathcal{V} := \mathcal{V}_1 \times \dots \times \mathcal{V}_n$$ ki ga dobimo kot kartezični produkt teh vektorskih prostorov, pravimo \textbf{direktna vsota} prostorov $\mathcal{V}_1, \dots, \mathcal{V}_n$ in ga označujemo kot $\mathcal{V}_1 \oplus \dots \oplus \mathcal{V}_n$.
 \end{definition}
 
 \begin{remark}
@@ -1571,7 +1571,7 @@ Ker so $\mathbb{N}$ zgolj polgrupa za $+$, imamo v algebri raje $\mathbb{Z}$.
 
 \begin{definition}
 \label{def:total_ordering}
-Množica $\mathcal{A}$ zadostuje \textbf{načelu dobre urejenosti}, če vsaka neprazna podmnožica množice $\mathcal{A}$, vsebuje najmanjši element.
+Množica $\mathcal{A}$ zadostuje \textbf{načelu dobre urejenosti}, če vsaka neprazna navzdol omejena podmnožica množice $\mathcal{A}$, vsebuje najmanjši element.
 \end{definition}
 
 \begin{remark}
@@ -1610,7 +1610,7 @@ $$\mathcal{S}_{(n,m)} := \{k \in \mathbb{Z} | kn \leq m\}$$
 $\mathcal{S}$ je navzgor omejena, ker lahko najdemo tako število $k$, tako da je $kn > m$ in to velja tudi za vsako od $k$ večje število, zato $\mathcal{S}$ vsebuje največje število $q$. Tako velja
 $$qn \leq m \ \ // \ \text{saj} \ q \in \mathcal{S}$$
 $$(q + 1)n > m \ \ // \ \text{saj} \ (q + 1) \notin \mathcal{S}$$
-$$r:= m-qn \leq 0$$
+$$r:= m-qn \geq 0$$
 $$qn + n > m \ \ // \ \text{torej} \ n > r$$
 \end{proof}
 
@@ -1690,7 +1690,7 @@ $$(h+k) - (h' + k') = (h - h') + (k - k') \in \mathcal{H} + \mathcal{K}$$
 
 \begin{proof}
 $m\mathbb{Z}$ in $n\mathbb{Z}$ sta podgrupi $\mathbb{Z}$, zato je tudi njuna vsota podgrupa. Po opombi zgoraj obstaja tak $d \in \mathbb{N}$, da velja $d\mathbb{Z} = m\mathbb{Z} + n\mathbb{Z}$ in ker eno izmed $m,n$ ni $0$ velja $d \neq 0$. Torej velja\\
-$d = mx + ny$ za neka $x,y \in \mathbb{Z}$ Torej velja:\\ $d \mathbb{Z} \supseteq n\mathbb{Z} \implies m \in m\mathbb{Z} \subseteq d\mathbb{Z} \implies d|m$ in podobno za $n$.
+$d = mx + ny$ za neka $x,y \in \mathbb{Z}$ Torej velja:\\ $d \mathbb{Z} \supseteq m\mathbb{Z} \implies m \in m\mathbb{Z} \subseteq d\mathbb{Z} \implies d|m$ in podobno za $n$.
 Dokazali smo, da je $d$ skupni delitelj števil $m$ in $n$. Potrebno je še dokazati, da je največji.\\
 Naj velja $c|m$ in $c|n$, potem $m=cz$ in $n=cw$.\\
 Vemo da $d = mx + ny = c(zx + wy) \implies c|d$
@@ -1723,7 +1723,7 @@ Splošneje lahko definiramo največji skupni delitelj števil $n_1, n_2, \dots, 
 
 \begin{definition}
 \label{def:prime}
-Naravno število $p$ je \textbf{praštevilo}, če sta $1$ in $p$ edini praštevili, ki ga delita in velja $p \neq 1$.
+Naravno število $p$ je \textbf{praštevilo}, če sta $1$ in $p$ edini naravni števili, ki ga delita in velja $p \neq 1$.
 \end{definition}
 
 \begin{lemma}
@@ -1743,7 +1743,7 @@ Tudi ta dokaz je bil poznan že Evklidu.
 \end{remark}
 
 \begin{theorem}[Osnovni izrek aritmetike]
-\label{th:fundamental_theroem_of_arithmetics}Vsako naravno število $n \geq 2$ lahko napišemo kot produkt praštevil. Ta zapis je do vrstnega reda faktorjev natančno enoličen.
+\label{th:fundamental_theroem_of_arithmetics}Vsako naravno število $n \geq 2$ lahko zapišemo kot produkt praštevil. Ta zapis je do vrstnega reda faktorjev natančno enoličen.
 \end{theorem}
 
 \begin{proof}
@@ -1766,7 +1766,7 @@ Množica praštevil je neskončna.
 
 \begin{proof}
 Predpostavimo, da jih je končno, torej da so $p_1, p_2, \dots, p_n$ vsa praštevila. Tedaj $p_1*p_2*\dots * p_n + 1$ ni praštevilo in je zato gotovo deljivo z nekim praštevilom $p_i$.\\
-$p_1*p_2*\dots * p_n + 1 = k*p_1 \implies p_i(k - p_1*p_2*\dots *p_{i-1} * p_{i+1} * \dots * p_n) = 1$, protislovje.
+$p_1*p_2*\dots * p_n + 1 = k*p_i \implies p_i(k - p_1*p_2*\dots *p_{i-1} * p_{i+1} * \dots * p_n) = 1$, protislovje.
 \end{proof}
 
 \subsection{Grupa in kolobar ostankov}
@@ -1792,7 +1792,7 @@ $$a \equiv a' \ (\textrm{mod}\ n) \land b \equiv b' \ (\textrm{mod}\ n) \implies
 
 \begin{proof}
 $$(a+b) - (a' + b') = \underbrace{(a-a') + (b-b')}_{\text{sta si kongruentna}}$$
-$$(ab) - (a' b') = \underbrace{b(a-a') + a(b-b')}_{\text{sta si kongruentna}}$$
+$$(ab) - (a' b') = \underbrace{b(a-a') + a'(b-b')}_{\text{sta si kongruentna}}$$
 \end{proof}
 
 \begin{statement}
@@ -1813,10 +1813,12 @@ Ker je relacija ekvivalenčna, lahko vpeljemo ekvivalenčne razrede. Z $[a]$ ozn
 Ekvivalenčni razredi kongurgento z $n$ so:
 $$\underbrace{[0]}_{\text{števila deljiva z }n} , \underbrace{[1]}_{\text{ostanek pri deljenji z }n \ \text{je }1}, \dots , [n-1]$$
 in jih označimo z $\mathbb{Z}_n$.
+%Se da tole kaj lepše zapisat, malce razpotegnjeno je vse, pa spodaj je dosti skupaj komentar.
 \end{definition}
 
 Potrebno je preveriti še dobro definiranost operacij.
-
+\\
+\\
 \begin{statement}
 Če v množici $\mathbb{Z}_n$ vpeljemo seštevanje:
 \begin{equation}
@@ -1843,7 +1845,7 @@ $$[a] + [b] = [a+b] = [b+a] = [b] + [a]$$
 
 
 \begin{statement}
-Aditivna grupa $\mathbb{Z}_n$ postane $\mathbb{Z}_n$ \textbf{komutativen kolobar} če vpeljemo moženje s predpisom:
+Aditivna grupa $\mathbb{Z}_n$ postane\textbf{komutativen kolobar} $\mathbb{Z}_n$, če vpeljemo množenje s predpisom:
 \begin{equation}
 \label{eq:def_modulo_group_multiplication}
 [a]*[b] := [a*b]
@@ -1851,13 +1853,13 @@ Aditivna grupa $\mathbb{Z}_n$ postane $\mathbb{Z}_n$ \textbf{komutativen kolobar
 \end{statement}
 
 \begin{proof}\leavevmode\\
-Dobra definiranost sledi iz leme(\ref{lem:modulo_equivalence_addition}), asociativnost in distributivnost pokažemo kot pri sešetevanju(se sklicujemo na te lastnosti v celih številih).\\
+Dobra definiranost sledi iz leme(\ref{lem:modulo_equivalence_addition}), asociativnost in distributivnost pokažemo kot pri seštevanju (se sklicujemo na te lastnosti v celih številih).\\
 Enota: $[1]$
 \end{proof}
 
 
 \begin{remark}
-Da oznake poenostavimo namesto $[a], 0 \leq a \leq n-1$ pišemo kar $a$, in tako $\mathbb{Z}_n = \{0,1, \dots, n-1\}$, pri čemero moramo obdržati v mislih, da to niso 'prava' cela števila.
+Da oznake poenostavimo, namesto $[a], 0 \leq a \leq n-1$ pišemo kar $a$, in tako $\mathbb{Z}_n = \{0,1, \dots, n-1\}$, pri čemer moramo obdržati v mislih, da to niso 'prava' cela števila.
 \end{remark}
 
 Vsoto $a+b$ izračunamo tako, da pogledamo ostanek pri deljenju običajne vsote, podobno s produktom.
@@ -1865,7 +1867,7 @@ Vsoto $a+b$ izračunamo tako, da pogledamo ostanek pri deljenju običajne vsote,
 \begin{example}
 \begin{example_case}
 V $\mathbb{Z}_{12}$: $3+4 = 7$ in $3+11 = 2 + 1*12 = 2$ ter $3*7 = 9$ in $3*8 = 0$.\\
-$\mathbb{Z}_n$ ima torej lahko delitelje niča. Očitno je to res vedno kadar je $n$ sestavljeno število. Če pa je $n$ praštevilo pa to ni res, še več, $\mathbb{Z}_p$ je polje.
+$\mathbb{Z}_n$ ima torej lahko delitelje niča. Očitno je to res vedno, kadar je $n$ sestavljeno število. Če pa je $n$ praštevilo, pa to ni res, še več, $\mathbb{Z}_p$ je polje.
 \end{example_case}
 \end{example}
 
@@ -1884,13 +1886,13 @@ $\underbrace{\mathbb{Z}}_{\text{cel kolobar, ki ni polje}}, \mathbb{Q}, \mathbb{
 Končen cel kolobar je polje.
 \end{statement}
 
-\begin{proof}Naj bo $\mathcal{K}$ končen cel kolobar. $0\neq a \in \mathcal{K} \implies a\ \text{je obrnljiv}$, naj bo $f: \mathcal{K} \to \mathcal{K}, f(x) = ax$, očitno $1 \in \mathcal{Z}_f$\\ Pokazati pa je potrebno surjektivnost $f$, kar je v končnem polju ekvivalentno njeni injektivnosti.\\
+\begin{proof}Naj bo $\mathcal{K}$ končen cel kolobar. $0\neq a \in \mathcal{K} \implies a\ \text{je obrnljiv}$, naj bo $f: \mathcal{K} \to \mathcal{K}, f(x) = ax$. Potrebno je pokazati, da $1 \in \mathcal{Z}_f$\\ Dokazali bomo kar surjektivnost $f$, kar je v končnem polju ekvivalentno njeni injektivnosti.\\
 $ax = ax \underbrace{\implies}_{\text{cel kolobar}} x=y$ torej $a(x-y) = 0 \land a \neq 0 \implies x = y$\\
-Komutativnost(eksistenca levenga inverza $\implies$ eksistenca desnega inverza $\implies$ eksistenca inverza)
+Komutativnost(eksistenca levega inverza $\implies$ eksistenca desnega inverza $\implies$ eksistenca inverza)
 \end{proof}
 
 \begin{remark}
-Izkaže se, da končnih nekomutativnih obsegov ni(dokaz je netrivialen).
+Izkaže se, da končnih nekomutativnih obsegov ni (dokaz je netrivialen).
 \end{remark}
 
 \begin{corollary}
@@ -1898,18 +1900,18 @@ Za vsako praštevilo $p$ je $\mathbb{Z}_p$ polje.
 \end{corollary}
 
 \begin{proof}
-Zadošča pokazati, da $\mathbb{Z}_p$ ni deliteljev niča.\\
-$a,b \in \mathbb{Z}_p, ab=0$ Torej je v običanjem produktu $ab$ večkratnik $p$, zato po lemi(\ref{lem:prime_divisibility}) $p$ deli vsaj eno, ker pa $a,b \in \{0,1,\dots, p-1\}$ velja $a = 0 \lor b=0$
+Zadošča pokazati, da $\mathbb{Z}_p$ nima deliteljev niča.\\
+$a,b \in \mathbb{Z}_p, ab=0$. Torej je v običajnem produktu $ab$ večkratnik $p$, zato po lemi(\ref{lem:prime_divisibility}) $p$ deli vsaj eno, ker pa $a,b \in \{0,1,\dots, p-1\}$ velja $a = 0 \lor b=0$
 \end{proof}
 
 \subsection{Obseg kvaternionov}
-Pojavi se naravno vprašanje, kako nadeljevati zaporedje:
+Pojavi se naravno vprašanje, kako nadaljevati zaporedje:
 $$\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C} \subset \ ?$$
 
 \begin{definition}
 \label{def:quaternion_element}
 
-Vzemimo $4$-razsežen vektorski prostor nad $\mathbb{R}$, označimo ga z $\mathbb{H}$, njegovo bazo pa z $\{1, i, j, k\}$, tako dobimo značilni element
+Vzemimo $4$-razsežen vektorski prostor nad $\mathbb{R}$, označimo ga s $\mathbb{H}$, njegovo bazo pa z $\{1, i, j, k\}$, tako dobimo značilni element
 \begin{equation}
 \label{eq:quaternion_element}
 h := \lambda_0 + \lambda_1 i + \lambda_2 j + \lambda_3 k, \ \lambda_i \in \mathbb{R}
@@ -1918,24 +1920,25 @@ Seštevanje in množenje s skalarji uvedemo enako kot pri normalnem $4$ razsežn
 \end{definition}
 
 \begin{remark}
-$\mathbb{H}$ izhaja iz njihovega odkritelja Sir Williama Rowana Hamiltona.
+$\mathbb{H}$ izhaja iz priimka irskega matematika, fizika in astronoma Sira Williama Rowana Hamiltona, ki jih je vpeljal leta 1843.
 \end{remark}
 
 \begin{definition}
 \label{def:quaternion_multiplication}
-Množenje vpelejemo po kosih in sicer: $1$ je enota za množenje, za druge pa velja:
+Množenje vpeljemo po kosih in sicer: $1$ je enota za množenje, za druge pa velja:
 \begin{equation}
 \label{eq:quaternion_multiplication}
 i^2 = j^2 = k^2 = ijk = -1
 \end{equation}
 Iz teh sledi: $$ij = -ji = k, jk = -kj = i, ki = -ik = j$$
 \end{definition}
-%A to spominja na vektorski produkt?, sej more, ker so kvaternioni pogoj za obstoj vektroskega produkta v 3d
-Ko poznamo množenje baznih elementov lahko množimo tudi vse ostale.
+%A to spominja na vektorski produkt?, sej more, ker so kvaternioni pogoj za obstoj vektroskega produkta v 3d. 
+%Ja spominja, ja :), saj, če jih zapišemo malo drugače, imaš notri vektorski produkt (glej drugačen zapis množenja spodaj)
+Ko poznamo množenje baznih elementov, lahko množimo tudi vse ostale.
 \\
 \\
 \begin{statement}
-S tako definiranim množenjem postane prostor $\mathbb{H}$ ne samo kolobar ampak tudi algebra nad $\mathbb{R}$.
+S tako definiranim množenjem postane prostor $\mathbb{H}$ ne samo kolobar, ampak tudi algebra nad $\mathbb{R}$.
 \end{statement}
 
 \begin{remark}
@@ -1952,7 +1955,7 @@ Preverimo po definiciji.
 
 \begin{statement}
 \label{st:inverse_quaternion}
-vsak neničelen kvaternion je obrnljiv in zanj velja 
+Vsak neničelen kvaternion je obrnljiv in zanj velja 
 \begin{equation}
 \label{eq:inverse_quaternion}
 h^{-1} = \frac{\overline{h}}{h\overline{h}}
@@ -1964,9 +1967,8 @@ h^{-1} = \frac{\overline{h}}{h\overline{h}}
 
 Izračunamo:
 
-$h \overline{h} = \lambda_0 + \lambda_1^2 + \lambda_2^2 + \lambda_3^2$\\
-$h \neq 0 \implies h \overline{h} \in \mathbb{R} - \{0\}$, zato je vsak neničelen kvaternion obrnljiv.
-in velja
+$h \overline{h} = \lambda_0^2 + \lambda_1^2 + \lambda_2^2 + \lambda_3^2$\\
+$h \neq 0 \implies h \overline{h} \in \mathbb{R} - \{0\}$, zato je vsak neničelen kvaternion obrnljiv in velja
 $$h^{-1} = \frac{\overline{h}}{h\overline{h}}$$
 \end{proof}
 
@@ -1974,7 +1976,7 @@ $$h^{-1} = \frac{\overline{h}}{h\overline{h}}$$
 $\mathbb{H}$ je tako nekomutativen obseg.
 \end{remark}
 
-Lahkopa uporabljamo tudi drugačen zapis:
+Lahko pa uporabljamo tudi drugačen zapis:
 $\lambda_0 + \lambda_1 i + \lambda_2 j + \lambda_3 k $ pišemo $$(\lambda_0, \vec{u}), \vec{u} = \lambda_1 i + \lambda_2 j + \lambda_3 k$$
 Množenje se tako glasi:
 \begin{equation}
@@ -1988,15 +1990,15 @@ Množica $\{\pm 1, \pm i, \pm j, \pm k\}$ je antikomutativna grupa za množenje 
 
 
 \subsection{Kolobar matrik}
-$\mathcal{M}_n(\mathbb{R})$ in $\mathcal{M}_n(\mathbb{C})$ sta kolobarja(celo algebri).\\
+$\mathcal{M}_n(\mathbb{R})$ in $\mathcal{M}_n(\mathbb{C})$ sta kolobarja (celo algebri).\\
 
 
 \begin{statement}
-Za vsak kolobar $\mathcal{K}$ je množica $\mathcal{M}_n(\mathcal{K})$ kolobar nad $\mathcal{K}$ za običajno seštevanje in množenje matrik.
+Za vsak kolobar $\mathcal{K}$, je množica $\mathcal{M}_n(\mathcal{K})$ kolobar nad $\mathcal{K}$ za običajno seštevanje in množenje matrik.
 \end{statement}
 
 \begin{proof}
-Preverimo po definiciji. $\mathcal{K}$ je lahko celo nekomutativen. Enota in ničelen element sta enaka kot pri $\mathcal{M}_n(\mathbb{R})$.
+Preverimo po definiciji. $\mathcal{K}$ je lahko celo nekomutativen. Enota in ničeln element sta enaka kot pri $\mathcal{M}_n(\mathbb{R})$.
 \end{proof}
 
 $\mathcal{M}_n(\mathcal{K})$ je nekomutativen za $n \geq 2$ (za $n=1$ je kolobar matrik kar $\mathcal{K}$)
@@ -2004,7 +2006,7 @@ $\mathcal{M}_n(\mathcal{K})$ je nekomutativen za $n \geq 2$ (za $n=1$ je kolobar
 
 \begin{definition}
 \label{def:idempotent_ring}
-Element $e$ kolobarja $\mathcal{K}$ je \textbf{idempotent} če zanj velja:
+Element $e$ kolobarja $\mathcal{K}$ je \textbf{idempotent}, če zanj velja:
 \begin{equation}
 \label{eq:def_idempotent}
 e^2 =  e
@@ -2013,7 +2015,7 @@ e^2 =  e
 
 \begin{definition}
 \label{def:nullpotent_ring}
-Element $a$ kolobarja $\mathcal{K}$ je \textbf{nilpotent} če zanj velja:
+Element $a$ kolobarja $\mathcal{K}$ je \textbf{nilpotent}, če zanj velja:
 \begin{equation}
 \label{eq:def_nullpotent}
 \exists n \in \mathbb{N}. \ a^n =  0
@@ -2022,15 +2024,15 @@ Element $a$ kolobarja $\mathcal{K}$ je \textbf{nilpotent} če zanj velja:
 
 \begin{example}
 \begin{example_case}
-Vsaka diagonalna matrika, z $0$ in $1$ na diagonali je idempotent.
+Vsaka diagonalna matrika, z $0$ in $1$ na diagonali, je idempotent.
 \end{example_case}
 \begin{example_case}
-Vsaka strogo zgoraj(ali spodaj) trikotna matrika je nilpotentna.
+Vsaka strogo zgoraj (ali spodaj) trikotna matrika je nilpotentna.
 \end{example_case}
 \end{example}
 
 \begin{statement}
-Naj bo $\mathcal{K}$ kolobar brez deliteljev niča, in naj bo $e \in \mathcal{K}$ idempotent. Velja: $e = 1 \lor e = 0$.
+Naj bo $\mathcal{K}$ kolobar brez deliteljev niča in naj bo $e \in \mathcal{K}$ idempotent. Velja: $e = 1 \lor e = 0$.
 \end{statement}
 
 \begin{proof}
@@ -2049,35 +2051,30 @@ Račun.
 Če je $\mathcal{K}$ algebra na poljem $\mathcal{F}$, tudi kolobar $\mathcal{M}_n(\mathcal{K})$ potem postane algebra, če definiramo:
 $$\lambda (a_{ij}) := (\lambda a_{ij})$$
 
-Poseben primer: $\mathcal{M}_n(\mathcal{F})$ je algebra na $\mathcal{F}$, $dim(\mathcal{M}_n(\mathcal{K})= n^2$
+Poseben primer: $\mathcal{M}_n(\mathcal{F})$ je algebra na $\mathcal{F}$, $dim(\mathcal{M}_n(\mathcal{K}))= n^2$
 
 
 \subsection{Kolobar funkcij}
 
 Naj bo $\mathcal{X}$ množica in naj bo $\mathcal{K} = \{ f : \mathcal{X} \to \mathbb{R}\}$\\
 
-$\mathcal{K}$ postane kolbar, če definiramo običajno seštevanje in množenje funkcij:
+$\mathcal{K}$ postane kolobar, če definiramo običajno seštevanje in množenje funkcij:
 $$(f+g)(x) := f(x) + g(x) $$
 $$(f*g)(x) := f(x) * g(x) $$
 Skupaj z enoto: $e(x) = 1$ in nasprotnim elementom: $(-f)(x) = -f(x)$ 
 
-Če vpeljemo še množenje s skalarji:
-$$(\lambda f) (x) := \lambda f(x)$$
-
-Če je $\mathcal{X} = [a,b]$ ali $\mathbb{R}$, ipd., lahko govorimo o kolobarju.
-
 \begin{example}
 \begin{example_case}
-$\mathcal{C}(x) = \{f: \mathcal{X} \to \mathcal{R} | \ f \ \text{zvezna} \}$ je kolobar, saj so vsote, in produkti zveznih funkcij spet zvezni. Ne samo to, je tudi algebra.
+Če je $\mathcal{X} = [a,b]$ ali $\mathbb{R}$, ipd., lahko govorimo o kolobarju $\mathcal{C}(x) = \{f: \mathcal{X} \to \mathcal{R} | \ f \ \text{zvezna} \}$. Res je kolobar, saj so vsote in produkti zveznih funkcij spet zvezne funkcije. Ne samo to, je tudi algebra.
 \end{example_case}
 \end{example}
 
 Poznamo več primerov kolobarjev funkcij:
 \begin{itemize}
-\item Odvedljivih funkcij
-\item omejenih funkcij 
-\item integrabilnih funkcij 
-\item polinomov (nima deliteljev niča).
+\item odvedljive funkcije
+\item omejene funkcije 
+\item integrabilne funkcije 
+\item polinomi (ta kolobar nima deliteljev niča).
 \item $\dots$
 \end{itemize}
 
@@ -2090,7 +2087,7 @@ Poznamo več primerov kolobarjev funkcij:
 postanejo vsi ti kolobarji tudi algebre.
 \\
 \\
-Na podoben način vpeljemo tudi kolobar (algebro) zaporedij $\mathcal{X} = \mathbb{N} \to \mathcal{A}$, kjer so vse operacije definirane po komponentah (seštevanje, množenje, množenje s skalarjem). Ter različne podalgebre (konvergentna zaporedja, omejena zaporedja...).
+Na podoben način vpeljemo tudi kolobar (algebro) zaporedij $\mathcal{X} = \mathbb{N} \to \mathcal{A}$, kjer so vse operacije definirane po komponentah (seštevanje, množenje, množenje s skalarjem). Ter različne podalgebre (konvergentna zaporedja, omejena zaporedja, ...).
 
 \begin{example}
 \begin{example_case}
@@ -2100,11 +2097,11 @@ V algebri zveznih funkcij ($\mathcal{C}(\mathbb{R})$) je podalgebra generirana z
 
 
 \subsection{Kolobar polinomov ene spremenljivke}
-Vajeni smo, da je polinom funkcija, v algebri polinomov pa polinom obravnavamo kot formalen izraz.
+Vajeni smo, da je polinom funkcija, v algebri pa polinom obravnavamo kot formalen izraz.
 
 \begin{definition}
 \label{def:polynomial_in_algebra}
-Polimon $p$ nad kolobarjem $\mathcal{K}$ je izraz oblike:
+Polinom $p$ nad kolobarjem $\mathcal{K}$ je izraz oblike:
 \begin{equation}
 \label{eq:polynomial_in_algebra}
 p(X) = a_0 + a_1 X + a_2 X^2 + \dots + a_n X^n, \  a_n \neq 0
@@ -2113,7 +2110,7 @@ Kjer so $a_i \in \mathcal{K}$ t.i. koeficienti tega polinoma.
 \begin{itemize}
 \item $a_0$ imenujemo \textbf{prosti (ali konstantni) člen}
 \item $a_n$ (zadnji neničelen člen) imenujemo \textbf{vodilni člen (koeficient)}
-\item $X$ imenujemo \textbf{spremenljivka}, a dejanski igra le formalno vlogo kot simbol
+\item $X$ imenujemo \textbf{spremenljivka}, a dejansko igra le formalno vlogo kot simbol
 \end{itemize}
 \end{definition}
 
@@ -2131,7 +2128,7 @@ $$p = (a_0, a_1, \dots , a_n, 0, 0, \dots )$$
 Vendar pa ta definicija ni udobna za množenje.
 \end{definition}
 
-Da si prihranimo čas pri zapisu spuščamo ničelne koeficiente: 
+Da si prihranimo čas pri zapisu, spuščamo ničelne koeficiente: 
 $$0 + 3X + 0x^2 - 5X = 3X - 5X^3$$
 
 Udoben pa se nam zdi tudi zapis
@@ -2156,10 +2153,10 @@ Kjer velja $c_k = a_0 b_k + a_1 b_{k-1} + \dots + a_n b_0$
 \end{definition}
 
 \begin{remark}
-V ozadju smo uporabili $(a_i X^i) * (b_j X^j) = (a_i b_j) X^{i+j}$ in distributivnost seštevanja.
+V ozadju smo uporabili $(a_i X^i) * (b_j X^j) = (a_i b_j) X^{i+j}$ in distributivnostni zakon.
 \end{remark}
 
-\begin{definition}[Stopnja polimoma]
+\begin{definition}[Stopnja polinoma]
 \label{def:polymonial_degree}
 \begin{equation}
 \label{eq:def_polynomial_degree}
@@ -2169,19 +2166,19 @@ Torej indeks zadnjega neničelnega koeficienta.
 \end{definition}
 
 \begin{remark}
-Polinom $0$ nima definirane stopnje, a jo občano definiramo kot $-1$ ali $-\infty$.
+Polinom $0$ nima definirane stopnje, a jo običajno definiramo kot $-1$ ali $-\infty$.
 \end{remark}
 
-Množico polinomov skupaj s tema dvema operacijama bomo od sedaj naprej označevali z $K[x]$. Preveriti to je rutinsko.
+Množico polinomov, skupaj s tema dvema operacijama, bomo od sedaj naprej označevali s $K[x]$. $K[x]$ je kolobar. Preveriti to je rutinsko.
 
 \begin{definition}
 \label{def:constant_polynomial}
 \textbf{Konstanten polinom} je polinom stopnje $0$ ali pa polinom $0$.
 \end{definition}
 
-Hitro opezimo nekatere lastnosti:
+Hitro opazimo nekatere lastnosti:
 \begin{itemize}
-\item Če $\mathcal{K}$ nima deliteljev niča jih prav tako nima tudi $\mathcal{K}[X]$ in velja:
+\item Če $\mathcal{K}$ nima deliteljev niča, jih prav tako nima tudi $\mathcal{K}[X]$ in velja:
 $$st(f(X)g(X)) = st(f(X)) + st(g(X))$$
 \item $\mathcal{K}$ je komutativen $\iff$ $\mathcal{K}[X]$ je komutativen.
 \end{itemize}
@@ -2197,7 +2194,7 @@ $$st(f(X)g(X)) = st(f(X)) + st(g(X))$$
 
 \begin{definition}[Vrednost polinoma]
 \label{def:polynomial_value}
-$p(X) = a_0 + a_1 X + a_2 X^2 + \dots + a_n X^n$ v elementu $x \in \mathcal{K}$ ima vrednost 
+$p(X) = a_0 + a_1 X + a_2 X^2 + \dots + a_n X^n$ v elementu $x \in \mathcal{K}$ je 
 \begin{equation}
 p(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \in \mathcal{K}
 \end{equation}
@@ -2206,12 +2203,12 @@ $$x \mapsto f(x)$$
 \end{definition}
 
 \begin{remark}
-Polimonska funkcija je seveda natanko določena s polinomom, naravno se nam porodi vprašanje ali je polinom natančno določen s polinomsko funkcijo, kar pa ni vedno res.
+Polinomska funkcija je seveda natanko določena s polinomom. Naravno pa se nam porodi vprašanje, ali je tudi polinom natančno določen s polinomsko funkcijo.
 \end{remark}
 
 \begin{example}
-$$p(X) = X + X^2 \in \mathbb{Z}_2$$
-porodi funkcijo $ \mathbb{Z}_2 \to \mathbb{Z}_2$ za katero velja:
+$$p(X) = X + X^2 \in \mathbb{Z}_2[X]$$
+porodi funkcijo $ \mathbb{Z}_2 \to \mathbb{Z}_2$, za katero velja:
 $$0 \mapsto 0$$
 $$1 \mapsto 1^2 + 1^2 = 0$$
 Enako funkcijo pa nam porodi tudi polinom $0$. Očitno polinomska funkcija ne določa polinoma.
@@ -2223,7 +2220,7 @@ V $\mathbb{R}[X]$, $\mathbb{C}[X]$ pa je razlika med polinomom in polinomsko fun
 \end{remark}
 \\
 \\
-Če je $\mathcal{K} \subseteq \mathcal{L}$ ($\mathcal{K}$ je podkolobar $\mathcal{L}$) in velja $f(X) \in \mathcal{K}[X]$, lahko izračunamo $f(x)$ tudi za $x \in \mathcal{L}$.
+Če je $\mathcal{K} \subseteq \mathcal{L}$ ($\mathcal{K}$ je podkolobar $\mathcal{L}$) in velja $f(x) \in \mathcal{K}[X]$, lahko izračunamo $f(x)$ tudi za $x \in \mathcal{L}$.
 
 
 \begin{definition}[Ničla polinoma]\\
@@ -2235,7 +2232,7 @@ Polinom nima nujno ničel, recimo $X^2 + 1 \in \mathbb{R}[X]$ nima ničel v $\ma
 \end{remark}
 
 
-Če je $\mathcal{K}$ algebra nad $\mathcal{F}$ tudi $\mathcal{K}[X]$ postane algebra nad $\mathcal{F}$. če definiramo množenje s skalarjem.
+Če je $\mathcal{K}$ algebra nad $\mathcal{F}$, tudi $\mathcal{K}[X]$ postane algebra nad $\mathcal{F}$. če definiramo množenje s skalarjem.
 
 \begin{definition}
 \label{def:polynomial_scalar_multiplication}
@@ -2246,17 +2243,17 @@ Polinom nima nujno ničel, recimo $X^2 + 1 \in \mathbb{R}[X]$ nima ničel v $\ma
 \end{definition}
 
 \begin{remark}
-Če si še enkrat pogledamo definicijo množenja polinomov (\ref{eq:def_polynomial_multiplication}) in pozabimo na pogoj, da so od nekje naprej vsi členi enaki $0$ potem govorimo o \textbf{kolobarju formalnih potenčnih vrst}, ki ga označimo z $$\mathcal{K}[[X]]^k$$ 
+Če si še enkrat pogledamo definicijo množenja polinomov (\ref{eq:def_polynomial_multiplication}) in pozabimo na pogoj, da so od nekje naprej vsi členi enaki $0$, potem govorimo o \textbf{kolobarju formalnih potenčnih vrst}, ki ga označimo s $$\mathcal{K}[[X]]^k$$ 
 \end{remark}
 
 \subsection{Kolobar polinomov več spremenljivk}
 
 Preprost primer polinoma več spremenljivk:
-$$f(X, Y) = 2X^4Y^2 - 3XY + 7X + 2Y + 3$$
+$$f(X, Y) = 2X^4Y^2 - 3XY^8 + 7X + 3$$
 
-Zgornji primer je sestavljenih iz $4$-ih členov, ki jih imenujemo \textbf{monomi}, s stopnjami: $6,2,1,1,0$
+Zgornji primer je sestavljenih iz $4$-ih členov, ki jih imenujemo \textbf{monomi}, s stopnjami: $6,9,1,0$
 
-Stopnja polinoma pa je največja stopnja monomov torej $st(f(X,Y)) = 9$
+Stopnja polinoma pa je največja stopnja monomov, torej $st(f(X,Y)) = 9$
 
 \begin{definition}
 Kolobar polinomov dveh spremenljivk je $$(\mathcal{K}[X])[Y]$$
@@ -2266,17 +2263,17 @@ in ga označimo kot $\mathcal{K}[X, Y]$.
 Elementi $\mathcal{K}[X, Y]$ so torej :
 
 $$\sum_{l \geq 0} (\sum_{k \geq 0} a_k X^k) Y^l$$
-Po dogovoru oklepaje kar izpuščamo in pišemo kar
+Po dogovoru oklepaje izpuščamo in pišemo kar
 
 $$\sum_{l \geq 0} \sum_{k \geq 0} a_{kl} X^k Y^l, \ a_{kl} \in \mathcal{K}$$
 
 \begin{remark}
-Ker je kolobar komutativen je vseeno v kakšnem vrstnem redu definiramo polinom ($(\mathcal{K}[X])[Y]$ je vsebinsko enak $(\mathcal{K}[Y])[X]$).
+Ker je kolobar komutativen, je vseeno v kakšnem vrstnem redu definiramo polinom ($(\mathcal{K}[X])[Y]$ je vsebinsko enak $(\mathcal{K}[Y])[X]$).
 \end{remark}
 \\
 \\
 \begin{remark}
-Induktivno definiramo tudi polnom $n$ spremenljivk
+Induktivno definiramo tudi polinom $n$ spremenljivk
 $$\mathcal{K}[X_1, X_2, \dots X_n] := (\mathcal{K}[X_1, X_2, \dots X_{n-1}])[X_n]$$
 \end{remark}
 
@@ -2297,7 +2294,7 @@ za $n \geq 3$ v $\mathbb{N}^3$ nima ničel (gre za zadnji Fermatov izrek, ki je 
 \subsection{Simetrična grupa}
 
 \begin{definition}
-Simetrična grupa $\mathcal{S}_n$ za $n \in \mathbb{N}$ je grupa permutacij množice $\{1,2, \dots , n\}$. In element te grupe zapišemo kot
+Simetrična grupa $\mathcal{S}_n$, za $n \in \mathbb{N}$, je grupa permutacij množice $\{1,2, \dots , n\}$. Element te grupe zapišemo kot
 \[
   a = \bigl(\begin{smallmatrix}
     1 & 2  & \cdots & n \\
@@ -2313,11 +2310,11 @@ $$|\mathcal{S}_n| = n!$$
 
 \begin{definition}
 \label{def:transposition}
-\textbf{Transpozicija} zamenja dva elementa in jo zapišemo kot $(i,j)$, kjer sta $i$ in $j$ elementa, ki se med sabo zamenjata.
+\textbf{Transpozicija} zamenja dva elementa in jo zapišemo kot $(i,j)$, kjer sta $i$ in $j$ elementa, ki se med seboj zamenjata.
 \end{definition}
 
 \begin{theorem}
-Vsako permutacijo se da zapisati kot produt transpozicij.
+Vsako permutacijo se da zapisati kot produkt transpozicij.
 \end{theorem}
 
 \begin{proof}
@@ -2325,7 +2322,7 @@ Algebra 1.
 \end{proof}
 
 \begin{statement}
-Če je permutacija enaka produktu sodega(lihega) števila transpozicij je tudi drug način zapisa te permutacije sod(lih)
+Če je permutacija enaka produktu sodega (lihega) števila transpozicij, je tudi drug način zapisa te permutacije sod (lih).
 \end{statement}
 
 $$sgn(\sigma \rho) = sgn(\sigma) sgn(\rho)$$
@@ -2334,11 +2331,11 @@ Sode permutacije tvorijo podgrupo. To podgrupo imenujemo \textbf{alternirajoča 
 
 \begin{definition}
 \label{def:permuation_cycle}
-Permutacijo oblike: $i_{j_1} \mapsto i_{j_2}, i_{j_2} \mapsto i_{j_3}, \dots , i_{j_{k-1}} \mapsto i_{j_k}$ imenujemo $k-$cikel in ga označimo z $(i_{j_1}, i_{j_2}, \dots, i_{j_k})$ (Zavrti zgolj nekatere elemente, ostale pa pusti pri miru)
+Permutacijo oblike: $i_{j_1} \mapsto i_{j_2}, i_{j_2} \mapsto i_{j_3}, \dots , i_{j_{k-1}} \mapsto i_{j_k}$ imenujemo $k-$cikel in ga označimo z $(i_{j_1}, i_{j_2}, \dots, i_{j_k})$ (Zamenja zgolj vrstni red nekaterih elementov, ostale pa pusti pri miru)
 \end{definition}
 
 \begin{definition}
-$2-$cikel imenujemo transpozicija
+$2-$cikel imenujemo transpozicija.
 \end{definition}
 
 
@@ -2365,12 +2362,12 @@ Simetrija kvadrata je ustrezna permutacija oglišč.
 \end{definition}
 
 \begin{remark}
-To si lahko predstavljamo kot da vzamemo kvadrat iz ravnine ga v prostoru vrtimo okoli poljubnih osi, ter ga položimo nazaj, tako da so oglišča na mestih, kjer so bila že prej(vendar ne nujno na istih mestih kot isto oglišče prej).
+To si lahko predstavljamo kot da vzamemo kvadrat iz ravnine, ga v prostoru vrtimo okoli simetrijskih osi, ter ga položimo nazaj, tako da so oglišča na mestih, kjer so bila že prej (mesta oglišč se ne ujemajo nujno z mesti oglišč preden smo lik dvignili).
 \end{remark}
 \\
 \\
 \begin{remark}
-Očitno je produkt(kompozitum) simetrij enak produktu ustreznih permutacij in je spet simetrije kvadrata.(To je tako, kot da bi zaporedoma izvajali te operacije)
+Očitno je produkt (kompozitum) simetrij enak produktu ustreznih permutacij in je spet simetrija kvadrata (to je tako, kot da bi zaporedoma izvajali te operacije).
 \end{remark}
 \\
 \\
@@ -2381,7 +2378,7 @@ Opazimo, da je inverz simetrije prav tako simetrija, ki vrne kvadrat nazaj v pre
 \\
 \begin{example}
 \begin{example_case}
-Naj bo $r$ rotacija kvadrata za $\frac{\pi}{2}$ v pozitivni smeri(v nasprotni smeri urinega kazalca), ustreza ji cikel $(1,2,3,4)$.
+Naj bo $r$ rotacija kvadrata za $\frac{\pi}{2}$ v pozitivni smeri (v nasprotni smeri urinega kazalca), ustreza ji cikel $(1,2,3,4)$.
 \\
 
 \begin{figure}[h]
@@ -2454,7 +2451,7 @@ Naj bo $z$ 'obračanje na glavo', tej simetriji ustreza permutacija: $z = (1 2) 
 
 
 \end{tikzpicture}
-\caption{Obračanje na glavo(zrcaljenje prek simetrijske osi)}
+\caption{Obračanje na glavo (zrcaljenje prek simetrijske osi)}
 \end{figure}
 \leavevmode
 \end{example_case}
@@ -2462,7 +2459,7 @@ Naj bo $z$ 'obračanje na glavo', tej simetriji ustreza permutacija: $z = (1 2) 
 \end{example}
 
 \begin{remark}
-Očitno simetrijska grupa ni komutativna($zr \neq rz$)
+Očitno simetrijska grupa ni komutativna ($zr \neq rz$).
 \end{remark}
 
 \begin{definition}
@@ -2472,11 +2469,15 @@ Diedrska grupa reda $2n$ je simetrijska grupa pravilnega $n-$kotnika.
 \label{eq:def_dihedral_group}
 \mathcal{D}_{2n} := \{1, r, r^2, \dots, r^{n-1}, z, zr, zr^2, \dots, zr^{n-1}\}
 \end{equation}
-Kjer velja:
-$$k \ \text{je rotacija v pozitivni smeri za} \ \frac{\pi}{n}$$
-Hitro pa opazimo: $r^n = 1, z^2 = 1, (rz)^2 = 1, |D_{2n}| = 2n$
+
 \end{definition}
 
+Pomembne enakosti: $r^n = 1, z^2 = 1, rz = zr^{-1}, (rz)^2 = 1, |D_{2n}| = 2n$		
+\\		
+\\		
+Vsak element $D_{2n}$ lahko zapisemo kot $a = z^jr^i; \ i \in \{0,1\}, 0 \leq i < n$
+\\
+\\
 \begin{example}
 \begin{example_case}
 $D_8$ je grupa simetrij kvadrata
@@ -2498,12 +2499,12 @@ Diedrsko grupo reda $2n \geq 3$ si lahko predstavljamo kot podgrupo simetrične 
 \end{remark}
 
 \subsection{Linearne grupe}
-Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. Tedaj je $( \mathcal{M}_n(\mathcal{F}), *)$ monoid(ni pa grupa, ker niso vsi elementi obrnljivi)
+Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. Tedaj je $( \mathcal{M}_n(\mathcal{F}), *)$ monoid (ni pa grupa, saj niso vsi elementi obrnljivi).
 
 \begin{definition}
 \label{def:general_linear_group}
 \end{definition}
-Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje, \textbf{splošna linearna grupa} je 
+Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. \textbf{Splošna linearna grupa} je 
 \begin{equation}
 \label{eq:def_general_linear_group}
 \mathcal{G}\mathcal{L}_n := M_n(\mathcal{F})^* = \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) | \ A \ \text{je obrnljiva}\}
@@ -2514,13 +2515,13 @@ Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje, \textbf{splošna linearna grup
 \end{equation*}
 
 \begin{remark}
-Če bi imeli matrike zgolj nad kolobarjem bi potrebovali vsaj komutativnost, da bi bila determinanta sploh smiselna($ad-bc = da -bc$)
+Če bi imeli matrike zgolj nad kolobarjem, bi potrebovali vsaj komutativnost, da bi bila determinanta sploh smiselna ($ad-bc = da -bc$).
 \end{remark}
 
 \begin{definition}
 \label{def:special_linear_group}
 
-Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje, \textbf{specialna linearna grupa} je 
+Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. \textbf{Specialna linearna grupa} je 
 \begin{equation}
 \label{eq:def_special_linear_group}
 \mathcal{S}\mathcal{L}_n := \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) | \ det(\mathcal{A}) = 1\}
@@ -2531,10 +2532,10 @@ Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje, \textbf{specialna linearna gru
 \begin{definition}
 \label{def:orthogonal_linear_group}
 
-Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje, \textbf{ortogonalna (linearna) grupa} je 
+Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. \textbf{Ortogonalna (linearna) grupa} je 
 \begin{equation}
 \label{eq:def_orthogonal_linear_group}
-\mathcal{O}_n := \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) |  \ \mathcal{A}\mathcal{A}^* = \mathcal{A}^*\mathcal{A} = \mathcal{I}\}
+\mathcal{O}_n := \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) |  \ \mathcal{A}\mathcal{A}^t = \mathcal{A}^t\mathcal{A} = \mathcal{I}\}
 \end{equation}
 Kjer $\mathcal{A}^*$ označuje transponirano konjugirano matriko % TODO: add reference to operation definition
 \end{definition}
@@ -2542,7 +2543,7 @@ Kjer $\mathcal{A}^*$ označuje transponirano konjugirano matriko % TODO: add ref
 \begin{definition}
 \label{def:unitary_linear_group}
 
-Naj bo $n \in \mathbb{N}$, \textbf{unitarna (linearna) grupa} je 
+Naj bo $n \in \mathbb{N}$. \textbf{Unitarna (linearna) grupa} je 
 \begin{equation}
 \label{eq:def_unitary_linear_group}
 \mathcal{U}_n := \{ \mathcal{A} \in \mathcal{M}_n(\mathbb{C}) |  \ \mathcal{A}\mathcal{A}^* = \mathcal{A}^*\mathcal{A} = \mathcal{I}\}
@@ -2551,7 +2552,7 @@ Naj bo $n \in \mathbb{N}$, \textbf{unitarna (linearna) grupa} je
 
 \begin{definition}
 \label{def:special_orthogonal_linear_group}
-Naj bo $n \in \mathbb{N}$, \textbf{specialna ortogonalna (linearna) grupa} je 
+Naj bo $n \in \mathbb{N}$. \textbf{Specialna ortogonalna (linearna) grupa} je 
 \begin{equation}
 \label{eq:def_special_orthogonal_linear_group}
 \mathcal{S}\mathcal{O}_n := \{ \mathcal{A} \in \mathcal{O}_n(\mathbb{C}) |  \ det(\mathcal{A}) = 1\}
@@ -2560,7 +2561,7 @@ Naj bo $n \in \mathbb{N}$, \textbf{specialna ortogonalna (linearna) grupa} je
 
 \begin{definition}
 \label{def:special_unitary_linear_group}
-Naj bo $n \in \mathbb{N}$, \textbf{specialna unitarna (linearna) grupa} je 
+Naj bo $n \in \mathbb{N}$. \textbf{Specialna unitarna (linearna) grupa} je 
 \begin{equation}
 \label{eq:def_special_unitary_linear_group}
 \mathcal{S}\mathcal{U}_n := \{ \mathcal{A} \in \mathcal{U}_n(\mathbb{C}) |  \ det(\mathcal{A})= 1\}
@@ -2569,22 +2570,23 @@ Naj bo $n \in \mathbb{N}$, \textbf{specialna unitarna (linearna) grupa} je
 
 \begin{definition}
 \label{def:simplectic_unitary_linear_group}
-Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje, \textbf{simplektična (linearna) grupa} je 
+Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. \textbf{Simplektična (linearna) grupa} je 
 \begin{equation}
 \label{eq:def_simplectic_unitary_linear_group}
-\mathcal{S}p_n(\mathcal{F}) := \{ \mathcal{A} \in \mathcal{M}_{2n}(\mathcal{F}) |  \ \mathcal{A} \mathcal{J} \mathcal{A}^* = \mathcal{A}^* \mathcal{J} \mathcal{A} = \mathcal{I}\}
+\mathcal{S}p_n(\mathcal{F}) := \{ \mathcal{A} \in \mathcal{M}_{2n}(\mathcal{F}) |  \ \mathcal{A} \mathcal{J} \mathcal{A}^t = \mathcal{A}^t \mathcal{J} \mathcal{A} = \mathcal{I}\}
 \end{equation}
-Kjer 
+Kjer je
 $$\mathcal{J}= \begin{bmatrix}
 		0 & \mathcal{I}_n \\
 		-\mathcal{I}_n & 0
 	  \end{bmatrix} $$
 \end{definition}
 
-\section{Homomorfizni in kvocientne strukture}
+\section{Homomorfizmi in kvocientne strukture}
 
 \subsection{Izomorfizmi grup, ciklične grupe}
-
+%Naslovi v glavi se ti prekrivajo!
+%Vem, sam ne znam tega popravit, malo bo treba še prašat strica googla
 \begin{definition}
 \label{def:group_isomorphism}
 Naj bosta $(\mathcal{G}_1, *)$ in $(\mathcal{G}_2, *)$ grupi. Grupi $\mathcal{G}_1$ in $\mathcal{G}_2$ sta \textbf{izomorfni}, če obstaja taka bijektivna preslikava $ \varphi : \mathcal{G}_1 \to \mathcal{G}_2$ da velja:
@@ -2597,13 +2599,13 @@ $$\mathcal{G}_1 \cong \mathcal{G}_2$$
 \end{definition}
 
 \begin{remark}
-Če je katera izmed grup (ali pa obe) aditivna primerno spremenimo operacijo.
+Če je katera izmed grup (ali pa obe) aditivna, primerno spremenimo operacijo.
 \end{remark}
 
 \begin{remark}
-Če imamo končni grupi, ki sta si izomorfni, potem sta njuni tabeli 'enaki'.
+Če imamo končni grupi, ki sta si izomorfni, potem sta njuni grupni tabeli 'enaki'.
 
-$\varphi : \mathcal{G}_1 \to \mathcal{G}_2, \ \text{izomorfizem} $, potem $\mathcal{G}_2 = \{\varphi(g_1), \varphi(g_2), \dots, \varphi(g_n) \}, g_i \in \mathcal{G}_1$
+$\varphi : \mathcal{G}_1 \to \mathcal{G}_2, \ \text{izomorfizem} $, potem $\mathcal{G}_2 = \{\varphi(g_1), \varphi(g_2), \dots, \varphi(g_n) \}, g_i \in \mathcal{G}_1$.
 
 Torej se $g_i$ in $\varphi(g_i)$ v tablah pojavita na istem mestu.
 \\
@@ -2704,7 +2706,7 @@ $<1> = <-1> = (\mathbb{Z}, +)$
 $<1> = (\mathbb{Z}_n, +)$, podgrupa $(\mathbb{Z}, +)$
 \end{example_case}
 \begin{example_case}
-$<i> = <-1> = \{1,i, -1,-i\} = \mathcal{U}_4$
+$<i> = <-i> = \{1,i, -1,-i\} = \mathcal{U}_4$
 \end{example_case}
 \end{example}
 
@@ -2712,8 +2714,8 @@ $<i> = <-1> = \{1,i, -1,-i\} = \mathcal{U}_4$
 \begin{theorem}
 Naj bo $\mathcal{G}$ ciklična grupa:
 \begin{enumerate}[label=(\alph*)]
-\item Če je $\mathcal{G}$ neskončna je izomorfna $(\mathbb{Z}, +)$
-\item Če je $\mathcal{G}$ končna je izomorfna $(\mathbb{Z}_n, +)$ za nek $n \in \mathbb{N}$
+\item Če je $\mathcal{G}$ neskončna, je izomorfna $(\mathbb{Z}, +)$
+\item Če je $\mathcal{G}$ končna, je izomorfna $(\mathbb{Z}_n, +)$ za nek $n \in \mathbb{N}$
 \end{enumerate}
 \end{theorem}
 
@@ -2722,8 +2724,8 @@ Naj bo $a$ generator grupe $\mathcal{G}$\\
 1. $\forall n \in \mathbb{Z}. \forall m \in \mathbb{Z}. \ m \neq n \implies a^n \neq a^m$\\
 Torej je grupa neskončna, dokazujemo: $\mathcal{G} \cong (\mathbb{Z}, +)$\\
 Vzemimo: $\varphi : \mathbb{Z} \to \mathcal{G}, n \mapsto a^n$, ki je zaradi predpostavke injektivna in surjektivna, ker  generira $a^n$ generira grupo. Prav tako pa velja:\\
-$\varphi(n+m) = \underbrace{a^{n+m} = a^n + a^m}_{(\ref{eq:sum_of_powers})} = \varphi(n) *\varphi(m)$ in je torej izomorfizem.\\ 
-2. $\exists m \in \mathcal{N}. \ \exists n \neq m \in \mathbb{N}. \ a^n = a^m$\\
+$\varphi(n+m) = \underbrace{a^{n+m} = a^n * a^m}_{(\ref{eq:sum_of_powers})} = \varphi(n) *\varphi(m)$ in je torej izomorfizem.\\ 
+2. $\exists m \in \mathbb{Z}. \ \exists n \neq m \in \mathbb{Z}. \ a^n = a^m$\\
 Torej $a^{n-m} = 1 \iff \exists s \in \mathbb{N}. \ a^s = 1$.\\
 Če $n = 1$, potem $\mathcal{G} = \{1\}$ in je izomorfna $(\mathbb{Z}_1, +)$\\
 Naj bo $n$ sedaj najmanjše tako naravno število($a^n = 1, a^k \neq 1, 0 < k < n$)\\
@@ -2731,20 +2733,20 @@ Očitno so si elementi $1, a, a^2, \dots a^{n-1}$ različni, saj smo tako izbral
 Za drugo smer pa vzemimo $x=a^m \in \mathcal{G}$, $m = qn +r, 0 \leq r \leq n-1$.\\
 Torej $x = a^m = a^{qn+r} = (a^n)^q * a^r = a^r \implies |\mathcal{G}| \leq n$\\
 Iz zgornjih ugotovitev velja: $|\mathcal{G}| = n$
-$z_i = a^i$ in $\varphi(z_i) = i$ kar pa je izomorfizem. 
+$z_i = a^i$ in $\varphi(z_i) = i$, kar pa je izomorfizem. 
 \end{proof}
 
 \begin{corollary}
-Če je $\mathcal{G}$ poljubna grupa tako vsak element generira ciklično podgrupo ($<a> = \{a^n | \ n \in \mathbb{Z}\}$).
+Če je $\mathcal{G}$ poljubna grupa, tako vsak element generira ciklično podgrupo ($<a> = \{a^n | \ n \in \mathbb{Z}\}$).
 \end{corollary}
 
 \begin{definition}
 \label{def:order_of_group}
-Naj bo $a$ element grupe $\mathcal{G}$. Če bostaja tak $s \in \mathbb{N}$, da velja $a^s = 1$ ( $1$ je enota grupe), rečemo da ima $a$ \textbf{končen red}, najmanjšemu naravnemu številu s to lastnostjo pravimo \textbf{red elementa} $a$. Če pa takega elementa ni, potem pravimo, da ima $a$ \textbf{neskončen red}.
+Naj bo $a$ element grupe $\mathcal{G}$. Če obstaja tak $s \in \mathbb{N}$, da velja $a^s = 1$ ($1$ je enota grupe), rečemo, da ima $a$ \textbf{končen red}, najmanjšemu naravnemu številu s to lastnostjo pravimo \textbf{red elementa} $a$. Če pa takega elementa ni, potem pravimo, da ima $a$ \textbf{neskončen red}.
 \end{definition}
 
 \begin{statement}\ 
-$red(a) = | <a>$
+$red(a) = |<a>|$
 \end{statement}
 
 \begin{proof}
@@ -2753,7 +2755,7 @@ $<a> = \{1,a, a^2, \dots, a^{n-1}\} \implies |<a>| = n$
 \end{proof}
 
 \begin{remark}
-Če je $\mathcal{G}$ grupa za seštevanje je red elementa tak najmanjši $n \in \mathbb{N}$, da $na = 0$. 
+Če je $\mathcal{G}$ grupa za seštevanje, je red elementa tak najmanjši $n \in \mathbb{N}$, da $na = 0$. 
 \end{remark}
 
 \begin{example}
@@ -2761,18 +2763,18 @@ $<a> = \{1,a, a^2, \dots, a^{n-1}\} \implies |<a>| = n$
 V vsaki grupi ima enota red $1$.
 \end{example_case}
 \begin{example_case}
-V $(\mathbb{Z}, +)$ imajo vsi elementi razem $0$ neskončen red.
+V $(\mathbb{Z}, +)$ imajo vsi elementi razen $0$ neskončen red.
 \end{example_case}
 \begin{example_case}
 $\mathbb{Z}_4$, $1$ in $3$ imata red $4$, $2$ ima red $2$.
 \end{example_case}
 \begin{example_case}
-$\mathcal{D}_4$(Simetrije pravokotnika, ki ni kvadrat) imajo vsi razen enote red $2$
+$\mathcal{D}_4$ (Simetrije pravokotnika, ki ni kvadrat) Vsi razen enote imajo red $2$
 \end{example_case}
 \end{example}
 
 \begin{remark}
-Očitno izomorfizmi ohranjajo red elementov
+Očitno izomorfizmi ohranjajo red elementov.
 \end{remark}
 
 \begin{remark}
@@ -2787,20 +2789,24 @@ Naj bosta $\mathcal{V}$ in $\mathcal{V}'$ vektorska prostora nad istim poljem $\
 \end{definition}
 
 \begin{theorem}
-Končno razsežna vektorska prostora sta si izomorfna natanko tedaj, ko imata enako dimenzijo.
+Končno razsežna vektorska prostora sta si izomorfna natanko tedaj, ko imata isto dimenzijo.
 \end{theorem}
 
 
 \begin{proof}
 $\implies$\\
-Naj ima $\mathcal{V}$ dimezijo $n$ in bazo: $\{b_1, b_2, \dots, b_n\}$.\\
+Naj ima $\mathcal{V}$ dimenzijo $n$ in bazo: $\{b_1, b_2, \dots, b_n\}$.\\
 Naj bo $\lambda_1 \varphi(b_1) + \dots + \lambda_n \varphi(b_n) = 0$ za neke $\lambda_i \in \mathcal{F}$\\ Ker je $\varphi$ linearna in injektivna velja:\\
-$\varphi(\lambda_1 b_1 + \lambda_2 b_2 + \dots + \lambda_n b_n) = 0$\\
-Ker so si bazni vektorji neodvisni so vsi skaraji ničelni: $\lambda_i = 0 $.\\
+$Ker(A) = \{0\}$ in ker velja: 
+$\varphi(\lambda_1 b_1 + \lambda_2 b_2 + \dots + \lambda_n b_n) = 0$ \\iz tega sledi: $\lambda_1 b_1 + \lambda_2 b_2 + \dots + \lambda_n b_n$ v jedru. 
+\\Torej velja 
+$\lambda_1 b_1 + \lambda_2 b_2 + \dots + \lambda_n b_n = 0$\\
+
+Ker so si bazni vektorji neodvisni, so vsi skalarji ničelni: $\lambda_i = 0 $.\\
 Tako smo dobili linearno neodvisne vektorje, pokazati moramo še, da so tudi ogrodje.\\
 Ker $\varphi$ je surjektivna velja: $v' \in \mathcal{V}' = \varphi(v)$ za poljuben $v'$.\\
 $v' = \lambda_1\varphi(b_1) + \dots + \lambda_n\varphi(b_n)$, vidimo da ima $\mathcal{V}'$ linearno ogrodje z močjo $n$ ($\varphi(b_1), \dots, \varphi(b_n)$).\\
-Tako smo dobili linearno ogrodje neodvisnih vektorjev, ki je torej baza z močjo $n$. Dimenzija $\mathcal{V}'$ je torej $n$, enaka $\mathcal{V}$.
+Tako smo dobili linearno ogrodje neodvisnih vektorjev, ki je torej baza z močjo $n$. Dimenzija $\mathcal{V}'$ je torej $n$, enaka dimenziji $\mathcal{V}$.
 \\
 $\impliedby$\\
 Vzemimo $\{b_1, b_2, \dots, b_n\}$ za bazo $\mathcal{V}$ in  $\{b'_1, b'_2, \dots, b'_n\}$ za bazo $\mathcal{V}'$.\\
