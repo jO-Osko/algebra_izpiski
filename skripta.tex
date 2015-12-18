@@ -15,6 +15,7 @@
 \usepackage{multicol}
 \usepackage[nomessages]{fp}
 \usepackage{fancyhdr}
+\usepackage{multirow}
 
 \usepackage{tikz}
 
@@ -2475,7 +2476,7 @@ Diedrska grupa reda $2n$ je simetrijska grupa pravilnega $n-$kotnika.
 Pomembne enakosti: $r^n = 1, z^2 = 1, rz = zr^{-1}, (rz)^2 = 1, |D_{2n}| = 2n$		
 \\		
 \\		
-Vsak element $D_{2n}$ lahko zapisemo kot $a = z^jr^i; \ i \in \{0,1\}, 0 \leq i < n$
+Vsak element $D_{2n}$ lahko zapišemo kot $a = z^jr^i; \ i \in \{0,1\}, 0 \leq i < n$
 \\
 \\
 \begin{example}
@@ -2498,6 +2499,46 @@ Opazimo, da je splošna diedrska grupa generirana z rotacijo in zrcaljenjem ($r,
 Diedrsko grupo reda $2n \geq 3$ si lahko predstavljamo kot podgrupo simetrične grupe $\mathcal{S}_n$
 \end{remark}
 
+\begin{remark}
+V splošnem lahko za diedrsko grupo proglasimo katerokoli grupo, ki ustreza osnovnim enakostim te grupe: ($r^n = 1, z^2 = 1, rz = zr^{-1}$)
+\end{remark}
+\\
+\\
+V $\mathbb{R}^2$ je tako diedrska grupa tudi grupa $D_{2n}$, kjer 
+$$r = \begin{bmatrix}
+		cos\frac{2\pi}{n} & sin\frac{2\pi}{n} \\
+		-sin\frac{2\pi}{n} & cos\frac{2\pi}{n}
+	  \end{bmatrix}, z = \begin{bmatrix}
+		-1 & 0 \\
+		0 & 1
+	  \end{bmatrix}$$
+Tu si pravilni $n-$kotnik predsatvljamo v ravnini, in ga prav tako tudi zrcalimo/rotiramo. Če pa je $n$ sod, potem je v tej grupi tudi rotacija prek vertikalne osi, ki jo zapišemo kot $z_v = -z = \begin{bmatrix}
+		1 & 0 \\
+		0 & -1
+	  \end{bmatrix}$.
+	  
+Ker pa si želimo, da bi imele naše matrike determinanto $1$ (To pomeni, da ne spreminjajo volumna objekta, ki ga preslikamo) lahko to grupo razširimo na podgrupo $\mathcal{SL}_3(\mathbb{R})$ kot:
+$$r' = \begin{bmatrix}
+		cos\frac{2\pi}{n} & sin\frac{2\pi}{n} & 0\\
+		-sin\frac{2\pi}{n} & cos\frac{2\pi}{n} & 0\\
+		0 & 0 & 1
+	  \end{bmatrix}, 
+	  z' = \begin{bmatrix}
+		-1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & -1
+	  \end{bmatrix}$$	  
+\\	 
+Podobno lahko kot Diedrsko grupo vidimo podgrupo $D_{2n} \subseteq \mathcal{GL}_2(\mathbb{Z}_n)$, kjer:
+	 $$r = \begin{bmatrix}
+		1 & 1 \\
+		0 & 1
+	  \end{bmatrix}, z = \begin{bmatrix}
+		-1 & 0 \\
+		0 & 1
+	  \end{bmatrix}$$
+Na ta način dobimo generirano ogrodje torusa, če pa $n \to \infty$, pa dobimo kar $\mathcal{GL}(\mathbb{Z})$.
+	  
 \subsection{Linearne grupe}
 Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. Tedaj je $( \mathcal{M}_n(\mathcal{F}), *)$ monoid (ni pa grupa, saj niso vsi elementi obrnljivi).
 
