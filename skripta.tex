@@ -16,6 +16,7 @@
 \usepackage[nomessages]{fp}
 \usepackage{fancyhdr}
 \usepackage{multirow}
+\usepackage{mathtools}
 
 \usepackage{tikz}
 
@@ -2703,12 +2704,13 @@ $\varphi$ je bijekcija in $\varphi(z_i * z_j) = \varphi(z_i) + \varphi(z_j)$, to
 \end{proof}
 
 \begin{statement}
+\label{st:inverse_of_isomorphism_is_isomorphism}
 Če je $\varphi : \mathcal{G} \to \mathcal{G}_1$ izomorfizem je tudi $\varphi^{-1}: \mathcal{G}_1 \to \mathcal{G}$ izomorfizem.
 \end{statement}
 
 \begin{proof}
 Ker je $\varphi$ injektivna je dovolj pokazati:
-$\varphi(\varphi^{-1}(uv)) = uv = \varphi(\varphi^{-1}(u)) \varphi(\varphi^{-1}(v)) = \underbrace{\varphi(\varphi^{-1}(u) \varphi^{-1}(v))}_{\text{Ker je } \varphi \ \text{homeomorfizem}}$
+$\varphi(\varphi^{-1}(uv)) = uv = \varphi(\varphi^{-1}(u)) \varphi(\varphi^{-1}(v)) = \underbrace{\varphi(\varphi^{-1}(u) \varphi^{-1}(v))}_{\text{Ker je } \varphi \ \text{homomorfizem}}$
 \end{proof}
 
 
@@ -2858,36 +2860,260 @@ Potrebno je zgolj še preveriti, da je to bijektivna linearna preslikava.
 \end{proof}
 
 
+\subsection{Pojem homomorfizma}
+
+\begin{definition}
+\label{def:group_homemorphism}
+Naj bosta $\mathcal{G}$ in $\mathcal{G}_1$ grupi, $\varphi : \mathcal{G} \to \mathcal{G}_1$ je homomorfizem grup, če velja:
+\begin{equation}
+\label{eq:def_group_homomorphism}
+\varphi(xy) = \varphi(x) \varphi(y), \ \forall x,y \in \mathcal{G} 
+\end{equation}
+\end{definition}
+
+\begin{remark}
+Če je grupa aditivna predznak smiselno spremenimo.
+\end{remark}
+
+\begin{definition}
+\label{def:ring_hommorphism}
+Naj bosta $\mathcal{K}$ in $\mathcal{K}_1$ kolobarja, $\varphi : \mathcal{K} \to \mathcal{K}_1$ je homomorfizem kolobarjev, če velja:
+\begin{equation}
+\label{eq:def_ring_homomorphism}
+\varphi(x+y) = \varphi(x) + \varphi(y) \land \varphi(xy) = \varphi(x) \varphi(y), \ \forall x,y \in \mathcal{G} 
+\end{equation}
+Ker pa smo pri kolobarju zahtevali tudi enoto, potrebujemo še dodaten pogoj:
+$$ \varphi(1) = 1$$
+\end{definition}
+
+\begin{definition}
+\label{def:vector_space_hommorphism}
+Naj bosta $\mathcal{V}$ in $\mathcal{V}_1$ vektorska prostora nad istim obsegom $\mathcal{F}$, $\varphi : \mathcal{V} \to \mathcal{V}_1$ je homomorfizem vektorskih prostorov, če velja:
+\begin{equation}
+\label{eq:def_vector_space_homomorphism}
+\varphi(x+y) = \varphi(x) + \varphi(y) \land \lambda \varphi(x) = \varphi(\lambda x) ,\ \forall x,y \in \mathcal{G}, \forall \lambda \in \mathcal{F} 
+\end{equation}
+\end{definition}
 
 
+\begin{definition}
+\label{def:algebra_homomorphism}
+Naj bosta $\mathcal{A}$ in $\mathcal{A}_1$ algebri nad istim obsegom $\mathcal{F}$, $\varphi : \mathcal{A} \to \mathcal{A}_1$ je homomorfizem algebr, če velja:
+\begin{equation}
+\label{eq:def_algebra_homomorphism}
+\begin{multlined}
+\varphi(1) = 1 \land \varphi(x+y) = \varphi(x) + \varphi(y) \land \lambda \varphi(x) = \varphi(\lambda x) \land \\ \varphi(x) \varphi(y) = \varphi(xy), \ \forall x,y \in \mathcal{G}, \forall \lambda \in \mathcal{F} 
+\end{multlined}
+\end{equation}
+\end{definition}
+
+\begin{example}
+$\varphi : \mathbb{R} \to \mathcal{M}_2(\mathbb{R}), \varphi(x) = \begin{bmatrix}
+		x & 0 \\
+		0 & 0
+	  \end{bmatrix}$ \textbf{ni} homomrofizem, saj enote ne slika v enoto, čeprav ustreza pogojem glede operacij.
+\end{example}
 
 
+\begin{remark}
+Kdar je iz konteksta razvidmo za homomofizem katerih struktur gre, to izpuščamo(homomofizem grup $\mapsto $ homormfizem, $\dots$).
+\end{remark}
+
+\begin{definition}
+Trivialni homomorfizem je $\varphi: \mathcal{A} \to \mathcal{A}_1, x \mapsto 1$ 
+\end{definition}
 
 
+\begin{definition}
+\label{def:epimorphism}
+\textbf{Epimorfizem} je surjektivni homomorfizem.
+\end{definition}
+
+\begin{definition}
+\label{def:monomorphism}
+\textbf{Monomorfizem}(vložitev) je injektivni homomorfizem.
+\end{definition}
+
+\begin{definition}
+\label{def:isomorphism}
+\textbf{Izomorfizem} je bijektivni homomorfizem.
+\end{definition}
+
+\begin{definition}
+\label{def:endomorphism}
+\textbf{Endomorfizem} je homomorfizem strukture same vase.
+\end{definition}
+
+\begin{definition}
+\label{def:automorphism}
+\textbf{Avtomorfizem} je bijektivni endomorfizem (izomorfizem strukture same vase).
+\end{definition}
+
+\begin{remark}
+Homemorfizmom v vektroskih prostorih pravimo tudi linearne preslikave
+\end{remark}
+
+\begin{remark}
+Izraz vložitev uporabljamo predvsem takrat, ko želimo povdariti, da lahko vsak element identificiramo z njegovo sliko.
+\end{remark}
+
+\begin{example}
+\begin{example_case}
+Vložitev $\mathbb{R}$ v $\mathbb{C}$ $: x \mapsto x + 0i$
+\end{example_case}
+\begin{example_case}
+Vložitev $\mathcal{K}$ v $\mathcal{K}[X]$ $: a \mapsto a + 0X + 0X^2 + \dots$. Tako vsak element identificiramo s konstantnim polinomom.
+\end{example_case}
+\end{example}
+
+\begin{remark}
+Ker je polje tudi kolobar(z nekaj dodatnimi lastnostmi), je homormfizem kolobarja tudi homomorfizem polja.
+\end{remark}
+\\
+\\
+\begin{statement}
+Kompozitum homomorfizmov je homomorfizem.
+\end{statement}
+
+\begin{proof}
+Dokaz zgolj za grupe, za ostale strukture pokažemo podobno.\\
+Naj bosta: $\varphi : \mathcal{G} \to \mathcal{G}_1$ in $\psi: \mathcal{G}_1 \to \mathcal{G}_2$ homomorfizma grup, tedaj velja:\\
+$(\psi \circ \varphi)(xy) = \psi(\varphi(xy)) = \psi(\varphi(x) \varphi(y)) = \psi(\varphi(x)) \psi(\varphi(y)) = (\psi \circ \varphi)(x) (\psi \circ \varphi)(y)$
+\end{proof}
+
+\begin{statement}
+Inverz izomorfizma je izomorfizem.
+\end{statement}
+
+\begin{proof}
+Za grupe smo že dokazali(\ref{st:inverse_of_isomorphism_is_isomorphism}), za ostale strukture pa to poteka na isti način.
+\end{proof}
+
+\begin{definition}
+\label{def:basic_isomorphism}
+Pravimo da sta si strukturi $\mathcal{A}$ in $\mathcal{A}_1$ izomorfni, če obstaja izomorfizem iz $\mathcal{A}$ v $\mathcal{A}_1$. Tedaj pišemo $$\mathcal{A} \cong \mathcal{A}_1$$
+\end{definition}
+
+\begin{statement}
+Relacija $\mathcal{A} \cong \mathcal{A}_1$ je ekvivalenčna.
+\end{statement}
+
+\begin{proof}\leavevmode\\
+\begin{enumerate}[label=\arabic*)]
+\item $\mathcal{A} \cong \mathcal{A}$ Očitno, saj je $id$ izomorfizem
+\item $\mathcal{A} \cong \mathcal{A}_1 \implies \mathcal{A}_1 \cong \mathcal{A}$ Inverz izomorfizma je tudi sm izomorfizem, torej je izmorofizem v drugo smer kar inverz prvega.
+\item $\mathcal{A} \cong \mathcal{A}_1 \land \mathcal{A}_1 \cong \mathcal{A}_2 \implies \mathcal{A} \cong \mathcal{A}_2$ Ker je kompozitum bijektivnih preslikav bijektivna preslikava, kompozitum homomorfizmov pa homomorfizem, je naš izomorfizem kar kompozitum izomorfizmov.
+\end{enumerate}
+\end{proof}
+
+\begin{corollary}
+Množica vseh avtomorfizmov v $\mathcal{A}$ je grupa za komponiranje.
+\end{corollary}
+
+\begin{proof}
+Tip strukture $\mathcal{A}$ je nepomemben. Potrebno je samo preveriti aksiome za grupo: \\Zaprtost: Kompozitum avtomorfizmov je avtomorfizem\\
+Asociativnost: Kompozitum je v splošnem asociativen\\
+Enota: $Id$ za komponiranje je tudi avtomorfizem\\
+Inverz: Inverz avtomorfizma je tudi avtomorfizem.
+\end{proof}
+
+\begin{example}
+$\mathcal{GL}_n(\mathcal{F}) =$ grupa vseh obrnljivih matrik $=$ grupa vseh linearnih presliakv iz $\mathcal{F}^n \to \mathcal{F}^n =$ grupa avtomorfizmov vektporskega prostora $\mathcal{F}^n$. 
+\end{example}\\\\
+
+\begin{statement}
+Če je $\varphi: \mathcal{G} \to \mathcal{G}_1$ homomorfizem grup, za poljuben $x \in \mathcal{A}$ velja $\varphi(1_{\mathcal{G}}) = 1_{\mathcal{G}_1}$ in $\varphi(x^{-1}) = \varphi(x)^{-1}$.
+\end{statement}
+
+\begin{proof}
+$\varphi(1) = \varphi(1*1) = \varphi(1) \varphi(1) \implies \varphi(1) = 1$\\
+$1 = \varphi(1) = \varphi(x x^{-1}) = \varphi(x) \varphi(x^{-1}) \implies \varphi(x^{-1}) = \varphi(x)^{-1}$
+\end{proof}
+
+\begin{statement}
+Za poljuben homomorfizem grup $\varphi: \mathcal{G} \to \mathcal{G}_1$  in poljuben $k \in \mathbb{Z}$ velja 
+$$\varphi(x^n) = \varphi(x)^n$$
+\end{statement}
+
+\begin{proof}
+Sledi iz prejšnje trditve in poznavanjem enakosti (\ref{eq:integer_power}).
+\end{proof}
 
 
+\begin{definition}
+\label{def:image_of_homomorphism}
+Zalogi vrednosti homomorfizma $\varphi: \mathcal{A} \to \mathcal{A}_1$ pravimo \textbf{slika} $\varphi$ in jo označimo z $Im(\varphi)$
+\begin{equation}
+\label{eq:def_image_of_homomorphism}
+Im(\varphi) := \{ \varphi(x) | \ x \in \mathcal{A} \} \subseteq \mathcal{A}_1
+\end{equation}
+\end{definition}
 
 
+\begin{statement}
+Slika homomorfizma poljubne strukture je tudi sama podstruktura te strukture 
+\end{statement}
+
+\begin{proof}
+Dokažemo zgolj za grupe, za ostale podstrukture se pokaže na podoben način.\\
+$\varphi(x) \varphi(y) = \varphi(xy) \in Im(\varphi)$\\
+$\varphi(x)^{-1} = \varphi(x^{-1}) \in Im(\varphi)$
+\end{proof}
+
+\begin{remark}
+Vsak homomorfizem je epimorfizem(na svojo zalogo vrednosti).
+\end{remark}
 
 
+\begin{definition}
+\label{def:kernel_of_homormphism}
+Naj bo $\varphi: \mathcal{A} \to \mathcal{A}_1$ homormfizem poljubnih struktur \textbf{jedro} $\varphi$ je množica vseh elementov, ki se slikajo v nevtralni element, ozmačino jo z $Ker(\varphi)$.
+\begin{equation}
+\label{eq:def_kernel_of_homomorphism}
+Ker(\varphi) = \{ x \in \mathcal{A} | \varphi(x) = 1\}
+\end{equation}
+\end{definition}
+
+\begin{remark}
+Spomnimo se, da za vektorski prostor, kolobarje in algebre velja $1 = 0$, torej nevtralni element za seštevanje.
+\end{remark}
+
+\begin{definition}
+\label{def:trivial_kernel}
+Jedro homomorfizma $\varphi$ je \textbf{trivialno}, če je v jedru zgolj en element($1$ ali $0$, če gre za aditivne strukture).
+\end{definition}
+
+\begin{statement}
+Homomorfizem $\varphi: \mathcal{A} \to \mathcal{A}_1$ je trivialen natanko tedaj, ko je njegovo jedro trivialno.
+\end{statement}
+
+\begin{proof}
+Dokazažemo zgolj za grupe, za ostale strukture so dokazi podobni.\\
+$\implies$\\
+Naj velja: $\varphi$ je injektivna, $x \in Ker(\varphi)$\\
+$\varphi(x) = 1 = \varphi(1)$, in torej zaradi injektivnost $\varphi$ velja: $x=1$\\
+$\impliedby$\\
+Naj velja $Ker(\varphi) = \{1\}$ in $\varphi(x) = \varphi(y)$\\
+$\varphi(xy^{-1}) = \varphi(x) \varphi(y^{-1}) = 1$, torej: $xy^{-1} \in Ker(\varphi) = \{1\}$, in dobimo $x=y$
 
 
+\end{proof}
 
+\begin{remark}
+Na jedro/sliko preslikave lahko gledamo kot na mero za injektivnost/surjektivnost. Čim manjše kot je jedro, tem 'bližje' injektivnosti je $\varphi$ in podobno, večja kot je slika, 'bolj' je $\varphi$ surjektivna.
+\end{remark}
 
+\begin{example}
+\begin{example_case}
+'Najlepši' homomorfizem je tak, ki ima trivialno jedro, slika pa je celotna kodomena
+\end{example_case}
+\begin{example_case}
+'Najgrši' homomorfizem je tak, ki ima jedro enako domeni, slika pa je zgolj $\{1\}$ (trivialni homomorfizem).
+\end{example_case}
+\end{example}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{remark}
+Zaradi naše definicije(\ref{def:ring_hommorphism}), da homomrofizem $\varphi(1) = 1$, lahko trivialni homomorifzem slika zgolj v ničelni kologar($\{0\}$).
+\end{remark}
 
 \end{document}
