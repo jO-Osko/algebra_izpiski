@@ -3116,4 +3116,159 @@ Na jedro/sliko preslikave lahko gledamo kot na mero za injektivnost/surjektivnos
 Zaradi naše definicije(\ref{def:ring_hommorphism}), ki za homomorfizem zahteva $\varphi(1) = 1$, lahko trivialni homomorfizem slika zgolj v ničelni kolobar($\{0\}$).
 \end{remark}
 
+\subsection{Primeri homomorfizmov}
+
+Najbolj splošen primer
+$$a^x a^y = a^{x+y}, a > 0$$
+
+
+\subsubsection{Primeri homomorfizmov grup}
+
+\begin{enumerate}
+\item 
+Naj bo $\mathcal{G}$ Abelova grupa\\
+$\varphi(x) = x^{-1}$je avtomorfizem\\
+$\varphi(xy) = (xy)^{-1} = (yx)^{-1} = x^{-1} y^{-1} = \varphi(x) \varphi(y)$
+Splošneje, za vsak $m \in \mathbb{Z}$ je $\varphi(x) = x^m$ endomorfizem grupe $\mathcal{G}$.
+\item 
+Naj bo $\varphi: \mathbb{C} - \{0\} \to \mathbb{R}^+, \varphi(w) = |w|$, očitno je $\varphi$ epimorfizem ($|zw| = |z||w|$)\\
+$Ker (\varphi) = \mathcal{S}^1 = \{z \in \mathbb{C} | \ |z| = 1\}$
+\item 
+$\varphi : (\mathbb{R}, +) \to (\mathcal{S}^1, *),  \varphi(x) = cos(x) + i sin(x)$, $Ker(\varphi) = \{2k\pi | \ k \in \mathbb{Z}\}$
+\item
+$sgn: \mathcal{S}_n \to (\{-1,1\}, *),	sgn(\sigma \rho) = sgn(\sigma) sgn(\rho)$, $Ker(sgn) = \mathcal{A}_n$
+\item
+$det: Gl(n,\mathcal{F}) \to \mathcal{F}^*$ je epimorfizem $Ker(det) = Sl(n, \mathcal{F})$
+\end{enumerate}
+
+\begin{definition}
+\label{def:group_inner_automorphism}
+Naj bo $\mathcal{G}$ poljubna grupa, za poljuben $a \in \mathcal{G}$ je $\varphi_a : \mathcal{G} \to \mathcal{G}, \varphi_a(x) = axa^{-1}$ avtomorfizem $\mathcal{G}$, vsak tak avtomorfizem imenujemo \textbf{notranji avtomorfizem}
+\end{definition}
+
+Dokaz da je to res avtomorfizem je trivialen:\\
+$\varphi_a(xy) = axya^{-1} = axa^{-1}aya^{-1} = \varphi_a(x)\varphi_a(y)$\\
+$Ker(\varphi_a) = \{x \in \mathcal{G} | \ axa^{-1}=1\} = \{1\}$\\
+$Im(\varphi_a) = \mathcal{G}$, saj $x = \varphi_a(a^{-1}xa)$
+
+\begin{remark}
+Če se spomnimo poglavja o grupah, sta si $x,y$ \textbf{konjugirana}, če obstaja tak $a$, da $y = axa^{-1}$ (\ref{def:conjugate_elements_group}), tako sta si $x$ in $\varphi_a(x)$ konjugirana. Za poljubno podgrupo $\mathcal{H} \subseteq \mathcal{G}$ tako velja $\mathcal{H} \cong a\mathcal{H}a^{-1}$
+\end{remark}
+
+\begin{remark}
+Edini notranji avtomorfizem katerekoli Abelove grupe je $id$.
+\end{remark}
+
+\begin{definition}
+\label{def:set_of_group_automorphisms}
+$Aut(\mathcal{G})$ je množica vseh avtomorfizmov grupe $\mathcal{G}$
+\end{definition}
+
+\begin{remark}
+Preveriti da je to grupa je trivialno
+\end{remark}
+
+$\Phi : \mathcal{G} \to Aut(\mathcal{G}), \Phi(a) = \varphi_a$\\
+Preverimo dobro definiranost:\\
+$\varphi_a \circ \varphi_b(x) = abxb^{-1}a^{-1} = \varphi_{ab}$ in $\Phi(ab) = \varphi_a \circ \varphi_b$\\
+$\Phi$ je torej homomorfizem grup, njegova slika pa je množica vseh notranjih avtomorfizmo grupe $\mathcal{G}$.
+
+\begin{definition}
+$Inn(\mathcal{G})$ je grupa vseh notranjih avtomorfizmov grupe $\mathcal{G}$
+\end{definition}
+
+\begin{remark}
+Očitno $Im(\Phi) = Inn(\mathcal{G})$
+\end{remark}
+
+\subsubsection{Primeri homomorfizmov kolobarjev in algeber}
+
+\begin{definition}
+\label{def:ring_inner_automorphism}
+Naj bo $\mathcal{K}$ poljubnen kolobar, za poljuben obrnljiv $a \in \mathcal{K}$ je $\varphi_a : \mathcal{K} \to \mathcal{K}, \varphi_a(x) = axa^{-1}$ avtomorfizem $\mathcal{K}$, vsak tak avtomorfizem imenujemo \textbf{notranji avtomorfizem} kolobarja $\mathcal{K}$.
+\end{definition}
+
+\begin{remark}
+Tako kot pri grupah ima tudi tu notranji avtomorfizem smisel zgolj za nekomutativne kolobarje
+\end{remark}
+
+\begin{definition}
+\label{def:algebra_of_vector_space_endomorphisms}
+Naj bo $\mathcal{V}$ vektorski prostor nad $\mathcal{F}$ in naj velja $dim(V) = n$. 
+Algebro vseh endomorfizmov $\mathcal{V}$ nad $\mathcal{F}$ označimo z :
+\begin{equation}
+\label{eq:def_algebra_of_vector_space_endomorphisms}
+End_{\mathcal{F}}(\mathcal{V}) = \{ f: \mathcal{V} \to \mathcal{V} | f \ \text{je linearna(je endomorfizem)}\}
+\end{equation}
+\end{definition}
+
+\begin{remark}
+Rutinsko preverimo da je to res algebra(množenje je komponiranje funkcij).
+\end{remark}
+
+
+\begin{enumerate}
+\item
+$\varphi : \mathbb{Z}_2 \to \mathbb{Z}, \varphi(x) = x$ \textbf{ni} homomorfizem. Veljajo sicer skoraj vse lastnosti, a pade pri $0 = \varphi(1+1) \neq \varphi(1) + \varphi(1) = 2$
+\item 
+V nasprotni smeri pa zadeva deluje
+$\varphi : \mathbb{Z} \to \mathbb{Z}_2$\\
+$\varphi(x) =\twopartdef{0}{n \ \text{sod}}{1}{n \ \text{lih}}$, očitno $\varphi(n+m) = \varphi(n) + \varphi(m)$, $Ker(\varphi) = 2\mathbb{Z}$
+
+\item
+$\mathcal{K}$ vložimo v $\mathcal{K}[X]$ ($a \mapsto a + 0X + 0X^2 \dots$)\\
+$\varphi: \mathcal{K}[X] \to \mathcal{K}, \varphi(a_0 + a_1X + \dots) = a_0$, očitno $\varphi(f+g) = \varphi(f) + \varphi(g)$ in $\varphi(f*g) = \varphi(f) * \varphi(g)$ \\
+$Ker(\varphi) = \{a_1X + a_2X^2 + \dots + a_nX^n\}$, velja tudi $\varphi(f(X)) = f(0)$.
+
+\begin{remark}
+Če je $\mathcal{K}$ komutativen, je za poljuben $x$ $\varphi: \mathcal{K}[X] \to \mathcal{K}, \varphi(f(X)) = f(x)$ homomorfizem.
+\end{remark}
+
+\item Naj bo $f \in C[0,1]$. Za poljuben $x \in [0,1]$ je $\varphi_x : C[0,1] \to \mathbb{R}, f \mapsto f(x) $ homomorfizem. $Ker(\varphi_x) = \{f \in C[0,1] | f(x) = 0\}$
+
+\item $\varphi: End_{\mathcal{F}}(\mathcal{V}) \to M_n(\mathcal{F}), \varphi(f) = [f]$, kjer je $[f]$ matrika, ki pripada $f$ glede na vnaprej izbrano bazo. $\varphi$ je izomorfizem elgeber. Torej velja $  End_{\mathcal{F}}(\mathcal{V}) \cong M_n(\mathcal{F})$.
+
+\item
+Primeri posebnih izomorfizmov
+\begin{enumerate}
+\item $\mathcal{K}_1 = \{ \begin{bmatrix}
+		x & 0 \\
+		0 & x
+	  \end{bmatrix} | \ x \in \mathbb{R}\}$, kaj hitro lahko preverimo da je to kolobar, da pa velja $\mathcal{K}_1 \cong \mathbb{R}$ vzemimo $\varphi(x) = \begin{bmatrix}
+		x & 0 \\
+		0 & x
+	  \end{bmatrix} = xI$, ki ustreza vsem zahtevam.
+	  
+\item $\mathcal{K}_2 = \{ \begin{bmatrix}
+		x & 0 \\
+		0 & y
+	  \end{bmatrix}| \ x, y \in \mathbb{R} \}$, podobno kot prej brez težav preverimo, da je kolobar, velja pa tudi $\mathcal{K}_2 \cong \mathbb{R} \times \mathbb{R}$(enak direktnemu produktu $\mathbb{R}$ s samim seboj), kar preverimo z $\varphi( (x,y) ) = \begin{bmatrix}
+		x & 0 \\
+		0 & y
+	  \end{bmatrix}$.
+	  
+	  
+	  
+\item $\mathcal{K}_3 = \{ \begin{bmatrix}
+		x & y \\
+		-y & x
+	  \end{bmatrix} | \ x,y \in \mathbb{R} \}$ Velja $\mathcal{K}_3 \cong \mathbb{C}$ z izomorfizmom $\varphi(x+yi) = \begin{bmatrix}
+		x & y \\
+		-y & x
+	  \end{bmatrix}$
+
+\item $\mathcal{K}_4 = \{\begin{bmatrix}
+		z & w \\
+		-\overline{w} & \overline{z} 
+	  \end{bmatrix} | \ w,z \in \mathbb{C} \}$ Na pogled se nam zdi podoben $\mathbb{H}$, saj je prav tako kot v kvaternionih vsak neničelen element obrnljiv in je kot $\mathbb{H}$ 4-razsežna algebra nad $\mathbb{R}$, res je, saj imamo izomorfizem: $\varphi(x+yi+uj+vk) = \begin{bmatrix}
+		x + yi & u + vi \\
+		-\overline{u+vi} & \overline{x+yi}
+	  \end{bmatrix}$
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
 \end{document}
