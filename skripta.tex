@@ -3269,6 +3269,157 @@ Primeri posebnih izomorfizmov
 
 \end{enumerate}
 
+\subsection{Cayleyev izrek in drugi izreki o vložitvah}
+
+\begin{definition}
+\label{def:symetric_group_over_set}
+Naj bo $\mathcal{X}$ množica, $Sim(\mathcal{X})$ je simetrična grupa množice $\mathcal{X}$, torej je grupa bijektivnih preslikav iz $\mathcal{G}$ v $\mathcal{G}$.
+\end{definition}
+
+\subsubsection{Cayleyev izrek}
+\begin{theorem}[Cayleyev izrek]
+\label{th:cayley_theorem}
+Vsako grupo $\mathcal{G}$ lahko vložimo v kako simetrično grupo.
+
+\end{theorem}
+
+\begin{proof}
+Naj bo $a \in \mathcal{G}$ definirajmo $l_a : \mathcal{G} \to \mathcal{G}, l_a(x) = ax$. Preveriti moramo, da velja $l_a \in Sim(\mathcal{G})$.\\
+Injektivnost: $l_a(x) = l_a(y) \implies ax = ay \implies x = y$\\
+Surjektivnost: $x \in \mathcal{G} \implies x = l_a(a^{-1}x) = aa^{-1}x = x$\\
+Definirajmo $\varphi : \mathcal{G} \to Sim(\mathcal{G}), \varphi(a) = l_a$ in preverimo, da je $l$ homomorfizem.\\
+$l_{ab}(x) = (ab)x = a(bx) = l_a(l_b(x)) = l_a * l_b (x) \implies l_{ab} = l_a*l_b$\\
+Preverimo še, da ima $\varphi$ trivialno jedro: $a \in Ker(\varphi) \implies l_a = id_\mathcal{G} \implies \forall x \in \mathcal{G}. \ ax = x \implies a=1$\\
+Torej je $\varphi$ vložitev.
+\end{proof}
+
+\begin{remark}
+Iz dokaza opazimo, da lahko $\mathcal{G}$ vložimo v $Sim(\mathcal{G})$, kjer $\mathcal{G}$ gledamo zgolj kot množico.
+\end{remark}
+
+Zanima nas, ali lahko grupo $\mathcal{G}$ vložimo v $Sim(\mathcal{X})$ za kako bolj posrečeno množico. (Če je grupa že sama simetrična grupa velja $Sim(\mathcal{G}) \cong S_n$). % Najbrž \cong in ne = ???
+
+\begin{corollary}
+Vsako končno grupo lahko vložimo v $S_n$ za nek $n \in \mathbb{N}$.
+\end{corollary}
+
+Našli smo injektivni homomorfizem iz $\mathcal{G}$ v $Sim(\mathcal{X})$ (Kjer je bil naš $\mathcal{X}$ kar $\mathcal{G}$). Nasploh se izkažejo kot pomembni homomorfizmi (ne nujno injektivni) iz grup v permutacije. Zato pogosteje obravnavamo ekvialenten pojem:
+
+\begin{definition}
+\label{def:group_acts_on_set}
+Grupa $\mathcal{G}$ deluje na množici $\mathcal{X}$ če obstaja preslikava $\varphi: \mathcal{G} \times \mathcal{X} \to \mathcal{X}, \varphi(a,x) = ax$, za katero velja $\varphi(ab,x) = \varphi(a, bx)$ in $\varphi(1,x) = x$ za $a,b \in \mathcal{G}, x \in \mathcal{X}$.
+\end{definition}
+
+\begin{statement}
+Vsakemu delovanju $\mathcal{G}$ na $\mathcal{X}$ lahko priredimo homomorfzem iz $\mathcal{G}$ na $Sim{X}$ in obratno.
+\end{statement}
+
+\begin{proof}
+$\implies$\\
+Imejmo delovanje $\mathcal{G}$ na $\mathcal{X}$. Priredimo mu homomorfizem $\varphi: \mathcal{G} \to Sim(\mathcal{X})$, kjer je $\varphi(a)$ premutacija definirana kot: $\varphi(a)(x) = ax$.
+Bralec bo lahko za domoačo nalogo dokazal, da je $\varphi(a)$ res premutacija in homomorfizem. % Sej bom nekoč dodal 
+\\$\impliedby$\\
+Homomorfizmu $\varphi(a):  \mathcal{G} \to Sim(\mathcal{X})$ priredimo delovanje $(a,x) \mapsto \varphi(a)(x)$
+\end{proof}
+
+\begin{example}
+$\mathcal{G}$ deluje na $\mathcal{G}$ z običajnim množenjem. To delovanje smo srečali že v dokazu Cayleyevaga izreka(\ref{th:cayley_theorem}).
+\end{example}
+
+
+\subsubsection{Vložitev kolobarja v kolobar endomorfizmov}
+
+Naj bo $\mathcal{M}$ aditivna (in zato Abelova) grupa. Množica vseh endomorfizmov($End(\mathcal{M})$) postane kolbar, če vpeljemo vsoto in produkt kot običajno seštevanje in komponiranje.
+
+\begin{theorem}
+Vsak kolobar $\mathcal{K}$ lahko vložimo v kolobar endomorfizmov neke aditivne grupe.
+\end{theorem}
+
+\begin{proof}
+$\mathcal{K}$ bomo vložili v $End(\mathcal{K})$, kjer bomo na drugi $\mathcal{K}$ gledali le še kot na aditivno grupo.\\
+Definiramo $\varphi: \mathcal{K} \to End(\mathcal{K}), \varphi(a) = l_a$, kjer je $l_a: \mathcal{K} \to \mathcal{K}$ in $l_a(x) = ax$. Zaradi distributivnosti je tako $l_a(x+y) = l_a(x) + l_a(y)$. $\varphi$ je prav tako homomorfizem(prevedemo na $l_a$). Injektivnost je trivialna. 
+\end{proof}
+
+Podobno vlogo kot jih imajo pri grupah delovanja, imajo pri kolobarjih moduli.
+
+\begin{definition}
+\label{def:modulo_over_ring}
+Aditivna grupa $\mathcal{M}$ je \textbf{modul nad kolobarjem $\mathcal{K}$}, če obstaja operacija $*: \mathcal{K} \times \mathcal{M} \to \mathcal{M}, (a,m) \mapsto am$ za katero velja.
+\begin{enumerate}[label=(\alph*)]
+\item $(a+b)*m = am + bm$
+\item $a*(m+n) = am + an$
+\item $(ab) * m = a(bm)$
+\item $1*m = m$
+\end{enumerate}
+Za $a,b \in \mathcal{K}$ in $m,n \in \mathcal{M}$.
+\end{definition}
+
+\begin{remark}
+Opazimo, da je modul nad poljem $\mathcal{F}$ kar vektorski prostor nad istim poljem.
+\end{remark}
+
+\begin{statement}
+Vsak modul $\mathcal{M}$ porodi homomorfizem iz $\mathcal{K}$ v $End(\mathcal{M})$ podan s preslikavo $\varphi(a)(m) = am$ in obratno, vsak homomorfizem $\varphi : \mathcal{K} \to End(\mathcal{M})$ porodi modul $a*m = \varphi(a)(m)$
+\end{statement}
+
+\begin{proof}
+Enako kot prej.
+\end{proof}
+
+\subsubsection{Vložitev algebre v algebro endomorfizmov vektorskega prostora}
+
+Naj bo $\mathcal{V}$ vektorski prostor nad poljem $\mathcal{F}$ in naj bo $End_\mathcal{F}(\mathcal{V})$ množica vseh linearnih preslikav iz $\mathcal{V}$ v $\mathcal{V}$. Ta množica je algebra če definiramo običajne operacije.
+
+\begin{statement}
+Vsako algebro $\mathcal{A}$  lahko vložimo v algebro endomorfizmov nekega vektorskega prostora.
+\end{statement}
+
+\begin{proof}
+Postopamo podobno kot prej.
+\end{proof}
+Če je $\mathcal{A}$ končno razsežna je tudi $End_\mathcal{F}(\mathcal{A})$ končno razsežna in zato velja $End_\mathcal{F}(\mathcal{A}) \cong \mathcal{M}_n(\mathcal{F})$.
+\\\\
+\begin{corollary}
+Vsako končno razsežno algebro lahko vložimo v matrično algebro $\mathcal{M}_n(\mathcal{F})$.
+\end{corollary}\\
+
+\begin{example}
+$\mathcal{A}$ naj bo končno razsežna algebra nad $\mathbb{R}$, zanima nas, ali lahko velja $ab-ba = 1$ kar je glede na posledico enakovredno problemu:\\
+Ali za $A,B \in \mathcal{M}_n(\mathbb{R})$ lahko velja $AB - BA = I$?\\
+Očitno to ne velja, saj: $sl(AB-BA) = 0 \neq 1 = sl(I)$. 
+
+\end{example}
+
+
+\subsection{Vložitev celega kolobarja v polje}
+
+Zanima nas, ali lahko poljuben kolobar $\mathcal{K}$ vložimo v polje (npr. ali lahko $\mathbb{Z}$ vložimo v $\mathbb{C}$.\\
+Takoj opazimo da mora imeti kolobar nekaj značilnosti:
+\begin{enumerate}
+\item $\mathcal{K}$ mora biti komutativen (da ima to lastnost tudi polje).
+\item $\mathcal{K}$ ne sme imeti deliteljev niča (da je tudi polje brez deliteljev niča)
+\end{enumerate}
+
+Zahtevati moramo torej, da je $\mathcal{K}$ \textbf{cel}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
