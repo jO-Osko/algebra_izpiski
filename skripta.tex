@@ -3403,23 +3403,135 @@ Takoj opazimo da mora imeti kolobar nekaj značilnosti:
 Zahtevati moramo torej, da je $\mathcal{K}$ \textbf{cel}.
 
 
+\begin{lemma}
+S predpisom $(a,b) \sim (a',b') \iff ab' = a'b$ je definirana ekvivalenčna relacija na kartezičnem produktu kolobarja in kolobarja brez ničle($\mathcal{K} \times \mathcal{K}-\{0\}$).
+\end{lemma}
+
+\begin{proof}
+Brez težav preverimo, da ustreza zahtevam za ekvivalenčno relacijo.
+\end{proof}
+
+Tako dobimo $\frac{a}{b} := [(a,b)]$ kot predstavnika ekvivalenčnega razreda $(a,b)$, in pišemo $\frac{a}{b} = \frac{a'}{b'} \iff ab' = a'b$.
+
+\begin{lemma}
+Za poljubne $a,a', c, c' \in \mathcal{K}$ in $b,b', d, d' \in \mathcal{K} - \{0\}$ velja $$\frac{a}{b} = \frac{a'}{b'} \land \frac{c}{d} = \frac{c'}{d'} \implies \frac{ab+bc}{bd} = \frac{a'd' + b'c'}{b'd'}\land \frac{ac}{bd} = \frac{a'c'}{b'd'}$$
+\end{lemma}
+
+\begin{proof}
+Preprosto premečemo številke
+\end{proof}
+
+\begin{theorem}
+Če v množico vseh ekvivalenčnih razredov $$\mathcal{F} :=\{\frac{a}{b} | a \in \mathcal{K}, b \in \mathcal{K} - \{0\} \}$$ vpelejmo seštevanje in množenje s predpisoma:
+$\frac{a}{b} + \frac{c}{d} = \frac{ab+bc}{bd}$ in $\frac{a}{b} * \frac{c}{d} = \frac{ac}{bd}$, potem $\mathcal{F}$ postane polje.
+\end{theorem}
+
+\begin{proof}
+Preprosto preverimo dobro lastnosti za polje, dobro definiranost nam daje že prejšnja lema.
+\end{proof}
+
+S predpison $\varphi : \mathcal{K} \to \mathcal{F}, \varphi(a) = \frac{a}{1}$ je definirano vložitev iz $\mathcal{K}$ v $\mathcal{F}$.
+
+\begin{proof}
+Prejšnja lema nam da dobro definiranost, ostale lastnosti pa preverimo s preprostim računom.
+\end{proof}
+
+\textbf{Dogovor:} Namesto $\frac{a}{1}$ pišemo kar $a$ in v tem smislu $\mathcal{K}$ obravnavamo kot podmnožico $\mathcal{F}$, $\mathcal{K} \subseteq \mathcal{F}$.
 
 
+\begin{remark}
+Polje $\mathcal{F}$ je generirano s (podmožico) $\mathcal{K}$, torej med $\mathcal{K}$ in $\mathcal{F}$ ni drugega polja (če obstaja polje $\mathcal{F}', \mathcal{K} \subseteq \mathcal{F}' \subseteq \mathcal{F}$, to polje zagotovo vsebuje vse inverze elementov iz $\mathcal{K}$ in zato tudi vse elemente $\mathcal{F}$ 
+\end{remark}
+
+\begin{definition}
+\label{def:fraction_field}
+Polju 
+\begin{equation}
+\label{eq:def_fraction_field}
+\mathcal{F} := \{\frac{a}{b} | a \in \mathcal{K}, b \in \mathcal{K} - \{0\} \}
+\end{equation}
+Pravimo \textbf{polje ulomkov} celega kolobarja $\mathcal{K}$
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+$\mathcal{K} = \mathbb{Z} \implies \mathcal{F} = \mathbb{Q}$
+\end{example_case}
+\begin{example_case}
+Če ej $\mathcal{K}$ že sam polje, velja $\mathcal{F} = \mathcal{K}$
+\end{example_case}
+\end{example}
 
 
+\begin{definition}
+\label{def:field_rational_functions}
+Naj bo $\mathcal{F}$ polje in $\mathcal{K} = \mathcal{F}[X]$ polju ulomkov $\mathcal{K}$ pravimo \textbf{polje racionalnih funkcij}, katerega elementi so $\frac{f(x)}{g(x)}$
+\end{definition}
+
+\begin{remark}
+Na podoben način definiramo polje racionalnih funkcij za polinom več spremenljivk.
+\end{remark}
 
 
+\subsection{Karakteristika kolobarja in vložitev prapolja v polje}
+
+\begin{definition}
+\label{def:characteristics_of_ring}
+Naj bo $\mathcal{K}$ kolobar, Če obstaja tako naravno število $n$, da velja $n*1 = 0$ (spomnimo se $n*1 = 1+1+\dots + 1$), potem najmanjšemu izmed njih pravimo $\textbf{karakteristika kolobarja}$, če pa takih števil ni, potem pravimo, da ima kolobar \textbf{karakteristiko 0}
+\end{definition}
+
+\begin{remark}
+Karakteristiko kolobarja označimo z $kar(\mathcal{K})$.
+\end{remark}
+
+\begin{example}
+\begin{example_case}
+$\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ imajo karakteristiko 0.
+\end{example_case}
+\begin{example_case}
+$kar(\mathbb{Z}_n) = n$
+\end{example_case}
+\begin{example_case}
+$kar(M_k(\mathbb{Z}_n)) = kar(\mathbb{Z}_n[X]) = n$
+\end{example_case}
+\begin{example_case}
+$kar(\mathbb{Z}_2 \times \mathbb{Z}_3) = 6$
+\end{example_case}
+\begin{example_case}
+$kar(k) = n \iff \forall x \in \mathcal{K}. \ nx = 0 $
+\end{example_case}
+\end{example}
+
+\begin{lemma}
+Karakteristika kolobarja brez deliteljev niča je bodisi $0$ bodisi praštevilo.
+\end{lemma}
+
+\begin{proof}
+Danimo da je $kar(\mathbb{K}) = n$. če velja $n=r*s \implies n*1 = r*s*1 = (r*1)*(s*1) \implies r*1 = 0 \lor s*1 = 0$, ker je po definiciji karekteristika najmanjše tako število, je $n=s \lor n = r \implies n$ je praštevilo.
+\end{proof}
+
+\begin{theorem}
+Naj bo $\mathcal{F}$ polje
+\begin{enumerate}
+\item Če velja $kar(\mathcal{F}) = 0$ lahko $\mathcal{F}$ vložimo v $\mathbb{Q}$
+\item Če velja $kar(\mathcal{F}) = p$ lahko $\mathcal{F}$ vložimo v $\mathbb{Z}_p$ 
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$kar(\mathcal{F}) = 0$, $\varphi : \mathbb{Q} \to \mathcal{F}, \frac{n}{m} \mapsto n * m^{-1}$
+Brez težav preverimo, da je $\varphi$ dobro definirana in homomorfizem, $Ker(\varphi) = \{0\}$, torej je res vložitev.\\
+$kar(\mathcal{F}) = p$, $\varphi : \mathbb{Z}_p \to \mathcal{F}, k \mapsto k*1=(1+1+\times + 1)$\\
+$\varphi(k) = 0 \iff k = 0$, saj $k < p = kar(\mathcal{F})$ torej je $\varphi$ injektivna.\\Preverimo še $\varphi(k*l) = \varphi(k) * \varphi(l)$, $\varphi(k)\varphi(l) = k*l = q*p + r, r < p = r$ Enako pa velja tudi v $\mathbb{Z}_p$, zato $\varphi(kl) = \varphi(r) = r$.
+
+\end{proof}
+
+Polje $\mathbb{Q}$ imenujemo \textbf{prapolje s karaktersitiko $0$} , polje $\mathbb{Z}_p$ pa \textbf{prapolje s karakteristiko $p$}.
+
+Vidimo, da vsako polje s karakteristiko $0$ 'vsebuje' $\mathbb{Q}$ (natančneje, vsebuje izomorfno kopijo $\mathbb{Q}$), vsako polje s karakteristiko p pa vsebuje $\mathbb{Z}_p$.
 
 
-
-
-
-
-
-
-
-
-
+\subsection{Odseki}
 
 
 \end{document}
