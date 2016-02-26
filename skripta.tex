@@ -3530,8 +3530,180 @@ Polje $\mathbb{Q}$ imenujemo \textbf{prapolje s karaktersitiko $0$} , polje $\ma
 
 Vidimo, da vsako polje s karakteristiko $0$ 'vsebuje' $\mathbb{Q}$ (natančneje, vsebuje izomorfno kopijo $\mathbb{Q}$), vsako polje s karakteristiko p pa vsebuje $\mathbb{Z}_p$.
 
+\section{Kvocientne strukture}
 
 \subsection{Odseki}
+
+\begin{definition}
+\label{def:coset_group}
+Naj bo $\mathcal{H}$ podgrupa grupe $\mathcal{G}$ in naj bo $a \in \mathcal{G}$. \textbf{Odsek} grupe $\mathcal{G}$ po podgrupi $\mathcal{H}$ je:
+
+\begin{equation}
+\label{eq:def_coset_group}
+a\mathcal{H} := \{ ah | \ h \in \mathcal{H}\}
+\end{equation}
+
+\end{definition}
+
+\begin{remark}
+Če je $\mathcal{G}$ aditivna grupa odsek pišemo kot $a + \mathcal{H} := \{ a+h | \ h \in \mathcal{H}\}$
+\end{remark}
+\\
+\\
+\begin{remark}
+Natančnej, $a\mathcal{H}$ je \textbf{levi odsek}, desni odsek definiramo na podoben način $\mathcal{H}a := \{ ha | \ h \in \mathcal{H}\}$ in se obnaša podobno. Pri Algebri 2 bomo obravnavali zgolj leve odseke.
+\end{remark}
+
+Če je $a \in \mathcal{H}$ velja $a \mathcal{H} = \mathcal{H}$, velja tudi obratno, če $a\mathcal{H} = a$ potem $a \in \mathcal{H}$ $ (a\mathcal{H} = \mathcal{H} \iff a \in \mathcal{H})$.
+
+Če $a \in \mathcal{G} - \mathcal{H}$, potem $a\mathcal{H}$ ni niti podrgupa(saj ne vsebuje niti enote).
+
+\begin{example}
+\begin{example_case}
+$\mathcal{G} = \mathbb{Z}, \mathcal{H} = n\mathbb{Z}$\\
+Odseki so: $0 + n\mathbb{Z} = n\mathbb{Z}, 1 + n\mathbb{Z}, \dots, (n-1) + n \mathbb{Z}$, elementi posameznih odsekov pa so števila, ki dajo pri deljenju z n enak ostanek. Tako je vseh odsekov $n$.\\
+S podobnim opisom smo se že srečali, le da smo $a + n\mathbb{Z}$ označili z $[a]$.
+\end{example_case}
+
+\begin{example_case}
+$\mathcal{G} = \mathbb{R}^2, \mathcal{H}=$abscisna os.\\
+Vsi možni odseki so premice, vzporedne abcisni osi.
+\end{example_case}
+
+\begin{example_case}
+$\mathcal{G} = \mathbb{C}^* = \mathbb{C}-\{0\}, \mathcal{H}=\mathcal{S}^1$\\
+Tukaj so odseki koncentrične krožnice.
+\end{example_case}
+
+\begin{example_case}
+$\mathcal{G} = \mathcal{S}_n, \mathcal{H}=\mathcal{A}_n$\\
+$\delta (\in \mathcal{S}_n) \mathcal{H} = \twopartdef{\mathcal{H}}{}{\text{vse lihe permutacije}}{\delta \notin \mathcal{H}}$\\
+Tu imamo le dva odseka lihe in sode permutacije.
+\end{example_case}
+
+\begin{lemma}
+\label{lem:coset_representation}
+Za poljubna $a,b \in \mathcal{G}$ velja:
+$$a\mathcal{H} = b\mathcal{H} \iff a^{-1} b \in \mathcal{H}$$
+\end{lemma}
+
+\begin{proof}
+$\implies$\\
+$a \mathcal{H} = b \mathcal{H}$\\
+$b = b*1 \in b\mathcal{H} = a\mathcal{H}$, $b = a*h_0$ za nek $h_0 \in \mathcal{H}$\\
+$a^{-1}*b = h_0 \in \mathcal{H}$ \\
+$\impliedby$\\
+$a^{-1}*b =h_0 \in \mathcal{H}$\\
+$b = a*h_0 \implies b*h = a*\underbrace{(h_0*h)}_{\in \mathcal{H}} \in a\mathcal{H}$
+Enako pokažemo tudi za vsebovanje v drugo smer.
+\end{proof}
+
+Hitro nas to spomne na karakterizacijo podgrupe:(\ref{def:subgroup})\\
+$\mathcal{H} ne podgrupa \iff a^{-1}b in \mathcal{H} \forall a,b \in \mathcal{H}$\\
+Pomembna razlika je v tem, da zdaj ta dva poljubna elementa nista element podgrupe ampak kar cele (nad)grupe $\mathcal{G}$.
+
+\begin{remark}
+Za desne odseke se pogoj glasi: $\mathcal{H}a = \mathcal{H}b \iff ab^{-1} \in \mathcal{H}$
+\end{remark}
+
+\begin{remark}
+Očitno za Abelove (komutativne) grupe vrstni red $a$ in $b$ ni pomemben 
+\end{remark}
+
+\begin{remark}
+Za aditivne grupe se lema glasi:
+$$a + \mathcal{H} = b + \mathcal{H} \iff b - a \in \mathcal{H}$$
+\end{remark}
+
+
+\end{example}
+
+Ideja, odseki se nam zdijo kot neke vrste ekvivalenčni razredi, poskusimo to tudi bolj algebraično utemeljiti.
+
+\begin{lemma}
+Za poljubna $a, b \in \mathcal{G}$ sta odseka $a\mathcal{H}$ in $b\mathcal{H}$ bodisi enaka, bodisi sta si disjunktna.
+\end{lemma}
+%Lih neki tazga zdej delamo pr UGT, zih bi te zanimal :), predstavljej si preverjat lokalno povezanost s potmi v kkšnem takem prostoru :)
+
+\begin{proof}
+Predpostavimo $a\mathcal{H} \cap b\mathcal{H} \neq \emptyset$ in naj velja $a*h_1 = b*h_2$ za neka $h_1, h_2 \in \mathcal{H}$, oboje z desne pomnožimo z $h_2^{-1}$\\
+$\underbrace{h_1*h_2}_{\in \mathcal{H}} = a^{-1}*b$\\
+Vidimo, da $a \in\mathcal{H}$ leži v kakem odseku(namreč $a\mathcal{H}$). Različna odseka pa sta si disjunktna. $\mathcal{G}$ je tako disjunktna unija svojih odsekov. Tako smo dobili particijo množice $\mathcal{G}$, torej je v ozadju neka ekvivalenčna relacija.\\
+Iz leme prej(\ref{lem:coset_representation})razberemo, da je ta ekvivalenčna relacija definirana kot :
+$$a \sim b \iff a^{-1}b \in \mathcal{H}$$
+
+\end{proof}
+
+\subsection{Podgrupe edinke in kvocientne grupe}
+
+Spomnimo se $\mathcal{G} = \mathbb{Z}, \mathcal{H} = n\mathbb{Z}$, potem množica vseh odsekov $$\{ [a] = a + n\mathbb{Z}\}$$ postane grupa, če definiramo $$[a] + [b] = [a+b] \ //\ \text{Običajno seštevanje v $\mathbb{Z}$}$$
+
+To bi seveda radi posplošil. tako lahko v novih oznakah napišemo $$(a + n\mathbb{Z}) + (b + n\mathbb{Z}) = (a + b) + n\mathbb{Z}$$
+
+
+\subsubsection{Definicija edinke in kvocientne grupe}
+
+Označino podgrupo (bnamesto s $\mathcal{H}$) z $\mathcal{N}$. Na množico vsh odsekov
+\begin{equation}
+\label{eq:def_all_cosets}
+\mathcal{G}/_{\mathcal{N}} := \{ a\mathcal{N} | \ a \in \mathcal{G} \}
+\end{equation}
+
+bi radi vpeljali operacijo, da dobimo grupo.Po izkušnji od prej se nam sam od sebe ponuja predpis:
+$$a\mathcal{N} * b\mathcal{N} := (ab) \mathcal{N}$$
+Vendar pa se pojavi problem dobre definranosti.
+
+\begin{lemma}
+Naj bo $\mathcal{N}$ podgrupa grupe $\mathcal{G}$. Naslednja pogoja sta si ekvivalentna:
+\begin{enumerate}
+\item Za poljubne $a,b, a', b' \in \mathcal{G}$ velja $a\mathcal{N} = a'\mathcal{N} \land b\mathcal{N} = b'\mathcal{N} \implies (ab) \mathcal{N} = (a'b')\mathcal{N}$
+\item $\forall a \in \mathcal{N}$ in $\forall n \in \mathcal{N} \implies ana^{-1} \in \mathcal{N}$
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+$\implies$ Očitno iz premetavanja definicij\\
+$\impliedby$\\
+Iz leme(\ref{lem:coset_representation}) lahko prvi pogoj zapišemo kot:
+$$a^{-1}a' \in \mathcal{N} \land b^{-1}b' \in \mathcal{N} \implies b^{-1}a^{-1}a'b' \in \mathcal{N}$$
+Definiramo si $n_1 = a^{-1}a'$, $n_2 = b^{-1}b'$. Tako dobimo:\\
+$b^{-1}a^{-1}a'b' = b^{-1}n_1b' = \underbrace{b^{-1}n_1b}_{\in \mathcal{N}}\underbrace{b^{-1}b'}_{n_2 \in \mathcal{N}} \in \mathcal{N}$
+\end{proof}
+
+\begin{definition}
+\label{def:normal_subgroup}
+Če podgrupa $\mathcal{N}$ za poljuben $a \in \mathcal{G}$ zadošča pogoju 
+$$\forall a \in \mathcal{N} \land \forall n \in \mathcal{N} \implies ana^{-1} \in \mathcal{N}$$
+jo imenujemo \textbf{podgrupa edinka} in to označimo z:
+$$\mathcal{N} \triangleleft \mathcal{G}$$
+\end{definition}
+
+\begin{theorem}
+Naj bo $\mathcal{N} \triangleleft \mathcal{G}$. Če v množico vseh odsekov $\mathcal{G}/_\mathcal{N}$ vpeljemo operacijo s predpisom $a\mathcal{N} * b\mathcal{N} := (ab)\mathcal{N}$, potem postane $\mathcal{G}/_\mathcal{N}$ grupe. Preslikava $\Pi(a) = a \mathcal{N}$ je epimorfizem grupe in $Ker(\Pi) = \mathcal{N}$
+\end{theorem}
+
+\begin{proof}
+Po prejšnji lemi je ta operacija dobro definirana. Enota je očitno $\mathcal{N} = 1 \mathcal{N}$, prav tako je inverz $(a\mathcal{N})^{-1}) = a^{-1}\mathcal{N}$\\
+Asiciativnost preverimo s preprostim računom $(a\mathcal{N} * b\mathcal{N}) * c \mathcal{N} = ((ab)c)\mathcal{N} = (a(bc))\mathcal{N} = a\mathcal{N} * (b\mathcal{N} * c \mathcal{N})$\\
+Prav tako je očitna surjektivnost in homomorfnost($(ab)\mathcal{N} = a\mathcal{N} * b \mathcal{N}$)\\
+$a \in Ker(\Pi) \iff \Pi(a) = \mathcal{N} \iff q \in \mathcal{N}$ 
+
+\end{proof}
+
+\begin{statement}
+Podmnožica $\mathcal{N}$ grupe $\mathcal{G}$ je podgrupa edinka natanko tedaj, ko je $\mathcal{N}$ jedro kakega homomorfizma ig $\mathcal{G}$ v neko grupo.
+\end{statement}
+
+\begin{proof}\leavevmode\\
+$\implies: \mathcal{N}$ je edinka $\implies \mathcal{N} = Ker(\Pi)$\\
+$\impliedby$\\
+$\mathcal{N} := Ker (\varphi), \varphi \mathcal{G} \to \mathcal{G}'$\\
+Naj velja $n,m \in \mathcal{N}$:
+$\varphi(nm^{-1}) = \varphi(n) \varphi(m)^{-1} = 1 * 1^{-1} = 1 \implies nm^{-1} \in \mathcal{N}$
+Preverimo, da za $a \in \mathcal{G}$ velja $ana^{-1} \in \mathcal{N}$: $\varphi(ana^{-1}) = \varphi(a) \underbrace{\varphi(n)}_{= 1} \varphi(a)^{-1} = 1$, Torej je $\mathcal{N}$ grupa edinka.
+
+
+\end{proof}
 
 
 \end{document}
