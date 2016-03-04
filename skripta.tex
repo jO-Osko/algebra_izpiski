@@ -3551,7 +3551,7 @@ a\mathcal{H} := \{ ah | \ h \in \mathcal{H}\}
 \\
 \\
 \begin{remark}
-Natančnej, $a\mathcal{H}$ je \textbf{levi odsek}, desni odsek definiramo na podoben način $\mathcal{H}a := \{ ha | \ h \in \mathcal{H}\}$ in se obnaša podobno. Pri Algebri 2 bomo obravnavali zgolj leve odseke.
+Natančneje, $a\mathcal{H}$ je \textbf{levi odsek}, desni odsek definiramo na podoben način $\mathcal{H}a := \{ ha | \ h \in \mathcal{H}\}$ in se obnaša podobno. Pri Algebri 2 bomo obravnavali zgolj leve odseke.
 \end{remark}
 
 Če je $a \in \mathcal{H}$ velja $a \mathcal{H} = \mathcal{H}$, velja tudi obratno, če $a\mathcal{H} = a$ potem $a \in \mathcal{H}$ $ (a\mathcal{H} = \mathcal{H} \iff a \in \mathcal{H})$.
@@ -3599,7 +3599,7 @@ Enako pokažemo tudi za vsebovanje v drugo smer.
 \end{proof}
 
 Hitro nas to spomne na karakterizacijo podgrupe:(\ref{def:subgroup})\\
-$\mathcal{H} ne podgrupa \iff a^{-1}b in \mathcal{H} \forall a,b \in \mathcal{H}$\\
+$\mathcal{H}$ je podgrupa $\iff a^{-1}b \in \mathcal{H} \forall a,b \in \mathcal{H}$\\
 Pomembna razlika je v tem, da zdaj ta dva poljubna elementa nista element podgrupe ampak kar cele (nad)grupe $\mathcal{G}$.
 
 \begin{remark}
@@ -3703,6 +3703,217 @@ $\varphi(nm^{-1}) = \varphi(n) \varphi(m)^{-1} = 1 * 1^{-1} = 1 \implies nm^{-1}
 Preverimo, da za $a \in \mathcal{G}$ velja $ana^{-1} \in \mathcal{N}$: $\varphi(ana^{-1}) = \varphi(a) \underbrace{\varphi(n)}_{= 1} \varphi(a)^{-1} = 1$, Torej je $\mathcal{N}$ grupa edinka.
 
 
+\end{proof}
+
+\subsubsection{Produkti podgrup}
+
+\begin{definition}
+
+\label{def:subrgoup_product}
+
+Naj bosta $\mathcal{H}, \mathcal{K} \leq \mathcal{G}$, njun produkt je
+
+\begin{equation}
+\label{eq:def_subgroup_product}
+\mathcal{H}\mathcal{K} := \{ hk | \ h \in \mathcal{H}, k \in \mathcal{K}\}
+\end{equation}
+
+\end{definition}
+
+
+
+\begin{remark}
+
+Produkt podgrup v splošnem ni nujno podgrupa
+
+\end{remark}
+
+\begin{definition}
+
+\label{def:subrgoup_sum}
+
+Naj bosta $\mathcal{H}, \mathcal{K} \leq \mathcal{G}$, njuna vsota je
+
+\begin{equation}
+\label{eq:def_subgroup_sum}
+\mathcal{H}+\mathcal{K} := \{ h+k | \ h \in \mathcal{H}, k \in \mathcal{K}\}
+\end{equation}
+
+\end{definition}
+
+\begin{lemma}
+
+Naj bo $\mathcal{G}$ grupa:
+
+\begin{enumerate}
+
+\item Če sta $\mathcal{H}, \mathcal{K} \leq \mathcal{G}$ in velja $\mathcal{H}\mathcal{K} = \mathcal{K}\mathcal{H}$ potem je ta množica podgrupa
+
+\item Če je $\mathcal{H} \leq \mathcal{G}$ in $\mathcal{N} \triangleleft \mathcal{G}$ potem velja $\mathcal{N}\mathcal{H} = \mathcal{N}\mathcal{H} \leq \mathcal{G}$
+
+\item Če velja $\mathcal{H},\mathcal{K} \triangleleft \mathcal{G}$, potem $\mathcal{H}\mathcal{K} = \mathcal{K}\mathcal{H} \triangleleft \mathcal{G}$
+
+\end{enumerate}
+
+\end{lemma}
+
+\begin{proof}\leavevmode
+\begin{enumerate}
+\item $\mathcal{H}\mathcal{K}=\mathcal{K}\mathcal{H}$. Pokazati moramo: $\forall k_1, k_2 \in \mathcal{K} \land \forall h_1,h_2 \in \mathcal{H}. \ (h_1k_2)(h_2k_2)^{-1} \in \mathcal{H}\mathcal{K}$(definicija podgrupe).\\
+$(h_1k_2)(h_2k_2)^{-1} = h_1 \underbrace{k_1 k_2^{-1}}_{k_3 \in \mathcal{K}} h_2^{-1} = h_1 \underbrace{k_3 h_1^{-1}}_{h_3k_4 // (\mathcal{H}\mathcal{K} = \mathcal{K}\mathcal{H})} = \underbrace{(h_1 h_3)}_{\in \mathcal{H}}\underbrace{k_4}_{\in \mathcal{K}} $
+\item Iz tega da je $\mathcal{N}$ edinka vemo da velja $h\mathcal{N} = \mathcal{N}h \forall h \in \mathcal{H}$ torej seveda $\mathcal{H}\mathcal{K}=\mathcal{K}\mathcal{H}$.
+\item Vemo da $\mathcal{M}\mathcal{N}=\mathcal{N}\mathcal{M} \leq \mathcal{G}$ torej $a(mn)a^{-1} =  \underbrace{ama^{-1}}_{\in \mathcal{M}} \underbrace{ana^{-1}}_{\in \mathcal{N}} \in \mathcal{M}\mathcal{N}$ 
+\end{enumerate}
+\end{proof}
+
+Če je $\mathcal{G}$ aditivna grupa in sta $\mathcal{H}, \mathcal{K} \leq \mathcal{G}$ (in zato tudi grupi edinki) ne govorimo o produktu, pač pa o vsoti.
+
+
+\begin{remark}
+
+To je pogrupa $\mathcal{G}$.
+
+\end{remark}
+
+\begin{remark}
+
+\begin{enumerate}
+
+\item Če velja $\mathcal{H}, \mathcal{K} \leq \mathcal{G}$, potem velja tudi $\mathcal{H} \cap \mathcal{K} \leq \mathcal{G}$
+
+\item Če velja $\mathcal{N}, \mathcal{M} \triangleleft \mathcal{G}$, je tudi $\mathcal{N} \cap \mathcal{M} \triangleleft \mathcal{G}$ (Seveda velja $\mathcal{N} \cap \mathcal{M} \subseteq \mathcal{N} \subseteq \mathcal{N} \mathcal{M}$
+
+\end{enumerate}
+
+\end{remark}
+
+Za $\mathcal{H}_1, \mathcal{H}_2, \dots \mathcal{H}_r \leq \mathcal{G}$ definiramo produkt kot
+
+$$
+\mathcal{H}_1 \dots\mathcal{H}_r \:= \{h_1, \dots, h_r | h_i \in \mathcal{H}_i \}
+$$
+
+\subsubsection{Podgrupe (edinke) kvocientne grupe}
+
+Pojavi se naravno vprašanje, kdaj so podgrupe edinke $\mathcal{G}/_{\mathcal{N}}$\\
+Prej pa se spomnimo definicij slike in praslike
+$$f: \mathcal{X} \to \mathcal{Y} \ \ \mathcal{X}_0 \subseteq \mathcal{X}, \mathcal{Y}_0 \subseteq \mathcal{Y}$$
+$$f(\mathcal{X}_0) = \{ f(x_0) | \ x_0 \in \mathcal{X}_0\}$$
+$$f^{-1}(\mathcal{Y}_0) = \{ x \in \mathcal{X} | f(x) \in \mathcal{Y}_0\}$$
+
+%Tole bo treba pregledat
+
+\begin{lemma}
+Naj bo $\varphi :\mathcal{G} \to \mathcal{G}'$ homomorfizem grup.
+\begin{enumerate}
+\item Če je $\mathcal{H}' \leq \mathcal{G}'$ potem je tudi $\varphi^{-1}(\mathcal{H}') \leq \mathcal{G}$
+\item Če je $\mathcal{N}' \triangleleft \mathcal{G}'$ potem je tudi $\varphi^{-1}(\mathcal{N}') \triangleleft \mathcal{G}$
+\item Če je $\mathcal{H} \leq \mathcal{G}$ potem je tudi $\varphi(\mathcal{H}) \leq \mathcal{G}$
+\item Če je $\mathcal{N} \triangleleft \mathcal{G}$ in je $\varphi$ epimorfizem, je $\varphi(\mathcal{N}) \triangleleft \mathcal{G}'$
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}\leavevmode
+\begin{enumerate}
+\item $h_1, h_2 \in \varphi^{-1}(\mathcal{H}')$ Torej: $\varphi(h_1h_2^{-1}) = \varphi(h_1) \varphi(h_2)^{-1} \in \mathcal{H}'$ Saj je $\mathcal{H}'$ podgrupa.
+\item Iz prve točke velja da je praslika edinke podgrupa. Pokažimo še $ana^{-1} \in \varphi^{-1}(\mathcal{N}')$ kar je enakovredno $\varphi(ana^{-1}) \in \mathcal{N}'$. $\varphi(ana^{-1}) = \varphi(a) \varphi(n) \varphi(a)^{-1} \in \mathcal{N}$ Saj je le ta edinka.
+\item DOBI IZ VAJ.
+
+\end{enumerate}
+\end{proof}
+
+\begin{statement}
+Če je $\mathcal{N} \leq \mathcal{H} \leq \mathcal{G}$ potem je $\mathcal{N} \triangleleft \mathcal{H}$, zato lahko tvorimo $\mathcal{H}/_{\mathcal{N}}$ in trdimo: $\mathcal{H}/_{\mathcal{N}} \leq \mathcal{G}/_{\mathcal{N}}$.
+\end{statement}
+
+\begin{proof}
+Dokažemo neposredno, ali pa uporabimo tretjo točko prejšnje leme za $\varphi = \Pi : \mathcal{G} \to \mathcal{G}/_{\mathcal{N}}$ (Kanonični epimorfizem).
+\end{proof}
+
+\begin{statement}
+Če je $\mathcal{N} \leq \mathcal{M} \triangleleft \mathcal{G}$ potem velja $\mathcal{M}/_{\mathcal{N}} \triangleleft \mathcal{G}_{\mathcal{N}}$
+\end{statement}
+
+\begin{proof}
+Dokažemo neposredno, ali pa uporabimo četrto točko prejšnje leme.
+\end{proof}
+
+
+\begin{theorem}
+Naj bo $\mathcal{N} \triangleleft \mathcal{G}$
+\begin{enumerate}
+\item Vsaka podgrupa $\mathcal{G}/_{\mathcal{N}}$ je oblike $\mathcal{H}/_{\mathcal{N}}$ za neko podgrupo $\mathcal{H}: \mathcal{N} \leq \mathcal{H} \leq \mathcal{G}$
+\item Vsaka podgrupa edinka $\mathcal{G} _{\mathcal{N}}$ je oblike $\mathcal{M}/_{\mathcal{N}}$ za neko edinko $\mathcal{M}: \mathcal{N} \leq \mathcal{M} \triangleleft \mathcal{G}$
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\item Naj bo $\mathcal{H}' \leq \mathcal{G}/_{\mathcal{N}}$, Definirajmo $\mathcal{H}:= \Pi^{-1}(\mathcal{H}')$, kjer je $\Pi : \mathcal{G} \to \mathcal{G}/_{\mathcal{N}}$ Po prvi točki prejšnje leme je $\mathcal{H} \leq \mathcal{G}$, seveda pa vsebuje tudi $\mathcal{N}$. (za nek $n \in \mathcal{N}, \Pi(n) = n\mathcal{N} = \mathcal{N} \in \mathcal{H}'$, ker je $\mathcal{N}$ enota grupe $\mathcal{H}'$).\\ Ker je $\Pi$ surjektivna velja $\Pi(\Pi^{-1}(\mathcal{H}')) = \mathcal{H}$
+
+\item Dokažemo na enak način, le da velja $\mathcal{N} := \Pi^{-1}(\mathcal{N}')$, Za vsebovanost pa namesto prve točke uporabimo drugo.
+\end{proof}
+
+\begin{example}
+Kaj so podgrupe $\mathbb{Z}_n$? Hitro opazimo, da za poljuben $k \in \mathbb{Z}$ velja $k\mathbb{Z}n = \{ka | \ a \in \mathbb{Z}_n\}$ je podgrupa $\mathbb{Z}_n$.\\
+Recimo: $2\mathbb{Z}_4 = \{0,2\}$ in $1\mathbb{Z}_4 = 3\mathbb{Z}_4 = \mathbb{Z}_4$\\
+Prav tako vidimo $\mathbb{Z}_n = \mathbb{Z}/_{n\mathbb{Z}}$, podgrupe $\mathcal{Z}_n$ so torej oblike $\mathcal{H}/_{n\mathbb{Z}}$, kjer je $n\mathbb{Z} \leq \mathcal{H} \leq \mathbb{Z}$, kjer je $\mathcal{H}$ oblike $k\mathbb{Z}, k \geq 0$.\\
+Kdaj pa velja $n\mathbb{Z} \subseteq k\mathbb{Z}$, natanko tedaj, kadar $n|k$.\\
+Edine podgrupe $\mathbb{Z}_n$ so torej oblike : \\
+$$k\mathbb{Z}/_{n\mathbb{Z}}, n|k$$
+
+\end{example}
+
+
+\subsection{Ideali in kvocientni kolobarji}
+
+\subsubsection{Definicija ideala in kvocientnega kolobarja}
+
+
+Naj bo $\mathcal{I} \subseteq \mathcal{K}$ in naj bo $\mathcal{I}$ podgrupa za seštevanje, kjer je $\mathcal{K}$ kolobar. Množica 
+$$\mathcal{K}/_{\mathcal{I}} := \{ a+\mathcal{I} | \ a \in \mathcal{K} \}$$
+postane aditivna grupa, če definiramo:
+$$(a+\mathcal{I}) + (b + \mathcal{I}) = (a+b) + \mathcal{I}$$
+
+Seveda nas normalno zanima, kaj moramo zahtevati, da bomo $\mathcal{K}/_{\mathcal{I}}$ lahko opremili z množenjem. Torej nas zanima, kdaj bo spodnja operacija dobro definirana:
+$$(a+\mathcal{I}) * (b + \mathcal{I}) = (a*b) + \mathcal{I}$$
+
+\begin{lemma}
+Naj bo $\mathcal{I}$ podgrupa za seštevanje kolobarja $\mathcal{K}$. Naslednja pogoja sta si ekvivalentna:
+\begin{itemize}
+\item $\forall a,a',b,b' \in \mathcal{K}. \ (a+\mathcal{I} = a'+\mathcal{I} \land b+\mathcal{I} = b'+\mathcal{I}) \implies ab + \mathcal{I} = a'b'+\mathcal{I}$
+\item $\forall a \in \mathcal{K}, u \in \mathcal{I}. \ au \in \mathcal{I} \land ua \in \mathcal{I}$
+\end{itemize}
+\end{lemma}
+
+\begin{proof}\leavevmode\\
+$\implies$ Bralec bo brez težav to preveril sam\\%Enkrat dodej
+$\impliedby$\\
+$u := a' - a \in \mathcal{I}, v := b'- b \in \mathcal{I}$\\
+$a'b'-ab = (a+u)(b+v) - ab = \underbrace{ub}_{\text{Po predpostavki}\ \in \mathcal{I}} + \underbrace{av + uv }_{\in \mathcal{I}}\in \mathcal{I}$
+
+
+\end{proof}
+
+
+\begin{definition}
+\label{def:ideal}
+Podgrupa za seštevanje $\mathcal{I}$ kolobarja $\mathcal{K}$ se imenuje ideal(kolobarja $\mathcal{K}$), če zadošča pogoju kateremukoli izmed pogojev iz prejšnje leme (pogoja sta si ekvivalentna). Označimo: $\mathcal{I} \triangleleft \mathcal{K}$
+\end{definition}
+
+
+\begin{example}
+Ideali kolobarja $\mathbb{Z}$ so $n\mathbb{Z}, n \geq 0$(To so(edine) podgrupe za $+$, in hkrati ustrezajo zahtevam) 
+\end{example}
+
+
+\begin{theorem}
+Naj bo $\mathcal{I} \triangleleft \mathcal{K}$. Če v množico cseh odsekov $\mathcal{K}/_{\mathcal{I}}$ vpeljemo seštevanje in množenje s predpisoma od prej, potem postane $\mathcal{K}/_{\mathcal{I}}$ kolobar.\\
+Preslikava $\pi : \mathcal{K} \to \mathcal{K}_{\mathcal{I}}, \Pi(a) = a + \mathcal{I}$ je opimorfizem in njeno jedro je $\mathcal{I}$.
+\end{theorem}
+
+\begin{proof}
+Zaradi leme je množenje dobro definirano, seštevanje prav tako.\\
+Enote ostanjejo iste ($0,1$), distributivnost sledi iz originalne distributivnosti, homomorfizem in jedro preslikave pa iz preprostega premetavanja definicij.
 \end{proof}
 
 
