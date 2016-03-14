@@ -3643,7 +3643,7 @@ To bi seveda radi posplošil. tako lahko v novih oznakah napišemo $$(a + n\math
 
 \subsubsection{Definicija edinke in kvocientne grupe}
 
-Označino podgrupo (bnamesto s $\mathcal{H}$) z $\mathcal{N}$. Na množico vsh odsekov
+Označino podgrupo (namesto s $\mathcal{H}$) z $\mathcal{N}$. Na množico vsh odsekov
 \begin{equation}
 \label{eq:def_all_cosets}
 \mathcal{G}/_{\mathcal{N}} := \{ a\mathcal{N} | \ a \in \mathcal{G} \}
@@ -3657,7 +3657,7 @@ Vendar pa se pojavi problem dobre definranosti.
 Naj bo $\mathcal{N}$ podgrupa grupe $\mathcal{G}$. Naslednja pogoja sta si ekvivalentna:
 \begin{enumerate}
 \item Za poljubne $a,b, a', b' \in \mathcal{G}$ velja $a\mathcal{N} = a'\mathcal{N} \land b\mathcal{N} = b'\mathcal{N} \implies (ab) \mathcal{N} = (a'b')\mathcal{N}$
-\item $\forall a \in \mathcal{N}$ in $\forall n \in \mathcal{N} \implies ana^{-1} \in \mathcal{N}$
+\item $\forall a \in \mathcal{G}$ in $\forall n \in \mathcal{N} \implies ana^{-1} \in \mathcal{N}$
 \end{enumerate}
 \end{lemma}
 
@@ -3673,7 +3673,7 @@ $b^{-1}a^{-1}a'b' = b^{-1}n_1b' = \underbrace{b^{-1}n_1b}_{\in \mathcal{N}}\unde
 \begin{definition}
 \label{def:normal_subgroup}
 Če podgrupa $\mathcal{N}$ za poljuben $a \in \mathcal{G}$ zadošča pogoju 
-$$\forall a \in \mathcal{N} \land \forall n \in \mathcal{N} \implies ana^{-1} \in \mathcal{N}$$
+$$\forall a \in \mathcal{G} \land \forall n \in \mathcal{N} \implies ana^{-1} \in \mathcal{N}$$
 jo imenujemo \textbf{podgrupa edinka} in to označimo z:
 $$\mathcal{N} \triangleleft \mathcal{G}$$
 \end{definition}
@@ -3915,6 +3915,87 @@ Preslikava $\pi : \mathcal{K} \to \mathcal{K}_{\mathcal{I}}, \Pi(a) = a + \mathc
 Zaradi leme je množenje dobro definirano, seštevanje prav tako.\\
 Enote ostanjejo iste ($0,1$), distributivnost sledi iz originalne distributivnosti, homomorfizem in jedro preslikave pa iz preprostega premetavanja definicij.
 \end{proof}
+
+\subsubsection{Izpustimo zaradi kolokvija}
+\subsubsection{Izpustimo zaradi kolokvija}
+\subsubsection{Izpustimo zaradi kolokvija}
+
+\subsubsection{Kvocientni prostori in kvocientne algebre}
+
+
+\begin{theorem}
+Naj bo $\mathcal{U}$ podprotor vektorksega protora $\mathcal{V}$ na obsegom $\mathcal{F}$. Če v množico vseh odsekov $$\mathcal{V}/_{\mathcal{U}} :=  \{v+\mathcal{U} | \ v \in \mathcal{V}\}$$
+vpeljemo seštevanje in množenje s skalarji na enak način kot pri grupah in kolobarjih glede na odseke, postane $\mathcal{U}/_{\mathcal{V}}$ vektorski prostor. Preslikava $\Pi : \mathcal{V} \to \mathcal{V}_{\mathcal{U}}, v \mapsto v + \mathcal{U}$ je homomorfizem in $Ker(\mathcal{Pi}) = \mathcal{U}$.  $\mathcal{U}/_{\mathcal{V}}$ imenujemo kvocientni vektorski prostor, $\Pi$ pa kvocientni epimorfizem.
+\end{theorem}
+
+\begin{proof}
+Od prej vemo, da je $(\mathcal{V}/_{\mathcal{U}}, +)$ aditivna grupa. Preverimo še dobro definiranost ostalih stvari.
+$$v + \mathcal{U} = v' + \mathcal{U} \implies \lambda(v+\mathcal{U}) = \lambda (v' + U)$$ ali ekvivalentno $v -v' \in \mathcal{U} \implies \lambda v - \lambda v' \in \mathcal{U}$, to je res, saj $\lambda v - \lambda v' = \lambda (v - v') \in \mathcal{U}$.
+\end{proof}
+
+
+\begin{remark}
+Ideal algebre definramo anako kot ideal kolobarja. Ideal algebre je avtomatsko tudi vektorski podprostor, saj velja $\lambda u = (\lambda * 1) u$, kar pa je v idealu.
+\end{remark}
+
+\begin{theorem}
+Naj bo $\mathcal{I}$ ideal algebre $\mathcal{A}$, če v množico vseh odsekov $$\mathcal{A}/_{\mathcal{I}} := \{a + \mathcal{I} | \ a \in \mathcal{A}\}$$ vpelejmo operacija na enak način kot pri vektorskih prostorih in kolobarju, postane $\mathcal{A}$ algebra. Preslikava $\Pi : \mathcal{A} \to \mathcal{A}_{\mathcal{I}}, a \mapsto a + \mathcal{A}$ je homomorfizem in $Ker(\mathcal{Pi}) = \mathcal{I}$.  $\mathcal{A}/_{\mathcal{I}}$ imenujemo kvocientna algebra, $\Pi$ pa kvocientni epimorfizem. 
+\end{theorem}
+
+\subsection{Izrek o izomorfizmih}
+Ob prejšnjih definicijah se naravno vprašamo, kakšen je pomen homomorfizmov, ki niso bijektivni ali injektivni.
+\\\\
+\begin{theorem}[Izrek o izomorfizmih]
+\label{th:isomophisms_theorem}
+Naj bo $\varphi : \mathcal{A} \to \mathcal{A}'$ homomorfizem poljubne algebraične strukture (grup, kolobarjev, vektorskih prostorov, ali algebr), potem velja:
+\begin{equation}
+\label{eq:th_isomophisms_theorem_statement}
+\mathcal{A}/_{Ker(\varphi)}  \cong Im(\varphi)
+\end{equation}
+\end{theorem}
+
+Dokazali bomo samo za grupe, za ostale strukture postopamo podobno. 
+\begin{proof}
+Naj bosta $\mathcal{A}, \mathcal{A}'$ grupi. $Ker(\varphi)$ je edinka in zato ima kvocientna struktura smisel, $Im(\varphi)$ pa je grupa (kar podgrupa $\mathcal{A}'$).\\
+$a Ker(\varphi) = a' Ker(\varphi) \iff a^{-1}a' \in Ker(\varphi) \iff \varphi(a^{-1}a')= 1 \iff \varphi(a)^{-1}\varphi(a') = 1 \iff \varphi(a) = \varphi(a')$\\
+Definirajmo novo preslikavo $\overline{\varphi} : \mathcal{A}/_{Ker(\varphi)} \to Im{\varphi}, \overline{\varphi}(aKer(\varphi))) := \varphi(a)$\\
+Očitno je $\overline{\varphi}$ dobro definirana, injektivna($\varphi(a) = \varphi(a') \implies aKer(\varphi) = a'Ker(\varphi)$ in je surjektivna(slika na sliko $\varphi$).\\
+Pokazati je treba še to, da je $\overline{\varphi}$ homomorfizem.\\
+$\overline{\varphi}(a Ker(\varphi) * b Ker(\varphi)) = \overline{\varphi}((ab) * Ker(\varphi)) = \varphi(ab) = \varphi(a)*\varphi(b) = \overline{\varphi}(a Ker(\varphi)) * \overline{\varphi}(bKer(\varphi))$
+\end{proof}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\def \SIZE {2}
+\def \MARGINLEFT {5}
+
+\FPeval{\MARGINPLUSSIZE}{\SIZE + \MARGINLEFT}
+\FPeval{\MARGINPLUSSIZEPLUSNUMBER}{\MARGINPLUSSIZE + 0.3}
+\FPeval{\SIZEHALF}{\SIZE / 2}
+
+
+\node[text width=0.5cm] (ORIGINAL) at (0,\SIZE) {$\mathcal{A}$};
+\node[text width=0.5cm] (QUOTIENT) at (0,0) {$\mathcal{A}/_{Ker(\varphi)}$};
+\node[text width=0.5cm] (IMAGE) at (\SIZE.3,\SIZE) {$\mathcal{A}'$};
+
+\draw [->] (ORIGINAL) -- (IMAGE) node [draw=none,midway,above=0.1cm] {$\varphi$};
+\draw[->] (ORIGINAL) -- (QUOTIENT) node [draw=none,midway,left=0.1cm] {$\Pi$};
+\draw[dashed, ->] (QUOTIENT) -- (IMAGE) node [draw=none,midway,below=0.1cm] {$\overline{\varphi}$};
+
+
+
+\end{tikzpicture}
+\caption{Komutativni diagram, $\varphi = \overline{\varphi} \circ \Pi$}
+\end{figure}
+\leavevmode
+
+\begin{remark}
+Izrek nam da inducirano preslikavo $\overline{\varphi}$
+\end{remark}
+
+
+
 
 
 \end{document}
