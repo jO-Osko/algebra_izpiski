@@ -2624,7 +2624,7 @@ $$\mathcal{J}= \begin{bmatrix}
 	  \end{bmatrix} $$
 \end{definition}
 
-\section{Homomorfizmi in kvocientne strukture}
+\section{Homomorfizmi}
 
 \subsection{Izomorfizmi grup, ciklične grupe}
 %Naslovi v glavi se ti prekrivajo!
@@ -3916,9 +3916,224 @@ Zaradi leme je množenje dobro definirano, seštevanje prav tako.\\
 Enote ostanjejo iste ($0,1$), distributivnost sledi iz originalne distributivnosti, homomorfizem in jedro preslikave pa iz preprostega premetavanja definicij.
 \end{proof}
 
-\subsubsection{Izpustimo zaradi kolokvija}
-\subsubsection{Izpustimo zaradi kolokvija}
-\subsubsection{Izpustimo zaradi kolokvija}
+\subsubsection{Operacije z ideali}
+Naravno se pojavi vprašanje, ob katerih operacijah med ideali je rezultat tudi ideal.
+
+\begin{statement}\\
+Naj velja $\mathcal{I}, \mathcal{J} \triangleleft \mathcal{K}$, potem velja tudi
+\begin{enumerate}
+\item $\mathcal{I} \cap \mathcal{J} \triangleleft \mathcal{K}$
+\item $\mathcal{I} + \mathcal{J} := \{ u + v | \ u \in \mathcal{I}, v \in \mathcal{J} \} \triangleleft \mathcal{K}$
+\item $\mathcal{I}\mathcal{J} := \underbrace{\{u_1v_1 + u_2v_2 + \dots + u_nv_n | \ u_i \in \mathcal{I}, v_i \in  \mathcal{J}, n \in \mathbb{N} \}}_{\text{Aditivna pogrupa generirana z vsemi produkti}} \triangleleft \mathcal{K}$
+\end{enumerate}
+\end{statement}
+
+%\begin{proof}
+% Dodaj enkrat
+%\end{proof}
+
+\begin{example}
+$\mathcal{I} = 4\mathbb{Z}, \mathcal{J} = 6\mathbb{Z}$\\
+$\mathcal{I}\mathcal{J} = 24\mathbb{Z}$\\
+$\mathcal{I}\cap\mathcal{J} = 12\mathbb{Z}$\\
+$\mathcal{I} + \mathcal{J} = 2\mathbb{Z}$
+\end{example}
+
+\subsubsection{Enostranski ideali in enostavni kolbarji}
+\begin{definition}
+\label{def:left_ideal}
+Podmnožica $\mathcal{L}$ kolbarja $\mathcal{K}$ je \textbf{levi ideal}, če velja:
+\begin{itemize}
+\item $\mathcal{L}$ je podgrupa za seštevanje
+\item $\mathcal{K}\mathcal{L} \subseteq \mathcal{K}$, torej: $\forall x \in \mathcal{K}, l \in \mathcal{L}. \ xl \in \mathcal{L}$
+\end{itemize}
+\end{definition}
+
+\begin{definition}
+\label{def:right_ideal}
+Podmnožica $\mathcal{L}$ kolbarja $\mathcal{K}$ je \textbf{desni ideal}, če velja:
+\begin{itemize}
+\item $\mathcal{L}$ je podgrupa za seštevanje
+\item $\mathcal{L}\mathcal{K} \subseteq \mathcal{K}$
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+Opazimo, da je podmnožica kolobarja ideal, če je hkrati desni in levi ideal.
+\end{remark}
+
+\begin{definition}
+Ideal je enostranski, če je bodisi levi bodisi desni ideal.
+\end{definition}
+
+\begin{definition}
+Ideal je dvostranski ideal, če je hkrati levi in desni ideal.
+\end{definition}
+
+\begin{definition}
+V komuativnem kolobarju so si pojmi levi, desni, in obojestranski ideal enaki.
+\end{definition}
+
+
+\begin{example}
+$\mathcal{K} = \mathcal{M}_2(\mathcal{F})$, $\mathcal{L} = \{ \begin{bmatrix}
+		a & 0 \\
+		b & 0
+	  \end{bmatrix}| \ a,b \in \mathcal{F} \}$\\
+$\begin{bmatrix}
+		x_1 & x_2 \\
+		x_3 & x_4
+	  \end{bmatrix}
+	 \begin{bmatrix}
+		a & 0 \\
+		b & 0
+	  \end{bmatrix} =
+	  \begin{bmatrix}
+		x_1a + x_2b & 0 \\
+		x_3a + x_4b & 0
+	  \end{bmatrix} \in \mathcal{K}
+$\\
+$
+	 \begin{bmatrix}
+		a & 0 \\
+		b & 0
+	 
+	  \end{bmatrix}
+	 \begin{bmatrix}				
+		x_1 & x_2 \\
+		x_3 & x_4
+	  \end{bmatrix} =
+	  \begin{bmatrix}
+		x_1a & x_2a \\
+		x_1b & x_2b
+	  \end{bmatrix} \notin \mathcal{K}
+$\\
+Vidimo, da je $\mathcal{L}$ levi ideal, ki ni desni. Podobno je $\mathcal{D} = \{ \begin{bmatrix}
+		a & b \\
+		0 & 0
+	  \end{bmatrix}| \ a,b \in \mathcal{F} \}$ desni ideal, ki ni levi.
+\end{example}
+
+\begin{lemma}
+Če levi ideal $\mathcal{L}$ kolbarja $\mathcal{K}$ vsebuje kak obrnljiv element velja $\mathcal{L} = \mathcal{K}$
+\end{lemma}
+
+\begin{proof}
+Naj bo $l \in \mathcal{L}$ obrnljiv. Ker je $\mathcal{L}$ levi ideal velja $1 = \underbrace{l^{-1}}_{\in \mathcal{K}}l \in \mathcal{L}$. Torej za poljuben $x \in \mathcal{K}$ velja $x = x*1 \in \mathcal{L}$. Dobimo $\mathcal{K} = \mathcal{L}$.
+\end{proof}
+
+\begin{remark}
+Iz prejšnje leme sledi, da tudi ideali kolobarja(ki mu niso enaki) ne vsebujejo obrnljivih elementov.
+\end{remark}
+
+\begin{definition}
+\label{def:ring_center}
+\textbf{Center kolobarja $\mathcal{K}$} so vsi elementi, ki komutatirajo z ostalimi.
+\begin{equation}
+\label{eq:def_ring_center}
+Z(\mathcal{K}) := \{ c \in \mathcal{K} | \forall x \in \mathcal{K}. cx = xc\} 
+\end{equation}
+\end{definition}
+
+Iz prejšnje leme prav tako sledi, da center kolobarja(z enoto) ni ideal, če $\mathcal{K}$ ni komutativen.
+
+\begin{remark}
+Spomnimo se, da center grupe pa je edinka, tako da tu ne moremo potegniti analogije.
+\end{remark}
+
+\begin{statement}
+Kolobar $\mathcal{K}$ je obsek natanko tedaj, ko sta $\{0\}$ in $\mathcal{K}$ njegova edina leva ideala.
+\end{statement}
+
+\begin{proof}\leavevmode
+\\$\implies$\\
+Naj bo $\mathcal{K}$ obseg, in $\mathcal{L}$ neničelni levi ideal. Ker $\mathcal{L}$ vsebuje obrnljive elemente je po lemi $\mathcal{L} = \mathcal{K}$.
+\\$\impliedby$\\
+Naj bosta $\{0\}$ in $\mathcal{K}$ edina leva ideala kolobarja $\mathcal{K}$. Vzemimo $0\neq a \in \mathcal{K}$. $Ka := \{xa | x \in \mathcal{K}\}$ je levi ideal in ker $a \neq 0$ je torej enak $\mathcal{K}$. $1 \mathcal{K} \implies \exists b \in \mathcal{K}: ba = 1$, to pomeni, da ima $a$ levi inverz. Vzemimo sedaj $b$ in $\mathcal{K}b$, ki je enako kot prej enak celemu kolbarju. in tako ima tudi $b$ levi inverz($\exists c. cb = 1$), skupaj dobimo, $ba = 1 = cb$, torej $a=c$ je obrnljiv. 
+
+\end{proof}
+
+\begin{definition}
+\label{def:simple_ring}
+Neničelen kolobar $\mathcal{K}$ je \textbf{enostaven}, če sta $\{0\}$ in $\mathcal{K}$ njegova edina ideala.
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+Obsegi
+\end{example_case}
+\begin{example_case}
+$\mathcal{M}_2(\mathcal{F})$ (Ta kolobar sicer ima netrivialne enostranske, odseke, nima pa netrivialnih dvostranskih odsekov)
+\end{example_case}
+\end{example}
+
+\begin{corollary}
+Komutativen kolobar je enostaven natanko tedaj, ko je polje.
+\end{corollary}
+
+
+\subsubsection{Ideali kvocientnega kolobarja in maksimalni ideali}
+
+\begin{lemma}
+Naj bo $\varphi : \mathcal{K} \to \mathcal{K}'$ homomorfizem kolobarjev, potem veljata naslednji trditvi:
+\begin{enumerate}
+\item $\mathcal{I}' \triangleleft \mathcal{K}' \implies \varphi^{-1}(\mathcal{I}') \triangleleft \mathcal{K}$
+\item Če je $\varphi$ epimorfizem, $\mathcal{I} \triangleleft \mathcal{K} \implies \varphi(\mathcal{I}) \triangleleft \mathcal{K}'$
+\end{enumerate}
+
+\end{lemma}
+
+\begin{proof}
+Lemo dokažemo na enak način kot analogen rezultat za grupe.
+\end{proof}
+
+\begin{theorem}
+Naj bo $\mathcal{I} \triangleleft \mathcal{K}$. Potem je vsak ideal $\mathcal{K}/_{\mathcal{I}}$ oblike $\mathcal{J}_{\mathcal{I}}$ kjer velja $\mathcal{J} \triangleleft \mathcal{K}, \mathcal{I} \subseteq \mathcal{J} \subseteq \mathcal{K}$
+\end{theorem}
+
+
+\begin{proof}
+Izrek dokažemo na enak način kot analogen rezultat za grupe.
+\end{proof}
+
+\begin{remark}
+Obratno $\mathcal{J}/_{\mathcal{I}}$ je ideal $\mathcal{K}/_{\mathcal{I}}$, če velja $\mathcal{J} \triangleleft \mathcal{K}$ in $\mathcal{I} \subseteq \mathcal{J}$
+\end{remark}
+
+\begin{corollary}
+Ideal $\mathcal{I}$ kolobarja $\mathcal{K}$ je maksimalen natanko tedaj, ko je $\mathcal{K}/_{\mathcal{I}}$ enostaven.
+\end{corollary}
+
+\begin{proof}\leavevmode\\
+$\implies$
+Nqj bo $\mathcal{I}$ maksimalen, vsak ideal $\mathcal{K}_{\mathcal{I}}$ je po prejšnjem izreku oblike $\mathcal{J}/_{\mathcal{K}}$ kjer je $\mathcal{J} \triangleleft \mathcal{K}$ in $\mathcal{I} \subseteq \mathcal{J} \subseteq \mathcal{K}$. Ker je $\mathcal{I}$ maksimalen velja $\mathcal{I} =\mathcal{K}$(in $\mathcal{J}/_{\mathcal{I}} = \{ 0 \}$) ali $\mathcal{J} = \mathcal{K}$ in ($\mathcal{J}/_{\mathcal{I}} = \mathcal{K}/_{\mathcal{I}}$) \\
+$\impliedby$\\
+Naj bo  $\mathcal{K}/_{\mathcal{I}}$ enostaven. Če je $\mathcal{J} \triangleleft \mathcal{K}$, velja $\mathcal{I} \not \subseteq \mathcal{J} \not \subseteq \mathcal{K}$ in je $\mathcal{J}_{\mathcal{K}}$ pravi neničelni ideal $\mathcal{K}/_{\mathcal{I}}$. Kar pa je protislovje in je torej ideal maksimalen.
+\end{proof}
+
+\begin{corollary}
+Ideal $\mathcal{I}$ komutativnega kolobarja $\mathcal{K}$ je maksimalen natanko tedaj, ko je $\mathcal{K}/_\mathcal{I}$ polje.
+\end{corollary}
+
+\begin{proof}
+Uporabimo prejšnjo posledico.
+\end{proof}
+
+\begin{example}
+\begin{example_case}
+$\mathbb{Z}/_{p\mathbb{Z}} = \mathbb{Z}_p$ je polje, če je $p$ praštevilo, zato je $p\mathbb{Z}$ maksimalni ideal.
+\end{example_case}
+\begin{example_case}
+$\mathcal{I} := \{ f \in C[a,b] | \ \exists x \in [a,b]. f(x) = 0 \}$, $C[a,b]/_{\mathcal{I}} \cong \mathbb{R}$ je polje, zato je $\mathcal{I}$ maksimalen. 
+\end{example_case}
+\begin{example_case}
+Za poljubno polje $\mathcal{F}$ velja: $\mathcal{F}[X]/_{(X)} \cong \mathcal{F}$ je polje, zato je $(X)$ maksimalen.
+\end{example_case}
+\end{example}
+
+\begin{remark}
+S pomočjo Zornove leme lahko dokažemo, da vsak kolobar vsebuje kakšen maksimalen ideal.
+\end{remark}
 
 \subsubsection{Kvocientni prostori in kvocientne algebre}
 
@@ -3994,8 +4209,59 @@ $\overline{\varphi}(a Ker(\varphi) * b Ker(\varphi)) = \overline{\varphi}((ab) *
 Izrek nam da inducirano preslikavo $\overline{\varphi}$
 \end{remark}
 
+\subsection{Zunanji in notranji direktni produkti grup}
 
+Spomnimo se definicije zunanjega produkta grup \ref{def:outer_direct_product_of_groups}. Zunanji produkti nam iz danih grup gradijo nove grupe, medtem ko nam motranji produkti dane grupe(strukture) razgradijo na "manjše".
 
+\begin{definition}
+\label{def:product_subgroup_projection}
+Naj bo $\mathcal{G} = \mathcal{G}_1 \times \mathcal{G}_2 \times \dots \times \mathcal{G}_n$ zunanji direktni produkt grup $\mathcal{G}_j$.
+\begin{equation}
+\label{eq:def_product_subgropu_projection}
+\widetilde{\mathcal{G}}_i = \{ (1, \dots , 1, x_i, 1, \dots, 1) | x_i \in \mathcal{G}_i\}
+\end{equation}
+\end{definition}
 
+Poglejmo si primere za direktni produkt dveh grup.
+$\mathcal{G} = \mathcal{G}_1 \times \mathcal{G}_2$\\
+$\widetilde{\mathcal{G}}_1 = \{ (x, 1) | x \in \mathcal{G}_1 \}$\\
+$\widetilde{\mathcal{G}}_2 = \{ (1, x) | x \in \mathcal{G}_2 \}$\\
+
+\begin{statement}\\
+$\mathcal{G}/_{\widetilde{\mathcal{G}}_1} \cong \mathcal{G}_2$
+\end{statement}
+
+\begin{proof}
+$(x_1, x_2) \mapsto x_2$ je epimorfizem iz $\mathcal{G}$ v $\mathcal{G}_2$, ki ima za jedro $\mathcal{G}_1$. Enako velja tudi v obratno smer.
+\end{proof}
+
+\begin{remark}
+S skoraj povsem enakim dokazom zadevo posplošimo na produkt več grup.
+\end{remark}
+
+Hitro opazimo naslednje splošne lastnosti grupe $\mathcal{G} = \mathcal{G}_1 \times \mathcal{G}_2 \times \dots \times \mathcal{G}_n$:
+\begin{itemize}
+\item $\widetilde{\mathcal{G}}_i \triangleleft \mathcal{G} \ \forall i < n$
+\item $\mathcal{G} = \widetilde{\mathcal{G}}_1 \times \widetilde{\mathcal{G}}_2 \times \dots \times \widetilde{\mathcal{G}}_n $
+\item $\widetilde{\mathcal{G}}_i \cap \widetilde{\mathcal{G}}_j = \{1, 1, \dots, 1, 1\} = \{ 1\} $ Za poljubna $i\neq j$
+\end{itemize}
+
+\begin{definition}
+\label{def:inner_direct_product}
+Grupa $\mathcal{G}$ je \textbf{notranji direktni produkt} svojih ednik $\mathcal{N}_1, \mathcal{N}_2, \dots, \mathcal{N}_n$, če velja:
+\begin{itemize}
+\item $\mathcal{G} = \mathcal{N}_1 \times \mathcal{N}_2 \times \dots \times \mathcal{N}_n$
+\item $\mathcal{N}_i \cap \mathcal{N}_j = \{ 1\} $ Za poljubna $i\neq j$
+\end{itemize}
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+Če je $\mathcal{G}$ zunanji direktni produkt $\mathcal{G}_1, \mathcal{G}_2, \dots ,\mathcal{G}_n$ potem je $\mathcal{G}$ notranji direktni produkt $\widetilde{\mathcal{G}}_1, \widetilde{\mathcal{G}}_2, \dots , \widetilde{\mathcal{G}}_n$
+\end{example_case}
+\begin{example_case}
+$D_4 = \{ 1, r, z, rz \} $ (komutativna), $\mathcal{N}_1 = \{ 1,r \}, \mathcal{N}_2 = \{1,z\}$ Potem je $D_4$ njun notranji produkt. (Spomnimo se, da velja tudi $D_4 \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$).
+\end{example_case}
+\end{example}
 
 \end{document}
