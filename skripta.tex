@@ -2364,7 +2364,7 @@ Simetrija kvadrata je ustrezna permutacija oglišč.
 \end{definition}
 
 \begin{remark}
-To si lahko predstavljamo kot da vzamemo kvadrat iz ravnine, ga v prostoru vrtimo okoli simetrijskih osi, ter ga položimo nazaj, tako da so oglišča na mestih, kjer so bila že prej (mesta oglišč se ne ujemajo nujno z mesti oglišč preden smo lik dvignili).
+To si lahko predstavljamo, kot da vzamemo kvadrat iz ravnine, ga v prostoru vrtimo okoli simetrijskih osi, ter ga položimo nazaj, tako da so oglišča na mestih, kjer so bila že prej (mesta oglišč se ne ujemajo nujno z mesti oglišč preden smo lik dvignili).
 \end{remark}
 \\
 \\
@@ -2374,13 +2374,13 @@ Očitno je produkt (kompozitum) simetrij enak produktu ustreznih permutacij in j
 \\
 \\
 \begin{remark}
-Opazimo, da je inverz simetrije prav tako simetrija, ki vrne kvadrat nazaj v prejšnjo lego
+Opazimo, da je inverz simetrije prav tako simetrija, ki vrne kvadrat nazaj v prejšnjo lego.
 \end{remark}
 \\
 \\
 \begin{example}
 \begin{example_case}
-Naj bo $r$ rotacija kvadrata za $\frac{\pi}{2}$ v pozitivni smeri (v nasprotni smeri urinega kazalca), ustreza ji cikel $(1,2,3,4)$.
+Naj bo $r$ rotacija kvadrata za $\frac{\pi}{2}$ v pozitivni smeri (v nasprotni smeri urinega kazalca). Ustreza ji cikel $(1,2,3,4)$.
 \\
 
 \begin{figure}[h]
@@ -2477,7 +2477,7 @@ Diedrska grupa reda $2n$ je simetrijska grupa pravilnega $n-$kotnika.
 Pomembne enakosti: $r^n = 1, z^2 = 1, rz = zr^{-1}, (rz)^2 = 1, |D_{2n}| = 2n$		
 \\		
 \\		
-Vsak element $D_{2n}$ lahko zapišemo kot $a = z^jr^i; \ i \in \{0,1\}, 0 \leq i < n$
+Vsak element $D_{2n}$ lahko zapišemo kot $a = z^jr^i; \ j \in \{0,1\}, 0 \leq i < n$
 \\
 \\
 \begin{example}
@@ -2493,11 +2493,11 @@ $D_2 = \{1,r\}$
 \end{example}
 
 \begin{remark}
-Opazimo, da je splošna diedrska grupa generirana z rotacijo in zrcaljenjem ($r, z$)
+Opazimo, da je splošna diedrska grupa generirana z rotacijo in zrcaljenjem ($r, z$).
 \end{remark}
 
 \begin{remark}
-Diedrsko grupo reda $2n \geq 3$ si lahko predstavljamo kot podgrupo simetrične grupe $\mathcal{S}_n$
+Diedrsko grupo reda $2n \geq 3$ si lahko predstavljamo kot podgrupo simetrične grupe $\mathcal{S}_n$.
 \end{remark}
 
 \begin{remark}
@@ -2513,12 +2513,12 @@ $$r = \begin{bmatrix}
 		-1 & 0 \\
 		0 & 1
 	  \end{bmatrix}$$
-Tu si pravilni $n-$kotnik predstavljamo v ravnini, in ga prav tako tudi zrcalimo/rotiramo. Če pa je $n$ sod, potem je v tej grupi tudi rotacija prek vertikalne osi, ki jo zapišemo kot $z_v = -z = \begin{bmatrix}
+Tu si pravilni $n-$kotnik, ki ga prav tako tudi zrcalimo/rotiramo, predstavljamo v ravnini. Če je $n$ sod, je v tej grupi tudi rotacija prek vertikalne osi, ki jo zapišemo kot $z_v = -z = \begin{bmatrix}
 		1 & 0 \\
 		0 & -1
 	  \end{bmatrix}$.
 	  
-Ker pa si želimo, da bi imele naše matrike determinanto $1$ (To pomeni, da ne spreminjajo volumna objekta, ki ga preslikamo) lahko to grupo razširimo na podgrupo $\mathcal{SL}_3(\mathbb{R})$ kot:
+Ker želimo, da bi imele naše matrike determinanto $1$ (to pomeni, da ne spreminjajo volumna objekta, ki ga preslikamo), lahko to grupo razširimo na podgrupo $\mathcal{SL}_3(\mathbb{R})$ kot:
 $$r' = \begin{bmatrix}
 		cos\frac{2\pi}{n} & sin\frac{2\pi}{n} & 0\\
 		-sin\frac{2\pi}{n} & cos\frac{2\pi}{n} & 0\\
@@ -2530,7 +2530,7 @@ $$r' = \begin{bmatrix}
 		0 & 0 & -1
 	  \end{bmatrix}$$	  
 \\	 
-Podobno lahko kot Diedrsko grupo vidimo podgrupo $D_{2n} \subseteq \mathcal{GL}_2(\mathbb{Z}_n)$, kjer:
+Podobno lahko kot diedrsko grupo vidimo podgrupo $D_{2n} \subseteq \mathcal{GL}_2(\mathbb{Z}_n)$, kjer:
 	 $$r = \begin{bmatrix}
 		1 & 1 \\
 		0 & 1
@@ -2538,10 +2538,10 @@ Podobno lahko kot Diedrsko grupo vidimo podgrupo $D_{2n} \subseteq \mathcal{GL}_
 		-1 & 0 \\
 		0 & 1
 	  \end{bmatrix}$$
-Na ta način dobimo generirano ogrodje torusa, če pa $n \to \infty$, pa dobimo kar $\mathcal{GL}(\mathbb{Z})$.
+Na ta način dobimo generirano ogrodje torusa. Ko $n \to \infty$, dobimo $\mathcal{GL}(\mathbb{Z})$.
 	  
 \subsection{Linearne grupe}
-Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. Tedaj je $( \mathcal{M}_n(\mathcal{F}), *)$ monoid (ni pa grupa, saj niso vsi elementi obrnljivi).
+Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. Tedaj je $( \mathcal{M}_n(\mathcal{F}), *)$ monoid (ni grupa, saj niso vsi elementi obrnljivi).
 
 \begin{definition}
 \label{def:general_linear_group}
@@ -2549,15 +2549,15 @@ Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. Tedaj je $( \mathcal{M}_n(\mat
 Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. \textbf{Splošna linearna grupa} je 
 \begin{equation}
 \label{eq:def_general_linear_group}
-\mathcal{G}\mathcal{L}_n := M_n(\mathcal{F})^* = \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) | \ A \ \text{je obrnljiva}\}
+\mathcal{G}\mathcal{L}_n(\mathcal{F}) := M_n(\mathcal{F})^* = \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) | \ A \ \text{je obrnljiva}\}
 \end{equation}
 
 \begin{equation*}
-\mathcal{G}\mathcal{L}n := M_n(\mathcal{F})^* = \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) | \ det(\mathcal{A}) \neq 0\}
+\mathcal{G}\mathcal{L}_n(\mathcal{F}) := M_n(\mathcal{F})^* = \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) | \ det(\mathcal{A}) \neq 0\}
 \end{equation*}
 
 \begin{remark}
-Če bi imeli matrike zgolj nad kolobarjem, bi potrebovali vsaj komutativnost, da bi bila determinanta sploh smiselna ($ad-bc = da -bc$).
+Če bi imeli matrike zgolj nad kolobarjem, bi potrebovali vsaj komutativnost, da bi bila determinanta sploh smiselna ($ad-bc = da -cb$).
 \end{remark}
 
 \begin{definition}
@@ -2566,7 +2566,7 @@ Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. \textbf{Splošna linearna grup
 Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. \textbf{Specialna linearna grupa} je 
 \begin{equation}
 \label{eq:def_special_linear_group}
-\mathcal{S}\mathcal{L}_n := \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) | \ det(\mathcal{A}) = 1\}
+\mathcal{S}\mathcal{L}_n(\mathcal{F}) := \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) | \ det(\mathcal{A}) = 1\}
 \end{equation}
 \end{definition}
 
@@ -2577,9 +2577,8 @@ Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. \textbf{Specialna linearna gru
 Naj bo $n \in \mathbb{N}$ in $\mathcal{F}$ polje. \textbf{Ortogonalna (linearna) grupa} je 
 \begin{equation}
 \label{eq:def_orthogonal_linear_group}
-\mathcal{O}_n := \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) |  \ \mathcal{A}\mathcal{A}^t = \mathcal{A}^t\mathcal{A} = \mathcal{I}\}
+\mathcal{O}_n(\mathcal{F}) := \{ \mathcal{A} \in \mathcal{M}_n(\mathcal{F}) |  \ \mathcal{A}\mathcal{A}^t = \mathcal{A}^t\mathcal{A} = \mathcal{I}\}
 \end{equation}
-Kjer $\mathcal{A}^*$ označuje transponirano konjugirano matriko % TODO: add reference to operation definition
 \end{definition}
 
 \begin{definition}
@@ -2588,8 +2587,8 @@ Kjer $\mathcal{A}^*$ označuje transponirano konjugirano matriko % TODO: add ref
 Naj bo $n \in \mathbb{N}$. \textbf{Unitarna (linearna) grupa} je 
 \begin{equation}
 \label{eq:def_unitary_linear_group}
-\mathcal{U}_n := \{ \mathcal{A} \in \mathcal{M}_n(\mathbb{C}) |  \ \mathcal{A}\mathcal{A}^* = \mathcal{A}^*\mathcal{A} = \mathcal{I}\}
-\end{equation}
+\mathcal{U}_n(\mathbb{C}) := \{ \mathcal{A} \in \mathcal{M}_n(\mathbb{C}) |  \ \mathcal{A}\mathcal{A}^* = \mathcal{A}^*\mathcal{A} = \mathcal{I}\}
+\end{equation}Kjer $\mathcal{A}^*$ označuje konjugirano transponirano matriko. % TODO: add reference to operation definition
 \end{definition}
 
 \begin{definition}
@@ -2597,7 +2596,7 @@ Naj bo $n \in \mathbb{N}$. \textbf{Unitarna (linearna) grupa} je
 Naj bo $n \in \mathbb{N}$. \textbf{Specialna ortogonalna (linearna) grupa} je 
 \begin{equation}
 \label{eq:def_special_orthogonal_linear_group}
-\mathcal{S}\mathcal{O}_n := \{ \mathcal{A} \in \mathcal{O}_n(\mathbb{C}) |  \ det(\mathcal{A}) = 1\}
+\mathcal{S}\mathcal{O}_n(\mathcal{F}) := \{ \mathcal{A} \in \mathcal{O}_n(\mathbb{C}) |  \ det(\mathcal{A}) = 1\}
 \end{equation}
 \end{definition}
 
@@ -2606,7 +2605,7 @@ Naj bo $n \in \mathbb{N}$. \textbf{Specialna ortogonalna (linearna) grupa} je
 Naj bo $n \in \mathbb{N}$. \textbf{Specialna unitarna (linearna) grupa} je 
 \begin{equation}
 \label{eq:def_special_unitary_linear_group}
-\mathcal{S}\mathcal{U}_n := \{ \mathcal{A} \in \mathcal{U}_n(\mathbb{C}) |  \ det(\mathcal{A})= 1\}
+\mathcal{S}\mathcal{U}_n(\mathbb{C}) := \{ \mathcal{A} \in \mathcal{U}_n(\mathbb{C}) |  \ det(\mathcal{A})= 1\}
 \end{equation}
 \end{definition}
 
@@ -2631,7 +2630,7 @@ $$\mathcal{J}= \begin{bmatrix}
 %Vem, sam ne znam tega popravit, malo bo treba še prašat strica googla
 \begin{definition}
 \label{def:group_isomorphism}
-Naj bosta $(\mathcal{G}_1, *)$ in $(\mathcal{G}_2, *)$ grupi. Grupi $\mathcal{G}_1$ in $\mathcal{G}_2$ sta \textbf{izomorfni}, če obstaja taka bijektivna preslikava $ \varphi : \mathcal{G}_1 \to \mathcal{G}_2$ da velja:
+Naj bosta $(\mathcal{G}_1, *)$ in $(\mathcal{G}_2, *)$ grupi. Grupi $\mathcal{G}_1$ in $\mathcal{G}_2$ sta si \textbf{izomorfni}, če obstaja taka bijektivna preslikava $ \varphi : \mathcal{G}_1 \to \mathcal{G}_2$, da velja:
 \begin{equation}
 \label{eq:def_group_isomosphism}
 \forall g_1, g_2 \in \mathcal{G}_1. \ \varphi(g_1 * g_2) = \varphi(g_1) * \varphi(g_2)
@@ -2647,7 +2646,7 @@ $$\mathcal{G}_1 \cong \mathcal{G}_2$$
 \begin{remark}
 Če imamo končni grupi, ki sta si izomorfni, potem sta njuni grupni tabeli 'enaki'.
 
-$\varphi : \mathcal{G}_1 \to \mathcal{G}_2, \ \text{izomorfizem} $, potem $\mathcal{G}_2 = \{\varphi(g_1), \varphi(g_2), \dots, \varphi(g_n) \}, g_i \in \mathcal{G}_1$.
+Bodi $\varphi : \mathcal{G}_1 \to \mathcal{G}_2 \ \text{izomorfizem} $, tedaj $\mathcal{G}_2 = \{\varphi(g_1), \varphi(g_2), \dots, \varphi(g_n) \}, g_i \in \mathcal{G}_1$.
 
 Torej se $g_i$ in $\varphi(g_i)$ v tablah pojavita na istem mestu.
 \\
@@ -2685,12 +2684,12 @@ Torej se $g_i$ in $\varphi(g_i)$ v tablah pojavita na istem mestu.
 \end{table}
 \end{example}
 
-Tabeli se nam zdita sumljivo podobni $0 \sim 1, 1 \sim i, 2 \sim -1, 3 \sim -i$, saj nastopajo na istih mestih.
+Tabeli se nam zdita sumljivo podobni $0 \sim 1, 1 \sim i, 2 \sim -1, 3 \sim -i$, saj omenjeni elementi v tabelah nastopajo na istih mestih.
 
-Če si pogledamo splošno grupo $(\mathbb{Z}_n, +)$ in $\mathcal{U}_n := \{ z \in \mathbb{C} | \ z^n = 1\} = \underbrace{\{1, a, a^2, \dots, a^{n-1}}_{a = cos(\frac{2\pi}{n}) + i sin(\frac{2\pi}{n})}\}$
+V splošnem si sedaj poglejmo grupi $(\mathbb{Z}_n, +)$ in $\mathcal{U}_n := \{ z \in \mathbb{C} | \ z^n = 1\} = \underbrace{\{1, a, a^2, \dots, a^{n-1}}_{a = cos(\frac{2\pi}{n}) + i sin(\frac{2\pi}{n})}\}$
 Vidimo: $$a_i * a_j = \twopartdef{a_{i+j}}{i+j < n}
 								 {a_{i+j-n}}{i+j \geq n}$$
-V čemer prepoznamo seštevanje v $\mathbb{Z}_n$
+V tem zapisu prepoznamo seštevanje v $\mathbb{Z}_n$
 \\
 
 \begin{statement}
@@ -2705,35 +2704,35 @@ $\varphi$ je bijekcija in $\varphi(z_i * z_j) = \varphi(z_i) + \varphi(z_j)$, to
 
 \begin{statement}
 \label{st:inverse_of_isomorphism_is_isomorphism}
-Če je $\varphi : \mathcal{G} \to \mathcal{G}_1$ izomorfizem je tudi $\varphi^{-1}: \mathcal{G}_1 \to \mathcal{G}$ izomorfizem.
+Če je $\varphi : \mathcal{G} \to \mathcal{G}_1$ izomorfizem, je tudi $\varphi^{-1}: \mathcal{G}_1 \to \mathcal{G}$ izomorfizem.
 \end{statement}
 
 \begin{proof}
-Ker je $\varphi$ injektivna je dovolj pokazati:
+Ker je $\varphi$ injektivna, je dovolj pokazati:
 $\varphi(\varphi^{-1}(uv)) = uv = \varphi(\varphi^{-1}(u)) \varphi(\varphi^{-1}(v)) = \underbrace{\varphi(\varphi^{-1}(u) \varphi^{-1}(v))}_{\text{Ker je } \varphi \ \text{homomorfizem}}$
 \end{proof}
 
 
 \begin{example}
 \begin{example_case}
-$\mathcal{G} \cong \mathcal{G}$ Izomorfizem je kar identiteta
+$\mathcal{G} \cong \mathcal{G}$; izomorfizem je identiteta
 \end{example_case}
 \begin{example_case}
 $(\mathbb{R}, +) \cong (\mathbb{R}_+, *)$, kjer $\varphi: x \mapsto e^x$
 \end{example_case}
 \begin{example_case}
-$(\mathbb{Z}, +) \cong (n\mathbb{Z}, +)$, kjer $\varphi: x \mapsto nx$, to velja za $n \geq 1$
+$(\mathbb{Z}, +) \cong (n\mathbb{Z}, +)$, kjer $\varphi: x \mapsto nx$, kar velja za $n \geq 1$
 \end{example_case}
 \end{example}
 
 \begin{definition}
 \label{def:cyclic_group}
 %Already defined in remark, but no problem
-Grupi, ki je generirana z enim samim elementom pravimo \textbf{ciklična grupa}.
+Grupi, ki je generirana z enim samim elementom, pravimo \textbf{ciklična grupa}.
 
 \end{definition}
 
-Če je $\mathcal{G}$ generirana z $a$ pišemo: $\mathcal{G} = <a>$
+Če je $\mathcal{G}$ generirana z $a$, pišemo $\mathcal{G} =<a>$
 
 \begin{example}
 \begin{example_case}
@@ -2746,7 +2745,7 @@ $<a> = \{ na | \ n \in \mathbb{Z}\}$ za seštevanje
 $<1> = <-1> = (\mathbb{Z}, +)$
 \end{example_case}
 \begin{example_case}
-$<1> = (\mathbb{Z}_n, +)$, podgrupa $(\mathbb{Z}, +)$
+$<1> = (\mathbb{Z}_n, +)$
 \end{example_case}
 \begin{example_case}
 $<i> = <-i> = \{1,i, -1,-i\} = \mathcal{U}_4$
@@ -2766,21 +2765,21 @@ Naj bo $\mathcal{G}$ ciklična grupa:
 Naj bo $a$ generator grupe $\mathcal{G}$\\
 1. $\forall n \in \mathbb{Z}. \forall m \in \mathbb{Z}. \ m \neq n \implies a^n \neq a^m$\\
 Torej je grupa neskončna, dokazujemo: $\mathcal{G} \cong (\mathbb{Z}, +)$\\
-Vzemimo: $\varphi : \mathbb{Z} \to \mathcal{G}, n \mapsto a^n$, ki je zaradi predpostavke injektivna in surjektivna, ker  generira $a^n$ generira grupo. Prav tako pa velja:\\
+Vzemimo: $\varphi : \mathbb{Z} \to \mathcal{G}, n \mapsto a^n$, ki je po predpostavki injektivna, očitno pa je tudi surjektivna, saj $a^n$ generira grupo. Prav tako velja:\\
 $\varphi(n+m) = \underbrace{a^{n+m} = a^n * a^m}_{(\ref{eq:sum_of_powers})} = \varphi(n) *\varphi(m)$ in je torej izomorfizem.\\ 
 2. $\exists m \in \mathbb{Z}. \ \exists n \neq m \in \mathbb{Z}. \ a^n = a^m$\\
 Torej $a^{n-m} = 1 \iff \exists s \in \mathbb{N}. \ a^s = 1$.\\
 Če $n = 1$, potem $\mathcal{G} = \{1\}$ in je izomorfna $(\mathbb{Z}_1, +)$\\
-Naj bo $n$ sedaj najmanjše tako naravno število($a^n = 1, a^k \neq 1, 0 < k < n$)\\
+Naj bo $n$ sedaj najmanjše naravno število z lastnostjo $a^n = 1, a^k \neq 1, 0 < k < n$\\
 Očitno so si elementi $1, a, a^2, \dots a^{n-1}$ različni, saj smo tako izbrali $n$, torej je $|\mathcal{G}| \geq n$.\\
 Za drugo smer pa vzemimo $x=a^m \in \mathcal{G}$, $m = qn +r, 0 \leq r \leq n-1$.\\
 Torej $x = a^m = a^{qn+r} = (a^n)^q * a^r = a^r \implies |\mathcal{G}| \leq n$\\
-Iz zgornjih ugotovitev velja: $|\mathcal{G}| = n$
+Iz zgornjih ugotovitev velja: $|\mathcal{G}| = n$,
 $z_i = a^i$ in $\varphi(z_i) = i$, kar pa je izomorfizem. 
 \end{proof}
 
 \begin{corollary}
-Če je $\mathcal{G}$ poljubna grupa, tako vsak element generira ciklično podgrupo ($<a> = \{a^n | \ n \in \mathbb{Z}\}$).
+Naj bo $\mathcal{G}$ poljubna grupa, tedaj vsak element generira ciklično podgrupo ($<a> = \{a^n | \ n \in \mathbb{Z}\}$).
 \end{corollary}
 
 \begin{definition}
@@ -2794,7 +2793,7 @@ $red(a) = |<a>|$
 
 \begin{proof}
 $red(a) = n \iff a^n = 1 \land a^k \neq 1, 1 \leq k < n$\\
-$<a> = \{1,a, a^2, \dots, a^{n-1}\} \implies |<a>| = n$
+$<a> = \{1,a, a^2, \dots, a^{n-1}\} \iff |<a>| = n$
 \end{proof}
 
 \begin{remark}
@@ -2812,7 +2811,7 @@ V $(\mathbb{Z}, +)$ imajo vsi elementi razen $0$ neskončen red.
 $\mathbb{Z}_4$, $1$ in $3$ imata red $4$, $2$ ima red $2$.
 \end{example_case}
 \begin{example_case}
-$\mathcal{D}_4$ (Simetrije pravokotnika, ki ni kvadrat) Vsi razen enote imajo red $2$
+$\mathcal{D}_4$ (Simetrije pravokotnika, ki ni kvadrat); vsi razen enote imajo red $2$.
 \end{example_case}
 \end{example}
 
@@ -2845,11 +2844,11 @@ $\varphi(\lambda_1 b_1 + \lambda_2 b_2 + \dots + \lambda_n b_n) = 0$ \\iz tega s
 \\Torej velja 
 $\lambda_1 b_1 + \lambda_2 b_2 + \dots + \lambda_n b_n = 0$\\
 
-Ker so si bazni vektorji neodvisni, so vsi skalarji ničelni: $\lambda_i = 0 $.\\
-Tako smo dobili linearno neodvisne vektorje, pokazati moramo še, da so tudi ogrodje.\\
-Ker $\varphi$ je surjektivna velja: $v' \in \mathcal{V}' = \varphi(v)$ za poljuben $v'$.\\
+Ker so bazni vektorji linearno neodvisni, so vsi skalarji ničelni: $\lambda_i = 0 $.\\
+Tako smo dobili linearno neodvisne vektorje. Pokazati moramo še, da so tudi ogrodje.\\
+Ker je $\varphi$ surjektivna, velja: $v' \in \mathcal{V}' = \varphi(v)$ za poljuben $v'$.\\
 $v' = \lambda_1\varphi(b_1) + \dots + \lambda_n\varphi(b_n)$, vidimo da ima $\mathcal{V}'$ linearno ogrodje z močjo $n$ ($\varphi(b_1), \dots, \varphi(b_n)$).\\
-Tako smo dobili linearno ogrodje neodvisnih vektorjev, ki je torej baza z močjo $n$. Dimenzija $\mathcal{V}'$ je torej $n$, enaka dimenziji $\mathcal{V}$.
+Dobili smo ogrodje linearno neodvisnih vektorjev, ki je torej baza z močjo $n$. Dimenzija $\mathcal{V}'$ je torej $n$, kar je enako dimenziji $\mathcal{V}$.
 \\
 $\impliedby$\\
 Vzemimo $\{b_1, b_2, \dots, b_n\}$ za bazo $\mathcal{V}$ in  $\{b'_1, b'_2, \dots, b'_n\}$ za bazo $\mathcal{V}'$.\\
@@ -2864,7 +2863,7 @@ Potrebno je zgolj še preveriti, da je to bijektivna linearna preslikava.
 
 \begin{definition}
 \label{def:group_homemorphism}
-Naj bosta $\mathcal{G}$ in $\mathcal{G}_1$ grupi, $\varphi : \mathcal{G} \to \mathcal{G}_1$ je homomorfizem grup, če velja:
+Naj bosta $\mathcal{G}$ in $\mathcal{G}_1$ grupi. $\varphi : \mathcal{G} \to \mathcal{G}_1$ je homomorfizem grup, če velja:
 \begin{equation}
 \label{eq:def_group_homomorphism}
 \varphi(xy) = \varphi(x) \varphi(y), \ \forall x,y \in \mathcal{G} 
@@ -2872,23 +2871,23 @@ Naj bosta $\mathcal{G}$ in $\mathcal{G}_1$ grupi, $\varphi : \mathcal{G} \to \ma
 \end{definition}
 
 \begin{remark}
-Če je grupa aditivna, predznak smiselno spremenimo.
+Če je grupa aditivna, operacijo smiselno spremenimo.
 \end{remark}
 
 \begin{definition}
 \label{def:ring_hommorphism}
-Naj bosta $\mathcal{K}$ in $\mathcal{K}_1$ kolobarja, $\varphi : \mathcal{K} \to \mathcal{K}_1$ je homomorfizem kolobarjev, če velja:
+Naj bosta $\mathcal{K}$ in $\mathcal{K}_1$ kolobarja. $\varphi : \mathcal{K} \to \mathcal{K}_1$ je homomorfizem kolobarjev, če velja:
 \begin{equation}
 \label{eq:def_ring_homomorphism}
 \varphi(x+y) = \varphi(x) + \varphi(y) \land \varphi(xy) = \varphi(x) \varphi(y), \ \forall x,y \in \mathcal{G} 
 \end{equation}
-Ker pa smo pri kolobarju zahtevali tudi enoto, potrebujemo še dodaten pogoj:
+Ker smo pri definiciji kolobarja zahtevali tudi enoto, potrebujemo dodaten pogoj:
 $$ \varphi(1) = 1$$
 \end{definition}
 
 \begin{definition}
 \label{def:vector_space_hommorphism}
-Naj bosta $\mathcal{V}$ in $\mathcal{V}_1$ vektorska prostora nad istim obsegom $\mathcal{F}$, $\varphi : \mathcal{V} \to \mathcal{V}_1$ je homomorfizem vektorskih prostorov, če velja:
+Naj bosta $\mathcal{V}$ in $\mathcal{V}_1$ vektorska prostora nad istim obsegom $\mathcal{F}$. $\varphi : \mathcal{V} \to \mathcal{V}_1$ je homomorfizem vektorskih prostorov, če velja:
 \begin{equation}
 \label{eq:def_vector_space_homomorphism}
 \varphi(x+y) = \varphi(x) + \varphi(y) \land \lambda \varphi(x) = \varphi(\lambda x) ,\ \forall x,y \in \mathcal{G}, \forall \lambda \in \mathcal{F} 
@@ -2898,7 +2897,7 @@ Naj bosta $\mathcal{V}$ in $\mathcal{V}_1$ vektorska prostora nad istim obsegom 
 
 \begin{definition}
 \label{def:algebra_homomorphism}
-Naj bosta $\mathcal{A}$ in $\mathcal{A}_1$ algebri nad istim obsegom $\mathcal{F}$, $\varphi : \mathcal{A} \to \mathcal{A}_1$ je homomorfizem algebr, če velja:
+Naj bosta $\mathcal{A}$ in $\mathcal{A}_1$ algebri nad istim obsegom $\mathcal{F}$. $\varphi : \mathcal{A} \to \mathcal{A}_1$ je homomorfizem algebr, če velja:
 \begin{equation}
 \label{eq:def_algebra_homomorphism}
 \begin{multlined}
@@ -2911,12 +2910,12 @@ Naj bosta $\mathcal{A}$ in $\mathcal{A}_1$ algebri nad istim obsegom $\mathcal{F
 $\varphi : \mathbb{R} \to \mathcal{M}_2(\mathbb{R}), \varphi(x) = \begin{bmatrix}
 		x & 0 \\
 		0 & 0
-	  \end{bmatrix}$ \textbf{ni} homomorfizem, čeprav ustreza pogojem glede operacij,saj enote ne slika v enoto.
+	  \end{bmatrix}$ \textbf{ni} homomorfizem, čeprav ustreza pogojem glede operacij, saj enote ne slika v enoto.
 \end{example}
 
 
 \begin{remark}
-Kadar je iz konteksta razvidno, za homomorfizem katerih struktur gre, to izpuščamo (homomorfizem grup $\mapsto $ homomorfizem, $\dots$).
+Kadar je iz konteksta razvidno, za homomorfizem katerih struktur gre, govorimo le o homomorfizmu (izpuščamo grup, kolobarjev, itd.).
 \end{remark}
 
 \begin{definition}
@@ -2950,7 +2949,7 @@ Trivialni homomorfizem je $\varphi: \mathcal{A} \to \mathcal{A}_1, x \mapsto 1$
 \end{definition}
 
 \begin{remark}
-Homomorfizmom v vektorskih prostorih pravimo tudi linearne preslikave.
+Homomorfizmom vektorskih prostorov pravimo tudi linearne preslikave.
 \end{remark}
 
 \begin{remark}
@@ -2962,7 +2961,7 @@ Izraz vložitev uporabljamo predvsem takrat, ko želimo poudariti, da lahko vsak
 Vložitev $\mathbb{R}$ v $\mathbb{C}$ $: x \mapsto x + 0i$
 \end{example_case}
 \begin{example_case}
-Vložitev $\mathcal{K}$ v $\mathcal{K}[X]$ $: a \mapsto a + 0X + 0X^2 + \dots$. Tako vsak element identificiramo s konstantnim polinomom.
+Vložitev $\mathcal{K}$ v $\mathcal{K}[X]$ $: a \mapsto a + 0X + 0X^2 + \dots$ Tako vsak element identificiramo s konstantnim polinomom.
 \end{example_case}
 \end{example}
 
@@ -3000,9 +2999,9 @@ Relacija $\mathcal{A} \cong \mathcal{A}_1$ je ekvivalenčna.
 
 \begin{proof}\leavevmode\\
 \begin{enumerate}[label=\arabic*)]
-\item $\mathcal{A} \cong \mathcal{A}$ Očitno, saj je $id$ izomorfizem
-\item $\mathcal{A} \cong \mathcal{A}_1 \implies \mathcal{A}_1 \cong \mathcal{A}$ Inverz izomorfizma je tudi sam izomorfizem, torej je izomorfizem v drugo smer kar inverz prvega.
-\item $\mathcal{A} \cong \mathcal{A}_1 \land \mathcal{A}_1 \cong \mathcal{A}_2 \implies \mathcal{A} \cong \mathcal{A}_2$ Ker je kompozitum bijektivnih preslikav bijektivna preslikava, kompozitum homomorfizmov pa homomorfizem, je naš izomorfizem kar kompozitum izomorfizmov.
+\item $\mathcal{A} \cong \mathcal{A}$; očitno, saj je $id$ izomorfizem
+\item $\mathcal{A} \cong \mathcal{A}_1 \implies \mathcal{A}_1 \cong \mathcal{A}$; inverz izomorfizma je tudi sam izomorfizem, torej je izomorfizem v drugo smer kar inverz prvega.
+\item $\mathcal{A} \cong \mathcal{A}_1 \land \mathcal{A}_1 \cong \mathcal{A}_2 \implies \mathcal{A} \cong \mathcal{A}_2$; ker je kompozitum bijektivnih preslikav bijektivna preslikava, kompozitum homomorfizmov pa homomorfizem, je naš izomorfizem kar kompozitum izomorfizmov.
 \end{enumerate}
 \end{proof}
 
@@ -3011,14 +3010,14 @@ Množica vseh avtomorfizmov v $\mathcal{A}$ je grupa za komponiranje.
 \end{corollary}
 
 \begin{proof}
-Tip strukture $\mathcal{A}$ je nepomemben. Potrebno je samo preveriti aksiome za grupo: \\Zaprtost: Kompozitum avtomorfizmov je avtomorfizem\\
+Tip strukture $\mathcal{A}$ je nepomemben. Potrebno je preveriti le aksiome za grupo: \\Zaprtost: Kompozitum avtomorfizmov je avtomorfizem\\
 Asociativnost: Kompozitum je v splošnem asociativen\\
 Enota: $Id$ za komponiranje je tudi avtomorfizem\\
 Inverz: Inverz avtomorfizma je tudi avtomorfizem.
 \end{proof}
 
 \begin{example}
-$\mathcal{GL}_n(\mathcal{F}) =$ grupa vseh obrnljivih matrik $=$ grupa vseh linearnih preslikav iz $\mathcal{F}^n \to \mathcal{F}^n =$ grupa avtomorfizmov vektorskega prostora $\mathcal{F}^n$. 
+$\mathcal{GL}_n(\mathcal{F}) =$ grupa vseh obrnljivih matrik $=$ grupa vseh obrnljivih linearnih preslikav iz $\mathcal{F}^n \to \mathcal{F}^n =$ grupa avtomorfizmov vektorskega prostora $\mathcal{F}^n$. 
 \end{example}\\\\
 
 \begin{statement}
@@ -3042,7 +3041,7 @@ Sledi iz prejšnje trditve in iz poznavanja enakosti (\ref{eq:integer_power}).
 
 \begin{definition}
 \label{def:image_of_homomorphism}
-Zalogi vrednosti homomorfizma $\varphi: \mathcal{A} \to \mathcal{A}_1$ pravimo \textbf{slika} $\varphi$ in jo označimo z $Im(\varphi)$
+Zalogi vrednosti homomorfizma $\varphi: \mathcal{A} \to \mathcal{A}_1$ pravimo \textbf{slika} $\varphi$ in jo označimo z $Im(\varphi)$.
 \begin{equation}
 \label{eq:def_image_of_homomorphism}
 Im(\varphi) := \{ \varphi(x) | \ x \in \mathcal{A} \} \subseteq \mathcal{A}_1
@@ -3067,7 +3066,7 @@ Vsak homomorfizem je epimorfizem (na svojo zalogo vrednosti).
 
 \begin{definition}
 \label{def:kernel_of_homormphism}
-Naj bo $\varphi: \mathcal{A} \to \mathcal{A}_1$ homomorfizem poljubnih struktur. \textbf{Jedro} $\varphi$ je množica vseh elementov, ki se slikajo v nevtralni element, označimo jo z $Ker(\varphi)$.
+Naj bo $\varphi: \mathcal{A} \to \mathcal{A}_1$ homomorfizem poljubnih struktur. \textbf{Jedro} $\varphi$ je množica vseh elementov, ki se preslikajo v nevtralni element, označimo jo s $Ker(\varphi)$.
 \begin{equation}
 \label{eq:def_kernel_of_homomorphism}
 Ker(\varphi) := \{ x \in \mathcal{A} | \varphi(x) = 1\}
@@ -3128,8 +3127,7 @@ $$a^x a^y = a^{x+y}, a > 0$$
 \item 
 Naj bo $\mathcal{G}$ Abelova grupa\\
 $\varphi(x) = x^{-1}$je avtomorfizem\\
-$\varphi(xy) = (xy)^{-1} = (yx)^{-1} = x^{-1} y^{-1} = \varphi(x) \varphi(y)$
-Splošneje, za vsak $m \in \mathbb{Z}$ je $\varphi(x) = x^m$ endomorfizem grupe $\mathcal{G}$.
+$\varphi(xy) = (xy)^{-1} = (yx)^{-1} = x^{-1} y^{-1} = \varphi(x) \varphi(y)$; splošneje: za vsak $m \in \mathbb{Z}$ je $\varphi(x) = x^m$ endomorfizem grupe $\mathcal{G}$.
 \item 
 Naj bo $\varphi: \mathbb{C} - \{0\} \to \mathbb{R}^+, \varphi(w) = |w|$, očitno je $\varphi$ epimorfizem ($|zw| = |z||w|$)\\
 $Ker (\varphi) = \mathcal{S}^1 = \{z \in \mathbb{C} | \ |z| = 1\}$
@@ -3138,21 +3136,21 @@ $\varphi : (\mathbb{R}, +) \to (\mathcal{S}^1, *),  \varphi(x) = cos(x) + i sin(
 \item
 $sgn: \mathcal{S}_n \to (\{-1,1\}, *),	sgn(\sigma \rho) = sgn(\sigma) sgn(\rho)$, $Ker(sgn) = \mathcal{A}_n$
 \item
-$det: Gl(n,\mathcal{F}) \to \mathcal{F}^*$ je epimorfizem $Ker(det) = Sl(n, \mathcal{F})$
+$det: Gl(n,\mathcal{F}) \to \mathcal{F}^*$ je epimorfizem, $Ker(det) = Sl(n, \mathcal{F})$
 \end{enumerate}
 
 \begin{definition}
 \label{def:group_inner_automorphism}
-Naj bo $\mathcal{G}$ poljubna grupa, za poljuben $a \in \mathcal{G}$ je $\varphi_a : \mathcal{G} \to \mathcal{G}, \varphi_a(x) = axa^{-1}$ avtomorfizem $\mathcal{G}$, vsak tak avtomorfizem imenujemo \textbf{notranji avtomorfizem}
+Naj bo $\mathcal{G}$ poljubna grupa. Za poljuben $a \in \mathcal{G}$ je $\varphi_a : \mathcal{G} \to \mathcal{G}, \varphi_a(x) = axa^{-1}$ avtomorfizem $\mathcal{G}$. Vsak tak avtomorfizem imenujemo \textbf{notranji avtomorfizem}.
 \end{definition}
 
-Dokaz da je to res avtomorfizem je trivialen:\\
+Dokaz, da je to res avtomorfizem je trivialen:\\
 $\varphi_a(xy) = axya^{-1} = axa^{-1}aya^{-1} = \varphi_a(x)\varphi_a(y)$\\
 $Ker(\varphi_a) = \{x \in \mathcal{G} | \ axa^{-1}=1\} = \{1\}$\\
 $Im(\varphi_a) = \mathcal{G}$, saj $x = \varphi_a(a^{-1}xa)$
 
 \begin{remark}
-Če se spomnimo poglavja o grupah, sta si $x,y$ \textbf{konjugirana}, če obstaja tak $a$, da $y = axa^{-1}$ (\ref{def:conjugate_elements_group}), tako sta si $x$ in $\varphi_a(x)$ konjugirana. Za poljubno podgrupo $\mathcal{H} \subseteq \mathcal{G}$ tako velja $\mathcal{H} \cong a\mathcal{H}a^{-1}$
+Če se spomnimo poglavja o grupah, sta si $x,y$ \textbf{konjugirana}, če obstaja tak $a$, da $y = axa^{-1}$ (\ref{def:conjugate_elements_group}). Tako sta si $x$ in $\varphi_a(x)$ konjugirana. Za poljubno podgrupo $\mathcal{H} \subseteq \mathcal{G}$ tako velja $\mathcal{H} \cong a\mathcal{H}a^{-1}$
 \end{remark}
 
 \begin{remark}
@@ -3171,7 +3169,7 @@ Preveriti da je to grupa je trivialno
 $\Phi : \mathcal{G} \to Aut(\mathcal{G}), \Phi(a) = \varphi_a$\\
 Preverimo dobro definiranost:\\
 $\varphi_a \circ \varphi_b(x) = abxb^{-1}a^{-1} = \varphi_{ab}$ in $\Phi(ab) = \varphi_a \circ \varphi_b$\\
-$\Phi$ je torej homomorfizem grup, njegova slika pa je množica vseh notranjih avtomorfizmo grupe $\mathcal{G}$.
+$\Phi$ je torej homomorfizem grup, njegova slika pa je množica vseh notranjih avtomorfizmov grupe $\mathcal{G}$.
 
 \begin{definition}
 $Inn(\mathcal{G})$ je grupa vseh notranjih avtomorfizmov grupe $\mathcal{G}$
@@ -3185,11 +3183,11 @@ Očitno $Im(\Phi) = Inn(\mathcal{G})$
 
 \begin{definition}
 \label{def:ring_inner_automorphism}
-Naj bo $\mathcal{K}$ poljubnen kolobar, za poljuben obrnljiv $a \in \mathcal{K}$ je $\varphi_a : \mathcal{K} \to \mathcal{K}, \varphi_a(x) = axa^{-1}$ avtomorfizem $\mathcal{K}$, vsak tak avtomorfizem imenujemo \textbf{notranji avtomorfizem} kolobarja $\mathcal{K}$.
+Naj bo $\mathcal{K}$ poljuben kolobar. Za poljuben obrnljiv $a \in \mathcal{K}$ je $\varphi_a : \mathcal{K} \to \mathcal{K}, \varphi_a(x) = axa^{-1}$ avtomorfizem $\mathcal{K}$. Vsak tak avtomorfizem imenujemo \textbf{notranji avtomorfizem} kolobarja $\mathcal{K}$.
 \end{definition}
 
 \begin{remark}
-Tako kot pri grupah ima tudi tu notranji avtomorfizem smisel zgolj za nekomutativne kolobarje
+Tako kot pri grupah, ima tudi tu notranji avtomorfizem smisel zgolj za nekomutativne kolobarje
 \end{remark}
 
 \begin{definition}
@@ -3198,20 +3196,20 @@ Naj bo $\mathcal{V}$ vektorski prostor nad $\mathcal{F}$ in naj velja $dim(V) = 
 Algebro vseh endomorfizmov $\mathcal{V}$ nad $\mathcal{F}$ označimo z :
 \begin{equation}
 \label{eq:def_algebra_of_vector_space_endomorphisms}
-End_{\mathcal{F}}(\mathcal{V}) = \{ f: \mathcal{V} \to \mathcal{V} | f \ \text{je linearna(je endomorfizem)}\}
+End_{\mathcal{F}}(\mathcal{V}) = \{ f: \mathcal{V} \to \mathcal{V} | f \ \text{je linearna (je endomorfizem)}\}
 \end{equation}
 \end{definition}
 
 \begin{remark}
-Rutinsko preverimo da je to res algebra(množenje je komponiranje funkcij).
+Rutinsko preverimo, da je to res algebra (množenje je komponiranje preslikav).
 \end{remark}
 
 
 \begin{enumerate}
 \item
-$\varphi : \mathbb{Z}_2 \to \mathbb{Z}, \varphi(x) = x$ \textbf{ni} homomorfizem. Veljajo sicer skoraj vse lastnosti, a pade pri $0 = \varphi(1+1) \neq \varphi(1) + \varphi(1) = 2$
+$\varphi : \mathbb{Z}_2 \to \mathbb{Z}, \varphi(x) = x$ \textbf{ni} homomorfizem. Veljajo sicer skoraj vse lastnosti, a se zatakne pri $0 = \varphi(1+1) \neq \varphi(1) + \varphi(1) = 2$
 \item 
-V nasprotni smeri pa zadeva deluje
+V nasprotni smeri zadeva deluje;
 $\varphi : \mathbb{Z} \to \mathbb{Z}_2$\\
 $\varphi(x) =\twopartdef{0}{n \ \text{sod}}{1}{n \ \text{lih}}$, očitno $\varphi(n+m) = \varphi(n) + \varphi(m)$, $Ker(\varphi) = 2\mathbb{Z}$
 
@@ -3226,7 +3224,7 @@ $Ker(\varphi) = \{a_1X + a_2X^2 + \dots + a_nX^n\}$, velja tudi $\varphi(f(X)) =
 
 \item Naj bo $f \in C[0,1]$. Za poljuben $x \in [0,1]$ je $\varphi_x : C[0,1] \to \mathbb{R}, f \mapsto f(x) $ homomorfizem. $Ker(\varphi_x) = \{f \in C[0,1] | f(x) = 0\}$
 
-\item $\varphi: End_{\mathcal{F}}(\mathcal{V}) \to M_n(\mathcal{F}), \varphi(f) = [f]$, kjer je $[f]$ matrika, ki pripada $f$ glede na vnaprej izbrano bazo. $\varphi$ je izomorfizem elgeber. Torej velja $  End_{\mathcal{F}}(\mathcal{V}) \cong M_n(\mathcal{F})$.
+\item $\varphi: End_{\mathcal{F}}(\mathcal{V}) \to M_n(\mathcal{F}), \varphi(f) = [f]$, kjer je $[f]$ matrika, ki pripada $f$ glede na vnaprej izbrano bazo. $\varphi$ je izomorfizem algeber. Torej velja $  End_{\mathcal{F}}(\mathcal{V}) \cong M_n(\mathcal{F})$.
 
 \item
 Primeri posebnih izomorfizmov
@@ -3234,7 +3232,7 @@ Primeri posebnih izomorfizmov
 \item $\mathcal{K}_1 = \{ \begin{bmatrix}
 		x & 0 \\
 		0 & x
-	  \end{bmatrix} | \ x \in \mathbb{R}\}$, kaj hitro lahko preverimo da je to kolobar, da pa velja $\mathcal{K}_1 \cong \mathbb{R}$ vzemimo $\varphi(x) = \begin{bmatrix}
+	  \end{bmatrix} | \ x \in \mathbb{R}\}$; kaj hitro lahko preverimo, da je to kolobar. Da velja $\mathcal{K}_1 \cong \mathbb{R}$, vzemimo $\varphi(x) = \begin{bmatrix}
 		x & 0 \\
 		0 & x
 	  \end{bmatrix} = xI$, ki ustreza vsem zahtevam.
@@ -3242,7 +3240,7 @@ Primeri posebnih izomorfizmov
 \item $\mathcal{K}_2 = \{ \begin{bmatrix}
 		x & 0 \\
 		0 & y
-	  \end{bmatrix}| \ x, y \in \mathbb{R} \}$, podobno kot prej brez težav preverimo, da je kolobar, velja pa tudi $\mathcal{K}_2 \cong \mathbb{R} \times \mathbb{R}$(enak direktnemu produktu $\mathbb{R}$ s samim seboj), kar preverimo z $\varphi( (x,y) ) = \begin{bmatrix}
+	  \end{bmatrix}| \ x, y \in \mathbb{R} \}$; podobno kot prej brez težav preverimo, da je kolobar. Velja tudi $\mathcal{K}_2 \cong \mathbb{R} \times \mathbb{R}$ (enak direktnemu produktu $\mathbb{R}$ s samim seboj), kar preverimo s $\varphi( (x,y) ) = \begin{bmatrix}
 		x & 0 \\
 		0 & y
 	  \end{bmatrix}$.
@@ -3252,7 +3250,7 @@ Primeri posebnih izomorfizmov
 \item $\mathcal{K}_3 = \{ \begin{bmatrix}
 		x & y \\
 		-y & x
-	  \end{bmatrix} | \ x,y \in \mathbb{R} \}$ Velja $\mathcal{K}_3 \cong \mathbb{C}$ z izomorfizmom $\varphi(x+yi) = \begin{bmatrix}
+	  \end{bmatrix} | \ x,y \in \mathbb{R} \}$; velja $\mathcal{K}_3 \cong \mathbb{C}$. Izomorfizem $\varphi(x+yi) = \begin{bmatrix}
 		x & y \\
 		-y & x
 	  \end{bmatrix}$
@@ -3260,7 +3258,7 @@ Primeri posebnih izomorfizmov
 \item $\mathcal{K}_4 = \{\begin{bmatrix}
 		z & w \\
 		-\overline{w} & \overline{z} 
-	  \end{bmatrix} | \ w,z \in \mathbb{C} \}$ Na pogled se nam zdi podoben $\mathbb{H}$, saj je prav tako kot v kvaternionih vsak neničelen element obrnljiv in je kot $\mathbb{H}$ 4-razsežna algebra nad $\mathbb{R}$, res je, saj imamo izomorfizem: $\varphi(x+yi+uj+vk) = \begin{bmatrix}
+	  \end{bmatrix} | \ w,z \in \mathbb{C} \}$; na pogled se nam zdi podoben $\mathbb{H}$, saj je prav tako kot v kvaternionih vsak neničelen element obrnljiv in je tako kot $\mathbb{H}$ 4-razsežna algebra nad $\mathbb{R}$. Res, saj imamo izomorfizem: $\varphi(x+yi+uj+vk) = \begin{bmatrix}
 		x + yi & u + vi \\
 		-\overline{u+vi} & \overline{x+yi}
 	  \end{bmatrix}$
@@ -3273,7 +3271,7 @@ Primeri posebnih izomorfizmov
 
 \begin{definition}
 \label{def:symetric_group_over_set}
-Naj bo $\mathcal{X}$ množica, $Sim(\mathcal{X})$ je simetrična grupa množice $\mathcal{X}$, torej je grupa bijektivnih preslikav iz $\mathcal{G}$ v $\mathcal{G}$.
+Naj bo $\mathcal{X}$ množica. $Sim(\mathcal{X})$ je simetrična grupa množice $\mathcal{X}$, torej grupa bijektivnih preslikav iz $\mathcal{G}$ v $\mathcal{G}$.
 \end{definition}
 
 \subsubsection{Cayleyev izrek}
@@ -3287,7 +3285,7 @@ Vsako grupo $\mathcal{G}$ lahko vložimo v kako simetrično grupo.
 Naj bo $a \in \mathcal{G}$ definirajmo $l_a : \mathcal{G} \to \mathcal{G}, l_a(x) = ax$. Preveriti moramo, da velja $l_a \in Sim(\mathcal{G})$.\\
 Injektivnost: $l_a(x) = l_a(y) \implies ax = ay \implies x = y$\\
 Surjektivnost: $x \in \mathcal{G} \implies x = l_a(a^{-1}x) = aa^{-1}x = x$\\
-Definirajmo $\varphi : \mathcal{G} \to Sim(\mathcal{G}), \varphi(a) = l_a$ in preverimo, da je $l$ homomorfizem.\\
+Definirajmo $\varphi : \mathcal{G} \to Sim(\mathcal{G}), \varphi(a) = l_a$ in preverimo, da je $\varphi$ vložitev.\\
 $l_{ab}(x) = (ab)x = a(bx) = l_a(l_b(x)) = l_a * l_b (x) \implies l_{ab} = l_a*l_b$\\
 Preverimo še, da ima $\varphi$ trivialno jedro: $a \in Ker(\varphi) \implies l_a = id_\mathcal{G} \implies \forall x \in \mathcal{G}. \ ax = x \implies a=1$\\
 Torej je $\varphi$ vložitev.
@@ -3297,27 +3295,29 @@ Torej je $\varphi$ vložitev.
 Iz dokaza opazimo, da lahko $\mathcal{G}$ vložimo v $Sim(\mathcal{G})$, kjer $\mathcal{G}$ gledamo zgolj kot množico.
 \end{remark}
 
-Zanima nas, ali lahko grupo $\mathcal{G}$ vložimo v $Sim(\mathcal{X})$ za kako bolj posrečeno množico. (Če je grupa že sama simetrična grupa velja $Sim(\mathcal{G}) \cong S_n$). % Najbrž \cong in ne = ???
+Zanima nas, ali lahko grupo $\mathcal{G}$ vložimo v $Sim(\mathcal{X})$ za kako bolj posrečeno množico $\mathcal{X}$ (npr. če je $\mathcal{G}$ že sama simetrična grupa)
+
+Velja: $\mathcal{G}$ končna $\implies Sim(\mathcal{G})$ končna, torej $Sim(\mathcal{G}) = S_n$. % Najbrž \cong in ne = ??? Nisem prepričan :)
 
 \begin{corollary}
 Vsako končno grupo lahko vložimo v $S_n$ za nek $n \in \mathbb{N}$.
 \end{corollary}
 
-Našli smo injektivni homomorfizem iz $\mathcal{G}$ v $Sim(\mathcal{X})$ (Kjer je bil naš $\mathcal{X}$ kar $\mathcal{G}$). Nasploh se izkažejo kot pomembni homomorfizmi (ne nujno injektivni) iz grup v permutacije. Zato pogosteje obravnavamo ekvialenten pojem:
+Našli smo injektivni homomorfizem iz $\mathcal{G}$ v $Sim(\mathcal{X})$ (kjer je bil naš $\mathcal{X}$ kar $\mathcal{G}$). Nasploh se izkažejo kot pomembni homomorfizmi (ne nujno injektivni) iz grup v permutacije, zato pogosteje obravnavamo ekvivalenten pojem:
 
 \begin{definition}
 \label{def:group_acts_on_set}
-Grupa $\mathcal{G}$ deluje na množici $\mathcal{X}$ če obstaja preslikava $\varphi: \mathcal{G} \times \mathcal{X} \to \mathcal{X}, \varphi(a,x) = ax$, za katero velja $\varphi(ab,x) = \varphi(a, bx)$ in $\varphi(1,x) = x$ za $a,b \in \mathcal{G}, x \in \mathcal{X}$.
+Grupa $\mathcal{G}$ deluje na množici $\mathcal{X}$, če obstaja preslikava $\varphi: \mathcal{G} \times \mathcal{X} \to \mathcal{X}, \varphi(a,x) = ax$, za katero velja $\varphi(ab,x) = \varphi(a, bx)$ in $\varphi(1,x) = x$ za $a,b \in \mathcal{G}, x \in \mathcal{X}$.
 \end{definition}
 
 \begin{statement}
-Vsakemu delovanju $\mathcal{G}$ na $\mathcal{X}$ lahko priredimo homomorfzem iz $\mathcal{G}$ na $Sim{X}$ in obratno.
+Vsakemu delovanju $\mathcal{G}$ na $\mathcal{X}$ lahko priredimo homomorfizem iz $\mathcal{G}$ na $Sim(\mathcal{X})$ in obratno.
 \end{statement}
 
 \begin{proof}
 $\implies$\\
-Imejmo delovanje $\mathcal{G}$ na $\mathcal{X}$. Priredimo mu homomorfizem $\varphi: \mathcal{G} \to Sim(\mathcal{X})$, kjer je $\varphi(a)$ premutacija definirana kot: $\varphi(a)(x) = ax$.
-Bralec bo lahko za domoačo nalogo dokazal, da je $\varphi(a)$ res premutacija in homomorfizem. % Sej bom nekoč dodal 
+Imejmo delovanje $\mathcal{G}$ na $\mathcal{X}$. Priredimo mu homomorfizem $\varphi: \mathcal{G} \to Sim(\mathcal{X})$, kjer je $\varphi(a)$ permutacija definirana kot: $\varphi(a)(x) = ax$.
+Bralec lahko sam preveri, da je $\varphi(a)$ res permutacija in homomorfizem. % Sej bom nekoč dodal 
 \\$\impliedby$\\
 Homomorfizmu $\varphi(a):  \mathcal{G} \to Sim(\mathcal{X})$ priredimo delovanje $(a,x) \mapsto \varphi(a)(x)$
 \end{proof}
@@ -3329,7 +3329,7 @@ $\mathcal{G}$ deluje na $\mathcal{G}$ z običajnim množenjem. To delovanje smo 
 
 \subsubsection{Vložitev kolobarja v kolobar endomorfizmov}
 
-Naj bo $\mathcal{M}$ aditivna (in zato Abelova) grupa. Množica vseh endomorfizmov($End(\mathcal{M})$) postane kolbar, če vpeljemo vsoto in produkt kot običajno seštevanje in komponiranje.
+Naj bo $\mathcal{M}$ aditivna (in zato Abelova) grupa. Množica vseh endomorfizmov ($End(\mathcal{M})$) postane kolobar, če vpeljemo vsoto in produkt kot običajno seštevanje in komponiranje.
 
 \begin{theorem}
 Vsak kolobar $\mathcal{K}$ lahko vložimo v kolobar endomorfizmov neke aditivne grupe.
@@ -3337,7 +3337,7 @@ Vsak kolobar $\mathcal{K}$ lahko vložimo v kolobar endomorfizmov neke aditivne 
 
 \begin{proof}
 $\mathcal{K}$ bomo vložili v $End(\mathcal{K})$, kjer bomo na drugi $\mathcal{K}$ gledali le še kot na aditivno grupo.\\
-Definiramo $\varphi: \mathcal{K} \to End(\mathcal{K}), \varphi(a) = l_a$, kjer je $l_a: \mathcal{K} \to \mathcal{K}$ in $l_a(x) = ax$. Zaradi distributivnosti je tako $l_a(x+y) = l_a(x) + l_a(y)$. $\varphi$ je prav tako homomorfizem(prevedemo na $l_a$). Injektivnost je trivialna. 
+Definiramo $\varphi: \mathcal{K} \to End(\mathcal{K}), \varphi(a) = l_a$, kjer je $l_a: \mathcal{K} \to \mathcal{K}$ in $l_a(x) = ax$. Zaradi distributivnosti je tako $l_a(x+y) = l_a(x) + l_a(y)$. $\varphi$ je prav tako homomorfizem (prevedemo na $l_a$). Injektivnost je trivialna. 
 \end{proof}
 
 Podobno vlogo kot jih imajo pri grupah delovanja, imajo pri kolobarjih moduli.
@@ -3368,7 +3368,7 @@ Enako kot prej.
 
 \subsubsection{Vložitev algebre v algebro endomorfizmov vektorskega prostora}
 
-Naj bo $\mathcal{V}$ vektorski prostor nad poljem $\mathcal{F}$ in naj bo $End_\mathcal{F}(\mathcal{V})$ množica vseh linearnih preslikav iz $\mathcal{V}$ v $\mathcal{V}$. Ta množica je algebra če definiramo običajne operacije.
+Naj bo $\mathcal{V}$ vektorski prostor nad poljem $\mathcal{F}$ in naj bo $End_\mathcal{F}(\mathcal{V})$ množica vseh linearnih preslikav iz $\mathcal{V}$ v $\mathcal{V}$. Ta množica postane algebra, če definiramo operacije na običajen način.
 
 \begin{statement}
 Vsako algebro $\mathcal{A}$  lahko vložimo v algebro endomorfizmov nekega vektorskega prostora.
@@ -3377,14 +3377,14 @@ Vsako algebro $\mathcal{A}$  lahko vložimo v algebro endomorfizmov nekega vekto
 \begin{proof}
 Postopamo podobno kot prej.
 \end{proof}
-Če je $\mathcal{A}$ končno razsežna je tudi $End_\mathcal{F}(\mathcal{A})$ končno razsežna in zato velja $End_\mathcal{F}(\mathcal{A}) \cong \mathcal{M}_n(\mathcal{F})$.
+Če je $\mathcal{A}$ končno razsežna, je tudi $End_\mathcal{F}(\mathcal{A})$ končno razsežna in zato velja $End_\mathcal{F}(\mathcal{A}) \cong \mathcal{M}_n(\mathcal{F})$.
 \\\\
 \begin{corollary}
 Vsako končno razsežno algebro lahko vložimo v matrično algebro $\mathcal{M}_n(\mathcal{F})$.
 \end{corollary}\\
 
 \begin{example}
-$\mathcal{A}$ naj bo končno razsežna algebra nad $\mathbb{R}$, zanima nas, ali lahko velja $ab-ba = 1$ kar je glede na posledico enakovredno problemu:\\
+$\mathcal{A}$ naj bo končno razsežna algebra nad $\mathbb{R}$, zanima nas, ali lahko velja $ab-ba = 1$, kar je glede na posledico enakovredno problemu:\\
 Ali za $A,B \in \mathcal{M}_n(\mathbb{R})$ lahko velja $AB - BA = I$?\\
 Očitno to ne velja, saj: $sl(AB-BA) = 0 \neq 1 = sl(I)$. 
 
@@ -3394,7 +3394,7 @@ Očitno to ne velja, saj: $sl(AB-BA) = 0 \neq 1 = sl(I)$.
 \subsection{Vložitev celega kolobarja v polje}
 
 Zanima nas, ali lahko poljuben kolobar $\mathcal{K}$ vložimo v polje (npr. ali lahko $\mathbb{Z}$ vložimo v $\mathbb{C}$.\\
-Takoj opazimo da mora imeti kolobar nekaj značilnosti:
+Takoj opazimo, da mora imeti kolobar $\mathcal{K}$ nekaj značilnosti:
 \begin{enumerate}
 \item $\mathcal{K}$ mora biti komutativen (da ima to lastnost tudi polje).
 \item $\mathcal{K}$ ne sme imeti deliteljev niča (da je tudi polje brez deliteljev niča)
@@ -3418,29 +3418,29 @@ Za poljubne $a,a', c, c' \in \mathcal{K}$ in $b,b', d, d' \in \mathcal{K} - \{0\
 \end{lemma}
 
 \begin{proof}
-Preprosto premečemo številke
+Rutinski račun prepuščamo bralcu.
 \end{proof}
 
 \begin{theorem}
-Če v množico vseh ekvivalenčnih razredov $$\mathcal{F} :=\{\frac{a}{b} | a \in \mathcal{K}, b \in \mathcal{K} - \{0\} \}$$ vpelejmo seštevanje in množenje s predpisoma:
-$\frac{a}{b} + \frac{c}{d} = \frac{ab+bc}{bd}$ in $\frac{a}{b} * \frac{c}{d} = \frac{ac}{bd}$, potem $\mathcal{F}$ postane polje.
+Če v množico vseh ekvivalenčnih razredov $$\mathcal{F} :=\{\frac{a}{b} | a \in \mathcal{K}, b \in \mathcal{K} - \{0\} \}$$ vpeljemo seštevanje in množenje s predpisoma:
+$\frac{a}{b} + \frac{c}{d} = \frac{ab+bc}{bd}$ in $\frac{a}{b} * \frac{c}{d} = \frac{ac}{bd}$, postane $\mathcal{F}$ polje.
 \end{theorem}
 
 \begin{proof}
-Preprosto preverimo dobro lastnosti za polje, dobro definiranost nam daje že prejšnja lema.
+Preprosto preverimo lastnosti, katerim mora množica zadoščati, da jo imenujemo polje. Dobro definiranost operacij nam zagotovi prejšnja lema.
 \end{proof}
 
-S predpison $\varphi : \mathcal{K} \to \mathcal{F}, \varphi(a) = \frac{a}{1}$ je definirano vložitev iz $\mathcal{K}$ v $\mathcal{F}$.
+S predpisom $\varphi : \mathcal{K} \to \mathcal{F}, \varphi(a) = \frac{a}{1}$ je definirana vložitev iz $\mathcal{K}$ v $\mathcal{F}$.
 
 \begin{proof}
-Prejšnja lema nam da dobro definiranost, ostale lastnosti pa preverimo s preprostim računom.
+Prejšnja lema nam zagotovi dobro definiranost, ostale lastnosti pa preverimo s preprostim računom.
 \end{proof}
 
 \textbf{Dogovor:} Namesto $\frac{a}{1}$ pišemo kar $a$ in v tem smislu $\mathcal{K}$ obravnavamo kot podmnožico $\mathcal{F}$, $\mathcal{K} \subseteq \mathcal{F}$.
 
 
 \begin{remark}
-Polje $\mathcal{F}$ je generirano s (podmožico) $\mathcal{K}$, torej med $\mathcal{K}$ in $\mathcal{F}$ ni drugega polja (če obstaja polje $\mathcal{F}', \mathcal{K} \subseteq \mathcal{F}' \subseteq \mathcal{F}$, to polje zagotovo vsebuje vse inverze elementov iz $\mathcal{K}$ in zato tudi vse elemente $\mathcal{F}$ 
+Polje $\mathcal{F}$ je generirano s (podmnožico) $\mathcal{K}$, torej med $\mathcal{K}$ in $\mathcal{F}$ ni drugega polja (če obstaja polje $\mathcal{F}', \mathcal{K} \subseteq \mathcal{F}' \subseteq \mathcal{F}$, to polje zagotovo vsebuje vse inverze elementov iz $\mathcal{K}$ in zato tudi vse elemente $\mathcal{F}$). 
 \end{remark}
 
 \begin{definition}
@@ -3450,7 +3450,7 @@ Polju
 \label{eq:def_fraction_field}
 \mathcal{F} := \{\frac{a}{b} | a \in \mathcal{K}, b \in \mathcal{K} - \{0\} \}
 \end{equation}
-Pravimo \textbf{polje ulomkov} celega kolobarja $\mathcal{K}$
+pravimo \textbf{polje ulomkov} celega kolobarja $\mathcal{K}$.
 \end{definition}
 
 \begin{example}
@@ -3458,14 +3458,14 @@ Pravimo \textbf{polje ulomkov} celega kolobarja $\mathcal{K}$
 $\mathcal{K} = \mathbb{Z} \implies \mathcal{F} = \mathbb{Q}$
 \end{example_case}
 \begin{example_case}
-Če ej $\mathcal{K}$ že sam polje, velja $\mathcal{F} = \mathcal{K}$
+Če je $\mathcal{K}$ že sam polje, velja $\mathcal{F} = \mathcal{K}$
 \end{example_case}
 \end{example}
 
 
 \begin{definition}
 \label{def:field_rational_functions}
-Naj bo $\mathcal{F}$ polje in $\mathcal{K} = \mathcal{F}[X]$ polju ulomkov $\mathcal{K}$ pravimo \textbf{polje racionalnih funkcij}, katerega elementi so $\frac{f(x)}{g(x)}$
+Naj bo $\mathcal{F}$ polje in $\mathcal{K} = \mathcal{F}[X]$. Polju ulomkov $\mathcal{K}$ pravimo \textbf{polje racionalnih funkcij}, katerega elementi so $\frac{f(x)}{g(x)}$.
 \end{definition}
 
 \begin{remark}
@@ -3473,15 +3473,16 @@ Na podoben način definiramo polje racionalnih funkcij za polinom več spremenlj
 \end{remark}
 
 
-\subsection{Karakteristika kolobarja in vložitev prapolja v polje}
+\subsection{Karakteristika kolobarja in vložitev prapolja} 
+%po naslovih od Brešarja se ravnam, lahko spremenis nazaj drugače, np. :)
 
 \begin{definition}
 \label{def:characteristics_of_ring}
-Naj bo $\mathcal{K}$ kolobar, Če obstaja tako naravno število $n$, da velja $n*1 = 0$ (spomnimo se $n*1 = 1+1+\dots + 1$), potem najmanjšemu izmed njih pravimo $\textbf{karakteristika kolobarja}$, če pa takih števil ni, potem pravimo, da ima kolobar \textbf{karakteristiko 0}
+Naj bo $\mathcal{K}$ kolobar. Če obstaja tako naravno število $n$, da velja $n*1 = 0$ (spomnimo se $n*1 = 1+1+\dots + 1$), potem najmanjšemu izmed njih pravimo $\textbf{karakteristika kolobarja} \ \mathcal{K}$. Če pa takih števil ni, potem pravimo, da ima kolobar \textbf{karakteristiko 0}
 \end{definition}
 
 \begin{remark}
-Karakteristiko kolobarja označimo z $kar(\mathcal{K})$.
+Karakteristiko kolobarja označimo s $kar(\mathcal{K})$.
 \end{remark}
 
 \begin{example}
@@ -3507,26 +3508,26 @@ Karakteristika kolobarja brez deliteljev niča je bodisi $0$ bodisi praštevilo.
 \end{lemma}
 
 \begin{proof}
-Danimo da je $kar(\mathbb{K}) = n$. če velja $n=r*s \implies n*1 = r*s*1 = (r*1)*(s*1) \implies r*1 = 0 \lor s*1 = 0$, ker je po definiciji karekteristika najmanjše tako število, je $n=s \lor n = r \implies n$ je praštevilo.
+Danimo da je $kar(\mathbb{K}) = n$. Če velja $n=r*s \implies n*1 = r*s*1 = (r*1)*(s*1) \implies r*1 = 0 \lor s*1 = 0$. Ker je po definiciji karakteristika najmanjše tako število, je $n=s \lor n = r \implies n$ je praštevilo.
 \end{proof}
 
 \begin{theorem}
 Naj bo $\mathcal{F}$ polje
 \begin{enumerate}
-\item Če velja $kar(\mathcal{F}) = 0$ lahko $\mathcal{F}$ vložimo v $\mathbb{Q}$
-\item Če velja $kar(\mathcal{F}) = p$ lahko $\mathcal{F}$ vložimo v $\mathbb{Z}_p$ 
+\item Če velja $kar(\mathcal{F}) = 0$, lahko $\mathbb{Q}$ vložimo v $\mathcal{F}$
+\item Če velja $kar(\mathcal{F}) = p$, lahko $\mathbb{Z}_p$ vložimo v $\mathcal{F}$ 
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
 $kar(\mathcal{F}) = 0$, $\varphi : \mathbb{Q} \to \mathcal{F}, \frac{n}{m} \mapsto n * m^{-1}$
 Brez težav preverimo, da je $\varphi$ dobro definirana in homomorfizem, $Ker(\varphi) = \{0\}$, torej je res vložitev.\\
-$kar(\mathcal{F}) = p$, $\varphi : \mathbb{Z}_p \to \mathcal{F}, k \mapsto k*1=(1+1+\times + 1)$\\
-$\varphi(k) = 0 \iff k = 0$, saj $k < p = kar(\mathcal{F})$ torej je $\varphi$ injektivna.\\Preverimo še $\varphi(k*l) = \varphi(k) * \varphi(l)$, $\varphi(k)\varphi(l) = k*l = q*p + r, r < p = r$ Enako pa velja tudi v $\mathbb{Z}_p$, zato $\varphi(kl) = \varphi(r) = r$.
+$kar(\mathcal{F}) = p$, $\varphi : \mathbb{Z}_p \to \mathcal{F}, k \mapsto k*1=(1+1+\hdots + 1)$\\
+$\varphi(k) = 0 \iff k = 0$, saj $k < p = kar(\mathcal{F})$, torej je $\varphi$ injektivna.\\Preverimo še $\varphi(k*l) = \varphi(k) * \varphi(l)$, $\varphi(k)\varphi(l) = k*l = q*p + r, r < p = r$. Enako velja tudi v $\mathbb{Z}_p$, zato $\varphi(kl) = \varphi(r) = r$.
 
 \end{proof}
 
-Polje $\mathbb{Q}$ imenujemo \textbf{prapolje s karaktersitiko $0$} , polje $\mathbb{Z}_p$ pa \textbf{prapolje s karakteristiko $p$}.
+Polje $\mathbb{Q}$ imenujemo \textbf{prapolje s karakteristiko $0$} , polje $\mathbb{Z}_p$ pa \textbf{prapolje s karakteristiko $p$}.
 
 Vidimo, da vsako polje s karakteristiko $0$ 'vsebuje' $\mathbb{Q}$ (natančneje, vsebuje izomorfno kopijo $\mathbb{Q}$), vsako polje s karakteristiko p pa vsebuje $\mathbb{Z}_p$.
 
@@ -3546,28 +3547,28 @@ a\mathcal{H} := \{ ah | \ h \in \mathcal{H}\}
 \end{definition}
 
 \begin{remark}
-Če je $\mathcal{G}$ aditivna grupa odsek pišemo kot $a + \mathcal{H} := \{ a+h | \ h \in \mathcal{H}\}$
+Če je $\mathcal{G}$ aditivna grupa, odsek pišemo kot $a + \mathcal{H} := \{ a+h | \ h \in \mathcal{H}\}$
 \end{remark}
 \\
 \\
 \begin{remark}
-Natančneje, $a\mathcal{H}$ je \textbf{levi odsek}, desni odsek definiramo na podoben način $\mathcal{H}a := \{ ha | \ h \in \mathcal{H}\}$ in se obnaša podobno. Pri Algebri 2 bomo obravnavali zgolj leve odseke.
+Natančneje, $a\mathcal{H}$ je \textbf{levi odsek}. Desni odsek definiramo na podoben način $\mathcal{H}a := \{ ha | \ h \in \mathcal{H}\}$ in se obnaša podobno. Pri Algebri 2 bomo obravnavali zgolj leve odseke.
 \end{remark}
 
-Če je $a \in \mathcal{H}$ velja $a \mathcal{H} = \mathcal{H}$, velja tudi obratno, če $a\mathcal{H} = a$ potem $a \in \mathcal{H}$ $ (a\mathcal{H} = \mathcal{H} \iff a \in \mathcal{H})$.
+Če je $a \in \mathcal{H}$, velja $a \mathcal{H} = \mathcal{H}$. Velja tudi obratno, če $a\mathcal{H} = a$ potem $a \in \mathcal{H}$ $ (a\mathcal{H} = \mathcal{H} \iff a \in \mathcal{H})$.
 
-Če $a \in \mathcal{G} - \mathcal{H}$, potem $a\mathcal{H}$ ni niti podrgupa(saj ne vsebuje niti enote).
+Če $a \in \mathcal{G} - \mathcal{H}$, potem $a\mathcal{H}$ ni niti podrgupa, saj ne vsebuje niti enote.
 
 \begin{example}
 \begin{example_case}
 $\mathcal{G} = \mathbb{Z}, \mathcal{H} = n\mathbb{Z}$\\
-Odseki so: $0 + n\mathbb{Z} = n\mathbb{Z}, 1 + n\mathbb{Z}, \dots, (n-1) + n \mathbb{Z}$, elementi posameznih odsekov pa so števila, ki dajo pri deljenju z n enak ostanek. Tako je vseh odsekov $n$.\\
+Odseki so: $0 + n\mathbb{Z} = n\mathbb{Z}, 1 + n\mathbb{Z}, \dots, (n-1) + n \mathbb{Z}$. Elementi posameznih odsekov so števila, ki dajo pri deljenju z $n$ enak ostanek. Tako je vseh odsekov $n$.\\
 S podobnim opisom smo se že srečali, le da smo $a + n\mathbb{Z}$ označili z $[a]$.
 \end{example_case}
 
 \begin{example_case}
 $\mathcal{G} = \mathbb{R}^2, \mathcal{H}=$abscisna os.\\
-Vsi možni odseki so premice, vzporedne abcisni osi.
+Vsi možni odseki so premice vzporedne abscisni osi.
 \end{example_case}
 
 \begin{example_case}
@@ -3577,8 +3578,8 @@ Tukaj so odseki koncentrične krožnice.
 
 \begin{example_case}
 $\mathcal{G} = \mathcal{S}_n, \mathcal{H}=\mathcal{A}_n$\\
-$\delta (\in \mathcal{S}_n) \mathcal{H} = \twopartdef{\mathcal{H}}{}{\text{vse lihe permutacije}}{\delta \notin \mathcal{H}}$\\
-Tu imamo le dva odseka lihe in sode permutacije.
+$\delta (\in \mathcal{S}_n) \mathcal{H} = \twopartdef{\mathcal{H}}{\delta \in \mathcal{H}}{\text{vse lihe permutacije}}{\delta \notin \mathcal{H}}$\\
+Tu imamo le dva odseka, lihe in sode permutacije.
 \end{example_case}
 
 \begin{lemma}
@@ -3594,20 +3595,20 @@ $b = b*1 \in b\mathcal{H} = a\mathcal{H}$, $b = a*h_0$ za nek $h_0 \in \mathcal{
 $a^{-1}*b = h_0 \in \mathcal{H}$ \\
 $\impliedby$\\
 $a^{-1}*b =h_0 \in \mathcal{H}$\\
-$b = a*h_0 \implies b*h = a*\underbrace{(h_0*h)}_{\in \mathcal{H}} \in a\mathcal{H}$
-Enako pokažemo tudi za vsebovanje v drugo smer.
+$b = a*h_0 \implies b*h = a*\underbrace{(h_0*h)}_{\in \mathcal{H}} \in a\mathcal{H}$\\
+Enako pokažemo inkluzijo v drugo smer.
 \end{proof}
 
-Hitro nas to spomne na karakterizacijo podgrupe:(\ref{def:subgroup})\\
-$\mathcal{H}$ je podgrupa $\iff a^{-1}b \in \mathcal{H} \forall a,b \in \mathcal{H}$\\
-Pomembna razlika je v tem, da zdaj ta dva poljubna elementa nista element podgrupe ampak kar cele (nad)grupe $\mathcal{G}$.
+Hitro nas to spomni na karakterizacijo podgrupe:(\ref{def:subgroup})\\
+$\mathcal{H}$ je podgrupa $\mathcal{G} \iff a^{-1}b \in \mathcal{H} \ \forall a,b \in \mathcal{H}$\\
+Pomembna razlika je v tem, da sta ta dva elementa zdaj elementa grupe $\mathcal{G}$.
 
 \begin{remark}
 Za desne odseke se pogoj glasi: $\mathcal{H}a = \mathcal{H}b \iff ab^{-1} \in \mathcal{H}$
 \end{remark}
 
 \begin{remark}
-Očitno za Abelove (komutativne) grupe vrstni red $a$ in $b$ ni pomemben 
+Očitno za Abelove (komutativne) grupe vrstni red $a$ in $b$ ni pomemben.
 \end{remark}
 
 \begin{remark}
@@ -3618,40 +3619,40 @@ $$a + \mathcal{H} = b + \mathcal{H} \iff b - a \in \mathcal{H}$$
 
 \end{example}
 
-Ideja, odseki se nam zdijo kot neke vrste ekvivalenčni razredi, poskusimo to tudi bolj algebraično utemeljiti.
+Ideja: odseki se nam zdijo kot neke vrste ekvivalenčni razredi, poskusimo to zdaj tudi bolj algebraično utemeljiti.
 
 \begin{lemma}
 Za poljubna $a, b \in \mathcal{G}$ sta odseka $a\mathcal{H}$ in $b\mathcal{H}$ bodisi enaka, bodisi sta si disjunktna.
 \end{lemma}
-%Lih neki tazga zdej delamo pr UGT, zih bi te zanimal :), predstavljej si preverjat lokalno povezanost s potmi v kkšnem takem prostoru :)
+%sem raje kar zbrisal :)
 
 \begin{proof}
 Predpostavimo $a\mathcal{H} \cap b\mathcal{H} \neq \emptyset$ in naj velja $a*h_1 = b*h_2$ za neka $h_1, h_2 \in \mathcal{H}$, oboje z desne pomnožimo z $h_2^{-1}$\\
 $\underbrace{h_1*h_2}_{\in \mathcal{H}} = a^{-1}*b$\\
-Vidimo, da $a \in\mathcal{H}$ leži v kakem odseku(namreč $a\mathcal{H}$). Različna odseka pa sta si disjunktna. $\mathcal{G}$ je tako disjunktna unija svojih odsekov. Tako smo dobili particijo množice $\mathcal{G}$, torej je v ozadju neka ekvivalenčna relacija.\\
-Iz leme prej(\ref{lem:coset_representation})razberemo, da je ta ekvivalenčna relacija definirana kot :
+Vidimo, da vsak $a \in\mathcal{G}$ leži v kakem odseku (namreč $a\mathcal{H}$). Različna odseka pa sta si disjunktna. $\mathcal{G}$ je tako disjunktna unija svojih odsekov. Tako smo dobili particijo množice $\mathcal{G}$, torej je v ozadju neka ekvivalenčna relacija.\\
+Iz leme zgoraj(\ref{lem:coset_representation})razberemo, da je ta ekvivalenčna relacija definirana kot :
 $$a \sim b \iff a^{-1}b \in \mathcal{H}$$
 
 \end{proof}
 
 \subsection{Podgrupe edinke in kvocientne grupe}
 
-Spomnimo se $\mathcal{G} = \mathbb{Z}, \mathcal{H} = n\mathbb{Z}$, potem množica vseh odsekov $$\{ [a] = a + n\mathbb{Z}\}$$ postane grupa, če definiramo $$[a] + [b] = [a+b] \ //\ \text{Običajno seštevanje v $\mathbb{Z}$}$$
+Spomnimo se $\mathcal{G} = \mathbb{Z}, \mathcal{H} = n\mathbb{Z}$, potem množica vseh odsekov $$\{ [a] = a + n\mathbb{Z}\}$$ postane grupa, če definiramo $$[a] + [b] = [a+b] \ \text{(seštevanje v $\mathbb{Z}_n$)}$$
 
-To bi seveda radi posplošil. tako lahko v novih oznakah napišemo $$(a + n\mathbb{Z}) + (b + n\mathbb{Z}) = (a + b) + n\mathbb{Z}$$
+To bi seveda radi posplošil. Tako lahko v novih oznakah napišemo $$(a + n\mathbb{Z}) + (b + n\mathbb{Z}) = (a + b) + n\mathbb{Z}$$
 
 
 \subsubsection{Definicija edinke in kvocientne grupe}
 
-Označino podgrupo (namesto s $\mathcal{H}$) z $\mathcal{N}$. Na množico vsh odsekov
+Označimo podgrupo (namesto s $\mathcal{H}$) z $\mathcal{N}$. Na množico vsh odsekov
 \begin{equation}
 \label{eq:def_all_cosets}
 \mathcal{G}/_{\mathcal{N}} := \{ a\mathcal{N} | \ a \in \mathcal{G} \}
 \end{equation}
 
-bi radi vpeljali operacijo, da dobimo grupo.Po izkušnji od prej se nam sam od sebe ponuja predpis:
+bi radi vpeljali operacijo, da dobimo grupo. Po izkušnji od prej, se nam sam od sebe ponuja predpis:
 $$a\mathcal{N} * b\mathcal{N} := (ab) \mathcal{N}$$
-Vendar pa se pojavi problem dobre definranosti.
+Vendar pa se pojavi problem dobre definiranosti.
 
 \begin{lemma}
 Naj bo $\mathcal{N}$ podgrupa grupe $\mathcal{G}$. Naslednja pogoja sta si ekvivalentna:
@@ -3662,7 +3663,7 @@ Naj bo $\mathcal{N}$ podgrupa grupe $\mathcal{G}$. Naslednja pogoja sta si ekviv
 \end{lemma}
 
 \begin{proof}
-$\implies$ Očitno iz premetavanja definicij\\
+$\implies$ Sledi iz definicij in preprostega računa.\\
 $\impliedby$\\
 Iz leme(\ref{lem:coset_representation}) lahko prvi pogoj zapišemo kot:
 $$a^{-1}a' \in \mathcal{N} \land b^{-1}b' \in \mathcal{N} \implies b^{-1}a^{-1}a'b' \in \mathcal{N}$$
@@ -3679,25 +3680,25 @@ $$\mathcal{N} \triangleleft \mathcal{G}$$
 \end{definition}
 
 \begin{theorem}
-Naj bo $\mathcal{N} \triangleleft \mathcal{G}$. Če v množico vseh odsekov $\mathcal{G}/_\mathcal{N}$ vpeljemo operacijo s predpisom $a\mathcal{N} * b\mathcal{N} := (ab)\mathcal{N}$, potem postane $\mathcal{G}/_\mathcal{N}$ grupe. Preslikava $\Pi(a) = a \mathcal{N}$ je epimorfizem grupe in $Ker(\Pi) = \mathcal{N}$
+Naj bo $\mathcal{N} \triangleleft \mathcal{G}$. Če v množico vseh odsekov $\mathcal{G}/_\mathcal{N}$ vpeljemo operacijo s predpisom $a\mathcal{N} * b\mathcal{N} := (ab)\mathcal{N}$, potem postane $\mathcal{G}/_\mathcal{N}$ grupa. Preslikava $\Pi(a) = a \mathcal{N}$ je epimorfizem grupe in $Ker(\Pi) = \mathcal{N}$
 \end{theorem}
 
 \begin{proof}
-Po prejšnji lemi je ta operacija dobro definirana. Enota je očitno $\mathcal{N} = 1 \mathcal{N}$, prav tako je inverz $(a\mathcal{N})^{-1}) = a^{-1}\mathcal{N}$\\
-Asiciativnost preverimo s preprostim računom $(a\mathcal{N} * b\mathcal{N}) * c \mathcal{N} = ((ab)c)\mathcal{N} = (a(bc))\mathcal{N} = a\mathcal{N} * (b\mathcal{N} * c \mathcal{N})$\\
-Prav tako je očitna surjektivnost in homomorfnost($(ab)\mathcal{N} = a\mathcal{N} * b \mathcal{N}$)\\
-$a \in Ker(\Pi) \iff \Pi(a) = \mathcal{N} \iff q \in \mathcal{N}$ 
+Po prejšnji lemi je ta operacija dobro definirana. Enota je očitno $\mathcal{N} = 1 \mathcal{N}$, prav tako je inverz $(a\mathcal{N})^{-1} = a^{-1}\mathcal{N}$\\
+Asociativnost preverimo s preprostim računom $(a\mathcal{N} * b\mathcal{N}) * c \mathcal{N} = ((ab)c)\mathcal{N} = (a(bc))\mathcal{N} = a\mathcal{N} * (b\mathcal{N} * c \mathcal{N})$\\
+Prav tako je očitno, da je ta preslika surjektivna in homomorfizem ($(ab)\mathcal{N} = a\mathcal{N} * b \mathcal{N}$)\\
+$a \in Ker(\Pi) \iff \Pi(a) = \mathcal{N} \iff a \in \mathcal{N}$ 
 
 \end{proof}
 
 \begin{statement}
-Podmnožica $\mathcal{N}$ grupe $\mathcal{G}$ je podgrupa edinka natanko tedaj, ko je $\mathcal{N}$ jedro kakega homomorfizma ig $\mathcal{G}$ v neko grupo.
+Podmnožica $\mathcal{N}$ grupe $\mathcal{G}$ je podgrupa edinka natanko tedaj, ko je $\mathcal{N}$ jedro kakega homomorfizma iz $\mathcal{G}$ v neko grupo.
 \end{statement}
 
 \begin{proof}\leavevmode\\
 $\implies: \mathcal{N}$ je edinka $\implies \mathcal{N} = Ker(\Pi)$\\
 $\impliedby$\\
-$\mathcal{N} := Ker (\varphi), \varphi \mathcal{G} \to \mathcal{G}'$\\
+$\mathcal{N} := Ker (\varphi), \varphi: \mathcal{G} \to \mathcal{G}'$\\
 Naj velja $n,m \in \mathcal{N}$:
 $\varphi(nm^{-1}) = \varphi(n) \varphi(m)^{-1} = 1 * 1^{-1} = 1 \implies nm^{-1} \in \mathcal{N}$
 Preverimo, da za $a \in \mathcal{G}$ velja $ana^{-1} \in \mathcal{N}$: $\varphi(ana^{-1}) = \varphi(a) \underbrace{\varphi(n)}_{= 1} \varphi(a)^{-1} = 1$, Torej je $\mathcal{N}$ grupa edinka.
@@ -3724,7 +3725,7 @@ Naj bosta $\mathcal{H}, \mathcal{K} \leq \mathcal{G}$, njun produkt je
 
 \begin{remark}
 
-Produkt podgrup v splošnem ni nujno podgrupa
+Produkt podgrup v splošnem ni nujno podgrupa.
 
 \end{remark}
 
@@ -3747,9 +3748,9 @@ Naj bo $\mathcal{G}$ grupa:
 
 \begin{enumerate}
 
-\item Če sta $\mathcal{H}, \mathcal{K} \leq \mathcal{G}$ in velja $\mathcal{H}\mathcal{K} = \mathcal{K}\mathcal{H}$ potem je ta množica podgrupa
+\item Če sta $\mathcal{H}, \mathcal{K} \leq \mathcal{G}$ in velja $\mathcal{H}\mathcal{K} = \mathcal{K}\mathcal{H}$, potem je ta množica podgrupa
 
-\item Če je $\mathcal{H} \leq \mathcal{G}$ in $\mathcal{N} \triangleleft \mathcal{G}$ potem velja $\mathcal{N}\mathcal{H} = \mathcal{N}\mathcal{H} \leq \mathcal{G}$
+\item Če je $\mathcal{H} \leq \mathcal{G}$ in $\mathcal{N} \triangleleft \mathcal{G}$, potem velja $\mathcal{N}\mathcal{H} = \mathcal{N}\mathcal{H} \leq \mathcal{G}$
 
 \item Če velja $\mathcal{H},\mathcal{K} \triangleleft \mathcal{G}$, potem $\mathcal{H}\mathcal{K} = \mathcal{K}\mathcal{H} \triangleleft \mathcal{G}$
 
@@ -3759,9 +3760,9 @@ Naj bo $\mathcal{G}$ grupa:
 
 \begin{proof}\leavevmode
 \begin{enumerate}
-\item $\mathcal{H}\mathcal{K}=\mathcal{K}\mathcal{H}$. Pokazati moramo: $\forall k_1, k_2 \in \mathcal{K} \land \forall h_1,h_2 \in \mathcal{H}. \ (h_1k_2)(h_2k_2)^{-1} \in \mathcal{H}\mathcal{K}$(definicija podgrupe).\\
+\item $\mathcal{H}\mathcal{K}=\mathcal{K}\mathcal{H}$. Pokazati moramo: $\forall k_1, k_2 \in \mathcal{K} \ \land \ \forall h_1,h_2 \in \mathcal{H}. \ (h_1k_2)(h_2k_2)^{-1} \in \mathcal{H}\mathcal{K}$ (ekvivalenten pogoj za podgrupo).\\
 $(h_1k_2)(h_2k_2)^{-1} = h_1 \underbrace{k_1 k_2^{-1}}_{k_3 \in \mathcal{K}} h_2^{-1} = h_1 \underbrace{k_3 h_1^{-1}}_{h_3k_4 // (\mathcal{H}\mathcal{K} = \mathcal{K}\mathcal{H})} = \underbrace{(h_1 h_3)}_{\in \mathcal{H}}\underbrace{k_4}_{\in \mathcal{K}} $
-\item Iz tega da je $\mathcal{N}$ edinka vemo da velja $h\mathcal{N} = \mathcal{N}h \forall h \in \mathcal{H}$ torej seveda $\mathcal{H}\mathcal{K}=\mathcal{K}\mathcal{H}$.
+\item Iz tega da je $\mathcal{N}$ edinka vemo da velja $h\mathcal{N} = \mathcal{N}h \ \forall h \in \mathcal{H}$ torej seveda $\mathcal{H}\mathcal{K}=\mathcal{K}\mathcal{H}$.
 \item Vemo da $\mathcal{M}\mathcal{N}=\mathcal{N}\mathcal{M} \leq \mathcal{G}$ torej $a(mn)a^{-1} =  \underbrace{ama^{-1}}_{\in \mathcal{M}} \underbrace{ana^{-1}}_{\in \mathcal{N}} \in \mathcal{M}\mathcal{N}$ 
 \end{enumerate}
 \end{proof}
@@ -3771,7 +3772,7 @@ $(h_1k_2)(h_2k_2)^{-1} = h_1 \underbrace{k_1 k_2^{-1}}_{k_3 \in \mathcal{K}} h_2
 
 \begin{remark}
 
-To je pogrupa $\mathcal{G}$.
+To je podgrupa $\mathcal{G}$.
 
 \end{remark}
 
@@ -3795,8 +3796,8 @@ $$
 
 \subsubsection{Podgrupe (edinke) kvocientne grupe}
 
-Pojavi se naravno vprašanje, kdaj so podgrupe edinke $\mathcal{G}/_{\mathcal{N}}$\\
-Prej pa se spomnimo definicij slike in praslike
+Pojavi se naravno vprašanje, kaj so podgrupe edinke $\mathcal{G}/_{\mathcal{N}}$\\
+Prej pa se spomnimo definicij slike in praslike:
 $$f: \mathcal{X} \to \mathcal{Y} \ \ \mathcal{X}_0 \subseteq \mathcal{X}, \mathcal{Y}_0 \subseteq \mathcal{Y}$$
 $$f(\mathcal{X}_0) = \{ f(x_0) | \ x_0 \in \mathcal{X}_0\}$$
 $$f^{-1}(\mathcal{Y}_0) = \{ x \in \mathcal{X} | f(x) \in \mathcal{Y}_0\}$$
@@ -3816,18 +3817,18 @@ Naj bo $\varphi :\mathcal{G} \to \mathcal{G}'$ homomorfizem grup.
 \begin{proof}\leavevmode
 \begin{enumerate}
 \item $h_1, h_2 \in \varphi^{-1}(\mathcal{H}')$ Torej: $\varphi(h_1h_2^{-1}) = \varphi(h_1) \varphi(h_2)^{-1} \in \mathcal{H}'$ Saj je $\mathcal{H}'$ podgrupa.
-\item Iz prve točke velja da je praslika edinke podgrupa. Pokažimo še $ana^{-1} \in \varphi^{-1}(\mathcal{N}')$ kar je enakovredno $\varphi(ana^{-1}) \in \mathcal{N}'$. $\varphi(ana^{-1}) = \varphi(a) \varphi(n) \varphi(a)^{-1} \in \mathcal{N}$ Saj je le ta edinka.
+\item Iz prve točke sledi, da je praslika edinke podgrupa. Pokažimo še $ana^{-1} \in \varphi^{-1}(\mathcal{N}')$, kar je enakovredno $\varphi(ana^{-1}) \in \mathcal{N}'$. $\varphi(ana^{-1}) = \varphi(a) \varphi(n) \varphi(a)^{-1} \in \mathcal{N}$, saj je le ta edinka.
 \item DOBI IZ VAJ.
 
 \end{enumerate}
 \end{proof}
 
 \begin{statement}
-Če je $\mathcal{N} \leq \mathcal{H} \leq \mathcal{G}$ potem je $\mathcal{N} \triangleleft \mathcal{H}$, zato lahko tvorimo $\mathcal{H}/_{\mathcal{N}}$ in trdimo: $\mathcal{H}/_{\mathcal{N}} \leq \mathcal{G}/_{\mathcal{N}}$.
+Če je $\mathcal{N} \leq \mathcal{H} \leq \mathcal{G}$, potem je $\mathcal{N} \triangleleft \mathcal{H}$, zato lahko tvorimo $\mathcal{H}/_{\mathcal{N}}$ in trdimo: $\mathcal{H}/_{\mathcal{N}} \leq \mathcal{G}/_{\mathcal{N}}$.
 \end{statement}
 
 \begin{proof}
-Dokažemo neposredno, ali pa uporabimo tretjo točko prejšnje leme za $\varphi = \Pi : \mathcal{G} \to \mathcal{G}/_{\mathcal{N}}$ (Kanonični epimorfizem).
+Dokažemo neposredno, ali pa uporabimo tretjo točko prejšnje leme za $\varphi = \Pi : \mathcal{G} \to \mathcal{G}/_{\mathcal{N}}$ (kanonični epimorfizem).
 \end{proof}
 
 \begin{statement}
@@ -3848,16 +3849,16 @@ Naj bo $\mathcal{N} \triangleleft \mathcal{G}$
 \end{theorem}
 
 \begin{proof}
-\item Naj bo $\mathcal{H}' \leq \mathcal{G}/_{\mathcal{N}}$, Definirajmo $\mathcal{H}:= \Pi^{-1}(\mathcal{H}')$, kjer je $\Pi : \mathcal{G} \to \mathcal{G}/_{\mathcal{N}}$ Po prvi točki prejšnje leme je $\mathcal{H} \leq \mathcal{G}$, seveda pa vsebuje tudi $\mathcal{N}$. (za nek $n \in \mathcal{N}, \Pi(n) = n\mathcal{N} = \mathcal{N} \in \mathcal{H}'$, ker je $\mathcal{N}$ enota grupe $\mathcal{H}'$).\\ Ker je $\Pi$ surjektivna velja $\Pi(\Pi^{-1}(\mathcal{H}')) = \mathcal{H}$
+\item Naj bo $\mathcal{H}' \leq \mathcal{G}/_{\mathcal{N}}$, Definirajmo $\mathcal{H}:= \Pi^{-1}(\mathcal{H}')$, kjer je $\Pi : \mathcal{G} \to \mathcal{G}/_{\mathcal{N}}$ Po prvi točki prejšnje leme je $\mathcal{H} \leq \mathcal{G}$, seveda pa vsebuje tudi $\mathcal{N}$. (za nek $n \in \mathcal{N}, \ \Pi(n) = n\mathcal{N} = \mathcal{N} \in \mathcal{H}'$, ker je $\mathcal{N}$ enota grupe $\mathcal{H}'$).\\ Ker je $\Pi$ surjektivna, velja $\Pi(\Pi^{-1}(\mathcal{H}')) = \mathcal{H}$
 
-\item Dokažemo na enak način, le da velja $\mathcal{N} := \Pi^{-1}(\mathcal{N}')$, Za vsebovanost pa namesto prve točke uporabimo drugo.
+\item Dokažemo na enak način, le da velja $\mathcal{N} := \Pi^{-1}(\mathcal{N}')$. Za dokaz inkluzije, pa namesto prve točke uporabimo drugo.
 \end{proof}
 
 \begin{example}
 Kaj so podgrupe $\mathbb{Z}_n$? Hitro opazimo, da za poljuben $k \in \mathbb{Z}$ velja $k\mathbb{Z}n = \{ka | \ a \in \mathbb{Z}_n\}$ je podgrupa $\mathbb{Z}_n$.\\
 Recimo: $2\mathbb{Z}_4 = \{0,2\}$ in $1\mathbb{Z}_4 = 3\mathbb{Z}_4 = \mathbb{Z}_4$\\
-Prav tako vidimo $\mathbb{Z}_n = \mathbb{Z}/_{n\mathbb{Z}}$, podgrupe $\mathcal{Z}_n$ so torej oblike $\mathcal{H}/_{n\mathbb{Z}}$, kjer je $n\mathbb{Z} \leq \mathcal{H} \leq \mathbb{Z}$, kjer je $\mathcal{H}$ oblike $k\mathbb{Z}, k \geq 0$.\\
-Kdaj pa velja $n\mathbb{Z} \subseteq k\mathbb{Z}$, natanko tedaj, kadar $n|k$.\\
+Prav tako vidimo $\mathbb{Z}_n = \mathbb{Z}/_{n\mathbb{Z}}$, podgrupe $\mathbb{Z}_n$ so torej oblike $\mathcal{H}/_{n\mathbb{Z}}$, kjer je $n\mathbb{Z} \leq \mathcal{H} \leq \mathbb{Z}$, kjer je $\mathcal{H}$ oblike $k\mathbb{Z}, k \geq 0$.\\
+Kdaj pa velja $n\mathbb{Z} \subseteq k\mathbb{Z}$? Natanko tedaj, kadar $n|k$.\\
 Edine podgrupe $\mathbb{Z}_n$ so torej oblike : \\
 $$k\mathbb{Z}/_{n\mathbb{Z}}, n|k$$
 
@@ -3874,19 +3875,19 @@ $$\mathcal{K}/_{\mathcal{I}} := \{ a+\mathcal{I} | \ a \in \mathcal{K} \}$$
 postane aditivna grupa, če definiramo:
 $$(a+\mathcal{I}) + (b + \mathcal{I}) = (a+b) + \mathcal{I}$$
 
-Seveda nas normalno zanima, kaj moramo zahtevati, da bomo $\mathcal{K}/_{\mathcal{I}}$ lahko opremili z množenjem. Torej nas zanima, kdaj bo spodnja operacija dobro definirana:
+Seveda nas zanima, kaj moramo zahtevati, da bomo $\mathcal{K}/_{\mathcal{I}}$ lahko opremili z množenjem. Zanima nas torej, kdaj bo spodnja operacija dobro definirana:
 $$(a+\mathcal{I}) * (b + \mathcal{I}) = (a*b) + \mathcal{I}$$
 
 \begin{lemma}
 Naj bo $\mathcal{I}$ podgrupa za seštevanje kolobarja $\mathcal{K}$. Naslednja pogoja sta si ekvivalentna:
 \begin{itemize}
-\item $\forall a,a',b,b' \in \mathcal{K}. \ (a+\mathcal{I} = a'+\mathcal{I} \land b+\mathcal{I} = b'+\mathcal{I}) \implies ab + \mathcal{I} = a'b'+\mathcal{I}$
+\item $\forall a,a,b,b' \in \mathcal{K}. \ (a+\mathcal{I} = a'+\mathcal{I} \land b+\mathcal{I} = b'+\mathcal{I}) \implies ab + \mathcal{I} = a'b'+\mathcal{I}$
 \item $\forall a \in \mathcal{K}, u \in \mathcal{I}. \ au \in \mathcal{I} \land ua \in \mathcal{I}$
 \end{itemize}
 \end{lemma}
 
 \begin{proof}\leavevmode\\
-$\implies$ Bralec bo brez težav to preveril sam\\%Enkrat dodej
+$\implies$ Bralec bo brez težav to preveril sam.\\%Enkrat dodej. Bom :)
 $\impliedby$\\
 $u := a' - a \in \mathcal{I}, v := b'- b \in \mathcal{I}$\\
 $a'b'-ab = (a+u)(b+v) - ab = \underbrace{ub}_{\text{Po predpostavki}\ \in \mathcal{I}} + \underbrace{av + uv }_{\in \mathcal{I}}\in \mathcal{I}$
@@ -3897,23 +3898,23 @@ $a'b'-ab = (a+u)(b+v) - ab = \underbrace{ub}_{\text{Po predpostavki}\ \in \mathc
 
 \begin{definition}
 \label{def:ideal}
-Podgrupa za seštevanje $\mathcal{I}$ kolobarja $\mathcal{K}$ se imenuje ideal(kolobarja $\mathcal{K}$), če zadošča pogoju kateremukoli izmed pogojev iz prejšnje leme (pogoja sta si ekvivalentna). Označimo: $\mathcal{I} \triangleleft \mathcal{K}$
+Podgrupa za seštevanje $\mathcal{I}$ kolobarja $\mathcal{K}$ se imenuje ideal (kolobarja $\mathcal{K}$), če zadošča kateremukoli pogoju iz prejšnje leme (pogoja sta si ekvivalentna). Označimo: $\mathcal{I} \triangleleft \mathcal{K}$
 \end{definition}
 
 
 \begin{example}
-Ideali kolobarja $\mathbb{Z}$ so $n\mathbb{Z}, n \geq 0$(To so(edine) podgrupe za $+$, in hkrati ustrezajo zahtevam) 
+Ideali kolobarja $\mathbb{Z}$ so $n\mathbb{Z}, n \geq 0$ (to so (edine) podgrupe za $+$, ki hkrati ustrezajo zahtevam). 
 \end{example}
 
 
 \begin{theorem}
-Naj bo $\mathcal{I} \triangleleft \mathcal{K}$. Če v množico cseh odsekov $\mathcal{K}/_{\mathcal{I}}$ vpeljemo seštevanje in množenje s predpisoma od prej, potem postane $\mathcal{K}/_{\mathcal{I}}$ kolobar.\\
-Preslikava $\pi : \mathcal{K} \to \mathcal{K}_{\mathcal{I}}, \Pi(a) = a + \mathcal{I}$ je opimorfizem in njeno jedro je $\mathcal{I}$.
+Naj bo $\mathcal{I} \triangleleft \mathcal{K}$. Če v množico vseh odsekov $\mathcal{K}/_{\mathcal{I}}$ vpeljemo seštevanje in množenje s predpisoma od prej, potem postane $\mathcal{K}/_{\mathcal{I}}$ kolobar.\\
+Preslikava $\pi : \mathcal{K} \to \mathcal{K}_{\mathcal{I}}, \Pi(a) = a + \mathcal{I}$ je epimorfizem, katere jedro je $\mathcal{I}$.
 \end{theorem}
 
 \begin{proof}
 Zaradi leme je množenje dobro definirano, seštevanje prav tako.\\
-Enote ostanjejo iste ($0,1$), distributivnost sledi iz originalne distributivnosti, homomorfizem in jedro preslikave pa iz preprostega premetavanja definicij.
+Enoti ostaneta isti ($0,1$). Distributivnost sledi iz originalne distributivnosti. Da je zgoraj omenjena preslikava homomorfizem, njeno jedro pa $\mathcal{I}$, sledi iz poznavanja definicij in preprostega računa.
 \end{proof}
 
 \subsubsection{Operacije z ideali}
@@ -3924,12 +3925,12 @@ Naj velja $\mathcal{I}, \mathcal{J} \triangleleft \mathcal{K}$, potem velja tudi
 \begin{enumerate}
 \item $\mathcal{I} \cap \mathcal{J} \triangleleft \mathcal{K}$
 \item $\mathcal{I} + \mathcal{J} := \{ u + v | \ u \in \mathcal{I}, v \in \mathcal{J} \} \triangleleft \mathcal{K}$
-\item $\mathcal{I}\mathcal{J} := \underbrace{\{u_1v_1 + u_2v_2 + \dots + u_nv_n | \ u_i \in \mathcal{I}, v_i \in  \mathcal{J}, n \in \mathbb{N} \}}_{\text{Aditivna pogrupa generirana z vsemi produkti}} \triangleleft \mathcal{K}$
+\item $\mathcal{I}\mathcal{J} := \underbrace{\{u_1v_1 + u_2v_2 + \dots + u_nv_n | \ u_i \in \mathcal{I}, v_i \in  \mathcal{J}, n \in \mathbb{N} \}}_{\text{Aditivna podgrupa generirana z vsemi produkti}} \triangleleft \mathcal{K}$
 \end{enumerate}
 \end{statement}
 
 %\begin{proof}
-% Dodaj enkrat
+% Dodaj enkrat.
 %\end{proof}
 
 \begin{example}
@@ -3939,22 +3940,22 @@ $\mathcal{I}\cap\mathcal{J} = 12\mathbb{Z}$\\
 $\mathcal{I} + \mathcal{J} = 2\mathbb{Z}$
 \end{example}
 
-\subsubsection{Enostranski ideali in enostavni kolbarji}
+\subsubsection{Enostranski ideali in enostavni kolobarji}
 \begin{definition}
 \label{def:left_ideal}
-Podmnožica $\mathcal{L}$ kolbarja $\mathcal{K}$ je \textbf{levi ideal}, če velja:
+Podmnožica $\mathcal{L}$ kolobarja $\mathcal{K}$ je \textbf{levi ideal}, če velja:
 \begin{itemize}
 \item $\mathcal{L}$ je podgrupa za seštevanje
-\item $\mathcal{K}\mathcal{L} \subseteq \mathcal{K}$, torej: $\forall x \in \mathcal{K}, l \in \mathcal{L}. \ xl \in \mathcal{L}$
+\item $\mathcal{K}\mathcal{L} \subseteq \mathcal{L}$, torej: $\forall x \in \mathcal{K}, l \in \mathcal{L}. \ xl \in \mathcal{L}$
 \end{itemize}
 \end{definition}
 
 \begin{definition}
 \label{def:right_ideal}
-Podmnožica $\mathcal{L}$ kolbarja $\mathcal{K}$ je \textbf{desni ideal}, če velja:
+Podmnožica $\mathcal{L}$ kolobarja $\mathcal{K}$ je \textbf{desni ideal}, če velja:
 \begin{itemize}
 \item $\mathcal{L}$ je podgrupa za seštevanje
-\item $\mathcal{L}\mathcal{K} \subseteq \mathcal{K}$
+\item $\mathcal{L}\mathcal{K} \subseteq \mathcal{L}$
 \end{itemize}
 \end{definition}
 
@@ -3971,7 +3972,7 @@ Ideal je dvostranski ideal, če je hkrati levi in desni ideal.
 \end{definition}
 
 \begin{definition}
-V komuativnem kolobarju so si pojmi levi, desni, in obojestranski ideal enaki.
+V komutativnem kolobarju pojmi levi, desni in obojestranski ideal sovpadajo.
 \end{definition}
 
 
@@ -4015,7 +4016,7 @@ Vidimo, da je $\mathcal{L}$ levi ideal, ki ni desni. Podobno je $\mathcal{D} = \
 \end{example}
 
 \begin{lemma}
-Če levi ideal $\mathcal{L}$ kolbarja $\mathcal{K}$ vsebuje kak obrnljiv element velja $\mathcal{L} = \mathcal{K}$
+Če levi ideal $\mathcal{L}$ kolobarja $\mathcal{K}$ vsebuje kak obrnljiv element, velja $\mathcal{L} = \mathcal{K}$
 \end{lemma}
 
 \begin{proof}
@@ -4023,33 +4024,33 @@ Naj bo $l \in \mathcal{L}$ obrnljiv. Ker je $\mathcal{L}$ levi ideal velja $1 = 
 \end{proof}
 
 \begin{remark}
-Iz prejšnje leme sledi, da tudi ideali kolobarja(ki mu niso enaki) ne vsebujejo obrnljivih elementov.
+Iz prejšnje leme sledi, da ideali kolobarja (ki mu niso enaki) ne vsebujejo obrnljivih elementov.
 \end{remark}
 
 \begin{definition}
 \label{def:ring_center}
-\textbf{Center kolobarja $\mathcal{K}$} so vsi elementi, ki komutatirajo z ostalimi.
+\textbf{Center kolobarja $\mathcal{K}$} so vsi elementi, ki komutirajo z ostalimi.
 \begin{equation}
 \label{eq:def_ring_center}
 Z(\mathcal{K}) := \{ c \in \mathcal{K} | \forall x \in \mathcal{K}. cx = xc\} 
 \end{equation}
 \end{definition}
 
-Iz prejšnje leme prav tako sledi, da center kolobarja(z enoto) ni ideal, če $\mathcal{K}$ ni komutativen.
+Iz prejšnje leme prav tako sledi, da center kolobarja (z enoto) ni ideal, če $\mathcal{K}$ ni komutativen.
 
 \begin{remark}
-Spomnimo se, da center grupe pa je edinka, tako da tu ne moremo potegniti analogije.
+Spomnimo se, da je center grupe edinka, tako da tu ne moremo potegniti analogije.
 \end{remark}
 
 \begin{statement}
-Kolobar $\mathcal{K}$ je obsek natanko tedaj, ko sta $\{0\}$ in $\mathcal{K}$ njegova edina leva ideala.
+Kolobar $\mathcal{K}$ je obseg natanko tedaj, ko sta $\{0\}$ in $\mathcal{K}$ njegova edina leva ideala.
 \end{statement}
 
 \begin{proof}\leavevmode
 \\$\implies$\\
 Naj bo $\mathcal{K}$ obseg, in $\mathcal{L}$ neničelni levi ideal. Ker $\mathcal{L}$ vsebuje obrnljive elemente je po lemi $\mathcal{L} = \mathcal{K}$.
 \\$\impliedby$\\
-Naj bosta $\{0\}$ in $\mathcal{K}$ edina leva ideala kolobarja $\mathcal{K}$. Vzemimo $0\neq a \in \mathcal{K}$. $Ka := \{xa | x \in \mathcal{K}\}$ je levi ideal in ker $a \neq 0$ je torej enak $\mathcal{K}$. $1 \mathcal{K} \implies \exists b \in \mathcal{K}: ba = 1$, to pomeni, da ima $a$ levi inverz. Vzemimo sedaj $b$ in $\mathcal{K}b$, ki je enako kot prej enak celemu kolbarju. in tako ima tudi $b$ levi inverz($\exists c. cb = 1$), skupaj dobimo, $ba = 1 = cb$, torej $a=c$ je obrnljiv. 
+Naj bosta $\{0\}$ in $\mathcal{K}$ edina leva ideala kolobarja $\mathcal{K}$. Vzemimo $0\neq a \in \mathcal{K}$. $Ka := \{xa | x \in \mathcal{K}\}$ je levi ideal in ker $a \neq 0$ je torej enak $\mathcal{K}$. $1 \in \mathcal{K} \implies \exists b \in \mathcal{K}: ba = 1$. To pomeni, da ima $a$ levi inverz. Vzemimo sedaj $b$ in $\mathcal{K}b$, ki je enako kot prej enak celemu kolobarju. Tako ima tudi $b$ levi inverz ($\exists c. cb = 1$). Skupaj dobimo: $ba = 1 = cb$, torej $a=c$ je obrnljiv. 
 
 \end{proof}
 
@@ -4063,7 +4064,7 @@ Neničelen kolobar $\mathcal{K}$ je \textbf{enostaven}, če sta $\{0\}$ in $\mat
 Obsegi
 \end{example_case}
 \begin{example_case}
-$\mathcal{M}_2(\mathcal{F})$ (Ta kolobar sicer ima netrivialne enostranske, odseke, nima pa netrivialnih dvostranskih odsekov)
+$\mathcal{M}_2(\mathcal{F})$ (Ta kolobar sicer ima netrivialne enostranske odseke, nima pa netrivialnih dvostranskih odsekov)
 \end{example_case}
 \end{example}
 
@@ -4075,25 +4076,25 @@ Komutativen kolobar je enostaven natanko tedaj, ko je polje.
 \subsubsection{Ideali kvocientnega kolobarja in maksimalni ideali}
 
 \begin{lemma}
-Naj bo $\varphi : \mathcal{K} \to \mathcal{K}'$ homomorfizem kolobarjev, potem veljata naslednji trditvi:
+Naj bo $\varphi : \mathcal{K} \to \mathcal{K}'$ homomorfizem kolobarjev. Potem veljata naslednji trditvi:
 \begin{enumerate}
 \item $\mathcal{I}' \triangleleft \mathcal{K}' \implies \varphi^{-1}(\mathcal{I}') \triangleleft \mathcal{K}$
-\item Če je $\varphi$ epimorfizem, $\mathcal{I} \triangleleft \mathcal{K} \implies \varphi(\mathcal{I}) \triangleleft \mathcal{K}'$
+\item Če je $\varphi$ epimorfizem in $\mathcal{I} \triangleleft \mathcal{K} \implies \varphi(\mathcal{I}) \triangleleft \mathcal{K}'$
 \end{enumerate}
 
 \end{lemma}
 
 \begin{proof}
-Lemo dokažemo na enak način kot analogen rezultat za grupe.
+Lemo dokažemo na enak način kot analogno trditev za grupe.
 \end{proof}
 
 \begin{theorem}
-Naj bo $\mathcal{I} \triangleleft \mathcal{K}$. Potem je vsak ideal $\mathcal{K}/_{\mathcal{I}}$ oblike $\mathcal{J}_{\mathcal{I}}$ kjer velja $\mathcal{J} \triangleleft \mathcal{K}, \mathcal{I} \subseteq \mathcal{J} \subseteq \mathcal{K}$
+Naj bo $\mathcal{I} \triangleleft \mathcal{K}$. Potem je vsak ideal $\mathcal{K}/_{\mathcal{I}}$ oblike $\mathcal{J}/_{\mathcal{I}}$, kjer velja $\mathcal{J} \triangleleft \mathcal{K}, \mathcal{I} \subseteq \mathcal{J} \subseteq \mathcal{K}$.
 \end{theorem}
 
 
 \begin{proof}
-Izrek dokažemo na enak način kot analogen rezultat za grupe.
+Izrek dokažemo na enak način kot analogno trditev za grupe.
 \end{proof}
 
 \begin{remark}
@@ -4106,13 +4107,13 @@ Ideal $\mathcal{I}$ kolobarja $\mathcal{K}$ je maksimalen natanko tedaj, ko je $
 
 \begin{proof}\leavevmode\\
 $\implies$
-Nqj bo $\mathcal{I}$ maksimalen, vsak ideal $\mathcal{K}_{\mathcal{I}}$ je po prejšnjem izreku oblike $\mathcal{J}/_{\mathcal{K}}$ kjer je $\mathcal{J} \triangleleft \mathcal{K}$ in $\mathcal{I} \subseteq \mathcal{J} \subseteq \mathcal{K}$. Ker je $\mathcal{I}$ maksimalen velja $\mathcal{I} =\mathcal{K}$(in $\mathcal{J}/_{\mathcal{I}} = \{ 0 \}$) ali $\mathcal{J} = \mathcal{K}$ in ($\mathcal{J}/_{\mathcal{I}} = \mathcal{K}/_{\mathcal{I}}$) \\
+Naj bo $\mathcal{I}$ maksimalen. Vsak ideal $\mathcal{K}_{\mathcal{I}}$ je po prejšnjem izreku oblike $\mathcal{J}/_{\mathcal{K}}$, kjer je $\mathcal{J} \triangleleft \mathcal{K}$ in $\mathcal{I} \subseteq \mathcal{J} \subseteq \mathcal{K}$. Ker je $\mathcal{I}$ maksimalen, velja $\mathcal{I} =\mathcal{K}$ (in $\mathcal{J}/_{\mathcal{I}} = \{ 0 \}$) ali $\mathcal{J} = \mathcal{K}$ (in $\mathcal{J}/_{\mathcal{I}} = \mathcal{K}/_{\mathcal{I}}$). \\
 $\impliedby$\\
-Naj bo  $\mathcal{K}/_{\mathcal{I}}$ enostaven. Če je $\mathcal{J} \triangleleft \mathcal{K}$, velja $\mathcal{I} \not \subseteq \mathcal{J} \not \subseteq \mathcal{K}$ in je $\mathcal{J}_{\mathcal{K}}$ pravi neničelni ideal $\mathcal{K}/_{\mathcal{I}}$. Kar pa je protislovje in je torej ideal maksimalen.
+Naj bo  $\mathcal{K}/_{\mathcal{I}}$ enostaven. Če je $\mathcal{J} \triangleleft \mathcal{K}$, velja $\mathcal{I} \not \subseteq \mathcal{J} \not \subseteq \mathcal{K}$ in je $\mathcal{J}_{\mathcal{K}}$ pravi neničelni ideal $\mathcal{K}/_{\mathcal{I}}$. To pa je v protislovju z našo predpostavko, torej je ideal maksimalen.
 \end{proof}
 
 \begin{corollary}
-Ideal $\mathcal{I}$ komutativnega kolobarja $\mathcal{K}$ je maksimalen natanko tedaj, ko je $\mathcal{K}/_\mathcal{I}$ polje.
+Ideal $\mathcal{I}$, komutativnega kolobarja $\mathcal{K}$, je maksimalen natanko tedaj, ko je $\mathcal{K}/_\mathcal{I}$ polje.
 \end{corollary}
 
 \begin{proof}
@@ -4139,30 +4140,30 @@ S pomočjo Zornove leme lahko dokažemo, da vsak kolobar vsebuje kakšen maksima
 
 
 \begin{theorem}
-Naj bo $\mathcal{U}$ podprotor vektorksega protora $\mathcal{V}$ na obsegom $\mathcal{F}$. Če v množico vseh odsekov $$\mathcal{V}/_{\mathcal{U}} :=  \{v+\mathcal{U} | \ v \in \mathcal{V}\}$$
-vpeljemo seštevanje in množenje s skalarji na enak način kot pri grupah in kolobarjih glede na odseke, postane $\mathcal{U}/_{\mathcal{V}}$ vektorski prostor. Preslikava $\Pi : \mathcal{V} \to \mathcal{V}_{\mathcal{U}}, v \mapsto v + \mathcal{U}$ je homomorfizem in $Ker(\mathcal{Pi}) = \mathcal{U}$.  $\mathcal{U}/_{\mathcal{V}}$ imenujemo kvocientni vektorski prostor, $\Pi$ pa kvocientni epimorfizem.
+Naj bo $\mathcal{U}$ podprostor vektorskega prostora $\mathcal{V}$ nad obsegom $\mathcal{F}$. Če v množico vseh odsekov $$\mathcal{V}/_{\mathcal{U}} :=  \{v+\mathcal{U} | \ v \in \mathcal{V}\}$$
+vpeljemo seštevanje in množenje s skalarji na enak način kot pri grupah in kolobarjih (glede na odseke), postane $\mathcal{U}/_{\mathcal{V}}$ vektorski prostor. Preslikava $\Pi : \mathcal{V} \to \mathcal{V}_{\mathcal{U}}, v \mapsto v + \mathcal{U}$ je homomorfizem, katere $Ker(\Pi) = \mathcal{U}$.  $\mathcal{U}/_{\mathcal{V}}$ imenujemo kvocientni vektorski prostor, preslikavo $\Pi$ pa kvocientni epimorfizem.
 \end{theorem}
 
 \begin{proof}
-Od prej vemo, da je $(\mathcal{V}/_{\mathcal{U}}, +)$ aditivna grupa. Preverimo še dobro definiranost ostalih stvari.
+Od prej vemo, da je $(\mathcal{V}/_{\mathcal{U}}, +)$ aditivna grupa. Preverimo še dobro definiranost ostalih operacij.
 $$v + \mathcal{U} = v' + \mathcal{U} \implies \lambda(v+\mathcal{U}) = \lambda (v' + U)$$ ali ekvivalentno $v -v' \in \mathcal{U} \implies \lambda v - \lambda v' \in \mathcal{U}$, to je res, saj $\lambda v - \lambda v' = \lambda (v - v') \in \mathcal{U}$.
 \end{proof}
 
 
 \begin{remark}
-Ideal algebre definramo anako kot ideal kolobarja. Ideal algebre je avtomatsko tudi vektorski podprostor, saj velja $\lambda u = (\lambda * 1) u$, kar pa je v idealu.
+Ideal algebre definiramo enako kot ideal kolobarja. Ideal algebre je avtomatsko tudi vektorski podprostor, saj velja $\lambda u = (\lambda * 1) u$, kar pa je v idealu.
 \end{remark}
 
 \begin{theorem}
-Naj bo $\mathcal{I}$ ideal algebre $\mathcal{A}$, če v množico vseh odsekov $$\mathcal{A}/_{\mathcal{I}} := \{a + \mathcal{I} | \ a \in \mathcal{A}\}$$ vpelejmo operacija na enak način kot pri vektorskih prostorih in kolobarju, postane $\mathcal{A}$ algebra. Preslikava $\Pi : \mathcal{A} \to \mathcal{A}_{\mathcal{I}}, a \mapsto a + \mathcal{A}$ je homomorfizem in $Ker(\mathcal{Pi}) = \mathcal{I}$.  $\mathcal{A}/_{\mathcal{I}}$ imenujemo kvocientna algebra, $\Pi$ pa kvocientni epimorfizem. 
+Naj bo $\mathcal{I}$ ideal algebre $\mathcal{A}$, če v množico vseh odsekov $$\mathcal{A}/_{\mathcal{I}} := \{a + \mathcal{I} | \ a \in \mathcal{A}\}$$ vpeljemo operacije na enak način kot pri vektorskih prostorih in kolobarjih, postane $\mathcal{A} / _ \mathcal{I}$ algebra. Preslikava $\Pi : \mathcal{A} \to \mathcal{A} / _{\mathcal{I}}, a \mapsto a + \mathcal{A}$ je homomorfizem, katere $Ker(\Pi) = \mathcal{I}$.  $\mathcal{A}/_{\mathcal{I}}$ imenujemo kvocientna algebra, $\Pi$ pa kvocientni epimorfizem. 
 \end{theorem}
 
 \subsection{Izrek o izomorfizmih}
-Ob prejšnjih definicijah se naravno vprašamo, kakšen je pomen homomorfizmov, ki niso bijektivni ali injektivni.
+Ob prejšnjih definicijah se naravno pojavi vprašanje, kakšen je pomen homomorfizmov, ki niso bijektivni ali injektivni.
 \\\\
 \begin{theorem}[Izrek o izomorfizmih]
 \label{th:isomophisms_theorem}
-Naj bo $\varphi : \mathcal{A} \to \mathcal{A}'$ homomorfizem poljubne algebraične strukture (grup, kolobarjev, vektorskih prostorov, ali algebr), potem velja:
+Naj bo $\varphi : \mathcal{A} \to \mathcal{A}'$ homomorfizem poljubne algebraične strukture (grup, kolobarjev, vektorskih prostorov ali algeber). Potem velja:
 \begin{equation}
 \label{eq:th_isomophisms_theorem_statement}
 \mathcal{A}/_{Ker(\varphi)}  \cong Im(\varphi)
@@ -4171,11 +4172,11 @@ Naj bo $\varphi : \mathcal{A} \to \mathcal{A}'$ homomorfizem poljubne algebraič
 
 Dokazali bomo samo za grupe, za ostale strukture postopamo podobno. 
 \begin{proof}
-Naj bosta $\mathcal{A}, \mathcal{A}'$ grupi. $Ker(\varphi)$ je edinka in zato ima kvocientna struktura smisel, $Im(\varphi)$ pa je grupa (kar podgrupa $\mathcal{A}'$).\\
+Naj bosta $\mathcal{A}, \mathcal{A}'$ grupi. $Ker(\varphi)$ je edinka, zato ima kvocientna struktura smisel, $Im(\varphi)$ pa je grupa (kar podgrupa $\mathcal{A}'$).\\
 $a Ker(\varphi) = a' Ker(\varphi) \iff a^{-1}a' \in Ker(\varphi) \iff \varphi(a^{-1}a')= 1 \iff \varphi(a)^{-1}\varphi(a') = 1 \iff \varphi(a) = \varphi(a')$\\
-Definirajmo novo preslikavo $\overline{\varphi} : \mathcal{A}/_{Ker(\varphi)} \to Im{\varphi}, \overline{\varphi}(aKer(\varphi))) := \varphi(a)$\\
-Očitno je $\overline{\varphi}$ dobro definirana, injektivna($\varphi(a) = \varphi(a') \implies aKer(\varphi) = a'Ker(\varphi)$ in je surjektivna(slika na sliko $\varphi$).\\
-Pokazati je treba še to, da je $\overline{\varphi}$ homomorfizem.\\
+Definirajmo novo preslikavo $\overline{\varphi} : \mathcal{A}/_{Ker(\varphi)} \to Im{\varphi}, \overline{\varphi}(aKer(\varphi)) := \varphi(a)$.\\
+Očitno je $\overline{\varphi}$ dobro definirana, injektivna ($\varphi(a) = \varphi(a') \implies aKer(\varphi) = a'Ker(\varphi)$ in surjektivna (slika v sliko preslikave $\varphi$).\\
+Pokazati je potrebno še, da je $\overline{\varphi}$ homomorfizem.\\
 $\overline{\varphi}(a Ker(\varphi) * b Ker(\varphi)) = \overline{\varphi}((ab) * Ker(\varphi)) = \varphi(ab) = \varphi(a)*\varphi(b) = \overline{\varphi}(a Ker(\varphi)) * \overline{\varphi}(bKer(\varphi))$
 \end{proof}
 
@@ -4206,12 +4207,13 @@ $\overline{\varphi}(a Ker(\varphi) * b Ker(\varphi)) = \overline{\varphi}((ab) *
 \leavevmode
 
 \begin{remark}
-Izrek nam da inducirano preslikavo $\overline{\varphi}$
+Izrek nam da inducirano preslikavo $\overline{\varphi}$.
+%je to vredu izraz?
 \end{remark}
 
 \subsection{Zunanji in notranji direktni produkti grup}
 
-Spomnimo se definicije zunanjega produkta grup \ref{def:outer_direct_product_of_groups}. Zunanji produkti nam iz danih grup gradijo nove grupe, medtem ko nam motranji produkti dane grupe(strukture) razgradijo na "manjše".
+Spomnimo se definicije zunanjega produkta grup \ref{def:outer_direct_product_of_groups}. Zunanji produkti nam iz danih grup gradijo nove grupe, medtem ko nam notranji produkti dano grupo (strukturo) razgradijo na "manjše".
 
 \begin{definition}
 \label{def:product_subgroup_projection}
@@ -4232,7 +4234,7 @@ $\mathcal{G}/_{\widetilde{\mathcal{G}}_1} \cong \mathcal{G}_2$
 \end{statement}
 
 \begin{proof}
-$(x_1, x_2) \mapsto x_2$ je epimorfizem iz $\mathcal{G}$ v $\mathcal{G}_2$, ki ima za jedro $\mathcal{G}_1$. Enako velja tudi v obratno smer.
+$(x_1, x_2) \mapsto x_2$ je epimorfizem iz $\mathcal{G}$ v $\mathcal{G}_2$, katerega jedro je $\mathcal{G}_1$. Enako velja, če indeksa grup zamenjamo.
 \end{proof}
 
 \begin{remark}
@@ -4242,25 +4244,26 @@ S skoraj povsem enakim dokazom zadevo posplošimo na produkt več grup.
 Hitro opazimo naslednje splošne lastnosti grupe $\mathcal{G} = \mathcal{G}_1 \times \mathcal{G}_2 \times \dots \times \mathcal{G}_n$:
 \begin{itemize}
 \item $\widetilde{\mathcal{G}}_i \triangleleft \mathcal{G} \ \forall i < n$
-\item $\mathcal{G} = \widetilde{\mathcal{G}}_1 \times \widetilde{\mathcal{G}}_2 \times \dots \times \widetilde{\mathcal{G}}_n $
-\item $\widetilde{\mathcal{G}}_i \cap \widetilde{\mathcal{G}}_j = \{1, 1, \dots, 1, 1\} = \{ 1\} $ Za poljubna $i\neq j$
+\item $\mathcal{G} = \widetilde{\mathcal{G}}_1 \widetilde{\mathcal{G}}_2 \dots \widetilde{\mathcal{G}}_n $
+\item $\widetilde{\mathcal{G}}_i \cap (\widetilde{\mathcal{G}}_1 \widetilde{\mathcal{G}}_2 \dots \widetilde{\mathcal{G}}_{i-1} \widetilde{\mathcal{G}}_{i+1} \dots \widetilde{\mathcal{G}}_n)  = \{1, 1, \dots, 1, 1\} = \{ 1\} $; za vsak $i$
+%s tildami je oznacen notranji produkt, tuki zahtevas oz. opazs vec kot paroma prazen presek, isto velja spodi (je popravljeno), samo da ves :)
 \end{itemize}
 
 \begin{definition}
 \label{def:inner_direct_product}
-Grupa $\mathcal{G}$ je \textbf{notranji direktni produkt} svojih ednik $\mathcal{N}_1, \mathcal{N}_2, \dots, \mathcal{N}_n$, če velja:
+Grupa $\mathcal{G}$ je \textbf{notranji direktni produkt} svojih edink $\mathcal{N}_1, \mathcal{N}_2, \dots, \mathcal{N}_n$, če velja:
 \begin{itemize}
-\item $\mathcal{G} = \mathcal{N}_1 \times \mathcal{N}_2 \times \dots \times \mathcal{N}_n$
-\item $\mathcal{N}_i \cap \mathcal{N}_j = \{ 1\} $ Za poljubna $i\neq j$
+\item $\mathcal{G} = \mathcal{N}_1 \mathcal{N}_2  \dots  \mathcal{N}_n$
+\item $\mathcal{N}_i \cap (\mathcal{N}_1 \mathcal{N}_2 \dots \mathcal{N}_{i-1} \mathcal{N}_{i+1} \dots \mathcal{N}_{n}) = \{ 1\}$; za vsak $i$.
 \end{itemize}
 \end{definition}
 
 \begin{example}
 \begin{example_case}
-Če je $\mathcal{G}$ zunanji direktni produkt $\mathcal{G}_1, \mathcal{G}_2, \dots ,\mathcal{G}_n$ potem je $\mathcal{G}$ notranji direktni produkt $\widetilde{\mathcal{G}}_1, \widetilde{\mathcal{G}}_2, \dots , \widetilde{\mathcal{G}}_n$
+Če je $\mathcal{G}$ zunanji direktni produkt $\mathcal{G}_1, \mathcal{G}_2, \dots ,\mathcal{G}_n$, potem je $\mathcal{G}$ notranji direktni produkt $\widetilde{\mathcal{G}}_1, \widetilde{\mathcal{G}}_2, \dots , \widetilde{\mathcal{G}}_n$
 \end{example_case}
 \begin{example_case}
-$D_4 = \{ 1, r, z, rz \} $ (komutativna), $\mathcal{N}_1 = \{ 1,r \}, \mathcal{N}_2 = \{1,z\}$ Potem je $D_4$ njun notranji produkt. (Spomnimo se, da velja tudi $D_4 \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$).
+$D_4 = \{ 1, r, z, rz \} $ (komutativna), $\mathcal{N}_1 = \{ 1,r \}, \mathcal{N}_2 = \{1,z\}$. Potem je $D_4$ njun notranji produkt (spomnimo se, da velja tudi $D_4 \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$).
 \end{example_case}
 \end{example}
 
