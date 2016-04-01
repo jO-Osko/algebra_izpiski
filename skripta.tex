@@ -1938,8 +1938,6 @@ i^2 = j^2 = k^2 = ijk = -1
 \end{equation}
 Iz teh sledi: $$ij = -ji = k, jk = -kj = i, ki = -ik = j$$
 \end{definition}
-%A to spominja na vektorski produkt?, sej more, ker so kvaternioni pogoj za obstoj vektroskega produkta v 3d. 
-%Ja spominja, ja :), saj, če jih zapišemo malo drugače, imaš notri vektorski produkt (glej drugačen zapis množenja spodaj)
 Ko poznamo množenje baznih elementov, lahko množimo tudi vse ostale.
 \\
 \\
@@ -2630,8 +2628,7 @@ $$\mathcal{J}= \begin{bmatrix}
 \section{Homomorfizmi}
 
 \subsection{Izomorfizmi grup, ciklične grupe}
-%Naslovi v glavi se ti prekrivajo!
-%Vem, sam ne znam tega popravit, malo bo treba še prašat strica googla
+
 \begin{definition}
 \label{def:group_isomorphism}
 Naj bosta $(\mathcal{G}_1, *)$ in $(\mathcal{G}_2, *)$ grupi. Grupi $\mathcal{G}_1$ in $\mathcal{G}_2$ sta si \textbf{izomorfni}, če obstaja taka bijektivna preslikava $ \varphi : \mathcal{G}_1 \to \mathcal{G}_2$, da velja:
@@ -3478,7 +3475,6 @@ Na podoben način definiramo polje racionalnih funkcij za polinom več spremenlj
 
 
 \subsection{Karakteristika kolobarja in vložitev prapolja} 
-%po naslovih od Brešarja se ravnam, lahko spremenis nazaj drugače, np. :)
 
 \begin{definition}
 \label{def:characteristics_of_ring}
@@ -3628,7 +3624,6 @@ Ideja: odseki se nam zdijo kot neke vrste ekvivalenčni razredi, poskusimo to zd
 \begin{lemma}
 Za poljubna $a, b \in \mathcal{G}$ sta odseka $a\mathcal{H}$ in $b\mathcal{H}$ bodisi enaka, bodisi sta si disjunktna.
 \end{lemma}
-%sem raje kar zbrisal :)
 
 \begin{proof}
 Predpostavimo $a\mathcal{H} \cap b\mathcal{H} \neq \emptyset$ in naj velja $a*h_1 = b*h_2$ za neka $h_1, h_2 \in \mathcal{H}$, oboje z desne pomnožimo z $h_2^{-1}$\\
@@ -3811,9 +3806,9 @@ $$f^{-1}(\mathcal{Y}_0) = \{ x \in \mathcal{X} | f(x) \in \mathcal{Y}_0\}$$
 \begin{lemma}
 Naj bo $\varphi :\mathcal{G} \to \mathcal{G}'$ homomorfizem grup.
 \begin{enumerate}
-\item Če je $\mathcal{H}' \leq \mathcal{G}'$ potem je tudi $\varphi^{-1}(\mathcal{H}') \leq \mathcal{G}$
-\item Če je $\mathcal{N}' \triangleleft \mathcal{G}'$ potem je tudi $\varphi^{-1}(\mathcal{N}') \triangleleft \mathcal{G}$
-\item Če je $\mathcal{H} \leq \mathcal{G}$ potem je tudi $\varphi(\mathcal{H}) \leq \mathcal{G}$
+\item Če je $\mathcal{H}' \leq \mathcal{G}'$, potem je tudi $\varphi^{-1}(\mathcal{H}') \leq \mathcal{G}$
+\item Če je $\mathcal{N}' \triangleleft \mathcal{G}'$, potem je tudi $\varphi^{-1}(\mathcal{N}') \triangleleft \mathcal{G}$
+\item Če je $\mathcal{H} \leq \mathcal{G}$, potem je tudi $\varphi(\mathcal{H}) \leq \mathcal{G}$
 \item Če je $\mathcal{N} \triangleleft \mathcal{G}$ in je $\varphi$ epimorfizem, je $\varphi(\mathcal{N}) \triangleleft \mathcal{G}'$
 \end{enumerate}
 \end{lemma}
@@ -4250,7 +4245,6 @@ Hitro opazimo naslednje splošne lastnosti grupe $\mathcal{G} = \mathcal{G}_1 \t
 \item $\widetilde{\mathcal{G}}_i \triangleleft \mathcal{G} \ \forall i < n$
 \item $\mathcal{G} = \widetilde{\mathcal{G}}_1 \widetilde{\mathcal{G}}_2 \dots \widetilde{\mathcal{G}}_n $
 \item $\widetilde{\mathcal{G}}_i \cap (\widetilde{\mathcal{G}}_1 \widetilde{\mathcal{G}}_2 \dots \widetilde{\mathcal{G}}_{i-1} \widetilde{\mathcal{G}}_{i+1} \dots \widetilde{\mathcal{G}}_n)  = \{1, 1, \dots, 1, 1\} = \{ 1\} $; za vsak $i$
-%s tildami je oznacen notranji produkt, tuki zahtevas oz. opazs vec kot paroma prazen presek, isto velja spodi (je popravljeno), samo da ves :)
 \end{itemize}
 
 \begin{definition}
@@ -4264,10 +4258,10 @@ Grupa $\mathcal{G}$ je \textbf{notranji direktni produkt} svojih edink $\mathcal
 
 \begin{example}
 \begin{example_case}
-Če je $\mathcal{G}$ zunanji direktni produkt $\mathcal{G}_1, \mathcal{G}_2, \dots ,\mathcal{G}_n$, potem je $\mathcal{G}$ notranji direktni produkt $\widetilde{\mathcal{G}}_1, \widetilde{\mathcal{G}}_2, \dots , \widetilde{\mathcal{G}}_n$
+Če je $\mathcal{G}$ zunanji direktni produkt $\mathcal{G}_1, \mathcal{G}_2, \dots ,\mathcal{G}_n$, potem je $\mathcal{G}$ notranji direktni produkt $\widetilde{\mathcal{G}}_1, \widetilde{\mathcal{G}}_2, \dots , \widetilde{\mathcal{G}}_n$.
 \end{example_case}
 \begin{example_case}
-$D_4 = \{ 1, r, z, rz \} $ (komutativna), $\mathcal{N}_1 = \{ 1,r \}, \mathcal{N}_2 = \{1,z\}$. Potem je $D_4$ njun notranji produkt (spomnimo se, da velja tudi $D_4 \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$).
+$D_4 = \{ 1, r, z, rz \} $ (komutativna), $\mathcal{N}_1 = \{ 1,r \}, \mathcal{N}_2 = \{1,z\}$. Potem je $D_4$ njun notranji produkt. Spomnimo se, da velja tudi $D_4 \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$.
 \end{example_case}
 \begin{example_case}
 $\mathcal{G} = \mathbb{C}^{\times}, \mathcal{N}_1 = \mathbb{R}^{+} = \{ r \in \mathbb{R}^{\times} | r > 0\}, \mathcal{N}_2 = \mathbb{S}^{1}$\\
@@ -4276,16 +4270,16 @@ Poljuben $z \in \mathcal{G} = |z| * \frac{z}{|z|}$, prav tako pa velja: $\mathbb
 \end{example}
 
 \begin{lemma}
-Grupa $\mathcal{G}$ je notranji direktni produkt svojih podgrup edink $\mathcal{N}_1, \mathcal{N}_2, \dots \mathcal{N}_n$, natanko tedaj, ko lahko vsak element iz $\mathcal{G}$ na en sam način zapišemo kot produkt $n_1 n_2 \dots n_n$, kjer $n_i \in \mathcal{N}_i$.
+Grupa $\mathcal{G}$ je notranji direktni produkt svojih podgrup edink $\mathcal{N}_1, \mathcal{N}_2, \dots \mathcal{N}_n$ natanko tedaj, ko lahko vsak element iz $\mathcal{G}$ na en sam način zapišemo kot produkt $n_1 n_2 \dots n_n$, kjer $n_i \in \mathcal{N}_i$.
 \end{lemma}
 
 \begin{proof}\leavevmode\\
 $\implies$\\
-$\mathcal{G} = \mathcal{N}_1, \mathcal{N}_2 \dots \mathcal{N}_n$, vsak element lahko na vsaj en način zapišemo kot $n_1 n_2, \dots n_n$. Dokažimo enličnost:\\
-$n_1 n_2 \dots n_n = r_1 r_2 \dots r_n, \ n_i, r_i \in \mathcal{N}_i$ Pomnožimo z leve s $r_1^{-1}$ in z desne s $(n_2 n_3 \dots n_n)^{-1}$\\
-$\underbrace{r_1^{-1}n_1}_{\in \mathcal{N}_1} = \underbrace{(r_2 r_3 \dots r_n)(n_2 n_3 \dots n_n)^{-1}}_{\in \mathcal{N}_2 \mathcal{N}_3 \dots \mathcal{N}_n}$ Ker velja $\mathcal{N}_1 \cap (\mathcal{N}_2 \mathcal{N}_3 \dots \mathcal{N}_{n}) = \{1\}$, sledi da $r_1n_1^{-1} = 1$ in torej $r_1 = n_1$. Obes strani enačbe krajšamo in dobimo: $n_2 n_3 \dots n_n = r_2 r_3 \dots r_n, \ n_i, r_i \in \mathcal{N}_i$. Ponavljamo, dokler ne dobimo rezultata, da so vsi členi enaki.\\
+$\mathcal{G} = \mathcal{N}_1, \mathcal{N}_2 \dots \mathcal{N}_n$. Vsak element lahko na vsaj en način zapišemo kot $n_1 n_2, \dots n_n$. Dokažimo enoličnost:\\
+$n_1 n_2 \dots n_n = r_1 r_2 \dots r_n, \ n_i, r_i \in \mathcal{N}_i$. Pomnožimo z leve z $r_1^{-1}$ in z desne z $(n_2 n_3 \dots n_n)^{-1}$\\
+$\underbrace{r_1^{-1}n_1}_{\in \mathcal{N}_1} = \underbrace{(r_2 r_3 \dots r_n)(n_2 n_3 \dots n_n)^{-1}}_{\in \mathcal{N}_2 \mathcal{N}_3 \dots \mathcal{N}_n}$ Ker velja $\mathcal{N}_1 \cap (\mathcal{N}_2 \mathcal{N}_3 \dots \mathcal{N}_{n}) = \{1\}$, sledi da $r_1n_1^{-1} = 1$ in torej $r_1 = n_1$. Obe strani enačbe krajšamo in dobimo: $n_2 n_3 \dots n_n = r_2 r_3 \dots r_n, \ n_i, r_i \in \mathcal{N}_i$. Ponavljamo dokler ne pridemo do rezultata, da so vsi členi enaki.\\
 $\impliedby$\\
-$\mathcal{G} = \mathcal{N}_1, \mathcal{N}_2 \dots \mathcal{N}_n$ sledi iz tega da obstaja zapis(ne nunjo enoličen)\\
+$\mathcal{G} = \mathcal{N}_1, \mathcal{N}_2 \dots \mathcal{N}_n$ sledi iz tega, da obstaja zapis (ne nujno enoličen).\\
 $x \in \mathcal{N}_i \cap (\mathcal{N}_1 \mathcal{N}_2 \dots \mathcal{N}_{i-1} \mathcal{N}_{i+1} \dots \mathcal{N}_{n})$, $x = 1 * 1 *\dots n_i * \dots * 1 *1 = n_1 \dots n_{i-1} n_{i+1} \dots n_n$ iz enoličnosti zapisa sledi $n_j = 1$, torej $\mathcal{N}_i \cap (\mathcal{N}_1 \mathcal{N}_2 \dots \mathcal{N}_{i-1} \mathcal{N}_{i+1} \dots \mathcal{N}_{n}) = \{1\}$
 
 \end{proof}
@@ -4304,7 +4298,7 @@ Uporablja se tudi podobna definicija: $[x,y] = x^{-1}y^{-1}xy$.
 \end{remark}
 
 \begin{lemma}
-Naj bosta $\mathcal{N}, \mathcal{M} \triangleleft \mathcal{G}$ potem je komutator $[n,m] \in \mathcal{N} \cap \mathcal{M}$ za poljubna $n \in \mathcal{N}, m \in \mathcal{M}$. 
+Naj bosta $\mathcal{N}, \mathcal{M} \triangleleft \mathcal{G}$. Potem je komutator $[n,m] \in \mathcal{N} \cap \mathcal{M}$ za poljubna $n \in \mathcal{N}, m \in \mathcal{M}$. 
 \end{lemma}
 
 \begin{proof}\leavevmode\\
@@ -4316,41 +4310,41 @@ $[n,m] = \underbrace{nmn^{-1}}_{\in \mathcal{M}}m^{-1} \in \mathcal{M}$ in $[n,m
 \end{corollary}
 
 \begin{theorem}
-Če je grupa $\mathcal{G}$ notranji direktni produkt svojih podgrup edink $\mathcal{N}_1, \mathcal{N}_2 \dots \mathcal{N}_n$, potem je $\mathcal{G}$ izomorfna svojemu zunanjemo direktnemu produktu. Oziroma: $\mathcal{N}_1 \mathcal{N}_2 \dots \mathcal{N}_n \cong \mathcal{N}_1 \times \mathcal{N}_2 \times \dots \times \mathcal{N}_n$.
+Če je grupa $\mathcal{G}$ notranji direktni produkt svojih podgrup edink $\mathcal{N}_1, \mathcal{N}_2 \dots \mathcal{N}_n$, potem je $\mathcal{G}$ izomorfna svojemu zunanjemu direktnemu produktu. Oziroma: $\mathcal{N}_1 \mathcal{N}_2 \dots \mathcal{N}_n \cong \mathcal{N}_1 \times \mathcal{N}_2 \times \dots \times \mathcal{N}_n$.
 \end{theorem}
 
 \begin{proof}\leavevmode\\
-Definirajmo $\varphi : \mathcal{N}_1 \times \mathcal{N}_2 \times \dots \times \mathcal{N}_n \to \mathcal{G}$, $\varphi( (n_1, n_2, \dots n_n) ) = n_1 n_2 \dots n_n$\\ Bijektivnost $\varphi$ dobimo iz prejšnje leme o enoličnosti zapisa. Preveriti moramo še homomorfizem.\\
-$\varphi((n_1, n_2, \dots , n_n) (r_1, r_2, \dots r_n)) = n_1r_1 n_2r_2 \dots n_nr_n$ ali je to enako $n_1n_2 \dots n_n r_1 r_2 \dots r_n$?
-Iz prejšnje leme se psomnimo, da posamezni elementi iz različnih edink med sabo komutirajo(ker imajo iz pogoja trivialen presek), torej enakost velja.
+Definirajmo $\varphi : \mathcal{N}_1 \times \mathcal{N}_2 \times \dots \times \mathcal{N}_n \to \mathcal{G}$, $\varphi( (n_1, n_2, \dots, n_n) ) = n_1 n_2 \dots n_n$\\ Bijektivnost $\varphi$ dobimo iz prejšnje leme o enoličnosti zapisa. Preveriti moramo še, da je tako definirana preslikava res homomorfizem.\\
+$\varphi((n_1, n_2, \dots , n_n) (r_1, r_2, \dots r_n)) = n_1r_1 n_2r_2 \dots n_nr_n$. Ali je to enako $n_1n_2 \dots n_n r_1 r_2 \dots, r_n$?
+Iz prejšnje leme se spomnimo, da posamezni elementi iz različnih edink med sabo komutirajo (ker imajo po predpostavki trivialen presek), torej enakost velja.
 
 \end{proof}
 
 \begin{remark}
-Ker sta si notranji in zunanji produtk po prejšnjem izreku izomorfna tudi notranji produkt označujemo z $\mathcal{N}_1 \times \mathcal{N}_2 \times \dots \times \mathcal{N}_n$ in pogosto sploh ne ločujemo med notranji in zunanjim produktom.
+Ker sta si notranji in zunanji produkt po prejšnjem izreku izomorfna, tudi notranji produkt označujemo z $\mathcal{N}_1 \times \mathcal{N}_2 \times \dots \times \mathcal{N}_n$ in pogosto sploh ne ločujemo med notranjim in zunanjim produktom.
 \end{remark}
 
 \begin{remark}
-Če je $\mathcal{G}$ aditivna grupa namesto o produkt govorimo o vsoti in pišemo $\mathcal{G} = \mathcal{N}_1 \oplus \mathcal{N}_2 \oplus \dots \oplus \mathcal{N}_n$. Seveda smiselno spremenimo trivialni presek, ki je zdaj $\{0\}$.
+Če je $\mathcal{G}$ aditivna grupa, namesto o produkt govorimo o vsoti in pišemo $\mathcal{G} = \mathcal{N}_1 \oplus \mathcal{N}_2 \oplus \dots \oplus \mathcal{N}_n$. Seveda smiselno spremenimo trivialni presek, ki je zdaj $\{0\}$.
 \end{remark}
 
 \begin{example}
-$\mathcal{N}_1 = \{0,2,4\} \cong \mathbb{Z}_3, \mathcal{N}_2 = \{0,3\} \cong \mathbb{Z}_2$\\ $\mathbb{Z}_6 = \mathcal{N}_1 \oplus \mathcal{N}_2 \cong \mathbb{Z}_3 \oplus \mathbb{Z}_2$, vendar pa $\mathbb{Z}_4 \not \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$(Saj imajo v $\mathbb{Z}_2$ elementi red 2, v $\mathbb{Z}_4$ pa 4)
+$\mathcal{N}_1 = \{0,2,4\} \cong \mathbb{Z}_3, \mathcal{N}_2 = \{0,3\} \cong \mathbb{Z}_2$\\ $\mathbb{Z}_6 = \mathcal{N}_1 \oplus \mathcal{N}_2 \cong \mathbb{Z}_3 \oplus \mathbb{Z}_2$, vendar pa $\mathbb{Z}_4 \not \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$. V $\mathbb{Z}_4$ imamo namreč element reda 4, v $\mathbb{Z}_2$ pa ne (vemo, da bi izomorfizem ohranil red elementa).
 \end{example}
 
 \subsection{Direktni produkti in direktne vsote v kolobarjih}
-Kolobar $\mathcal{K}$ je med drugim aditivna grupa in zato lahko pišemo $$\mathcal{K} = \mathcal{I}_1 \oplus \mathcal{I}_2 \oplus \dots \mathcal{I}_n$$ kjer so $\mathcal{I}_j$ poljubne podgrupe za seštevanje, nas pa bo bolj zanimal primer, ko so $\mathcal{I}_j$ ideal.
+Kolobar $\mathcal{K}$ je med drugim aditivna grupa, zato lahko pišemo $$\mathcal{K} = \mathcal{I}_1 \oplus \mathcal{I}_2 \oplus \dots \oplus \mathcal{I}_n$$ kjer so $\mathcal{I}_j$ poljubne podgrupe za seštevanje. Nas bo bolj zanimal primer, ko so $\mathcal{I}_j$ ideali.
 
 Če je $\mathcal{K} = \mathcal{K}_1 \times \mathcal{K}_2 \times \dots \times \mathcal{K}_n$ direktni produkt kolobarjev $\mathcal{K}_1, \dots , \mathcal{K}_n$, potem je enak direktni vsoti svojih idealov:
 $$\mathcal{I}_j = \{(0, \dots , 0, x, 0, \dots, 0) | x \in \mathcal{K}_j\}$$
-Da je to res ideal ni težko pokazati.\\
+Da je to res ideal, ni težko pokazati.\\
 Radi bi pokazali obratno: če je $\mathcal{K}$ direktna vsota svojih idealov, je $\mathcal{K}$ izomorfen njihovemu direktnemu produktu.
 
-Spomnimo se definicije idempotenta. $e \in \mathcal{K}$ je idemoptent, če velja $e^2 = e$. in lastnosti $e^2 = e \iff (1-e)^2 = (1-e)$
+Spomnimo se definicije idempotenta. $e \in \mathcal{K}$ je idempotent, če velja $e^2 = e$. Velja tudi $e^2 = e \iff (1-e)^2 = (1-e)$
 
 \begin{definition}
 \label{def:central_idempotent}
-Idempotent $e$ kolobarja $\mathcal{K}$ je \textbf{centralni idempotent}, če velja $e \in Z(\mathcal{K})$ torej $ex = xe, \forall x \in \mathcal{K}$. 
+Idempotent $e$ kolobarja $\mathcal{K}$ je \textbf{centralni idempotent}, če velja $e \in Z(\mathcal{K})$, torej $ex = xe, \forall x \in \mathcal{K}$. 
 \end{definition}
 
 \begin{definition}
@@ -4368,41 +4362,41 @@ Idempotenti $e_k$ so si paroma ortogonalni, če velja $e_je_i = e_ie_j = 0, j \n
 
 
 \begin{example}
-$\mathcal{K} = \mathcal{K}_1 \times \mathcal{K}_2 \times \dots \times \mathcal{K}_n$, $e_j = (0, \dots, 0, 1, 0, \dots ,0)$($1$ na $i$-tem mestu) so paroma ortogonalni centralni idempotenti z vsoto $1$.
+$\mathcal{K} = \mathcal{K}_1 \times \mathcal{K}_2 \times \dots \times \mathcal{K}_n$, $e_j = (0, \dots, 0, 1, 0, \dots ,0)$($1$ na $i$-tem mestu) so si paroma ortogonalni centralni idempotenti z vsoto $1$.
 \end{example}
 
 
 \begin{theorem}
-Naj bodo $\mathcal{I}_1, \dots \mathcal{I}_n$ ideali kolobarja $\mathcal{K}$, potem velja $\mathcal{K} = \mathcal{I}_1 \oplus \dots \oplus \mathcal{I}_n$ natanko tedaj, ko obstajajo taki paroma ortogonalni idempotenit $e_1, \dots e_n$, da je njihova vsota $e_1 + \dots e_n = 1$ in $\mathcal{I}_j = e_j \mathcal{K} := \{ e_j x | x \in \mathcal{K}\}$. 
+Naj bodo $\mathcal{I}_1, \dots, \mathcal{I}_n$ ideali kolobarja $\mathcal{K}$. Potem velja $\mathcal{K} = \mathcal{I}_1 \oplus \dots \oplus \mathcal{I}_n$ natanko tedaj, ko obstajajo taki paroma ortogonalni idempotenti $e_1, \dots, e_n$, da je njihova vsota $e_1 + \dots + e_n = 1$ in $\mathcal{I}_j = e_j \mathcal{K} := \{ e_j x | x \in \mathcal{K}\}$. 
 \end{theorem}
 
 \begin{proof}\leavevmode\\
 $\implies$\\
-$\mathcal{K} = \mathcal{I}_1 \oplus \dots \oplus \mathcal{I}_n$, velja $1 = e_1 + e_2 + \dots + e_n$ za neke $e_j \in \mathcal{I}_j$ velja tudi $i \neq j \implies \mathcal{I}_i \mathcal{I}_j \subseteq \mathcal{I}_i \mathcal{I}_j = \{0\}$ in zato $u_i \in \mathcal{I}_i \implies u_i e_j = 0 \implies u_i = u_i*1 = u_i e_i$ in podobno $u_i = e_i u_i$. Posebej $e_i^2 = e_i \in \mathcal{I}_i \implies e_i \mathcal{K} \subseteq \mathcal{I}_i$ in $\mathcal{I}_i \subseteq e_i\mathcal{K}$.\\
-Dobimo torej $\mathcal{I}_i = e_i \mathcal{K}$, od enakosti prej ($e_iu_i = u_ie_i$) pa seldi, da so $e_i$ centralni idempotenti.\\
+$\mathcal{K} = \mathcal{I}_1 \oplus \dots \oplus \mathcal{I}_n$. Velja $1 = e_1 + e_2 + \dots + e_n$ za neke $e_j \in \mathcal{I}_j$; velja tudi $i \neq j \implies \mathcal{I}_i \mathcal{I}_j \subseteq \mathcal{I}_i \mathcal{I}_j = \{0\}$ in zato $u_i \in \mathcal{I}_i \implies u_i e_j = 0 \implies u_i = u_i*1 = u_i e_i$ in podobno $u_i = e_i u_i$. Posebej $e_i^2 = e_i \in \mathcal{I}_i \implies e_i \mathcal{K} \subseteq \mathcal{I}_i$ in $\mathcal{I}_i \subseteq e_i\mathcal{K}$.\\
+Dobimo torej $\mathcal{I}_i = e_i \mathcal{K}$. Iz enakosti prej ($e_iu_i = u_ie_i$) sledi, da so $e_i$ centralni idempotenti.\\
 $\impliedby$\\
-$x \in \mathcal{K} \implies x = 1x = e_1x + e_2 x + \dots e_n x$ Poglejmo si presek $\mathcal{I}_1 \cap (\mathcal{I}_2 \oplus \dots \oplus \mathcal{I}_n)$ $e_1x = e_2y_2 + \dots e_n y_n$ za neke $x, y_i \in \mathcal{K}$. Pomnožimo z leve s $e_1$.
-$e_1x = e_1e_2y_2 + \dots e_1e_n y_n = 0$ torej je presek ničelen.
+$x \in \mathcal{K} \implies x = 1x = e_1x + e_2 x + \dots e_n x$. Poglejmo si presek $\mathcal{I}_1 \cap (\mathcal{I}_2 \oplus \dots \oplus \mathcal{I}_n)$. $e_1x = e_2y_2 + \dots + e_n y_n$ za neke $x, y_i \in \mathcal{K}$. Pomnožimo z leve z $e_1$.
+$e_1x = e_1e_2y_2 + \dots e_1e_n y_n = 0$, torej je presek ničelen.
 
 \end{proof}
 
 \begin{remark}
-Ideali $\mathcal{I}_j = e_j \mathcal{K}$ sicer niso podkolobarji(ker ne vsebujejo enote) so pa sami zase kolobarji s svojo enoto $e_j$
+Ideali $\mathcal{I}_j = e_j \mathcal{K}$ sicer niso podkolobarji (ker ne vsebujejo enote), so pa sami zase kolobarji s svojo enoto $e_j$.
 \end{remark}
 
 \begin{theorem}
 Če je kolobar $\mathcal{K}$ direktna vsota svojih idealov, potem je izomorfen direktnemu produktu teh idealov:
-$$\mathcal{K} = \mathcal{I}_1 \oplus \mathcal{I}_2 \oplus \dots \oplus \mathcal{I}_n \cong \underbrace{\mathcal{I}_1 \times \mathcal{I}_2 \times \dots \times \mathcal{I}_n}_{\text{Operacija ima smisel v luči opombe, da si ti ideali sami zase kolobarji}}$$
+$$\mathcal{K} = \mathcal{I}_1 \oplus \mathcal{I}_2 \oplus \dots \oplus \mathcal{I}_n \cong \underbrace{\mathcal{I}_1 \times \mathcal{I}_2 \times \dots \times \mathcal{I}_n}_{\text{Operacija ima smisel v luči opombe, da so ti ideali sami zase kolobarji}}$$
 \end{theorem}
 
-\begin{proof} Dokaza bomo zgolj skicirali.
-Podobno kot pri enakovrednem izreku za grupe definiramo $\varphi : \mathcal{I}_1 \times \mathcal{I}_2 \times \dots \times \mathcal{I}_n \to \mathcal{I}_1 \oplus \mathcal{I}_2 \oplus \dots \oplus \mathcal{I}_n$, $\varphi( (u_1, u_2, \dots u_n) ) = u_1 + u_2 + \dots + u_n$\\
-Preverimo da je $\varphi$ izomorfizem kolobarjev.
+\begin{proof} Dokaz bomo zgolj skicirali.
+Podobno kot pri enakovrednem izreku za grupe definiramo $\varphi : \mathcal{I}_1 \times \mathcal{I}_2 \times \dots \times \mathcal{I}_n \to \mathcal{I}_1 \oplus \mathcal{I}_2 \oplus \dots \oplus \mathcal{I}_n$, $\varphi( (u_1, u_2, \dots, u_n) ) = u_1 + u_2 + \dots + u_n$.\\
+Preverimo, da je $\varphi$ izomorfizem kolobarjev.
 
 \end{proof}
 
 \begin{example}
-$(\mathbb{Z}_6, +,*)$ je izomorfen $\mathbb{Z}_3 \times \mathbb{Z}_2$ in enak vsoti idealov $\mathcal{I}_1 = \{0,2,4\}, \mathcal{I}_2 = \{0,2\}, e_1 = 4, e_2 = 3$
+$(\mathbb{Z}_6, +,*)$ je izomorfen $\mathbb{Z}_3 \times \mathbb{Z}_2$ in enak vsoti idealov $\mathcal{I}_1 = \{0,2,4\}, \mathcal{I}_2 = \{0,3\}; e_1 = 4, e_2 = 3$
 \end{example}
 
 \section{Končne grupe}
@@ -4419,7 +4413,7 @@ $(\mathbb{Z}_6, +,*)$ je izomorfen $\mathbb{Z}_3 \times \mathbb{Z}_2$ in enak vs
 
 
 \begin{lemma}
-Naj bo $\mathcal{H} \leq \mathcal{G}$ in $a \in \mathcal{G}$, velja:$|a\mathcal{H}| = | \mathcal{H}|$ 
+Naj bo $\mathcal{H} \leq \mathcal{G}$ in $a \in \mathcal{G}$. Velja: $|a\mathcal{H}| = | \mathcal{H}|$ 
 \end{lemma}
 
 \begin{proof}
@@ -4428,10 +4422,10 @@ $f : \mathcal{H} \to a \mathcal{H}, h \mapsto ah$ je očitno bijektivna preslika
 
 \begin{definition}
 \label{def:subgroup_index}
-Naj bo $\mathcal{H}$ pogrupa grupe $\mathcal{G}$ \textbf{indeks podrupe $\mathcal{H}$} je moč množice vsej odsekov.
+Naj bo $\mathcal{H}$ podgrupa grupe $\mathcal{G}$. \textbf{Indeks podgrupe $\mathcal{H}$} je moč množice vseh odsekov.
 \begin{equation}
 \label{eq:def_subgroup_index}
-[\mathcal{G}: \mathcal{H}] := | \{a\mathcal{H} | a \in \mathcal{G}n\}|
+[\mathcal{G}: \mathcal{H}] := | \{a\mathcal{H} | a \in \mathcal{G}\}|
 \end{equation}
 \end{definition}
 
@@ -4441,7 +4435,7 @@ $[\mathbb{Z}: n\mathbb{Z}] = n$
 \\\\
 \begin{theorem}[Lagrangeov izrek]
 \label{th:lagrange_theorem}
-Če je $\mathcal{H}$ podgrupa končne grupe $\mathcal{G}$ velja:
+Če je $\mathcal{H}$ podgrupa končne grupe $\mathcal{G}$, velja:
 \begin{equation}
 \label{eq:th_lagrange_theorem}
 |\mathcal{G}| = [\mathcal{G}:\mathcal{H}] |\mathcal{H}|
@@ -4454,19 +4448,19 @@ $|\mathcal{G}| = |a_1\mathcal{H}| + |a_2\mathcal{H}| + \dots + |a_r\mathcal{H}| 
 \end{proof}
 
 \begin{remark}
-Očitno sledi: če $\mathcal{N} \triangleleft \mathcal{G}$ potem $|\mathcal{G}/_{\mathcal{N}}|  = \frac{|\mathcal{G}|}{|\mathcal{N}|}$, ob predpostavki, da je $\mathcal{G}$ končna.
+Očitno sledi: če $\mathcal{N} \triangleleft \mathcal{G}$, potem $|\mathcal{G}/_{\mathcal{N}}|  = \frac{|\mathcal{G}|}{|\mathcal{N}|}$ (ob predpostavki, da je $\mathcal{G}$ končna).
 \end{remark}
 
 \begin{corollary}
-Red vsake končne podgrupe deli red grupe.
+Red vsake podgrupe končne grupe deli red grupe.
 \end{corollary}
 
 \begin{remark}
-Naj bo $\mathcal{G}$ grupa in $a \in \mathcal{G}$. Potem veljajo naslednje trditve:
+Naj bo $\mathcal{G}$ grupa in $a \in \mathcal{G}$, potem veljajo naslednje trditve:
 \begin{enumerate}
 \item Naj bo $n$ = $\ord a$, potem velja: $a^m = 1 \iff n|m$
-\item Če je $p$ praštevilo in je $a^p=1, a \neq 1$ potem velja $p = \ord a$
-\item Naj bo $n = \ord a$ in $\varphi : \mathcal{G} \to \mathcal{G}'$ homomorfizem. Potem velja $\ord \varphi(a) | \ord a$
+\item Če je $p$ praštevilo in je $a^p=1, a \neq 1$, potem velja $p = \ord a$
+\item Naj bo $n = \ord a$ in $\varphi : \mathcal{G} \to \mathcal{G}'$ homomorfizem, potem velja $\ord \varphi(a) | \ord a$
 \item $\mathcal{N} \triangleleft \mathcal{G} \implies \ord(a\mathcal{N}) | \ord a$
 \item $a \in \mathcal{G}, \ord a = \ord <a>$
 \end{enumerate} 
@@ -4474,11 +4468,11 @@ Naj bo $\mathcal{G}$ grupa in $a \in \mathcal{G}$. Potem veljajo naslednje trdit
 
 \begin{proof}\leavevmode
 \begin{enumerate}
-\item $m=kn \implies a^m = (a^n)^k = 1^k = 1$ Obratno: $m = qn +r$, $a^m = a^{qn + r} = a^r = 1 \implies r = 0$ (Saj mora biti $r \in \mathbb{N} < n$)
-\item Sledi iz prejšnje točke (nobeno drugo število ne deli praštevila)
-\item $a^n= 1 \implies \varphi(a)^n = \varphi(a^n) = \varphi(1) = 1$ po prvi točki torej če obstaja tak $m < n$, da $\varphi(a)^m = 1$ potem $m |n$. Torej $\ord \varphi(a) | \ord a$  
-\item V prejšnjo točko vstavimo $\Pi$ kot homomorfizem
-\item Podgrupa generirana z $a$ vsebuje elemente $1, a, a^2, \dots, a^{\ord a - 1}$ , torej ravno $\ord a$
+\item $m=kn \implies a^m = (a^n)^k = 1^k = 1$ Obratno: $m = qn +r$, $a^m = a^{qn + r} = a^r = 1 \implies r = 0$ (saj mora biti $r \in \mathbb{N} < n$).
+\item Sledi iz prejšnje točke (nobeno drugo število ne deli praštevila).
+\item $a^n= 1 \implies \varphi(a)^n = \varphi(a^n) = \varphi(1) = 1$. Po prvi točki torej sledi: če obstaja tak $m < n$, da $\varphi(a)^m = 1$, potem $m |n$. Torej $\ord \varphi(a) | \ord a$.
+\item V prejšnjo točko za homomorfizem vstavimo $\Pi$.
+\item Podgrupa generirana z $a$ vsebuje elemente $1, a, a^2, \dots, a^{\ord a - 1}$ , torej ravno $\ord a$.
 \end{enumerate}
 \end{proof}
 
@@ -4495,7 +4489,7 @@ Vzemimo $a \in \mathcal{G}$ in naj bo $n = \ord a$, vemo $|\mathcal{G}| = kn$, t
 \end{proof}
 
 Poglejmo si še poseben primer: $\mathcal{G} = \mathbb{Z}_p^\times$, kjer je $p$ praštevilo, kot grupo za množenje. Elementi $\mathcal{G}$ so odseki $x + p\mathbb{Z}, x \not \in p \mathbb{Z}$.
-Opazimo naslednjo posledico
+Opazimo naslednjo posledico.
 \\\\
 \begin{theorem}[Mali Fermatov izrek]
 \label{th:little_fermat_theroem}
@@ -4518,29 +4512,29 @@ $(a - p\mathbb{Z})^{p-1} = a^{p-1} + p \mathbb{Z} = 1 + p\mathbb{Z} \iff a^{p-1}
 \end{corollary}
 
 \begin{corollary}
-Vsaka grupa s praštevilskim redom je ciklična (in zato izomorfna $\mathcal{G}_p$).
+Vsaka grupa s praštevilskim redom je ciklična (in zato izomorfna $\mathbb{Z}_p$).
 \end{corollary}
 
 \begin{proof}
-Naj bo $|\mathcal{G}| = p$ praštevilo. \\Izberimo si $a \in \mathcal{G} - \{1 \}$, potem velja $\{1\} \subsetneq <a> \leq \mathcal{G}$. Od prej pa vemo $\ord <a> | p \implies \ord <a> = p \implies <a> = \mathcal{G}$
+Naj bo $|\mathcal{G}| = p$ praštevilo. \\Izberimo si $a \in \mathcal{G} - \{1 \}$. Potem velja $\{1\} \subsetneq <a> \leq \mathcal{G}$. Od prej vemo $\ord <a> | p \implies \ord <a> = p \implies <a> = \mathcal{G}$
 \end{proof}
 
 \begin{remark}
-To velja za poljuben $a \neq 1$, torej za vsak $a \neq 1. <a> = \mathcal{G}$. Vidimo, da $\mathcal{G}$ ne vsebuje pravih netrivialnih grup (edini podgrupi sta $\{1\}$ in $\mathcal{G}$).
+To velja za poljuben $a \neq 1$, torej za vsak $a \neq 1.<a> = \mathcal{G}$. Vidimo, da $\mathcal{G}$ ne vsebuje pravih netrivialnih podgrup (edini podgrupi sta $\{1\}$ in $\mathcal{G}$).
 \end{remark}
 
 \begin{corollary}
-Grupa $\mathcal{G}$ nima pravih netrivialnih podgrup natanko tedaj ko je njen red praštevilo.
+Grupa $\mathcal{G}$ nima pravih netrivialnih podgrup natanko tedaj, ko je njen red praštevilo.
 \end{corollary}
 
 \begin{proof}\leavevmode\\
 $\implies$\\
-$\mathcal{G}$ nima pravih podgrup netrivialnih podgrup, vzemimo $a \neq 1$ in poglejmo $<a>$, ker $\mathcal{G}$ nima trivialnih podgrup velja $<a> = \mathcal{G}$. Torej je $\mathcal{G}$ ciklična in izomorfna $\mathbb{Z}_n$ ali pa $\mathbb{Z}$. Ker $\mathbb{Z}$ vsebuje podgrupe je torej $\mathcal{G} \cong \mathbb{Z}_n$ za nek $n$. Če $d|n$ in $d \not \in \{1,n\}$, je $d\mathbb{Z}_n$ prava netrivialna podgrupa $\mathbb{Z}_n$. Torej je $n$ praštevilo.
+$\mathcal{G}$ nima pravih netrivialnih podgrup. Vzemimo $a \neq 1$ in poglejmo $<a>$. Ker $\mathcal{G}$ nima trivialnih podgrup, velja $<a> = \mathcal{G}$. Torej je $\mathcal{G}$ ciklična in izomorfna $\mathbb{Z}_n$ ali pa $\mathbb{Z}$. Ker $\mathbb{Z}$ vsebuje podgrupe, je torej $\mathcal{G} \cong \mathbb{Z}_n$ za nek $n$. Če $d|n$ in $d \not \in \{1,n\}$, je $d\mathbb{Z}_n$ prava netrivialna podgrupa $\mathbb{Z}_n$, torej je $n$ praštevilo.\\
 $\impliedby$ Smo dokazali že v opombi.
 \end{proof}
 
-Če je torej moč grupe praštevilo, je taka grupa ciklična, kaj pa se zgodi če moč grupe ni praštevilo?\\
+Če je torej moč grupe praštevilo, je taka grupa ciklična. Kaj pa se zgodi, če moč grupe ni praštevilo?\\
 $|\mathcal{G}| = 4, \mathcal{G} = \{1,a,b,c\}$\\
-Predpostavimo, da $\mathcal{G}$ ni ciklična. Ker je red grupe $4$ imajo lahko elementi $a,b,c$ zgolj red $2$ ali $4$. Če bi bil red kateregakoli izmed njih $4$ bi bila grupa ciklična(generirana s tem elementom). Torej velja $a^2=b^2=c^2 = 1$. Torej $ab \neq 1 \neq a \neq b$, ostane zgolj še $ab = c$, in podobno za ostale pare. Ugotovimo $\mathcal{G} \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$.
+Predpostavimo, da $\mathcal{G}$ ni ciklična. Ker je red grupe $4$, imajo lahko elementi $a,b,c$ zgolj red $2$ ali $4$. Če bi bil red kateregakoli izmed njih $4$, bi bila grupa ciklična (generirana s tem elementom). Torej velja $a^2=b^2=c^2 = 1$. Torej $ab \neq 1 \neq a \neq b$. Ostane zgolj še $ab = c$ in podobno za ostale pare. Ugotovimo $\mathcal{G} \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$.
 
 \end{document}
