@@ -44,7 +44,7 @@
 \newcounter{environment:theorem_counter}
 
 \newenvironment{theorem}[1][\unskip]
-{\refstepcounter{environment:theorem_counter}\textbf{Izrek \arabic{environment:theorem_counter}:\textit{#1}} \\}
+{\refstepcounter{environment:theorem_counter}\textbf{Izrek \arabic{environment:theorem_counter}:\textit{#1}}\\}
 {\bigskip}
 
 \newcounter{environment:statement_counter}
@@ -4537,4 +4537,156 @@ $\impliedby$ Smo dokazali že v opombi.
 $|\mathcal{G}| = 4, \mathcal{G} = \{1,a,b,c\}$\\
 Predpostavimo, da $\mathcal{G}$ ni ciklična. Ker je red grupe $4$, imajo lahko elementi $a,b,c$ zgolj red $2$ ali $4$. Če bi bil red kateregakoli izmed njih $4$, bi bila grupa ciklična (generirana s tem elementom). Torej velja $a^2=b^2=c^2 = 1$. Torej $ab \neq 1 \neq a \neq b$. Ostane zgolj še $ab = c$ in podobno za ostale pare. Ugotovimo $\mathcal{G} \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$.
 
+
+Poglejmo si nekaj osnovnih grup velikosti $n$
+\begin{enumerate}
+\item $\{1\}$
+\item $\mathbb{Z}_2$
+\item $\mathbb{Z}_3$
+\item $\mathbb{Z}_4, \mathbb{Z}_1 \oplus \mathbb{Z}_2$(Med seboj si nista izomorfni, sej se red elemento ne ujema)
+\item $\mathbb{Z}_5$
+\item $\mathbb{Z}_3 \oplus \mathbb{Z}_2, \mathcal{S}_3$
+\item $\mathbb{Z}_7$
+\item $\mathbb{Z}_8 \underbrace{\mathbb{Z}_4 \oplus \mathbb{Z}_2, \mathbb{Z}_2 \oplus \mathbb{Z}_2 \oplus \mathbb{Z}_2, \mathcal{D}_2, \mathbb{Q}}_{\text{Niso izomorfne} \ \mathbb{Z}_8 \text{, saj so elementi različnih redov}}$
+\item $\dots$
+\end{enumerate}
+
+
+Naravno se pojavi vprašanje, kako bi lahko klasificirali končne enostavne grupe. Izkaže se, da si jih da razdeliti na $18$ (neskončnih) družin $(\mathbb{Z}_p, \mathbb{A}_n(n > 5), \dots)$ in $26$ sporadičnih grup (največja med njimi se imenuje "monster" in ima približno $8*10^{53}$ elementov).
+
+
+\subsection{Razredna formula}
+Spomnimo se definicije, kdaj sta si elementa konjugirana(\ref{def:conjugate_elements_group}) in tega, da je to ekvivalenčna relacija.
+
+\begin{definition}
+\label{def:conjugate_equivalence_classes}
+Grupa $\mathcal{G}$ glede na ekvivalenčno relacijo razpade na ekivalenčne razrede $\mathcal{R}_i$, ki jim pravimo \textbf{konjugirani razredi} in $\mathcal{R}(a)$ označuje ekvivalenčni razred, ki mu pripada $a$.
+\begin{equation}
+\label{eq:def_conjugate_class}
+\mathcal{R}(a) := \{ gag^{-1} | g \in \mathcal{G} \}
+\end{equation}
+\end{definition}
+
+Ker je $\mathcal{G}$ disjunktna unija svojih ekvivalenčnih razredov lahko zapišemo formulo:
+\begin{equation}
+\label{eq:power_of_gruop_is_sum_of_conjugate_classes}
+|\mathcal{G}| =  \sum |\mathcal{R}_i|
+\end{equation}
+
+\begin{definition}
+\label{def:centralizatior_of_elment}
+\textbf{Centralizator} elementa $a$ grupe $\mathcal{G}$, je grupa vseh elementov, ki z njim komutirajo
+\begin{equation}
+\label{eq:def_centralizator_of_element}
+C(a) := \{ x \in \mathcal{G} | ax = xa \}
+\end{equation}
+\end{definition}
+
+\begin{lemma}
+$C(a)$ je podgrupa $\mathcal{G}$ in velja $|\mathcal{R}(a)| = [\mathcal{G}:C(a)]$
+\end{lemma}
+
+\begin{proof}
+Vzemimo $x,y \in C(a)$, očitno $xy \in C(a)$, prav tako $ax = xa \implies ax^{-1} = x^{-1}a$ če iz obeh strani pomnožimo z $x^{-1}$.\\
+Dokažimo še drug del:\\
+$g C(a) = hC(a) \iff h^{-1}g \in C(a) \iff h^{-1}ga = ah^{-1}g \iff gag^{-1} = hah^{-1}$, od tod dobimo da je $gag^{-1} \mapsto gC(a)$ dobro definirana bijekcija iz $\mathcal{R}(a) v \{ gC(a) | g \in \mathcal{G} \}$. \\
+\end{proof}
+
+Prav tako sledi $a \in \mathcal{Z}(\mathcal{G}) \iff \mathcal{R}(a) = \{a\} \iff |\mathcal{R}(a)| = 1$.\\
+Iz \ref{eq:power_of_gruop_is_sum_of_conjugate_classes} sledi dodatek:
+\begin{equation}
+|\mathcal{G}| = |Z(\mathcal{G})| + \sum \mathcal{R}_j
+\end{equation}
+pri čemer so $\mathcal{R}_j$ razredi, ki vsebujejo vsaj dva elementa.
+
+\begin{theorem}
+Za vsako končno grupo $\mathcal{G}$ je 
+\begin{equation}
+|\mathcal{G}| = |Z(\mathcal{G})| + \sum [\mathcal{G}: C(a_j)]
+\end{equation}
+kjer vsota teče po vseh predstavnikih konjugiranih razredov, ki ne sestojijo iz elementov $Z(\mathcal{G}$
+\end{theorem}
+
+\subsection{Cauchiyjev izrek}
+
+NAravno se pojavi vprašanje, če je $\mathcal{G}$ končna grupa, in če $m | \ord \mathcal{G}$, ali potem $\mathcal{G}$ vsebuje element reda $m$? V splošnem, če $\mathcal{G}$ ni ciklična ne vsebuje elementa z redom, ki je enak moči grupe.
+
+\begin{theorem}[Cauchiyjev izrek]
+\label{th:cauchy_theroem}
+Naj bo $\mathcal{G}$ končna grupa. Če praštevilo $p$ deli $|\mathcal{G}|$, potem $\mathcal{G}$ vsebuje element reda $p$.
+
+\end{theorem}
+
+\begin{proof}
+Naj bo $\mathcal{G}$ grupa moči $n= p*k$, pokazali bomo z indukcijo na $n$:
+Če je $n = p$, potem je $\mathcal{G}$ ciklična in ima vsak neničelen element red $p$
+Če $n > p$, in izrek velja za vse grupe, ki imajo manj kot $n$ elementov:\\
+Predpostavimo, da $\mathcal{G}$ ni Abelova in torej $Z(\mathcal{G}) \subsetneq \mathcal{G}$. Če $p | Z(\mathcal{G}$, potem po indukcijski predpostavki obstaja tak element. Torej $p \nmid Z(\mathcal{G})$. Iz razredne formule sledi, da $p \nmid [\mathcal{G}:C(a_j)]$ za nek $a_j \in \mathcal{G}$.
+Spet nam preostaneta dve možnosti če $p | |C(a_j)|$ po indukcijsi prespostavki $C(a_j)$ vsebuje element rada $p$. V nasprotnem primeru $p \nmid [\mathcal{G}:C(a_j)]|C(a_j)| = |\mathcal{G}|$ kar pa je v protislovju.\\
+Če pa je $\mathcal{G}$ abelova, in ker $n$ ni praštevilo, potem $\mathcal{G}$ kot posledica Lagrangevega izreka vsebuje kako pravo netrivialno podgrupo $\{ 1\} \subsetneq \mathcal{N} \subsetneq \mathcal{G}$ in je $\mathcal{N}$ edinka lahko govorimo o $\mathcal{G}/_{\mathcal{N}}$\\
+Če $p | |\mathcal{N}|$, po indukcijski predpostavki imamo tak element, v nasprotnem pa $p \nmid \mathcal{N}$, velja pa $p | \mathcal{G} = |\mathcal{N}| |\mathcal{G}/_{\mathcal{N}}|$ torej $p | |\mathcal{G}/_{\mathcal{N}}$ in ker $\mathcal{N}$ ni trivialna edinka lahko uporabimo predpostavko in dobimo element reda $p$.
+\end{proof}
+\begin{remark}
+Izrek lahko ekvivalentno formuliramo: Če $p$ deli $|\mathcal{G}|$ potem $\mathcal{G}$ vsebuje podgrupi s $p$ elementi. Res, če je $\mathcal{H} = p$ $\mathcal{H} \leq \mathcal{G}$ potem je $\mathcal{H}$ ciklična in vsak njen neničelen element ima red $p$, obratno, če je $a^p = 1 \implies |<a>| = p$.
+\end{remark}
+
+Nasploh, ali iz $m| |\mathcal{G}|$ sledi, da $\mathcal{G}$ vsebuje pogrupo z $m$ elementi. V splošnem to ni res($A_n$ ne vsebuje podgrupe s $6$ elementi). Odgovor pa ni pozitiven zgolj za praštevila, ampak tudi za vse njihove potence: $p^k | |\mathcal{G}|$, potem $\mathcal{G}$ vsebuje elemepte reda $p^k$, to pravi prvi izrek Sylowa.
+
+
+\begin{definition}
+Grupa $\mathcal{G}$ se imenuje $p$-grupa, kjer je $p$ praštevilo, če je red vsakega njenega neničelenega elementa potenca števila $p$.
+\end{definition}
+
+\begin{example}
+$\mathbb{Z}_p, \mathbb{Z}_{p^2}, \mathbb{Z}_{p^3}, \dots$
+\end{example}
+
+Direktni produkti $p$-grup so $p$-grupe, prav tako so to njihove podgrupe($\mathcal{D}_4, \mathbb{Q}$)
+
+\begin{corollary}
+Končna grupa $\mathcal{G}$ je $p$-grupa natanko tedaj, ko je $|\mathcal{G}| = p^l$ za nek $l \in \mathbb{N}$.
+\end{corollary}
+
+\begin{proof}
+Če je $\mathcal{G}$ $p$-grupa, potem je po Cauchyjevem izreku $|\mathcal{G}| = p^l$, obratno, $|\mathcal{G}| = p^l \implies $ vsi elementi imajo red $p^k, k \leq l$, po posledici Lagrangevega izreka. 
+\end{proof}
+
+\subsection{Končne Abelove grupe}
+
+Tipični primeri končnih Abelovih grup so ciklične grupe $\mathbb{Z}_n$ in njihove direktne vsote.\\
+\begin{example}
+$\mathbb{Z}_{n_1} \oplus \mathbb{Z}_{n_2} \oplus \dots \mathbb{Z}_{n_r}$
+\end{example}
+
+Ali jih imamo še kaj? Ne.\\
+$\mathbb{Z}_4 \not \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2, \mathbb{Z}_6 \cong \mathbb{Z}_3 \oplus \mathbb{Z}_2$
+
+Po dogovoru bodo grupe v tem razdelku aditivne, im bom operacijo pisali kot $+$.
+
+\begin{lemma}
+Demimo, da je $|\mathcal{G}| = mn$ in sta si $m$ in $n$ tuji števili. potem je $\mathcal{G}$ direktna vsota svojih podgrup $\mathcal{H} = \{x \in \mathcal{G} | mx = n\}, \mathcal{K} = \{ x \in \mathcal{G} | nx = 0\}$
+\end{lemma}
+
+\begin{proof}
+Očitno sta $\mathcal{H}, \mathcal{K} \leq \mathcal{G}$\\
+$x^{|\mathcal{G}|} = 1 \forall x \in \mathcal{G} \implies x^{mn} = 0 \forall x \in \mathcal{G}$, torej je $nx \in \mathcal{H}$ in $mx \in \mathcal{K}$, ker sta si tuji, $\exists u,v \in \mathbb{Z}. um + vn = 1$ in $u\underbrace{(mx)}_{\in \mathcal{K}} + v\underbrace{(nx)}_{\in \mathcal{H}} = x \implies \mathcal{G} = \mathcal{H} + \mathcal{K}$, preverimo, še da je presek ničelen $x \in \mathcal{H} \cap \mathcal{K} \implies mx = nx = 0 \implies x = 0$
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
+
