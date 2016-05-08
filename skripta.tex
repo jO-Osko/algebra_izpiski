@@ -103,6 +103,7 @@
 \begin{document}	
 \title{Skripta za algebro 2}
 \author{Filip Koprivec}
+
 \date{\today}
 \maketitle
 
@@ -4672,14 +4673,271 @@ Očitno sta $\mathcal{H}, \mathcal{K} \leq \mathcal{G}$\\
 $x^{|\mathcal{G}|} = 1 \forall x \in \mathcal{G} \implies x^{mn} = 0 \forall x \in \mathcal{G}$, torej je $nx \in \mathcal{H}$ in $mx \in \mathcal{K}$, ker sta si tuji, $\exists u,v \in \mathbb{Z}. um + vn = 1$ in $u\underbrace{(mx)}_{\in \mathcal{K}} + v\underbrace{(nx)}_{\in \mathcal{H}} = x \implies \mathcal{G} = \mathcal{H} + \mathcal{K}$, preverimo, še da je presek ničelen $x \in \mathcal{H} \cap \mathcal{K} \implies mx = nx = 0 \implies x = 0$
 \end{proof}
 
+Tako lahko posplošimo: $\mathbb{Z}_mn \cong \mathbb{Z}_m \oplus \mathbb{Z}_n$, kjer sta si $m$ in $n$ tuji števili.
 
 
 
 
+\begin{lemma}
+Naj bo $\mathcal{G}$ grupa in naj velja $|\mathcal{G}| = p_1^{k_1}p_2^{k_2} \dots p_n^{k_n}$, kjer so $p_i$ različna praštevila, potem je 
+$$ \mathcal{G} = \mathcal{H}_1 \oplus \mathcal{H}_2 \oplus \dots \oplus \mathcal{H}_n$$
+kjer so $\mathcal{H}_i$ $p_i-$ grupe in velja $|\mathcal{H}_i| = p_i^{k_i}$
+\end{lemma}
+
+\begin{proof}
+Definirajmo: $\mathcal{H}_1 := \{ x \in \mathcal{G} | xp_1^{k_1} = 0\}$ in \\
+$\mathcal{K} =  \{ x \in \mathcal{G} | p_2^{k_2} \dots p_n^{k_n} \}$\\
+Vemo, da $p_1 \nmid | \mathcal{K}|$, saj bi sicer po Cauchyjevem izreku $\mathcal{K}$ vsebovala element reda $p$ in bi zato veljalo $p_1 | p_2^{k_2} \dots p_n^{k_n}$, kar pa je protislovje.
+Tako je edina možnost $|\mathcal{G}| = |\mathcal{H}_1| |\mathcal{K}| = p_1 * p_2^{k_2} \dots p_n^{k_n}$
+\end{proof}
+
+\begin{lemma}
+Naj go $\mathcal{G}$ $p-$grupa. Potem je $\mathcal{G}$ ciklična natanko tedaj, ko vsebuje eno samo podgrupo reda $p$.
+\end{lemma}
+
+\begin{remark}
+Vsaka $p-$grupa vsebuje kako podgrupo reda $p$ (Po Cauchyjevem izreku), če pa ni siklična pa vsaj $2$.
+\end{remark}
+
+\begin{proof}\leavevmode\\
+$\implies$Ker je $\mathcal{G}$ ciklična velja $\mathcal{G} \cong \mathbb{Z}_{p^m}$, kot vemo pa so edine pogrupe $\mathcal{G}$ grupe oblike: $p^i \mathbb{Z}_{p^k}$, kjer ima samo $p^{m-1}\mathbb{Z}_{p^m}$ $p$ elementov.
 
 
+$\impliedby$ Naj ima $\mathcal{G}$ natanko eno podgrupo reda $p$, imenujmo jo $\mathcal{N}$. Imamo dve možnosti, če $|\mathcal{G}| = p$, potem velja $\mathcal{G} = \mathcal{N}$ in $\mathcal{G}$ je ciklična. drugače pa velja $|\mathcal{G}| > p$ in predpostavimo, da lema velja za vse grupe, ki imajo manj elementov, kot grupe $\mathcal{G}$.\\
+Vpeljimo $\varphi: \mathcal{G} \to \mathcal{G}, \varphi(x) = px$, ki je endomorfizem, katerega jedro sestoji iz elementov z redom $p$. Zato velja $Ker (\varphi) = \mathcal{N}$. Po izreku o izomorfizmih tako velja: $\mathcal{G}/_{\mathcal{N}} \cong Im(\varphi) \leq \mathcal{G}$ in $|Im(\varphi)| = \frac{|\mathcal{G}|}{|\mathcal{N}|} \leq \mathcal{G}$. Tako lema po predpostavki velja za grupo $Im(\varphi)$.\\
+Kot prodgrupa $Im(\varphi)$ ne more vsebovati več podgrup reda $p $ kot $\mathcal{G}$, zato vsebuje eno samo in je torej ciklična. zato je tudi $\mathcal{G}/_{\mathcal{N}}$ ciklična z generatorjem $a + \mathcal{N}$, iz tega sledi: $\mathcal{G} = <a> + \mathcal{N}$. Tako dobimo $|\mathcal{G}| > p = |\mathcal{N}|$ in zato je $<a>$ netrivialna podgrupa $\mathcal{G}$ in po Cauchyjevem izreku zato vsebuje element reda $p$. Sledi $\mathcal{N} \subseteq <a>$ in zato $\mathcal{G} = <a>$.
+\end{proof}
+
+Spomnimo se vektroskih prostorov. Če je $\mathcal{U}$ vektorski podprostor $\mathcal{V}$, potem obsjata podprostor $\mathcal{W}$, da velja $\mathcal{V} = \mathcal{U} \oplus \mathcal{W}$. Za grupe ne velja nič podobnega. Grupa $\mathbb{Z}_4$ in podgrupa $\{0,2\}$ nimata komplementa da velja $\mathbb{Z}_4 = \{0,2\} \oplus \mathcal{G}$.
+
+\begin{lemma}
+Naj bo $\mathcal{G}$ $p-$grupa. Če je $\mathcal{C}$ njena ciklična podgrupa, ki ima izmed vseh cikličnih podgrup največji red, potem $\mathcal{G}$ vsebuje tako podgrupo $\mathcal{K}$, da velja: $\mathcal{G} = \mathcal{V} \oplus \mathcal{K}$.
+\end{lemma}
+
+\begin{proof}
+Če je $\mathcal{G}$ ciklična, potem $\mathcal{G} = \mathcal{C}$ in $\mathcal{K} = \{0\}$, torej smemo privzeti, da $\mathcal{G}$ ni ciklična, $|\mathcal{G}| > p$ in da lema velja za vse grupe z manj elementi kot $p$.\\
+Ker po lemi vemo, da če $\mathcal{G}$ ni ciklična ima vsaj dve podgrupi reda $p$, $\mathcal{C}$ pa zgolj eno samo. Naj bo $\mathcal{N}$ podgrupa reda $p$, ki ni vsebovana v $\mathcal{C}$. Dobimo $\mathcal{C} \cap \mathcal{N} = \{0\}$ saj je presek podgrupa grupe $\mathcal{N}$ in ima zato $p^j$ elementov ($j = 0$). Tako velja $\mathcal{C} + \mathcal{N} = \mathcal{C} \oplus \mathcal{N}$ in $\mathcal{C} + \mathcal{N}/_{\mathcal{N}} \cong \mathcal{C}$ ($c \mapsto c + \mathcal{N}$) in tako dobimo: $(\mathcal{C} + \mathcal{N})/_{\mathcal{N}} \cong \mathcal{C}$.\\
+v $\mathcal{G}/_{\mathcal{N}}$ tako ni cikličnih podgrup z več elemnti kot jih ima $\mathcal{C}$ (saj je red elemeta $x+ \mathcal{N} \in \mathcal{G}/_{\mathcal{N}}$ kvečjemu manjši kot red elementa $x$. Zato ima $(\mathcal{C} + \mathcal{N})/_{\mathcal{N}}$ izmed vseh cikličnih pogrup grupe $\mathcal{G}/_{\mathcal{N}}$ največji red $|\mathcal{G}/_{\mathcal{N}}| < \mathcal{G}$ in tako po naši predpostavki velja $\mathcal{G}/_{\mathcal{N}} = (\mathcal{C} + \mathcal{N})/_{\mathcal{N}} \oplus \mathcal{L}$ za neko podgrupo $\mathcal{L} \leq \mathcal{G}/_{\mathcal{N}}$.\\
+Po znane izreku je tako res: $\mathcal{L} = \mathcal{K}/_{\mathcal{N}}, \mathcal{N} \leq \mathcal{K} \leq \mathcal{G}$, potrebno je še dokazati: $\mathcal{G} = \mathcal{V} \oplus \mathcal{K}$. Vemo: $\mathcal{G}/_{\mathcal{N}} = ((\mathcal{C} + \mathcal{N})/_{\mathcal{N}}) \oplus (\mathcal{K}/_{\mathcal{N}} \implies \mathcal{G} = \mathcal{C} + \mathcal{N} + \mathcal{K}$ in potrebujemo zgolj še $\mathcal{C} \cap \mathcal{K} = \{0\}$.\\
+Vzemimo $x \neq 0$ iz preseka. $x \notin \mathcal{N} \implies x + \mathcal{N}$ je neničelen element $(\mathcal{C} + \mathcal{N})/_{\mathcal{N}} \cap \mathcal{K}/_{\mathcal{N}}$, kar pa je protislovje.
+
+\end{proof}
+
+\begin{theorem}[Osnovni izrek o končnih Abelovh grupah]
+\label{th:fundamental_theorem_of_finite_abel_group}
+Vsaka končna Abelova grupa je direktna vsota cikličnih podgrup. Te podgrupe lahko izberemo tako, da je red vsake izmed njih potenca praštevil.
+\end{theorem}
+
+\begin{proof}
+Po predzadnji lemi zadošča obravnavati zgolj situacijo, ko je $\mathcal{G}$ $p-$grupa in tako po zadnji lemi dobimo $\mathcal{G} = \mathcal{C} \oplus \mathcal{K}$, $|\mathcal{C}| \geq p$ in $\mathcal{G}$ ciklična, potem $|\mathcal{K}| < |\mathcal{G}|$. Uporabimo zadnjo lemo za $\mathcal{K}$ in po končnem številu korakov dobimo željeno.
+\end{proof}
+
+\begin{remark}
+Krajše lahko zadevo zapišemo: $\mathcal{G}$ je (notranja) direktna vsota cikličnih $p$ podgrup. Ali ekvivalentno: $\mathcal{G}$ je izomorfna (zunanji) direktni vsoti grup  oblike $\mathbb{Z}_{p^i}$, kjer je $p$ praštevilo.
+\end{remark}
+
+Naravno nas zanima, katere izmed teh grup so si med seboj izomorfne.
+
+Naj bosta $\mathcal{G}$ in $\mathcal{G}'$ končni Abelovi grupi: $\mathcal{G} \cong \mathcal{G}'$, $|\mathcal{G}| = |\mathcal{G}'| \implies \mathcal{G} = \mathcal{H}_1 \oplus \dots \oplus \mathcal{H}_s, \mathcal{G}' = \mathcal{H}_1' \oplus \dots \mathcal{H}_s'$, kjer sta $\mathcal{H}_i, \mathcal{H}_i'$ $p_i-$grupi.\\
+Izomorfizem $\varphi \mathcal{G} \to \mathcal{G}'$ pa slika eno v drugo. Zato je potrebno odgovoriti le za $p-$grupe.\\
+$\mathcal{G}$ je $p-$grupa $\implies \mathcal{G} \cong \mathbb{Z}_{p^{k_1}} \oplus \dots \oplus \mathbb{Z}_{p^{k_n}}$, brez škode za splošnost pa lahko privzamemo $k_1 < \geq k_2 \geq \dots \geq k_n$
+\\\\
+\begin{theorem}
+Naj bo $p$ preštevilo. Če za naravna števila $k_1 \geq k_2 \geq \dots \geq k_u$ in $l_1  \geq l_2 \geq \dots \geq l_v$ velja $\mathbb{Z}_{p^{k_1}} \oplus \dots \oplus \mathbb{Z}_{p^{k_u}} \cong \mathbb{Z}_{p^{l_1}} \oplus \dots \oplus \mathbb{Z}_{p^{l_v}}$ potem je $k_i = l_i$ in $u = v$.
+\end{theorem} 
+
+\begin{proof}
+Seveda se vsoti ujemata in sta enaki moči grup. Naj bo $|\mathcal{G}| > p$ in privzemimo, da izrek velja za grupe z manj elementi kot $\mathcal{G}$. Za nako poljubno podgrupo $\mathcal{K}$ pišimo $p\mathcal{K} := \{ px | x \in \mathcal{K} \}$. Tako dobimo $p \mathbb{Z}_{p^m} \cong \mathbb{Z}_{p^{m-1}} (m=1: p\mathbb{Z}_p = \{0\}$ in $\mathcal{G} \cong \mathcal{G}' \implies p\mathcal{G} \cong p\mathcal{G}' \implies \mathbb{Z}_{p^{k_1 - 1}} \oplus \dots \oplus \mathbb{Z}_{p^{k_w - 1}} \cong \mathbb{Z}_{p^{l_1 - 1}} \oplus \dots \oplus \mathbb{Z}_{p^{l_z - 1}}$, kjer je $w$ največji indeks $k_w > 1$ in $z$ največji indeks $k_z > 1$. Po predpsotavki tako dobimo $w = z$ in $k_i - 1 = l_i - 1$, ker pa $k_1 + \dots + k_w - w = l_1 + \dots + l_w - w$ in imata grupi enako moč dobmio $u = v$.
+
+\end{proof}
+
+\begin{example}
+$|\mathcal{G}|$ je Abelova in $|\mathcal{G}| = 200 = 5^2*2^3$, $\mathcal{G} = \mathcal{H} \oplus \mathcal{K}$, $|\mathcal{H}| = 25$ in $|\mathcal{K}| = 8$.\\
+Za $\mathcal{H}$ imamo (do izomorfizma natančno) dve možnosti: $\mathbb{Z}_25$ ali $\mathbb{Z}_5 \oplus \mathbb{Z}_5$, za $\mathcal{K}$ pa $\mathbb{Z}_8$ ali $\mathbb{Z}_2 \oplus \mathbb{Z}_4$ ali $\mathbb{Z}_2 \oplus \mathbb{Z}_2 \oplus \mathbb{Z}_2$. Torej je $\mathcal{G}$ izomorfna eni izmed grup, ki o dobimo s kombinacijo prve ali druge možnosti.
+\end{example}
+
+\begin{remark}
+Osnovni izrek za \textbf{končno generirane} Abelove grupe: Vsaka taka grupa je izomorfna $\mathbb{Z}^m\oplus \mathcal{K}$, kjer je $\mathcal{K}$ končna Abelova grupa. Tako je vsaka taka grupa direktna vsota cikličnih grup.
+\end{remark}
+
+\section{Deljivost v komutativnih kolobarjih}
+\subsection{Glavni ideal}
+
+\begin{definition}
+\label{def:main_ideal}
+Naj bo $\mathcal{K}$ komutativen kolobar in $a \in \mathcal{K}$. Množica
+\begin{equation}
+\label{eq:def_main_ideal}
+(a) := \{ ax | x \in \mathcal{K} \}
+\end{equation}
+je \textbf{ideal generiran z $a$}.
+\end{definition}
+
+\begin{definition}
+Ideal kolobarja je glavni ideal, če je generiran z enim samim elementom.
+\end{definition}
+
+\begin{remark}
+Če $\mathcal{K}$ ni komutativen kolobar je 
+$$(a) := \{\sum_i x_iay_i \ | \ x_i, y_i \in \mathcal{K} \} $$ 
+\end{remark}
+
+\begin{example}
+$\mathcal{K} = \{1\}$ in $(0) = \{0\}$
+\end{example}
+
+\begin{statement}
+$\mathcal{K} = (a)$ natanko tedaj, ko je $a$ obrnljiv.
+\end{statement}
+
+\begin{proof}\leavevmode\\
+$\implies$ Enačba $ax = 1$ ima rešitev, torej je $a$ obrnljiv \\
+$\impliedby$ Vemo od prej
+
+\end{proof}
+
+\begin{example}
+$\mathcal{K} = \mathbb{Z}$, vsi ideali so oblike $n\mathbb{Z}, n \geq 0$ in zato so vsi glavni.
+\end{example}
+
+\begin{definition}
+Ideal je \textbf{končno generiran}, če je generiran s končno mnogo množico elementov. Oznalimo ga z $(a_1, a_2, \dots, a_n)$
+\end{definition}
+
+\begin{remark}
+Opazimo, da velja $(a_1, a_2, \dots, a_n) = (a_1) + (a_2) + \dots + (a_n)$ in torej $(a_1, a_2, \dots, a_n) = \{ a_1x_1 + a_2x_2 + \dots + a_nx_n \ | \ x_i \in \mathcal{K} \}$
+\end{remark}
+
+\begin{example}
+\begin{example_case}
+$(4,6)\triangleleft \mathbb{Z}$ $(4,6) = \{ 4x + 6y \ | \ x,y \in \mathbb{Z} \} = (2)$, torej lahko generatorja $4,6$ nadomestimo z enim samim $2$.
+\end{example_case}
+\begin{example_case}
+Naj bo $\mathcal{F}$ polje in naj bo $\mathcal{I}$ množica vseh polinomov iz $\mathcal{F}[X]$ s konstantnim členom $0$. Velja $\mathcal{I} = (X)$. Kasneje bomo pokazali, da so vsi ideali $\mathcal{F}[X]$ glavni.
+\end{example_case}
+\begin{example_case}
+$\mathbb{Z}[X]$ ($\mathbb{Z}$ ni polje), $(2,X)$ sestoji iz polinomov, ki imajo konstanten člen sod. Ta ideal pa ni glavni, saj če bi veljalo: $(2,X) = (f(X))$, cin $2 \in (f(X))$, sledi, da je $f(X)$ konstanten polinom $a_0$, ki je sod, kar pa je v protislovju s predpostavko da $X \in (a_0)$
+\end{example_case}
+\begin{example_case}
+$\mathcal{F}[X,Y]$, $\mathcal{I}$ vsebuje vse polinome s konstantim členom $0$, torej $\mathcal{I} = (X,Y)$, bralec pa bo za domačo nalogo lahko preveril, da $\mathcal{I}$ ni glavni ideal.
+\end{example_case}
+\end{example}
+
+\subsection{Deljivost}
+
+\begin{definition}
+\label{def:divides_ring}
+Naj bo $\mathcal{K}$ komutativen kolobar. Neničelen element $b$ \textbf{deli} element $a$, če obstaja  tak $q \in \mathcal{K}$, da velja $a = bq$. V tem primeru rečemo, da je $a$ deljiv z $b$.
+\begin{equation}
+\label{eq:def_divides_ring}
+b \mid a \iff \exists q \in \mathcal{K}. \ a = bq 
+\end{equation}
+\end{definition}
 
 
+\begin{statement}
+$$b \mid a \iff (a) \subseteq (b)$$
+\end{statement}
+
+\begin{proof}\leavevmode \\
+$\implies$ \\
+$b \mid a \implies a = bq \implies (a) \subseteq (b)$
+\\$\impliedby$\\
+$(a) \subseteq (b) \implies a \in (b) \implies a = bq$
+\end{proof}
+
+\begin{remark}
+V posebnem primeru dobimo: $$b \mid a \land a \mid b \iff (a) = (b)$$
+\end{remark}
+
+\begin{definition}
+V primeru, da $a \mid b$ in $b \mid a$ pravimo, da sta si $a$ in $b$ \textbf{asociirana}.
+\end{definition}
+
+\begin{statement}
+Naj bo $\mathcal{K}$ cel kolobar (torej komutativen in brez deliteljev niča), potem sta si neničelna elementa $a$ in $b$ asiciiriana natanko tedaj, ko obstaja tak obrnljiv elementa $u \in \mathcal{K}$, da velja $a = ub$.
+\end{statement}
+
+\begin{proof}\leavevmode\\
+$\implies$\\
+$a \mid b \land b \mid a, a,b \neq 0$\\
+$b = ar, a = bq \implies b = ar = (bq)r = b(qr) \implies b(1-qr) = 0$, ker pa $b \neq 0$, sta $q, r$ obrnljiva.\\
+$\impliedby$\\
+Zgolj premečemo definicjo.
+
+\end{proof}
+
+\begin{example}
+\begin{example_case}
+V $\mathbb{Z}$ sta si števili asociirani natanko tedaj, ko sta si enaki ali ko velja $n = -m$, saj sta $1$ in $-1$ edina obrnljiva elementa.
+\end{example_case}
+\begin{example_case}
+Obrnljivi elementi v $\mathcal{F}[X]$ so neničelni konstanti polinomi, $f(x) in g(x)$ sta si asociirana $\iff$ $f(X) = ug(X)$ za nek $u \in \mathcal{F} \neq 0$  
+\end{example_case}
+\end{example}
+
+\begin{remark}
+Iz definicij sledi, da asociirana elementa delite iste elemente in sta z istimi elementi deljiva. S stališča teorije deljivosti ju zato lahko identificiramo.
+\end{remark}
+
+\begin{definition}
+\label{def:gcd_ring}
+Naj bo $\mathcal{K}$ komutativen kolobar in $a,b \in \mathcal{K}$ neničelna. Neničelni $d \in \mathcal{K}$ je njun \textbf{največji skupni delitelj}, če velja:
+\begin{itemize}
+\item $d \mid a \land d \mid b$
+\item $c \mid a \land c \mid b \implies c \mid d$
+\end{itemize}
+Pišemo $\gcd(a,b) = d$
+\end{definition}
+
+\begin{remark}
+Največji skupni delitelj števil ne obstaja vedno, če pa obstaja, potem je določen do asociiranosti natančno.
+\end{remark}
+
+\begin{remark}
+Po dogovoru v $\mathbb{Z}$ za $\gcd$ izberemo naravno število in je tako $\gcd$ natančno določen. Podobno v $\mathcal{F}[X]$ za $\gcd$ izberemo polinom, ki ima vodilni koeficient $1$.
+\end{remark}
+
+\begin{definition}
+Elementa $a$ in $b$ sta si \textbf{tuja}, če velja $gcd(a,b) = 1$
+\end{definition}
+
+
+\begin{statement}
+Naj bo $\mathcal{K}$ komutativen in $a,b \in \mathcal{K}$ ne oba enaka $0$, če je idal $(a,b)$ glavni, potem $\gcd(a,b)$ obstaja in je oblike $d = ax + by$ za neka $x,y \in \mathcal{K}$.
+\end{statement}
+
+\begin{proof}
+Po predpostavki je $(a,b) = (d)$ za nek $d \neq 0 \in \mathcal{K}$, vemo $a \in (d) \implies d \mid a, b \in d \implies d \mid b$\\
+$d \in (d) = (a,b) \implies d =ax + by$\\
+ $c \mid a, c \mid d$, $a = cz, b= cw \implies d = c(zx +wy) \implies c \mid d$
+\end{proof}
+
+\begin{remark}
+Četudi ideal $(a,b)$ ni glavni ideal lahko njun $\gcd$ še vedno obstaja. V $\mathbb{Z}[X]$ je tako $\gcd(2, X) = 1$. 
+\end{remark}
+
+\begin{definition}
+Naj bo $\mathcal{K}$ komutativen. Neničelen $p \in \mathcal{K}$, ki ni obrnljiv je \textbf{nerazcepen}, če iz $p = ab$ sledi, da je (vsaj) eden izmed elementov $a,b$ obrnljiv.
+\end{definition}
+
+\begin{example}
+V $\mathbb{Z}$ so nerazcepni elementi $p, -p$, kjer je $p$ praštevilo.
+\end{example}
+
+\begin{statement}
+Naj bo $\mathcal{K}$ cel kolobar in $p \in \mathcal{K}$, tedaj sta za neničelen in neobrnljiv $p$ naslednji trditvi ekvivalentni:
+\begin{itemize}
+\item $p$ je nerazcepen
+\item Če je $a \in \mathcal{K}$ tak, da $(p) \subseteq (a)$ in $(a) \neq \mathcal{K}$, potem $(p) = (a)$
+\end{itemize}
+\end{statement}
+
+\begin{proof}
+$(p) \subseteq (a)$ pomeni $p = ab$ za nek $b$. $(a) \neq \mathcal{K}$ pomeni, da $a$ ni obrnljiv, $(p) = (a)$ pa, da sta si $p$ in $a$ asociirana ($ua = p$ za nek obrnljiv $u$)\\
+$p = ab = ua \implies b=u$ in sledi, da sta si trditvi ekvivalentni.
+
+\end{proof}
 
 
 
