@@ -5279,6 +5279,165 @@ $\pi, e$ sta transcedentni števili(dokaz je dokaj zahteven, zato navadno transc
 Algebraičnih števil je števno mnogo.
 \end{remark}
 
+\begin{remark}
+Vsota dveh algebraičnih števil je algebraično število.
+\end{remark}
+
+\subsection{Kratnost ničle polinoma}
+
+\begin{definition}
+Naj bo $f(X) \in \mathcal{F}[X]$ neničelen polinom in $a \in \mathcal{F}$ njegova ničla. $a$ je enostavna ničla polinoma $f(X)$, če velja $f(X) = (X-a)g(X)$ in $g(a) \neq 0$. 
+\end{definition}
+
+\begin{definition}
+Naj bo $f(X) \in \mathcal{F}[X]$ neničelen polinom in $a \in \mathcal{F}$ njegova ničla. $a$ je $k-$kratna ničla polinoma $f(X)$, če velja $f(X) = (X-a)^kg(X)$ in $g(a) \neq 0$. 
+\end{definition}
+
+\begin{statement}
+Naj bo polje $\mathcal{E}$ razširitev polja $\mathcal{F}$. Polinom $f(X) \in \mathcal{F}[X]$ ima ničlo $a \in \mathcal{E}$ natanko tedaj, ko obstaja $g(X) \in \mathcal{E}[X]$, da velja $f(X) = (X-a)g(X)$.
+\end{statement}
+
+\begin{proof}
+Za $\mathcal{F} = \mathcal{E}$ to že vemo. Če obravanvamo $f(X)$ kot element $\mathcal{E}[X]$ tako trditev sledi.\\
+V splošnem lahko zapišemo $f(X) = (X-a)^k g(X), g(X) \in \mathcal{E}[X] \land g(a) \neq 0$\\
+Tudi $g(X)$ pa ima lahko ničle v $\mathcal{E}$, tako pridemo do zapisa $f(X) = (X-a_1)^{k_1}(X-a_2)^{k_2} \dots (X-a_r)^{k_r} f_(X)$, kjer so $a_i \in \mathcal{E}$ in $f_0(X)$ nima ničel v $\mathcal{E}$. Opazimo: $st(f(X)) = k_1 + k_2 + \dots  + k_r + st(f_0(X))$
+\end{proof}
+
+\begin{corollary}
+Število ničel polinoma, štetih z njihovo mnogokratnostjo je kvečjemu manjše od stopnje polinoma
+\end{corollary}
+
+\begin{example}
+$f(X) = X^6 - 3X^2 + 4 \in \mathbb{Q}[X], f(X) = (X^2-2)^2(X^2 + 1)$
+Glede na izbiro polja $\mathcal{E}$ imamo več možnosti:
+\begin{enumerate}
+\item $\mathcal{E} = \mathbb{Q}:$ polinom nima ničel, $f_0(X) = f(X)$
+\item $\mathcal{E} = \mathbb{R}: a_1 = \sqrt{2}, k_1 = 2; a_2 = -\sqrt{2}, k_2 = 2; f_0(X) = (X^2 + 1)$
+\item $\mathcal{E} = \mathbb{C}: a_1 = \sqrt{2}, k_1 = 2; a_2 = -\sqrt{2}, k_2 = 2; a_3 = i, k_3 = 1; a_4 = -1, k_4 = 1$
+\end{enumerate}
+
+\end{example}
+
+
+\subsection{Končne razširitve}
+
+$\mathcal{F} \subseteq \mathcal{E}$, tedaj lahko $\mathcal{E}$ obravanavamo kot vektorski prostor nad $\mathcal{F}$. $\mathcal{E}$ je seveda aditivna grupa, za množenje s skalarji pa vzamemo kar damo množenje v $\mathcal{E}$. Tako so vsi aksiomi za vektorske prostore izpolnjeni.
+
+\begin{definition}
+Naj bo $\mathcal{E}$ razširitev $\mathcal{F}$. Rečemo, da je $\mathcal{E}$ končna razširitev $\mathcal{F}$, če je $\mathcal{E}$ končno razsežen vektorski prostor nad $\mathcal{F}$. Dimanziji $\mathcal{E}$ nad $\mathcal{F}$ pravimo stopnja razširitve in jo označujemo z 
+$$[\mathcal{E}: \mathcal{F}] := dim_{\mathcal{F}}(\mathcal{E})$$
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+$[\mathbb{C}:\mathbb{R}] = 2$, s standardno bazo: $\{1, i\}$
+\end{example_case}
+\begin{example_case}
+$\mathbb{R} ni končna razširitev \mathbb{Q}$ (Vsaka končna razširitev $\mathcal{Q}$ je števna množica.
+\end{example_case}
+\end{example}
+
+\begin{theorem}
+Naj bo polje $\mathcal{L}$ končna razširitev polja $\mathcal{F}$ in polje $\mathcal{E}$ končna razširitev polja $\mathcal{L}$. Potem je tudi $\mathcal{E}$ končna razširitev $\mathcal{F}$ in velja:
+$$[\mathcal{E}:\mathcal{F}] = [\mathcal{E}:\mathcal{L}][\mathcal{L}:\mathcal{F}]$$
+\end{theorem}
+
+\begin{proof}
+Naj bo $\{a_1, \dots a_m\}$ baza $\mathcal{L}$ nad $\mathcal{F}$in $\{b_1, \dots , b_n\}$ baza $\mathcal{E}$ nad $\mathcal{L}$. Trdimo, da je $B := \{ a_ib_j | 1 \leq i \leq m, 1 \leq j \leq n \}$ baza $\mathcal{E}$ nad $\mathcal{F}$. \\
+Preverimo, da je ogrodje: \\
+$x \in \mathcal{E} \implies x = c_1b_1 + \dots + c_nb_n, c_i \in \mathcal{L}$, $c_i = \sum_{j=1}^{m} f_{ij}a_j$\\
+$$x = \sum_{i=1}^n\sum^m_{j=1} f_{ij}a_jb_i$$
+Torej je $B$ ogrodje. Pokažimo, še da je linearno neodvisna.\\
+Denimo $\sum_{i=1}^n\sum^m_{j=1} f_{ij}(a_jb_i) = 0, f_{ij} \in \mathcal{F}$\\
+Potem $\sum_{i=1}^n\underbrace{(\sum^m_{j=1} f_{ij}a_j)}_{\in \mathcal{L}}b_i = 0 \implies \sum f_{ij}a_j = 0$, sa so $b_i$ linearno neodvsini nad $\mathcal{L}$. Prav tako pa so tudi $a_j$ linearno neodvisni in torej $f_{ij} = 0$.
+ 
+\end{proof}
+
+\begin{corollary}
+Naj bo $\mathcal{E}$ končna razširitev $\mathcal{F}$. Če je $\mathcal{L}$ podpolje $\mathcal{E}$, ki vsebuje $\mathcal{F}$, potem $[\mathcal{L}:\mathcal{F}]$ deli $[\mathcal{E}:\mathcal{F}]$
+\end{corollary}. 
+
+\begin{proof}
+Bralec bo lahko sam razmislil.
+\end{proof}
+
+\begin{definition}
+Polje $\mathcal{E}$ je \textbf{algebraična razširitev} polja $\mathcal{F}$, le je vsak element iz $\mathcal{E}$ algebraičen nad $\mathcal{F}$.
+\end{definition}
+
+
+\begin{remark}
+število $a$ je algebraično natanko tedaj, ko so elementi $1, a, \dots, a^n \in \mathcal{E}$ linearno odvisni nad $\mathcal{F}$.
+\end{remark}
+
+\begin{statement} % To se pogosto pojavi na ustnem izpitu.
+Vsaka končna razširitev je algebraična.
+\end{statement}
+
+\begin{proof}
+Naj bo $[\mathcal{E}:\mathcal{F}] = n$, $a \in \mathcal{E} \implies 1, a, \dots , a^n$ so linearno odvisni nad $\mathcal{F}$, saj jih je $n+1$, kar je več od dimenzije. To pomeni, da obstaja tak polinom, katerega ničla je $a$. Torej je $a$ algebraičen. 
+\end{proof}
+
+\begin{example}
+$[\mathbb{C}:\mathbb{R}] = 2 \implies \mathbb{C}$ je algebraičen nad $\mathbb{R}$, iz dokaza pa sledi, da je poljubno kompleksno število ničla nekega polinoma, stopnje $2$ ali manj z realnimi koeficienti ($(X - \overline{z})(X + \overline{z})$).
+\end{example}
+
+
+\begin{remark}
+Obstajajo tudi algebraične razširitve, ki niso končne.
+\end{remark}
+
+\begin{definition}
+Naj bo $\mathcal{F} \subseteq \mathcal{E}$ in naj bo $\mathcal{A}$ podmnožica $\mathcal{E}$. Z $\mathcal{F}[\mathcal{A}]$ označimo podkolobar $\mathcal{E}$ generiran z $\mathcal{F}$ in $\mathcal{A}$.
+\end{definition}
+
+\begin{definition}
+Naj bo $\mathcal{F} \subseteq \mathcal{E}$ in naj bo $\mathcal{A}$ podmnožica $\mathcal{E}$. Z $\mathcal{F}(\mathcal{A})$ označimo podpolje $\mathcal{E}$ generiran z $\mathcal{F}$ in $\mathcal{A}$.
+\end{definition}
+
+\begin{remark}
+Če je $\mathcal{A} =\{a_1, a_2, \dots \}$ pišemo kar $\mathcal{F}[a_1, a_2, \dots ]$ ali $\mathcal{F}(a_1, a_2, \dots )$. Največkrat je $\mathcal{A}$ kar singelton torej $\mathcal{F}[a]$ in $\mathcal{F}(a)$.
+\end{remark}
+
+\begin{example}
+$\mathcal{F}[a] = \{ f(a)(=\lambda_0 + \lambda_1 a_1 + \dots \lambda_n a_n) \  | f(X) \in \mathcal{F}[X] \}$\\
+$\mathcal{F}(a) = \{ f(a)g(a)^{-1} | f(X), g(X), g(a) \neq 0 \in \mathcal{F}[X] \}$
+\end{example}
+
+\begin{definition}
+Polje $\mathcal{F}(a)$ imenujemo polje, dobljeno s priključitvijo elementa.
+\end{definition}
+
+\begin{definition}
+$\mathcal{E}$ je enostavna razširitev $\mathcal{F}$, če obstaja tak $a \in \mathcal{E}$, da je $\mathcal{E} = \mathcal{F}(a)$, tedaj ta $a$ imanujemo primitivni element iz razširitve.
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+$\mathbb{C} = \mathbb{R}(i)$, $\mathbb{C}$ je torej enostavna razširitev $\mathbb{R}$, $i$ pa je primer primitivnega elementa.
+\end{example_case}
+\begin{example_case}
+$\mathcal{F} = \mathbb{Q}, \mathcal{E} = \mathbb{C}, a = i$\\
+$\mathbb{Q}[i] = \{ f(i) | f(X) \in \mathbb{Q}[X] \} = \{a + bi | a, b \in \mathbb{Q} \}$, kar pa je tudi polje vidmo: $\mathbb{Q}[i] = \mathbb{Q}(i)$
+\end{example_case}
+\end{example}
+
+\begin{theorem}
+Naj bo polje $\mathcal{E}$ razširitev polja $\mathcal{F}$. Če je $a \in \mathcal{E}$ algebraičen stopnje $n$ nad $\mathcal{F}$, potem je $\mathcal{F}(a) = \mathcal{F}[a] = \{ \lambda_0 + \lambda_1a + \dots + \lambda_{n-1}a^{n-1} \ | \lambda_i \in \mathcal{F} \}$ in velja $[\mathcal{F}(a):\mathcal{F}] = n]$
+\end{theorem}
+
+\begin{proof}
+Vsak element iz $\mathcal{F}[a]$ je oblike $f(a)$ za nek $f(X) \in \mathcal{F}[X]$. Denimo: $f(a) \neq 0$, dokazati moramo, da $f(a)^{-1} \in \mathcal{F}[a]$.\\
+Naj bo $p(X)$ minimalen polinom elementa $a$ (stopnje $n$). $f(a) \neq 0 \implies p(X) \nmid f(X)$, $p(X)$ je nerazcepen, torej sta si $p(X)$ in $f(X)$ tuja. $\exists h(X), k(X) \in \mathcal{F}[X]. h(X) p(X) + k(X)f(X) = 1$. Vsativmo $a$ in dobimo $f(a)k(a) = 1 \implies f(a)^{-1} = k(a) \implies \mathcal{F}[a] = \mathcal{F}(a)$\\
+Za drugi del uporabimo osnovni izrek o deljenju.:
+$f(X) = q(X)p(X) + r(X) \implies f(a) = \underbrace{q(a)p(a)}_{=0} + r(a) = r(a)$, $r(X) = 0 \lor st(r(x)) < n$
+Tako dobimo, da so elementi $1, a, \dots , a^{n-1}$ ogrodje $\mathcal{F}(a)$ nad $\mathcal{F}$, ker pa je $a$ algebraične stopnje $n$ pa so si tudi neodvsini.\\
+Torej je $\{1, a, \dots, a^{n-1} \}$ baza $\mathcal{F}(a)$ nad $\mathcal{F}$ in sledi $[\mathcal{F}(a):\mathcal{F}] = n$.
+\end{proof}
+
+\begin{remark}
+V slučaju zgornjega izreka bomo namesto $\mathcal{F}[a]$ raje uporabljali $\mathcal{F}(a)$.
+\end{remark}
 
 \end{document}
 
