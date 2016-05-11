@@ -1606,6 +1606,7 @@ Analogno: Vsaka neprazna navzgor omejena podmnožica $\mathbb{Z}$ vsebuje najve�
 \\
 
 \begin{theorem}[Osnovni izrek o deljenju]
+\label{th:fundamental_theorem_of_division}
 Za poljubna $m,n \in \mathbb{Z}$ obstajata taki števili $p,q \in \mathbb{Z}$, da velja:
 $$m = qn + r \land 0 \leq r < n$$
 \end{theorem}
@@ -4939,11 +4940,344 @@ $p = ab = ua \implies b=u$ in sledi, da sta si trditvi ekvivalentni.
 
 \end{proof}
 
+\subsection{Evklidski kolobarji}
+
+Če si podrobneje pogledamo, vidimo da sta si $\mathbb{Z}$ in $\mathcal{F}[X]$ zelo podobna, oba sta cela in imata zelo "malo" obrnljivih elementov. Oba zadoščata osnovnemu izreku o deljenju (\ref{th:fundamental_theorem_of_division}).
+ 
+
+\begin{theorem}[Osnovni izrek o deljenju polinomov]
+\label{def:fundamental_theorem_of_polynomial_division}
+Naj bo $\mathcal{F}$ polje in naj bosta $f(X), g(X) \in \mathcal{F}[X]$, Če $g(X) \neq 0$ potem obstajata taka $q(X), r(X) \in \mathcal{F}[X]$, da velja 
+\begin{equation}
+\label{eq:def_fundemantal_theorem_of_polynomial_division}
+f(X)= q(X)g(X) + r(X), r(X) = \lor st(r(X)) < st(g(X))
+\end{equation} 
+\end{theorem}
+
+\begin{proof}
+$n := st(g(X)), m := st(f(X))$, $m < n \implies q(X) = 0, r(X) = f(X)$, torej naj bo $m \geq n$, izrek pa bomo dokazali z indukcijo na $m$.\\
+$m = 0 \implies n = 0$ in trivialno dobimo $r(X) = 0$\\
+$f(X) = aX^n + f_1(X), st(f_1(X)) < m$. $g(X) = bX^n + g_1(X)$, $st(g_1(X)) < n$\\
+$h(X) := f(X)- ab^{-1}X^{m-n}g(X) = \underbrace{f_1(X) - ab^{-1}X^{m-n}g_1(X)}_{\text{stopnja } \ < m}$\\
+Po indukcijski predpostavki velja $h(X) = q_1(X)g(X) + r(X), r=0 \lor st(r(X)) < n$
+$f(X) - ab^{-1}X^{m-n}g(X) = q_1(X)g(X) + r(X) \implies$\\ $f(X) = \underbrace{(ab^{-1}X^{m-n} + q_1(X))}_{q(X)}g(X) + r(X)$
+\end{proof}
 
 
+\begin{definition}
+\label{def:euclidean_ring}
+Cel kolobar $\mathcal{K}$ je \textbf{evklidksi kolobar} če obstaja taka preslikava $\sigma : \mathcal{K} - \{0\} \to \mathbb{N} \cup \{0\}$, za katero velja:
+\begin{itemize}
+\item $\forall a,b \in \mathcal{K}, b \neq 0. \exists q,r \in \mathcal{K}. \ a= qb +r, r = 0 \lor \sigma(r) < \sigma(b)$ (izrek o deljenju)
+\item $\forall a,b \in \mathcal{K}- \{0\}. \ \sigma(a) \leq \sigma(ab)$
+\end{itemize} 
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+$\mathbb{Z}, \sigma(n) = |n|$
+\end{example_case}
+\begin{example_case}
+$\mathcal{F}[X], \sigma(f(X)) = st(f(X))$
+\end{example_case}
+\begin{example_case}
+$\mathbb{Z}[i]$ je evklidski za $\sigma(n+mi) = n^2 + m^2$
+\end{example_case}
+\begin{example_case}
+$\mathcal{F}$ je evklidski, saj je zaradi deljenja vedno: $r=0$, tako je lahko $\sigma$ poljubna funkcija, ki ustreza drugemu pogoju.
+\end{example_case}
+\end{example}
+
+\begin{statement}
+$\sigma(a) = \sigma(ab) \implies b$ je obrnljiv
+\end{statement}
+
+\begin{proof}
+$a = qab + r, r= 0 \lor \sigma(r) < \sigma(ab)$. \\
+Če $r = 0 \implies a(1-qb) = 0  \underbrace{\implies}_{a \neq 0} b = q^{-1}$\\
+Če $r \neq 0 \implies r = a(q-qb)$ in zato $\sigma(r) \geq(a)$, kar pa je protislovje.
+\end{proof}
+
+\begin{remark}
+$\sigma(u) = 0 \implies u$ je obrnljiv. $1 = qu + r \implies r = 0$
+\end{remark}
+
+\begin{theorem}
+Vsak ideal evklidskega kolobarja je glavni.
+\end{theorem}
 
 
+\begin{proof}
+Naj bo $\mathcal{I} \triangleleft \mathcal{K}$, kjer je $\mathcal{K}$ evklidski. Izberimo si $a \in \mathcal{I} - \{0\}$, da zanj velja $\sigma(a) \leq \sigma(x), x \in \mathcal{I}$ (to lahko naredimo, saj za naravna števila velja načelo dobre urejenosti. Pokazali bomo da velja $\mathcal{I} = (a)$, vemo že da $(a) \subseteq \mathcal{I}$. Vemo tudi $x \in \mathcal{I}. x = qa +r$ Če $r = 0: x = qa \in (a)$, Če pa $\sigma(r) < \sigma(a), r = x- qa \in \mathcal{I}$, kar pa je protislovje.
+\end{proof}
 
+
+\begin{corollary}
+Naj bo $\mathcal{K}$ evklidksi kolobar in $p \in \mathcal{K}, p \neq 0$, naslednje trditve so si ekvivalentne:
+\begin{enumerate}
+\item $p$ je nerazcepen
+\item $(p)$ je maksimalen ideal
+\item $\mathcal{K}/_{(p)}$ je polje
+\end{enumerate} 
+\end{corollary}
+
+\begin{proof}
+$(1) \iff (2)$, v prejšnjem razdelku smo dokazali, da je nerazcepnost ekvivalentena maksimalnosti.\\
+$(2) \iff (3)$ Smo dokazali v poglavju $4$.
+\end{proof}
+
+\begin{example}
+Za $\mathbb{Z}$ to že poznamo ($p$ je praštevilo $\iff \mathbb{Z}/_{p\mathbb{Z}} = \mathbb{Z}_p$ je polje 
+\end{example}
+
+\begin{corollary} %posledica posledice............
+Naj bo $\mathcal{K}$ evklidski kolobar. Za vsaka $a,b \in \mathcal{K}$, ki nista oba $0$ velja, da obstaja njun $\gcd$, ki je oblike $\gcd(a,b) = ax + by; \ x,y \in \mathcal{K}$
+\end{corollary}
+
+\begin{proof}
+Že prej smo dokazali, da je vsak tak kolobar glavni in da temu ustreza.
+\end{proof}
+
+\begin{corollary}
+Naj bo $\mathcal{K}$ evklidski kolobar in $a,b, p \in \mathcal{K}$. Če je $p$ nerazcepen in $p \mid ab$, potem $p \mid a \lor p \mid b$.
+\end{corollary}
+
+\begin{proof}
+Denimo, da $p \nmid a$, potem sta si $p$ in $a$ tuja, zato po prejšnji posledici velja $ax + py = 1$ za nkea $x,y \in \mathcal{K}$\\
+$abx = bpy = y \implies p(cx+by) = b \implies p\mid b$
+\end{proof}
+
+\begin{remark} %mogoce definicija
+Fraza \textbf{enoličnost do vrstnega reda asociiranosti} pomeni $a= p_1p_2 \dots p_s = q_1 q_2\dots q_t$, ker so $p_i, q_i$ nerazcepni pomeni, da ob pogoju $s = t$ obstaja permutacija $\sigma \in \mathcal{S}_s$, da velja $p_i$ je asociiran $q_{\sigma(i)}$. 
+\end{remark}
+
+
+\begin{theorem}
+\label{th:unique_factorization_in_ring}
+Naj bo $\mathcal{K}$ evklidski kolobar, vsak neničelni $a \in \mathcal{K}$, ki ni obrnljiv lahko zapišemo kot produkt nerazcepnih elementov. Ta zapis je enoličen do vrstnega reda in asociiranosti faktorjev natančno.
+\end{theorem}
+
+\begin{proof}
+$a \in \mathcal{K}, a \neq 0$, a ni obrnljiv. Predpostavimo, da $a$ ni nerazcepen, torej $a = a_1a_2$, kjer sta $a_1$ in $a_2$ obrnljiva, velja tudi $\sigma(a_1) < \sigma(a), \sigma(a_2) < \sigma(a)$ tako nadaljujemo za navzdol, doker ne pridemo do $a$ja, kjer velja $\sigma(a) = 0$.\\
+Potrebno je dokazati še enoličnost.
+$a = p_1 p_2 \dots p_s = q_1 q_2 \dots q_t$, kjer so $p_i, q_i$ nerazcepni, po posledici pa $p_1 \mid p_i$ za nek $i$. $q$-je permutiramo, in $p_1 \mid q_1$ in $q_1 = p_1 u$, kjer je $u$ obrnljiv. $p_1$ in $q_1$ sta si asociirana. Krajšamo s $p_1$ in dobimo $p_2 \dots p_s = (uq_2)\dots q_t$, kjer je $uq_2$ nerazcepen. Postopek ponavljamo dokler ne končamo.
+\end{proof}
+
+\begin{remark}
+Vse posledice zadnjega izreka veljajo tudi za \textbf{glavne kolobarje} (celi kolobarji, v katerih je vsak ideal glaven), venad se je za dokaz potrebno nekoliko bolj potruditi.
+\end{remark}
+
+\begin{remark}
+Vsak evklidski kolobar je glavni, obratno pa v splošnem ne velja.
+\end{remark}
+
+\begin{definition}
+\textbf{Kolobar z enolično faktorizacijo} je cel komutativen kolobar, za katerega velja izrek (\ref{th:unique_factorization_in_ring}).
+\end{definition}
+
+
+\begin{definition}
+\textbf{Noetherski kolobar} je komutativen kolobar, v katerem je vsak ideal končno generiran.
+\end{definition}
+
+
+\begin{remark}
+Izkaže se:\\
+$\mathcal{K}$ je kolobar z enolično faktorizacijo $\implies$ $\mathcal{K}[X]$ je kolobar z enolično faktorizacjio.\\
+$\mathcal{K}$ je noeterski kolobar $\implies$ $\mathcal{K}[X]$ noeterski kolobar.\\
+Zato sta $\mathbb{Z}[X]$ in $\mathcal{K}[X,Y] = (\mathcal{K}[X])[Y]$ kolobarja z enolično faktorizacijo/noetrska(ob primernih predpostavkah), nista pa niti evklidska niti glavna.
+\end{remark}
+
+\subsection{Nerazcepni polinomi}
+
+Spomnimo se prejšnjega poglavja in rezultata, da je vsak ideal $\mathcal{F}[X]$ glavni, torej oblike: 
+$$(a(X)) = \{ a(X)f(X) | \ f(X) \in \mathcal{F}[X] \}$$
+
+Za vsaka $a(X), b(X) \in \mathcal{F}[X]$, ki nista oba $0$ obstaja  $\gcd$, ki je oblike: $\gcd(a(X) = d(X) = b(X)) = a(X)f(X) + b(X)g(X)$, z zahtevo da ima $d$ vodilni koeficient $1$ pa je $\gcd$ celo enolično določen.
+
+\begin{lemma}
+Polinom $f(X) \in \mathcal{F}[X]$ ima ničlo v $a \in \mathcal{F}$ natanko tedaj, ko je $f(X)$ deljiv z $(X-a)$ ($f(X) = g(X)(X-a)$).
+\end{lemma}
+
+\begin{proof}
+$f(X) = q(X)(X-a) + r(X)$, kjer je $r(X)$ konstanten polinom izračunamo $f$ v $a$. $f(a) = 0 + a_0 = 0 \iff a_0 = 0$
+\end{proof}
+
+\begin{corollary}
+Če neničelen in nelinearen polinom $f(X) \in \mathcal{F}[X]$ ima ničlno v $\mathcal{F}$, potem ni razcepen.
+\end{corollary}
+
+\begin{remark}
+V nasprotno smer ne gre. $(X^2+1)^2 \in \mathbb{R}[X]$ ni nerazcepen, a nima ničle v $\mathbb{R}$ 
+\end{remark}
+
+\begin{remark}
+Linearni polinomi so nerazcepni (v $\mathbb{C}$ so to tudi edini nerazcepni polinomi (Osnovni izrek algebre)).
+\end{remark}
+
+\begin{remark}
+V $\mathbb{R}[X]$ so nerazcepni linearni polinomi in kvadratni polinomi, katerih diskriminanta je manjša od $0$.
+\end{remark}
+
+Pojavi s vprašanje, kaj so nerazcepni polinomi v $\mathbb{Q}[X]$, izkaže se da je dovolj, da si pogledamo $\mathbb{Z}[X]$, saj lahko poljuben polinom pomnožimo z skupnim imenovalcem in smo v $\mathbb{Z}$
+
+\begin{definition}
+Polinom $p \in \mathbb{Z}[X]$ je \textbf{primitiven}, če je največji skupni delitelj njegovih koeficientov enak $1$.
+\end{definition}
+
+\begin{example}
+$2 - 3X + 6X^5$ je primitiven, $2-4X+6X^5$ pa ni.
+\end{example}
+
+\begin{lemma}[Gaussova lema]
+Produkt dveh primitivnih polinomov je primitiven polinom.
+\end{lemma}
+
+\begin{proof}
+$f(X), g(X)$ sta primitivna, njun produkt $p(X)q(X)$ pa ni. Torej obstaja praštevilo $p$, da $p$ ki deli vse koeficiente $p(X)g(X)$. $p$ lahko obravnavamo ko polinom v $\mathbb{Z}[X]$, vemo da velja $f(X)g(X) \in (p) = \{ pq(X) | \ q(X) \in \mathbb{Z}[X]\}$. Vemo da je $f(X) + \underbrace{p\mathbb{Z}[X]}_{(p)} \in \mathbb{Z}[X]/_{(p)}$ neničelen odsek, saj $p$ ne deli vseh koeficientov $f(X)$. Podoben argument velja za $g(X)$. Tako dobimo $(f(X) + (p))(g(X) + (p)) = f(X) + g(X) + (p) = 0$, kolobar $\mathbb{Z}[X]/_{p\mathbb{Z}[X]}$ ima torej delitelje niča. Ker pa je izomofen $(\mathbb{Z}/_{p\mathbb{Z}})[X] = \mathbb{Z}_p[X]$ in je $\mathbb{Z}_p$ polje je to protislovje.
+\end{proof}
+
+
+\begin{definition}
+Nekonstanten polinom $f(X) \in \mathbb{Z}[X]$ je nerazcepen, če ga je noremo zapisati kot produkt dveh nelinearnih polinomov iz $\mathbb{Z}[X]$
+\end{definition}
+
+\begin{theorem}
+Če je polinom $f(X) \in \mathbb{Z}[X]$ nerazcepen v $\mathbb{Z}[X]$ je nerazcepen tudi v $\mathbb{Q}[X]$.
+\end{theorem}
+
+\begin{remark}
+Veljevnost v obratno je trivialna.
+\end{remark}
+
+\begin{proof}
+$f(X) = g(X)h(X), g(X),h(X) \in \mathbb{Q}[X]$ Izberemo $k,l \in \mathbb{N}$, da velja $kg(X), lh(X) \in \mathbb{Z}[X]$, dobimo $klf(X) = kg(X)lh(X)$, kjer imajo vsi trije koeficiente v $\mathbb{Z}$.\\
+Zapišemo $hg(X) = d_1g_0(X)$, kjer je $d_1$ največji skupni delitelj koeficientov $hg(X)$. Potem je $g_0$ primitiven. Podobno dobimo: $lh(X) = d_2h_(X), h_0(X)$ je primitiven in $f(X) = df_0(X), f_0(X)$ je primitiven. \\
+$\underbrace{(hld)}_{\in \mathbb{Z}}f_0(X) = \underbrace{(d_1d_2)}_{\in \mathbb{Z}}\underbrace{g_0(X)h_0(X)}_{\text{primitivna po Gaussovi lemi}}$\\
+Največji skupni delitelj $(hld)f(X)$ j3 $kld$, za $(d_1d_2)g_0(X)h_0(X)$ pa $d_1d_2$ torej $kld = d_1d_2$.\\
+Pokrajšamo polinoma $f_0(X) = g_0(X)h_0(X) \implies f(X) = df_0(X) = dg_0(X)h_0(X)$, ki pa je nerazcepen v $\mathbb{Z}$. Sledi da je $dg_0(X)$ ali $h_0(X)$ konstanten torej $g(X)$ ali $h(x)$ je konstanten.
+ 
+\end{proof}
+
+\begin{corollary}[Eisensteinov kriterij]\\
+Naj bo $n \in \mathbb{N}$ in $f(X) = a_0 + a_1X + \dots + a_nX^n \in \mathbb{Z}[X], a_n \neq 0$. Če obstaja tako praštevilo $p$, da $p \mid a_0, p \mid a_1, \dots, p \mid a_{n-1} \land p \nmid a_n \land p^2 \nmid a_0$, potem je $f(X)$ nerazcepen v $\mathbb{Q}[X]$.
+\end{corollary}
+
+\begin{proof}
+Po izreku zadošča pokazati, da je $f(X)$ nerazcepen v $\mathbb{Z}[X]$.
+Naj bo $f(X) = g(X)h(X)$ kjer
+$g(X) = b_0 + b_1X + \dots + b_rX^r, b_r \neq 0$ in $h(X) = c_0 + c_1X + \dots + c_sX^s, c_s \neq 0$ $a_0 = b_0c_0$ in ker $p \mid a, p^2 \nmid a_0 \implies p$ deli natanko eno izmed $b_0$ in $c_0$, naj deli $b_0$. 
+Vemo tudi $a_n = b_rc_s$, $p \nmid a_n \implies p \nmid b_r$. Naj bo $k \leq r$ število z lastnostjo $p \mid b_0, p\mid b, \dots , p \mid b_{k-1}, p \nmid b_n$, potem $a_k = b_kc_0 + b_{k-1}c_1 + \dots + b_0c_k$, $p\mid a_n$(ker $k \leq r < n$) in $p \mid b_0, \dots p \mid b_{n-1}$. Sledi $p \mid b_n c_0 \implies p \mid b_n \lor p \mid c_0$ kar pa je protislovje.
+\end{proof}
+
+\begin{example}
+$X^n - p \in \mathbb{Q}[X]$, kjer je $p$ praštevilo je nerazcepen v $\mathbb{Q}[X]$, torej nima ničel, torej $\sqrt[n]{p} \notin \mathbb{Q}$
+\end{example}
+
+
+\section{Ničle polinomov in razširitve polj}
+\subsection{Pogled v zgodovino}
+
+$$\mathbb{N} \subseteq \mathbb{Z} \subseteq \underbrace{\mathbb{Q}}_{\text{ničle }\ nX - m} \subseteq \underbrace{\mathbb{R}}_{\text{ničle }\ X^2 - 1} \subseteq \underbrace{\mathbb{C}}_{\text{ničle }\ X^2 + 1}$$
+Polinom $a_0 + a_1X + a_2X^2 + \dots + a_n X^n, a_n \neq 0$ ima za poljuben $a_i$ ničlo v $\mathbb{C}$(po osnovnem izreku algebre).
+
+Že Babilonci so (cca. 4000 let naza) znali reševati linearne in kvadratne enačbe.
+\\
+\\
+Ničle kubičnega polinoma so v 16. stoletju znali reševati s pomočjo Cardanovih formul.
+\\
+\\
+$x^3 + px + q = 0 \implies x = \sqrt[3]{\frac{q}{2} + \sqrt{(\frac{q}{q})^2 - (\frac{p}{3})^3}} + \sqrt[3]{\frac{q}{2} - \sqrt{(\frac{q}{q})^2 - (\frac{p}{3})^3}}$ % pocutim se kot pri vajah RPja....
+
+Splošne enačbe tretje in četrte stopnje se da prevesti na to, za $n \geq 5$ pa so Ruffini, Abel in Galois dokazali, da obstajajo polinomi, za katere se rešitev ne da izraziti z njihovimi koeficienti in operacijami: $+,-,*,/, \sqrt[n]{\ }$.
+
+\begin{example}
+Poleg prejšnjih polj so za raziskovanje pomembna tudi polja:
+\begin{itemize}
+\item $\{a + bi \ | a,b \in \mathbb{Q} \}$
+\item $\{a + b\sqrt{2} \ | a,b \in \mathbb{Q} \}$
+\item $\mathbb{Z}_p$
+\item $\mathcal{F}[X] \hookrightarrow \mathcal{F}(x)$
+\end{itemize}
+\end{example}
+
+\subsection{Algebraični in transcedentni elementi}
+
+\begin{example}
+$\sqrt{2}$ je algebraično število, saj je ničla $X^2-2$, medtem ko število $\pi$ ni algebraično, je torej transcedentno(dokaz je zelo zahteven).
+\end{example}
+
+\begin{remark}
+V tem smislu lahko govorimo, da je $\sqrt{2}$ "bližje" $\mathbb{Q}$ kot $\pi$.
+\end{remark}
+
+\begin{definition}
+Naj bo polje $\mathcal{E}$ razširitev polja $\mathcal{F}$. Pravimo, da je $a \in \mathcal{E}$ \textbf{algebraičen nad $\mathcal{F}$}, ča obstaja tak $0 \neq f(X) \in \mathcal{F}[X]$, da velja $f(a) = 0$. 
+\end{definition}
+
+\begin{definition}
+Če $a$ ni algebraičen nad $\mathcal{E}$, potem rečemo, da je $a$ \textbf{transcedenten nad $\mathcal{F}$}.
+\end{definition}
+
+\begin{remark}
+Če je $\mathcal{E} = \mathbb{C}, \mathcal{F} = \mathbb{Q}$, takrat govorimo o algebraičnih oziroma transcedentnih števili.
+\end{remark}
+
+\begin{definition}
+Naj bo $a \in \mathcal{E}$ algebraičen nad $\mathcal{F}$, polinom $p(X) \in \mathcal{F}[X]$ je \textbf{minimalni polinom} elementa $a$, če velja:
+\begin{itemize}
+\item $p(X) \neq 0$
+\item $p(a) = 0$
+\item vodilni koeficient $p(X)$ je $0$
+\item izmed vseh polinomov, ki imajo $a$ za $0$ ima $p(X)$ najmanjšo stopnjo
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+Eksistenca in enoličnost sta očitni
+\end{remark}
+
+\begin{statement}
+Naj bo $a \in \mathcal{E}$ algebraičen nad $\mathcal{F}$ in naj bo $p(X) \in \mathcal{F}[X]$ neničelen polinom, da je njegovo vodilni koeficient $0$ ter $p(a) = 0$. Naslednje trditve so ekvivalentne:
+\begin{enumerate}
+\item $p(X)$ je minimalen polinom elementa $a$
+\item $p(X)$ je nerazcepen v $\mathcal{F}[X]$
+\item $(p(X)) = \{ f(X) \in \mathcal{F}[X] \ | \ f(a) = 0 \}$
+\end{enumerate}
+\end{statement}
+
+\begin{proof}
+(i) $\implies$ (ii):\\
+Naj bo $p(X) = g(X)h(X)$, potem $0 = p(a) = g(a)h(a) \implies g(a) = 0  \lor h(a) = 0$, ker pa je $f(X)$ minimalen, potem $st(g(X)) > st(p(X))$, kar pa je protislovje.\\ % ali je tu stroga neenakost, v definicije piše smo najmanjša stopnja?
+(ii) $\implies$ (iii):\\
+naj bo $p(X)$ nerazcepen, $\mathcal{I} := \{ f(X) \  | \ f(a) = 0\}$ je ideal za $\mathcal{F}[X]$, vemo da je $\mathcal{I}$ glavni ideal, tj $\mathcal{I} = (p_1(X))$, torej $p(X) \in \mathcal{I} = p_1(X)g(X)$, ker pa je $p(X)$ nerazcepen je $g(X)$ konstanten polinom in $(p(X)) = (p_1(X))$\\
+(iii) $\implies$ (i):\\
+$f(a) = 0$, $f(X) = p(X)g(X)$, torej ima $p(X)$ izmed vseh polinomov, katerih ničla je $a$ najmanjšo stopnjo.
+
+\end{proof}
+
+\begin{definition}
+Elementa $a \in \mathcal{E}$ je \textbf{algebraične stopnje $n$}, če je $n$ stopnja njegovega minimalnega polinoma.
+\end{definition}
+
+\begin{example}
+\begin{example_case}
+Elementi $\mathcal{F}$ so algebraične stopnje $1$ nad $\mathcal{F}$.
+\end{example_case}
+\begin{example_case}
+Vsak $z \in \mathbb{C}$ je algebraičen nad $\mathbb{R}$, saj je ničla $(X-z)(X-\overline{z}) = X^2 - (z + \overline{z})X \in \mathbb{R}[X]$ in če $z \in \mathbb{C} - \mathbb{R}$, je $z$ algebraičen stopnje $2$ nad $\mathbb{R}$.
+\end{example_case}
+\begin{example_case}
+$\mathcal{F}, \mathcal{F}[X](=\mathcal{E}$, $X \in \mathcal{F}[X]$ je očitno transcedenten nad $\mathcal{F}$ 
+\end{example_case}
+\begin{example_case}
+$\pi, e$ sta transcedentni števili(dokaz je dokaj zahteven, zato navadno transcedentna števila konstruiramo posebej, glej Liouvillova števila). %ziher narobe napisan
+\end{example_case}
+\end{example}
+
+\begin{remark}
+Algebraičnih števil je števno mnogo.
+\end{remark}
 
 
 \end{document}
