@@ -38,13 +38,13 @@
 \newcounter{environment:definition_counter}
 
 \newenvironment{definition}[1][\unskip]
-{\vspace{0.5cm}\refstepcounter{environment:definition_counter}\textbf{Definicija \arabic{environment:definition_counter}: \textbf{#1}}\itshape}
+{\vspace{0.5cm}\refstepcounter{environment:definition_counter}\textbf{Definicija \arabic{environment:definition_counter}: \textbf{#1}}}
 {\bigskip}
 
 \newcounter{environment:theorem_counter}
 
 \newenvironment{theorem}[1][\unskip]
-{\refstepcounter{environment:theorem_counter}\textbf{Izrek \arabic{environment:theorem_counter}:\textit{#1}}\\}
+{\refstepcounter{environment:theorem_counter}\textbf{Izrek \arabic{environment:theorem_counter}:\textit{#1}}\itshape\\}
 {\bigskip}
 
 \newcounter{environment:statement_counter}
@@ -98,7 +98,10 @@
 
 %operatorji
 \newcommand{\ord}{\ensuremath{\operatorname{red}}} % red grupe/elementa
+\renewcommand{\ker}{\ensuremath{\operatorname{Ker}}} % red grupe/elementa
 \newcommand{\Mod}[1]{ \ (\text{mod}\ #1)}
+
+
 
 \begin{document}	
 \title{Skripta za algebro 2}
@@ -5438,6 +5441,96 @@ Torej je $\{1, a, \dots, a^{n-1} \}$ baza $\mathcal{F}(a)$ nad $\mathcal{F}$ in 
 \begin{remark}
 V slučaju zgornjega izreka bomo namesto $\mathcal{F}[a]$ raje uporabljali $\mathcal{F}(a)$.
 \end{remark}
+
+Spomnimo se, da če vzamemo praštevilo $p$, je potem $\sqrt[n]{p}$ algebraične stopnje $n$ nad $\mathcal{Q}$, saj je njegov minimalni polinom $X^n - p$, ki je po Eisensteinovem kriteriju nerazcepen.
+
+Tako dobimo $\mathbb{Q}(\sqrt[n]{p}) = \{ \lambda_0 + \lambda_1 \sqrt[n]{p} + \dots  + \lambda_{n-1}\sqrt[n]{p^{n-1}}, \lambda_i \in \mathbb{Q} \}$
+
+
+\begin{remark}
+Za nek $a \in \mathcal{E}, \mathcal{F} \subseteq \mathcal{E}$, je $\varphi : \mathcal{F}[X] \to \mathcal{F}[a], f(x) \mapsto f(a)$ surjektivni (evalvacijski) homomorfizem in velja:
+\begin{enumerate}
+\item Če je $a$ algebraičen, potem $\ker(\varphi) = (p(X))$, kjer je $p(X)$ minimalnio polinom za $a$. Te lepo sledi iz izreka o izomorfizmih: 
+$$\underbrace{\mathcal{F}[X]/_{(p(X))}}_{\text{je polje, saj je } p(X) \text{nerazcepen}} \cong \mathcal{F}[a]$$
+Tudi od tod bi lahko dobili enakost $\mathcal{F}[a] = \mathcal{F}(a)$
+\item Če je $a$ transcedenten, potem $\ker(\varphi) = \{0\}$ in je zato $\varphi$ izomorfizem in torej $\mathcal{F}[a] \cong \mathcal{F}[X]$ in velja celo $\mathcal{F}(a) = \mathcal{F}(X)$(to preprosto vidimo tako, da poiščemo razširitev preslikave iz zgornje vrstice) in je zato $\mathcal{F}[a] \subsetneq \mathcal{F}(a)$
+\end{enumerate}
+\end{remark}
+
+
+\begin{remark}
+Izrek pove $[\mathcal{F}(a):\mathcal{F}]$ je stopnja algebraičnosti elementa $a$. Naj bo $\mathcal{L}$ razširitev $\mathcal{F}$. Ker je $a$ algebraičen nad $\mathcal{F}$, je algebraičen nad $\mathcal{L}$. Stopnja algebraičnosti nad $\mathcal{L}$ pa je manjša ali enaka kot stopnja algebraičnosti nad $\mathcal{F}$. $$[\mathcal{L}(a):\mathcal{L}] \leq [\mathcal{F}(a):\mathcal{F}]$$
+\end{remark}
+
+\begin{corollary}
+Naj bo $\mathcal{E}$ razširitev $\mathcal{F}$. Če so $a_1, \dots a_n \in \mathcal{E}$ algebraični nad $\mathcal{F}$, potem je polje $\mathcal{F}(a_1, \dots, a_n)$ končna razširitev $\mathcal{F}$ in velja $$\mathcal{F}[a_1, \dots, a_n] = \mathcal{F}(a_1, \dots, a_n)$$
+\end{corollary}
+
+\begin{proof}
+Dokažemo z indukcijo na $n$. Za $n = 1$ je to kar osnovni izrek.\\
+Predpostavimo lahko, da je $\mathcal{L} = \mathcal{F}[a_1, \dots a_{n-1}] = \mathcal{F}(a_1, \dots, a_{n-1}$ končna razširitev $\mathcal{F}$. Ker je $a$ algebraičen nad $\mathcal{F}$, potem je $a$ tudi algebraičen nad $\mathcal{L}$. Po osnevnem izreku je $\mathcal{L}(a_n)$ končna razširitev $\mathcal{L}$ in ker je $\mathcal{L}$ končna razširitev $\mathcal{F}$ je $\mathcal{L}(a_n)$ končna razširitev $\mathcal{F}$ (Končna razširitev končne razširitve je končna razširitev). Pokazati moramo torej $\mathcal{L}(a_n) = \mathcal{F}(a_1, \dots, a_n) = \mathcal{F}[a_1, \dots, a_n]$. Elementi $\mathcal{L}(a_n)$ so oblike $l_0 + l_1a_1 + \dots + l_ka_{k}^k$, vsak $l_i$ pa je oblike $f_i(a_1, \dots, a_{n-1})$ \\
+Sledi: vsak podkolobar, ki vsebuje $\mathcal{F}$ in vse $a$ mora vsebovati $\mathcal{L}(a_n)$, ki je celo polje in ki vsebuje vse $a_i$ in s tem dobimo željeno.
+
+\end{proof}
+
+\begin{remark}
+Če so torej $a_1, \dots, a_n$ algebraični nad $\mathcal{F}$, je $\mathcal{F}(a_1, \dots, a_n)$ končna razširitev $\mathcal{F}$. Velja pa tudi obratno. Tako je vsaka kočna razširitev $\mathcal{F}$ oblike $\mathcal{F}(a_1, \dots, a_n)$ za $a_i \in \mathcal{E}$(Včasih se za zelo pametno izkaže, da izberemo kar elementa iz baze). Izrek o primitivnem elementu nam pove, da če je $\ker(F) = 0$, potem lahko vse $a_i$ nadomestimo z enim samim elementom $a$ ($\mathcal{F}(a_1, \dots, a_n) = \mathcal{F}(a)$) in je torej vsaka končna razširitev enostavna. 
+\end{remark}
+
+\begin{example}
+$\mathbb{Q}(\sqrt{2}, \sqrt{3}) =  \mathbb{Q}(\sqrt{2} + \sqrt{2})$, inkluzija v eno smer je očitna, v drugo pa se je potrebno malo bolj potruditi. $(\sqrt{2} + \sqrt{3})^3 = 11\sqrt{2} + 9\sqrt{3}$ in torej $2\sqrt{2} = (\sqrt{2} + \sqrt{3})^3 - 9(\sqrt{2} + \sqrt{3})$. Tako smo $\sqrt{2}$ izrazili kot $f(\sqrt{2} + \sqrt{3}), f(X) \in \mathbb{Q}$. Podobmo naredimo še za $\sqrt{3}$ in dobimo $\mathbb{Q}(\sqrt{2} + \sqrt{3}) \subseteq \mathbb{Q}(\sqrt{2}, \sqrt{3})$, z malo razmisleka pa lahko ugotovim otudi $[\mathbb{Q}(\sqrt{2},\sqrt{3}):\mathbb{Q}] = 4$ 
+\end{example}
+
+\begin{remark}
+Naj bo $\mathcal{E}$ razširitev nad $\mathcal{F}$. Množica $\mathcal{A}$ vseh elementov iz $\mathcal{E}$, ki so algebraični nad $\mathcal{F}$ je podpolje polja $\mathcal{E}$ (ki vsebuje polje $\mathcal{F}$).
+\end{remark}
+
+\begin{proof}
+Pokazati je treba:
+$$a,b(\neq 0)  \in \mathcal{A} \implies a+b, a-b, ab, b^{-1} \in \mathcal{A}$$
+Vemo da velja $\mathcal{F}(a,b) = \mathcal{F}[a,b]$ končna razširitev $\mathcal{F}$ in je zato tudi algebraična. Vsak element iz $\mathcal{F}(a,b)$ je torej algebraičen nad $\mathcal{F}$ in pripada $\mathcal{A}$(posebej $a+b, a-b, ab, b^{-1}$).
+\end{proof}
+
+\begin{remark}
+Poseben primer: \underline{Polje} algebraičnih števol $\mathcal{A}$. To je tudi primer algebraične razširitve, ki ni končna, saj $[\mathbb{Q}(\sqrt[n]{1}):\mathbb{Q}] = n$ in če bi veljalo $[\mathcal{A}:\mathbb{Q}] \leq \infty$, sledilo: $n \mid [\mathcal{A}:\mathbb{Q}]$ za vsk $n$ (pride iz formule $[\mathcal{E}:\mathcal{F}] = [\mathcal{E}:\mathcal{L}][\mathcal{L}:\mathcal{F}]$), kar pa je protislovje.
+\end{remark}
+
+\subsection{Razpadna polja}
+Dan je $f(X) \in \mathcal{F}(X)$ in denimo, da nima ničel v $\mathcal{F}$, zanima nas, ali bi obstajala kakšna razširitev, v kateri bi $f(X)$ imel ničlo. (Če je $\mathcal{F} \subseteq \mathbb{C}$ potem nam odgovor da kar osnovni izrek algebre, a nas zanimajo bolj splošna polja).
+
+\begin{example}
+"Ponovno odkrijmo" $\mathbb{C}$. Vemo, da $X^2 + 1 \in \mathbb{R}$ nima ničel. Radi bi pokazali, da 
+$$\mathbb{R}[X]/_{(X^2 + 1)} \cong \mathbb{C}$$
+\end{example}
+
+\begin{proof}\leavevmode\\
+$$\varphi : \mathbb{C} \to \mathbb{R}[X]/_{(X^2 + 1)}, \varphi(a + bi) = (a+bX) + \underbrace{(X^2 + 1)}_{= \mathcal{I}}$$ Preprosto preverimo, da je $\varphi$ izomorfizem. $i \in \mathbb{C}$ je v smislu tega izmorfizma identifikacija z $X + \mathcal{I}$. 
+\end{proof}
+
+% Pogosto na ustnem izpitu
+\begin{theorem}
+Naj bo $\mathcal{F}$ polje in $f(X) \in \mathcal{F}[X]$ nekonstanten polinom. Potem ima $f(X)$ ničlo v kaki razširitvi $\mathcal{E}$ polja $\mathcal{F}$.
+\end{theorem}
+
+\begin{proof}
+Naj bo $p(X) \in \mathcal{F}[X]$ nerazcepen polinom, ki deli $f(X)$(ta obstaja, saj vemo, da je $F(X)$ produkt nerazcepnih polinomov). $\mathcal{I} = (p(X))$ in ker je $p(X)$ nerazcepen vemo da je $$\mathcal{E} := \mathcal{F}[X]/_{\mathcal{I}}$$ polje. Tako lahko na $\mathcal{F}$ gledamo kot na podpolje v smislu vložitve $ a \mapsto a + \mathcal{I}$ ($a + \mathcal{I} \neq 0$, saj $\mathcal{I}$ ne vsebuje konstantnih polinomov). Tako lahko poljuben element $a$ identificiramo z $a + \mathcal{I} \in \mathcal{E}$. Vzemimo sedaj $g(X) \in \mathcal{F}[X] (\subseteq \mathcal{E}[X])$. $g(X) = a_0 + a_1X + \dots a_nX, a_i \in \mathcal{F}$ in jih zaradi lažje predstave pišimo kot $a_i + \mathcal{I} \in \mathcal{E}$.\\
+$g(X + \mathcal{I})$ je tako vrednost polinoma $g(X) \in \mathcal{E}[X]$ v elementu $X + \mathcal{I} \in \mathcal{E}$. $g(X + \mathcal{I}) = (a_0 + \mathcal{I}) + (a_1 + \mathcal{I})(X + \mathcal{I})  + \dots + (a_n + \mathcal{I})(X + \mathcal{I})^n = (a_0 + \mathcal{I}) + (a_1X + \mathcal{I}) + \dots + (a_nX^n + \mathcal{I}) = g(X) + \mathcal{I}$. Za $g(X) = f(X)$ tako dobimo $f(X + \mathcal{I}) = \underbrace{f(X) + \mathcal{I} = \mathcal{I}}_{f(X) \in \mathcal{I}} = 0$\\
+Tako je $X + \mathcal{I} \in \mathcal{E}$ ničla polinoma $f(X)$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
 
