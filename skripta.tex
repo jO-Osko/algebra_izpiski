@@ -5518,9 +5518,145 @@ $g(X + \mathcal{I})$ je tako vrednost polinoma $g(X) \in \mathcal{E}[X]$ v eleme
 Tako je $X + \mathcal{I} \in \mathcal{E}$ ničla polinoma $f(X)$.
 \end{proof}
 
+\begin{theorem}
+Naj bo $\mathcal{F}$ polje in $f(X) \in \mathcal{F}[X]$ nekonstanten polinom z vodilnim koeficientom $c \in \mathcal{F}$. Potem obstaja taka razširitev $\mathcal{E}$ polja $\mathcal{F}$, da je $f(X) = x(X-a_1)^{k_1} \dots (X-a_r)^{k_r}$ za neke $a_i \in \mathcal{F}$.
+\end{theorem}
+
+\begin{proof}
+Izrek pove, da obstaja razširitev $\mathcal{E}_1$ in $a_1 \in \mathcal{E}_1. f(a_1) = 0$. Sledi da $f(X) = (X-a_i)g(X)$ na nek $g(X) \in \mathcal{E}_1[X]$. Potem induktivno obstaja razširitev $\mathcal{E}_2 \supseteq \mathcal{E}_1 \supseteq \mathcal{F}$ in $a_2 \in \mathcal{E}_2. g(a_2) = 0$.
+$f(X) = (X-a_1)(X-a_2)h(X), h(X) \in \mathcal{E}_2[X]$. Tako nadaljujemo do konca.
+\end{proof}
+
+\begin{remark}
+Tako vidimo, da za vsak nekonstanten polinom $f(X) \in \mathcal{F}[X]$ obstaja razširitev, v kateri ima $f(X)$ toliko ničel štetih z njihovo večkratnostjo, kot je njegova stopnja.
+\end{remark}
+
+\begin{definition}
+Pravimo, da polinom $f(X) \in \mathcal{F}[X]$ razpade v polju $\mathcal{E}$, le je $f(X)$ produkt lineranih polinomov iz $\mathcal{E}[X]$. Če $f(X)$ razpade v $\mathcal{E}$, ne razpade pa v nobenem podpolju $\mathcal{E}$, $\mathcal{E}$ imenujemo \textbf{razpadno polje} $f(X)$.
+\end{definition}
+
+\begin{theorem}
+Za vsak nekonstanten polinom $f(X) \in \mathcal{F}[X]$ obstaja razpadno polje.
+\end{theorem}
+
+\begin{proof}
+Naj bo $\mathcal{E}$ polje iz prejšnjega izreka. $f(X) = c(X-a_1)^{k_1} \dots (X-a_r)^{k_r}, a_i \in \mathcal{E}$. Vsako podpolje $\mathcal{E}$, v katerem $f(X)$ razpade mora vsebovati $a_i$, torej ja to razpadno polje $\mathcal{F}(a_1, \dots, a_n)$
+\end{proof}
+
+\begin{remark}
+$a_i$ so ničle $f(X) \in \mathcal{F}[X]$, zato so to algebraični elementi nad $\mathcal{F}$, tako je razpadno polje vselej \textbf{končna razširitev}.
+\end{remark}
+
+\begin{example}
+Kaj je razpadno polje $X^2 + 1$, odgovor je odvisien od izbire $\mathcal{F}$.
+\begin{itemize}
+\item $\mathcal{F} = \mathbb{Q}$ Seveda $X^2+ 1$ razpade v $\mathbb{C}$, razapdno polje pa je že $\mathbb{Q}(i,-i) = \{ a + bi | \ a,b \in \mathbb{Q} \}$
+\item $\mathcal{F} = \mathbb{R}$, razpadno polje je $\mathbb{R}(i) = \mathbb{C}$
+\item $\mathcal{F} = \mathbb{C}$ $X^2 + 1$ razpade že v $\mathcal{F}$, zato je to že kar razpadno polje. 
+\item $\mathcal{F} = \mathbb{Z}_2$, $(X^2 + 1) = (X + 1)^2$ , zato razpade že kar v $\mathcal{F}$
+\end{itemize}
+\end{example}
 
 
+\begin{remark}
+Razpadno polje poljubnega nekonstantnega polinoma obstaja, ni pa enolično določeno.
+\end{remark}
 
+\begin{proof}
+Poljubni razpadni polji istega polnoma sta si izomorfni
+\end{proof}
+
+\begin{remark}
+Ni dokaza
+\end{remark}
+
+
+\subsection{Algebraično zaprta polja}
+\begin{definition}
+Polje $\mathcal{Z}$ je \textbf{algebrično zaprto}, le ima vsak nekonstanten polinom iz $\mathcal{Z}[X]$ vsaj eno ničlo v $\mathcal{Z}$
+\end{definition}
+
+
+\begin{remark}
+Osnovni izrek algebre: $\mathbb{C}$ je algebraično zaprto polje.
+\end{remark}
+
+
+\begin{remark}
+Naslednje trditve so si ekvivalentne:
+\begin{itemize}
+\item $\mathcal{Z}$ je algebraično zaprto
+\item Vsak nekonstanten polinom iz $\mathcal{Z}[X]$ je produkt linearnih faktorjev iz $\mathcal{Z}[X]$, $f(X) = c(X-a_1)^{k_1}\dots (X-a_r)^{k_r}, a_i \in \mathcal{Z}$
+\item Vsak nekonstanten polinom iz $\mathcal{Z}[X]$ ima toliko ničel štetih z njivovo večkratnostjo, kot je njegovo stopnja.
+\end{itemize}
+\end{remark}
+
+\begin{statement}
+Naj bo $\mathcal{L}$ algebraična razširitev $\mathcal{F}$, če je $\mathcal{E}$ razširitev $\mathcal{L}$ i nje $X \in \mathcal{E}$ algebraičen nad $\mathcal{L}$, potem je algebraičen tudi nad $\mathcal{F}$.
+\end{statement}
+
+
+\begin{proof}
+Po predpostavki je $a_0 + a_1X + \dots a_nX^n = $ za neke $a_i \in \mathcal{L}$, ki niso vsi 0. Torej je $X$ algebraičen že nad poljen $\mathcal{F}(a_0, \dots, a_n)$, to polje pa je končna razširitev $\mathcal{F}$, saj so $a_i \in \mathcal{L}$ in so zato algebraični nad $\mathcal{F}$. Po znanen izreku je $(\mathcal{F}(a_0, \dots, a_n))(X)$ končna razširitev $\mathcal{F}(a_0, \dots, a_n)$ in ker je končna razširitev končne razširitve spet končna razširitev, je to tudi končna razširitev $\mathcal{F}$, vsak element iz končne razširitve pa je algebraičen, torej tudi $X$.
+\end{proof}
+
+
+\begin{corollary}
+Algebraična razširitev algebraične razširitve je sama algebraična.
+\end{corollary}
+
+
+\begin{definition}
+Polje $\mathcal{A}$ se imenuje \textbf{algebraično zaprtje} poja $\mathcal{F}$, če je algebraična zaprto in je algebraična razširitev $\mathcal{F}$.
+\end{definition}
+
+\begin{example}
+$\mathbb{C}$ je algebraično zaprtje $\mathbb{R}$, ni pa algebraično zaprtje $\mathbb{Q}$, saj ni algebraična razširitev.
+\end{example}
+
+
+\begin{theorem}
+Naj bo $\mathcal{F}$ podpolje algebraično zaprtega polja $\mathcal{Z}$. Potem je množica $\mathcal{A}$ vseh elementov iz $\mathcal{Z}$, ki so algebraični nad $\mathcal{F}$ algebraično zaprtje $\mathcal{F}$.
+\end{theorem}
+
+\begin{proof}
+$f(X) \in \mathcal{A}[X]$ naj bo nekonstanten polinom, ker $\mathcal{A} \subseteq \mathcal{Z}$ in je $\mathcal{Z}$ algebraično zaprto ima $f(X)$ ničlo $x \in \mathcal{Z}$. $x$ je torej algebraičen nad $\mathcal{A}$, ki je sam po sebi algebraična razširitev $\mathcal{F}$ in je zato po trditvi $x$ tudi algebraičen nad $\mathcal{F}$. To pomeni, $x \in \mathcal{A}$. 
+\end{proof}
+
+\begin{corollary}
+Polje algebraičnih števil je algebraično zaprtje polja $\mathbb{Q}$.
+\end{corollary}
+
+
+\begin{theorem}
+Vsako polje ima algebraično zaprtje. Poljubni algebraični zaprtji istega polja sta si izomorfni.
+\end{theorem}
+
+\begin{remark}
+Ni dokaza
+\end{remark}
+
+\begin{remark}
+Iz tega izreka seveda sledi obstoj razpadnega polja posameznih polinomov
+\end{remark}
+
+
+\subsection{Končna polja}
+
+Cilj: Klasifikacija vseh končnih polj, od katerih zanekrat poznamo $\mathbb{Z}_p$, kjer je $p$ praštevilo.
+
+Vemo, da ima končno polje končno karakteristiko $p$ vsebuje izomorfno kopijo $\mathbb{Z}_p$, vsako polje s karakteristiko $0$ pa kopijo $\mathbb{Z}$% \mathbb{Q} v zapiskih ?
+, zato smemo predpostaviti, da vsako kočno polje s karakteristiko $p$ vsebuje $\mathbb{Z}_p$
+
+\begin{lemma}
+Če je $\mathcal{E}$ končno polje s karakteristiko $p$, je $|\mathcal{E}| = p^n, n \in \mathbb{N}$
+\end{lemma}
+
+\begin{proof}
+$\mathbb{Z}_p \subseteq \mathcal{E}$ in seveda $$n:=[\mathcal{E}:\mathbb{Z}_p] < \infty$$
+Naj bo $\{b_1, \dots, b_n \}$ baza $\mathcal{E}$ nad $\mathbb{Z}_p$. Vsak element iz $\mathcal{E}$ torej lahko zapišemo na en sam način kot $\lambda_1 b_1 + \dots \lambda_n b_n, \lambda_i \in \mathbb{Z}_p$, število vseh možnih zapisov je torej produkt števila zapisov za vsako komponento $|\mathcal{E}| = p * p \dots p = p^n$.
+\end{proof}
+Denimo, da je $|\mathcal{E}| = p^n$, $\mathcal{E}^* - \{0\}$ je množica vseh obrnljivih elementov v $\mathcal{E}$ in je grupa za množenje. Za $x \in \mathcal{E}^*$ velja $x^{|\mathcal{E}^*|} = 1$, torej $x^{p^n-1} = 1$ za neničelne $x$, če to formulo pomnožimo z $x$ dobimo $$\forall x \in \mathcal{E}. x^{p^n} = x$$.
 
 
 
