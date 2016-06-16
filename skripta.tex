@@ -17,6 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage{multirow}
 \usepackage{mathtools}
+\usepackage{textcomp}
 
 \usepackage{tikz}
 
@@ -5658,14 +5659,121 @@ Naj bo $\{b_1, \dots, b_n \}$ baza $\mathcal{E}$ nad $\mathbb{Z}_p$. Vsak elemen
 \end{proof}
 Denimo, da je $|\mathcal{E}| = p^n$, $\mathcal{E}^* - \{0\}$ je množica vseh obrnljivih elementov v $\mathcal{E}$ in je grupa za množenje. Za $x \in \mathcal{E}^*$ velja $x^{|\mathcal{E}^*|} = 1$, torej $x^{p^n-1} = 1$ za neničelne $x$, če to formulo pomnožimo z $x$ dobimo $$\forall x \in \mathcal{E}. x^{p^n} = x$$.
 
+Seveda nas zanima, kako poiskati končna polja. Končne razširitve polja $\mathbb{Z}_p$ bodo končna polja s $p^n$ elementi.
+
+Razpadna polja polinomov so končne razširitve. Načeloma lahko izberemo katerikoli polinom iz $\mathbb{Z}_p[X]$, njegovo rzapadno polje bo končna razširitev. Zato zadošča obravnavati polinom iz naslednje leme:
+
+\begin{lemma}
+Če je $\mathcal{E}$ polje s $p^n$ elementi, potem je $\mathcal{E}$  
+razpado polje polinoma $X^{p^n} - X \in \mathbb{Z}_p[X]$ 
+\end{lemma}
+
+\begin{proof}
+$f(X) = X^{p^n} - X$. Prejšnja lema pove, da je vsak $x \in \mathcal{E}$ ničla $f(X)$. Torej ima $f(X)$ toliko ničel v $\mathcal{E}$ kot je njegova stopnja. Zato $f(X)$ v $\mathcal{E}$ razpade. Ker je $\mathcal{E}$ množica vseh njegovih ničel, $f(X)$ ne more razpasti v pravem podpolju $\mathcal{E}$. Zato je razpadno polje.
+\end{proof}
+
+\begin{remark}
+Lema pravi, da če polje s $p^n$ elementi obstaja, potej je razpadno polje $f(X)$. Toda ali tako polje sploh obstaja?
+\end{remark}
 
 
+\begin{lemma}
+Če je $\mathcal{K}$ komutativen kolobar s karakteristiko $p$, potem je
+$$\varphi : \mathcal{K} \to \mathcal{K}, \varphi(x) = x^p$$
+endomorfizem $\mathcal{K}$
+\end{lemma}
+
+\begin{proof}
+$\varphi(xy) = (xy)^p = x^py^p = \varphi(x)\varphi(y)$
+Za dokaz $\varphi(x+y) = \varphi(x) + \varphi(x)$ pa potrebujemo enakost: $(x+y)^p = x^p + y^p$. Po binomskem izreku vemo da velja: 
+$$(x+y)^p = x^p + \binom{p}{1}x^{p-1}y + \dots + y^p$$
+Ker $p \mid \binom{p}{k}; k =1, \dots, p-1$, v kolobarju s karakteristiko $p$ velja $\varphi(x+y) = (x+y)^p = x^p + y^p = \varphi(x) + \varphi(y)$
+\end{proof}
 
 
+\begin{remark}
+Zgoraj uporabljeni endomorfizem imenujemo \textbf{Frobeniusev endomorfizem}.
+\end{remark}
+
+Če je $\mathcal{K} = \mathcal{E}$ končno polje, je $\varphi$ avtomorfizem. 
+Ker je $\mathcal{E}$ polje je $\ker(\varphi)$ ideal in velja $\ker(\varphi) = \{0\}$ ali $\mathcal{E}$, torej $\varphi$ je injektiven in če je $\mathcal{E}$ končen tudi surjektiven.
+
+$(\varphi \circ \varphi)(x) = (x^p)^p = x^{pp} = x^{p^2}$ in torej:
+$$\varrho(x) = (\underbrace{\varphi \circ \dots \circ \varphi}_{n-\text{krat}})(x) = x^{p^n}$$
+
+\begin{lemma}
+Razpadno polje polinoma $X^{p^n} - X $ nad $\mathbb{Z}_p$ ima $p^n$ elementov.
+\end{lemma}
+
+\begin{proof}
+Naj bo $\mathcal{E}$ razpadno polje, torej najmajše polje, ki vsebuje vse ničle tega polinoma. Naj bo $\mathcal{E}_0 := \{x \in \mathcal{E} | x^{p^n} = x\}$ množica vseh ničel tega polnoma v $\mathcal{E}$.
+$\varrho$ je endomorfizem in $\mathcal{E}_0 = \{ x \in \mathcal{E} | \varrho(x) = x\}$ Pokazati moramo, da je $\mathcal{E}_0$ podpolje $\mathcal{E}$. To preprosto poračunamo: $x, y \in \mathcal{E}_0$ $\varrho(x-y) = x-y, 1 \in \mathcal{E}_0, \varrho(xy) = xy, \varrho(x^{-1}) = x^{-1}$ in ato celo $\mathcal{E} = \mathcal{E}_0$ (saj je $\mathcal{E}$ najmanjše ple, ki vsebuje vse ničle, množica $\mathcal{E}_0$ vseh ničel pa je že polje.) Pokažimo še, da velja $|\mathcal{E}| = |\mathcal{E}_0| = p^n$. Ker ima $X^{p^n} - X$ največ toliko ničel kot je njegova stopnja, torej $p^n$, moramo dokazati, da so vse ničle enostavne. Od tod bo sledilo, da je toliko različnih ničel/elementov v $\mathcal{E}$ kot je spotnja polinoma. Vemo $f(X) = X(X^{p^n-1} - 1)$. $0$ je seva enostavna ničla, saj ni ničla $X^{p^n} - 1$. Naj bo $a \in \mathcal{E}-\{0\}$, pokažimo, da je $a$ enostavna ničla $f(X)$. 
+$a^{p^n} = a \implies a^{p^n-1} = 1$, torej $f(X) = X^{p^n} - X = X(X^{p^n-1} - 1) = X(X^{p^{n-1}} - a^{p^n-1}) = X(X-a) (X^{p^n-2} + X^{p^n-3}a + \dots + Xa^{p^n-3} + a^{p^n - 2}) = (X-a)g(X)$, kjer pa $g(a) = -a^{p^n-1} \neq 0 = -1$ 
+\end{proof}
+
+\begin{remark}
+Polje iz zgornje leme (polje z $p^n$ elementi imenujemo \textbf{Galoisevo polje} (s $p^n$ elementi) in ga oznalujemo z $\mathcal{GF}(p^n)$
+\end{remark}
+
+Povzemimo vse z izrekom:
+\begin{theorem}
+Za vsako praštevilo $p$ in vsako naravno število $n$ obstaja polje $\mathcal{GF}(p^n)$ s $p^n$ elementi. Vsako končno polje je izomorfno enemu izmed teh polj.
+\end{theorem}
+
+Za $n=1: \mathcal{GF}(p) = \mathbb{Z}_p$, kako pa računamo v $\mathcal{GF}(p^n)$ za večje $n$? Kot abelova grupa za $+$ je $\mathcal{GF}(p^n) \cong \underbrace{\mathbb{Z}_p \oplus \dots \oplus \mathbb{Z}_p}_{n-\text{krat}}$ 
+
+Izkaže pa se, da je $\mathcal{GF}(p^n)^*$ ko grupa za noženje vseh neničelnih elementov ciklična. Torej je $\mathcal{GF}(p^n) = \{0,1, a, a^2, \dots, a^{p^n-2} \}$
 
 
+\begin{remark}
+Če ima polje karakteristiko $p$ imanjo tudi njegova podpolje in njegove rezširitve karakteristiko $p$.
+\end{remark}
+
+\subsection{Konstrukcije z ravnilom in šestilom}
+Iz stare Grčije so se ohranili trije osnovni problemi s šestilom in ravnilom:
+\begin{enumerate}
+\item \textbf{Podvojitev kocke}: Ali lahko samo z ravnilom in šestilom iz dane kocke konstruiramo kocko z dvakratno prostornino?
+\item \textbf{Trisekcija kota}: Ali lahko samo z ravnilom in šestilo vsako kot razdelimo na $3$ enake dele.
+\item \textbf{Kvadratura kroga}: Ali lahko samo z ravnilom in šestilom iz danega kroga konstruiramo kvadrat z isto ploščino?
+\end{enumerate}
 
 
+Odgovor je \textbf{NE} na vsa vprašanja. Prvega in drugaga je podal P. Wantzel leta 1837, tretjega pa F. von Lindemann leta 1882
+
+\begin{definition}
+Ravnilo je neoznačeno, s pomočjo ravnila lahko čez dve že obstoječi točki potegnemo premico. S pomočjo šestila lahko naredimo krožnico s središčem v eni izmed obstoječih točk in radijem, ki je enak oddaljenosti središča do katere druge točke. Tako dobimo kot presečišča krožnic in premic nove točke, ki jih lahko uporabimo za konstrukcije nocih objektov.
+\end{definition}
+
+Da bi lažje delali naše probleme "preoblečemo". 
+\begin{enumerate}
+\item Podvojitev kocke poenostavimo, na problem podvojitve kocke z robom $1$. Postavimo sedaj kocko v koordinatni sistem: $T_0(0,0,0), T_1(1,0,0)$. Ali lahko sedaj dobimo "podvojeno kocko", ki bo imelo stranico dolžine $\sqrt[3]{2}$. Torej nas zanima, ali lahko iz točk $T_0, T_1$ s šestilom in ravnilo skonstruiramo $Z(0, \sqrt[3]{2})$
+
+\item Nekatere kote lahko raztretnjinimo (npr $\frac{\pi}{2}$), kaj pa recimo kot $60$\textdegree ? Vzemimo $T_1 = (0,0), T_2 = (1,0), T_3 = (\frac{1}{2}, \frac{\sqrt{3}}{2})$ Vprašanje se torej glasi, ali lahko s pomočjo ravnila, šestila in vnaprej postavljenih točk $T_1, T_2, T_3$ skonstruiramo točko $Z(\cos 20\text{\textdegree}, \sin 20\text{\textdegree})$
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\draw (4,0) coordinate (a) node[right] {$T_2$}
+    -- (0,0) coordinate (b) node[left] {$T_1$}
+    -- (2,3.4641016151377544) coordinate (c) node[above right] {$T_3$};
+    
+\draw[dashed] (0,0) -- (3.7587704831436337, 1.3680805733026749) coordinate (z) node[above right] {$Z$};
+
+\draw[dashed] (4,0) arc (0:60:4cm);
+
+\node at (z) {\textbullet};
+
+\end{tikzpicture}
+\caption{Skica konstrukcije}
+\end{figure}
+
+\item Ali lahko z ravnilom in šestilom iz točk $T_1(0,0), T_2(1,0)$ konstuiramo $Z(\sqrt{\pi}, 0)$?
+
+\end{enumerate}
+
+Splošna situacija. Naj bo $\mathcal{T}$ dana množica točk (v naših preimerih $\mathcal{T} = \{T_1, T_2\}$, kakšne so lastnosti vseh točk, ki jih lahko konstruiramo iz $\mathcal{T}$
+
+Bistvo pristopa: Če $\mathcal{T} = \{ (a_i, b_i) \}$, potem obravanvamo polje $\mathcal{F}$, ki vsebuje vsa števila $a_i, b_i$ ($\mathcal{F} \subseteq \mathbb{R}$), torej $\mathcal{T} = \mathbb{R} \times \mathbb{R}$ in nas zanimajo lastnosti, ki jih dobimo iz $\mathcal{F} \times \mathcal{F}$. To so v prvem in tretjem problemu $\mathcal{F} = \mathbb{Q}$, v drugem pa $\mathcal{F} = \mathbb{Q}(\sqrt{3})$
 
 
 \end{document}
