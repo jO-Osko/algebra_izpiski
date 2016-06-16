@@ -5753,14 +5753,17 @@ Da bi lažje delali naše probleme "preoblečemo".
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
-\draw (4,0) coordinate (a) node[right] {$T_2$}
-    -- (0,0) coordinate (b) node[left] {$T_1$}
-    -- (2,3.4641016151377544) coordinate (c) node[above right] {$T_3$};
+\draw (4,0) coordinate (a) node[right] {$(1,0)$}
+    -- (0,0) coordinate (b) node[left] {$(0,0)$}
+    -- (2,3.4641016151377544) coordinate (c) node[above] {$(\frac{1}{2}, \frac{\sqrt{3}}{2})$};
     
-\draw[dashed] (0,0) -- (3.7587704831436337, 1.3680805733026749) coordinate (z) node[above right] {$Z$};
+\draw[dashed] (0,0) -- (3.7587704831436337, 1.3680805733026749) coordinate (z) node[above right] {$(\cos 20\text{\textdegree}, \sin 20\text{\textdegree})$};
 
 \draw[dashed] (4,0) arc (0:60:4cm);
 
+\node at (a) {\textbullet};
+\node at (b) {\textbullet};
+\node at (c) {\textbullet};
 \node at (z) {\textbullet};
 
 \end{tikzpicture}
@@ -5774,6 +5777,84 @@ Da bi lažje delali naše probleme "preoblečemo".
 Splošna situacija. Naj bo $\mathcal{T}$ dana množica točk (v naših preimerih $\mathcal{T} = \{T_1, T_2\}$, kakšne so lastnosti vseh točk, ki jih lahko konstruiramo iz $\mathcal{T}$
 
 Bistvo pristopa: Če $\mathcal{T} = \{ (a_i, b_i) \}$, potem obravanvamo polje $\mathcal{F}$, ki vsebuje vsa števila $a_i, b_i$ ($\mathcal{F} \subseteq \mathbb{R}$), torej $\mathcal{T} = \mathbb{R} \times \mathbb{R}$ in nas zanimajo lastnosti, ki jih dobimo iz $\mathcal{F} \times \mathcal{F}$. To so v prvem in tretjem problemu $\mathcal{F} = \mathbb{Q}$, v drugem pa $\mathcal{F} = \mathbb{Q}(\sqrt{3})$
+
+
+V prvem koraku konstrukcije dobimo točko $A$, za katero velja ena izmed možnosti
+\begin{enumerate}
+\item (pp) $A$ je presečišče dveh premic doblenih iz $\mathcal{T}$
+\item (pk) $A$ je presečišče premice in krožnice dobljene iz $\mathcal{T}$
+\item (kk) $A$ je presečišče dveh krožnic dobljenih iz $\mathcal{T}$
+\end{enumerate}
+V drugem koraku torej $\mathcal{T} \cup \{A\}$ dodamo točko $B$, do katere pridemo na enak način. Tako nadaljujemo in dobimo $\mathcal{T}'$. Zanima nas, do katerih točk pridemo v končno mnogo korakih. Tako dobljene točke $(A,B, \dots )$ imenujemo \textbf{konstruirane točke iz množice $\mathcal{T}$}.
+
+\begin{theorem}
+Naj bo $\mathcal{T}$ množica točk v ravnini in $\mathcal{F}$ tako podpolje $\mathbb{R}$, da je $\mathcal{T} \subseteq \mathcal{F} \times \mathcal{F}$. Če je točka $Z = (a,b)$ konstruirana iz množice $\mathcal{T}$ sta števili $a, b$ algebraični nad $\mathcal{F}$, stopnja algebraičnosti pa je potenca števila $2$.
+\end{theorem}
+
+\begin{proof}
+Naj bo $A$ doblena v prvem koraku kot zgoraj. Dokazali bomo, da obstaja tako polje $\mathcal{L}$, da je $A \in \mathcal{L} \times \mathcal{L}$ in $[\mathcal{L}:\mathcal{F}] \in \{1,2,4\}$ Ko s tem postopkom nadaljujemo v naslednjem koraku dobimo točko $B$ in polje $\mathcal{M}$: $B \in \mathcal{M} \times \mathcal{M}$ in $[\mathcal{M}:\mathcal{L}] \in \{1,2,4\}$ kar nam da $[\mathcal{M}:\mathcal{F}] = 2^u2^v; u,v \in \{0,1,2\}$. Najdaljujmo s postopkom in dobimo polje $\mathcal{E}, Z \in \mathcal{E} \times \mathcal{E}$ in $[\mathcal{E}:\mathcal{F}] = 2^w$. Naj bo $Z(a,b$, $\mathcal{F}(a) \subseteq \mathcal{E}$, ker je $\mathcal{E}$ končna razširitev je $<$ algebraičen nad $\mathcal{F}$ in 
+$$[\mathcal{F}(a):\mathcal{F}] \mid [\mathcal{E}:\mathcal{F}] = 2^w \implies \underbrace{[\mathcal{F}(a):\mathcal{F}]}_{\text{stopnja slgebraičnosti } a} = 2^k$$
+
+Če je premica dobljena iz $\mathcal{T}$, je njena enačba
+\begin{equation}
+y = \alpha x + \beta \text{ ali } x = \gamma; \alpha, \beta, \gamma \in \mathcal{F}
+\end{equation}
+$\alpha = \frac{y_2 - y_1}{x_2 - x_1}, x_i, y_i \in \mathcal{F}$
+
+Če pa je krožnica dobljena iz $\mathcal{T}$, je njena enačba
+\begin{equation}
+x^2 + y^2 = \delta x + \epsilon y + \zeta; \ \delta, \epsilon, \zeta \in \mathcal{F}
+\end{equation}
+
+Dokazati moramo, da so presečišča posameznih objektov spet točke s komponentami v $\mathcal{F}$
+
+
+\begin{enumerate}
+\item Presečišče premice z enačbo od prej in premice z enačbo: $y = \alpha' x + \beta' \text{ ali } x = \gamma'$ je točka s komponentama v $\mathcal{F}$
+
+\item Presečišče premice in krožnice z zgornjima enačbama je točka $A(x,y)$, kjer za $x$ velja kvadratna enačba, ki ima koeficiente v $\mathcal{F}$:
+$$x^2 + (\alpha x + \beta)^2 = \delta x + \epsilon(\alpha x + \beta) + \zeta$$ 
+
+Imamo dve možnosti: če je $x \in \mathcal{F}$ smo končali, če pa $x \neq \mathcal{F}$ potem je algebraične stopnje $2$ nad $\mathcal{F}$ torej $[\mathcal{F}(x):\mathcal{F}] = 2$, podoben sklep naredimo za $y$ in dobimo $\mathcal{L} := \mathcal{F}(x,y)$, za katerega velja: $[\mathcal{L}:\mathcal{F}] = [(\mathcal{F}(x))(y):\mathcal{F}(x)][\mathcal{F}(x):\mathcal{F}] \in \{1,2,4\}$ 
+
+\item Presečišče krožnice z enačbo od prej in krožnice z enačbo: $x^2 + y^2 = \delta' x + \epsilon' y + \zeta'$: Enačbi odštejemo in dobimo 
+$$(\delta - \delta')x + (\epsilon - \epsilon')y + (\zeta - \zeta') = 0$$
+Če privzamemo, da sta krožnici različni, smo s tem prevedli problem na presečišče premice in krožnice.
+\end{enumerate}
+
+\end{proof}
+
+
+\begin{corollary}
+Iz dane kocke z ravnilom in šestilom ne moremo konstruirati ocke z dvakratno prostornino.
+\end{corollary}
+
+\begin{proof}
+Če bi lahko konstruirali bi $Z=(\sqrt[3]{2},0)$ lahko konstruirali iz $\mathcal{T} = \{ (0,0,0), (1,0,0)$; $\mathcal{F} = \mathbb{Q}$. Po izreku bi porem $\sqrt[3]{2}$ bilo algebraično število stopnje $2^k$, stopnja $\sqrt[3]{2}$ pa je $3$, saj je $X^3 - 2 \in \mathbb{Q}[X]$ nerazcepen.
+\end{proof}
+
+\begin{corollary}
+Kota $60$\textdegree z ravnilom in šestilom ne moremo razdeliti na $3$ enake dele.
+\end{corollary}
+
+\begin{proof}
+Pokazati moramo, do točke $Z(\cos 20\text{\textdegree}, \sin 20\text{\textdegree})$ ne moremo konstruirati iz $\mathcal{T} = \{(0,0), (1,0), (\frac{1}{2}, \frac{\sqrt{3}}{2} \}$; $\mathcal{F} = \mathbb{Q}(\sqrt{3})$. Pokazali bomo, da $\cos 20\text{\textdegree}$ ni algebraično število stopnje $2^k$ nad $\mathbb{Q}(\sqrt{3})$, natančneje, število je algebraične stopnje $3$.
+$\cos 3x + i\sin 3x = (\cos x + i\sin x)^3$, realni del: $\cos 3x = (\cos x)^3  - 3\cos x(1-\cos^2 x) = 4\cos^3 x - 3\cos x$ Vstavimo $x = 20$\textdegree in $v = \cos x$
+$\frac{1}{2} = 4v^3 - 3v$ torej $8v^3 - 6v - 1 = 0$ Vzemimo torej polinmo $1 + 6X - 8X^3 \in \mathbb{Q}[X] \subseteq \mathbb{Q}(\sqrt{3})[X]$ in pokažimo, da je to minimalni polinom nad $\mathbb{Q}(\sqrt{3})$, torej da nima ničle v $\mathbb{Q}(\sqrt{3})$(ker ima stopnjo $3$ to pomeni, da j nerazcepen). Recimo, da je $a$ ničla. $b := 2a \in \mathbb{Q}(\sqrt{3})$. Dobimo $1+3b -b^3 = 0$, in $b = p + r\sqrt{3}; p,r \in \mathbb{Q}$, $1 + 3q - q^3 - 9qr^2 = 0$ in $r(1-q^2 - r^2) = 0$ torej $r = 0 $ ali $1- q^2 - r^2 = 0$. Če $r=0$, $1+3q - q^3 = 0$, $q = \frac{m}{n}$, dobimo $1 + 3\frac{m}{n} - \frac{m^3}{n^3} = 0 \implies n^3 + 3mn - m^3 = 0$ kar pomeni, da $m = \pm 1, n = \pm 1$, kar pa je protislovje. Če pa $r^2 = 1-q^2$ potem velja $1-3s +s^3 = 0, s \in \mathbb{Q}$, kar pa je spet protislovje. 
+\end{proof}
+
+
+\begin{remark}
+Točka, ki jih lahko konstruiramo iz $\mathcal{T} = \{(0,0), (1,0) \}$ imenujemo \textbf{konstruktibilne točke}, njihove komponente pa \textbf{konstruktibilna števila}.
+\end{remark}
+
+\begin{corollary}
+Iz danega kroga z ravnilom in šestilom ne moremo konstruirati kvadrata z isto ploščino.
+\end{corollary}
+
+\begin{proof}
+Če bi lahko bi $Z(\sqrt{\pi}, 0)$ lahko konstrirali iz $\mathcal{T} = \{(0,0), (1,0) \}$, kar bi pomenilo, da je $\sqrt{\pi}$ algebraično število in torej tudi $\pi$ algebraično število, kar pa ni res, saj je $\pi$ transcedentno.
+\end{proof}
 
 
 \end{document}
