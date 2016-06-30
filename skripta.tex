@@ -1857,7 +1857,7 @@ $$[a] + [b] = [a+b] = [b+a] = [b] + [a]$$
 
 
 \begin{statement}
-Aditivna grupa $\mathbb{Z}_n$ postane\textbf{komutativen kolobar} $\mathbb{Z}_n$, če vpeljemo množenje s predpisom:
+Aditivna grupa $\mathbb{Z}_n$ postane \textbf{komutativen kolobar} $\mathbb{Z}_n$, če vpeljemo množenje s predpisom:
 \begin{equation}
 \label{eq:def_modulo_group_multiplication}
 [a]*[b] := [a*b]
@@ -1899,7 +1899,7 @@ Končen cel kolobar je polje.
 \end{statement}
 
 \begin{proof}Naj bo $\mathcal{K}$ končen cel kolobar. $0\neq a \in \mathcal{K} \implies a\ \text{je obrnljiv}$, naj bo $f: \mathcal{K} \to \mathcal{K}, f(x) = ax$. Potrebno je pokazati, da $1 \in \mathcal{Z}_f$\\ Dokazali bomo kar surjektivnost $f$, kar je v končnem polju ekvivalentno njeni injektivnosti.\\
-$ax = ax \underbrace{\implies}_{\text{cel kolobar}} x=y$ torej $a(x-y) = 0 \land a \neq 0 \implies x = y$\\
+$ax = ay \underbrace{\implies}_{\text{cel kolobar}} x=y$ torej $a(x-y) = 0 \land a \neq 0 \implies x = y$\\
 Komutativnost(eksistenca levega inverza $\implies$ eksistenca desnega inverza $\implies$ eksistenca inverza)
 \end{proof}
 
@@ -2655,7 +2655,7 @@ $$\mathcal{G}_1 \cong \mathcal{G}_2$$
 
 Bodi $\varphi : \mathcal{G}_1 \to \mathcal{G}_2 \ \text{izomorfizem} $, tedaj $\mathcal{G}_2 = \{\varphi(g_1), \varphi(g_2), \dots, \varphi(g_n) \}, g_i \in \mathcal{G}_1$.
 
-Torej se $g_i$ in $\varphi(g_i)$ v tablah pojavita na istem mestu.
+Torej se $g_i$ in $\varphi(g_i)$ v tabelah pojavita na istem mestu.
 \\
 \\
 \end{remark}
@@ -3632,7 +3632,7 @@ Za poljubna $a, b \in \mathcal{G}$ sta odseka $a\mathcal{H}$ in $b\mathcal{H}$ b
 \end{lemma}
 
 \begin{proof}
-Predpostavimo $a\mathcal{H} \cap b\mathcal{H} \neq \emptyset$ in naj velja $a*h_1 = b*h_2$ za neka $h_1, h_2 \in \mathcal{H}$, oboje z desne pomnožimo z $h_2^{-1}$\\
+Predpostavimo $a\mathcal{H} \cap b\mathcal{H} \neq \emptyset$ in naj velja $a*h_1 = b*h_2$ za neka $h_1, h_2 \in \mathcal{H}$, oboje z desne pomnožimo z $h_2^{-1}$ in z leve s $a^{-1}$\\
 $\underbrace{h_1*h_2}_{\in \mathcal{H}} = a^{-1}*b$\\
 Vidimo, da vsak $a \in\mathcal{G}$ leži v kakem odseku (namreč $a\mathcal{H}$). Različna odseka pa sta si disjunktna. $\mathcal{G}$ je tako disjunktna unija svojih odsekov. Tako smo dobili particijo množice $\mathcal{G}$, torej je v ozadju neka ekvivalenčna relacija.\\
 Iz leme zgoraj(\ref{lem:coset_representation})razberemo, da je ta ekvivalenčna relacija definirana kot :
@@ -3765,8 +3765,8 @@ Naj bo $\mathcal{G}$ grupa:
 
 \begin{proof}\leavevmode
 \begin{enumerate}
-\item $\mathcal{H}\mathcal{K}=\mathcal{K}\mathcal{H}$. Pokazati moramo: $\forall k_1, k_2 \in \mathcal{K} \ \land \ \forall h_1,h_2 \in \mathcal{H}. \ (h_1k_2)(h_2k_2)^{-1} \in \mathcal{H}\mathcal{K}$ (ekvivalenten pogoj za podgrupo).\\
-$(h_1k_2)(h_2k_2)^{-1} = h_1 \underbrace{k_1 k_2^{-1}}_{k_3 \in \mathcal{K}} h_2^{-1} = h_1 \underbrace{k_3 h_1^{-1}}_{h_3k_4 // (\mathcal{H}\mathcal{K} = \mathcal{K}\mathcal{H})} = \underbrace{(h_1 h_3)}_{\in \mathcal{H}}\underbrace{k_4}_{\in \mathcal{K}} $
+\item $\mathcal{H}\mathcal{K}=\mathcal{K}\mathcal{H}$. Pokazati moramo: $\forall k_1, k_2 \in \mathcal{K} \ \land \ \forall h_1,h_2 \in \mathcal{H}. \ (h_1k_1)(h_2k_2)^{-1} \in \mathcal{H}\mathcal{K}$ (ekvivalenten pogoj za podgrupo).\\
+$(h_1k_1)(h_2k_2)^{-1} = h_1 \underbrace{k_1 k_2^{-1}}_{k_3 \in \mathcal{K}} h_2^{-1} = h_1 \underbrace{k_3 h_1^{-1}}_{h_3k_4 // (\mathcal{H}\mathcal{K} = \mathcal{K}\mathcal{H})} = \underbrace{(h_1 h_3)}_{\in \mathcal{H}}\underbrace{k_4}_{\in \mathcal{K}} $
 \item Iz tega da je $\mathcal{N}$ edinka vemo da velja $h\mathcal{N} = \mathcal{N}h \ \forall h \in \mathcal{H}$ torej seveda $\mathcal{H}\mathcal{K}=\mathcal{K}\mathcal{H}$.
 \item Vemo da $\mathcal{M}\mathcal{N}=\mathcal{N}\mathcal{M} \leq \mathcal{G}$ torej $a(mn)a^{-1} =  \underbrace{ama^{-1}}_{\in \mathcal{M}} \underbrace{ana^{-1}}_{\in \mathcal{N}} \in \mathcal{M}\mathcal{N}$ 
 \end{enumerate}
@@ -3914,7 +3914,7 @@ Ideali kolobarja $\mathbb{Z}$ so $n\mathbb{Z}, n \geq 0$ (to so (edine) podgrupe
 
 \begin{theorem}
 Naj bo $\mathcal{I} \triangleleft \mathcal{K}$. Če v množico vseh odsekov $\mathcal{K}/_{\mathcal{I}}$ vpeljemo seštevanje in množenje s predpisoma od prej, potem postane $\mathcal{K}/_{\mathcal{I}}$ kolobar.\\
-Preslikava $\pi : \mathcal{K} \to \mathcal{K}_{\mathcal{I}}, \Pi(a) = a + \mathcal{I}$ je epimorfizem, katere jedro je $\mathcal{I}$.
+Preslikava $\Pi : \mathcal{K} \to \mathcal{K}/_{\mathcal{I}}, \Pi(a) = a + \mathcal{I}$ je epimorfizem, katere jedro je $\mathcal{I}$.
 \end{theorem}
 
 \begin{proof}
@@ -4112,9 +4112,9 @@ Ideal $\mathcal{I}$ kolobarja $\mathcal{K}$ je maksimalen natanko tedaj, ko je $
 
 \begin{proof}\leavevmode\\
 $\implies$
-Naj bo $\mathcal{I}$ maksimalen. Vsak ideal $\mathcal{K}_{\mathcal{I}}$ je po prejšnjem izreku oblike $\mathcal{J}/_{\mathcal{K}}$, kjer je $\mathcal{J} \triangleleft \mathcal{K}$ in $\mathcal{I} \subseteq \mathcal{J} \subseteq \mathcal{K}$. Ker je $\mathcal{I}$ maksimalen, velja $\mathcal{I} =\mathcal{K}$ (in $\mathcal{J}/_{\mathcal{I}} = \{ 0 \}$) ali $\mathcal{J} = \mathcal{K}$ (in $\mathcal{J}/_{\mathcal{I}} = \mathcal{K}/_{\mathcal{I}}$). \\
+Naj bo $\mathcal{I}$ maksimalen. Vsak ideal $\mathcal{K}/_{\mathcal{I}}$ je po prejšnjem izreku oblike $\mathcal{J}/_{\mathcal{I}}$, kjer je $\mathcal{J} \triangleleft \mathcal{K}$ in $\mathcal{I} \subseteq \mathcal{J} \subseteq \mathcal{K}$. Ker je $\mathcal{I}$ maksimalen, velja $\mathcal{I} =\mathcal{K}$ (in $\mathcal{J}/_{\mathcal{I}} = \{ 0 \}$) ali $\mathcal{J} = \mathcal{K}$ (in $\mathcal{J}/_{\mathcal{I}} = \mathcal{K}/_{\mathcal{I}}$). \\
 $\impliedby$\\
-Naj bo  $\mathcal{K}/_{\mathcal{I}}$ enostaven. Če je $\mathcal{J} \triangleleft \mathcal{K}$, velja $\mathcal{I} \not \subseteq \mathcal{J} \not \subseteq \mathcal{K}$ in je $\mathcal{J}_{\mathcal{K}}$ pravi neničelni ideal $\mathcal{K}/_{\mathcal{I}}$. To pa je v protislovju z našo predpostavko, torej je ideal maksimalen.
+Naj bo  $\mathcal{K}/_{\mathcal{I}}$ enostaven. Če je $\mathcal{J} \triangleleft \mathcal{K}$, velja $\mathcal{I} \subsetneq \mathcal{J} \subsetneq \mathcal{K}$ in je $\mathcal{J}_{\mathcal{K}}$ pravi neničelni ideal $\mathcal{K}/_{\mathcal{I}}$. To pa je v protislovju z našo predpostavko, torej je ideal maksimalen.
 \end{proof}
 
 \begin{corollary}
@@ -4615,7 +4615,7 @@ kjer vsota teče po vseh predstavnikih konjugiranih razredov, ki ne sestojijo iz
 
 \subsection{Cauchiyjev izrek}
 
-NAravno se pojavi vprašanje, če je $\mathcal{G}$ končna grupa, in če $m | \ord \mathcal{G}$, ali potem $\mathcal{G}$ vsebuje element reda $m$? V splošnem, če $\mathcal{G}$ ni ciklična ne vsebuje elementa z redom, ki je enak moči grupe.
+Naravno se pojavi vprašanje, če je $\mathcal{G}$ končna grupa, in če $m | \ord \mathcal{G}$, ali potem $\mathcal{G}$ vsebuje element reda $m$? V splošnem, če $\mathcal{G}$ ni ciklična ne vsebuje elementa z redom, ki je enak moči grupe.
 
 \begin{theorem}[Cauchiyjev izrek]
 \label{th:cauchy_theroem}
@@ -4627,9 +4627,9 @@ Naj bo $\mathcal{G}$ končna grupa. Če praštevilo $p$ deli $|\mathcal{G}|$, po
 Naj bo $\mathcal{G}$ grupa moči $n= p*k$, pokazali bomo z indukcijo na $n$:
 Če je $n = p$, potem je $\mathcal{G}$ ciklična in ima vsak neničelen element red $p$
 Če $n > p$, in izrek velja za vse grupe, ki imajo manj kot $n$ elementov:\\
-Predpostavimo, da $\mathcal{G}$ ni Abelova in torej $Z(\mathcal{G}) \subsetneq \mathcal{G}$. Če $p | Z(\mathcal{G}$, potem po indukcijski predpostavki obstaja tak element. Torej $p \nmid Z(\mathcal{G})$. Iz razredne formule sledi, da $p \nmid [\mathcal{G}:C(a_j)]$ za nek $a_j \in \mathcal{G}$.
-Spet nam preostaneta dve možnosti če $p | |C(a_j)|$ po indukcijsi prespostavki $C(a_j)$ vsebuje element rada $p$. V nasprotnem primeru $p \nmid [\mathcal{G}:C(a_j)]|C(a_j)| = |\mathcal{G}|$ kar pa je v protislovju.\\
-Če pa je $\mathcal{G}$ abelova, in ker $n$ ni praštevilo, potem $\mathcal{G}$ kot posledica Lagrangevega izreka vsebuje kako pravo netrivialno podgrupo $\{ 1\} \subsetneq \mathcal{N} \subsetneq \mathcal{G}$ in je $\mathcal{N}$ edinka lahko govorimo o $\mathcal{G}/_{\mathcal{N}}$\\
+Predpostavimo, da $\mathcal{G}$ ni Abelova in torej $Z(\mathcal{G}) \subsetneq \mathcal{G}$. Če $p \mid | Z(\mathcal{G})|$, potem po indukcijski predpostavki obstaja tak element. Torej $p \nmid Z(\mathcal{G})$. Iz razredne formule sledi, da $p \nmid [\mathcal{G}:C(a_j)]$ za nek $a_j \in \mathcal{G}$.
+Spet nam preostaneta dve možnosti če $p | |C(a_j)|$ po indukcijsi prespostavki $C(a_j)$ vsebuje element reda $p$. V nasprotnem primeru $p \nmid [\mathcal{G}:C(a_j)]|C(a_j)| = |\mathcal{G}|$ kar pa je v protislovju.\\
+Če pa je $\mathcal{G}$ abelova, in ker $n$ ni praštevilo, potem $\mathcal{G}$ kot posledica Lagrangevega izreka vsebuje kako pravo netrivialno podgrupo $\{ 1\} \subsetneq \mathcal{N} \subsetneq \mathcal{G}$ in je $\mathcal{N}$ edinka torej lahko govorimo o $\mathcal{G}/_{\mathcal{N}}$\\
 Če $p | |\mathcal{N}|$, po indukcijski predpostavki imamo tak element, v nasprotnem pa $p \nmid \mathcal{N}$, velja pa $p | \mathcal{G} = |\mathcal{N}| |\mathcal{G}/_{\mathcal{N}}|$ torej $p | |\mathcal{G}/_{\mathcal{N}}$ in ker $\mathcal{N}$ ni trivialna edinka lahko uporabimo predpostavko in dobimo element reda $p$.
 \end{proof}
 \begin{remark}
@@ -4670,7 +4670,7 @@ $\mathbb{Z}_4 \not \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2, \mathbb{Z}_6 \cong \m
 Po dogovoru bodo grupe v tem razdelku aditivne, im bom operacijo pisali kot $+$.
 
 \begin{lemma}
-Demimo, da je $|\mathcal{G}| = mn$ in sta si $m$ in $n$ tuji števili. potem je $\mathcal{G}$ direktna vsota svojih podgrup $\mathcal{H} = \{x \in \mathcal{G} | mx = n\}, \mathcal{K} = \{ x \in \mathcal{G} | nx = 0\}$
+Demimo, da je $|\mathcal{G}| = mn$ in sta si $m$ in $n$ tuji števili. potem je $\mathcal{G}$ direktna vsota svojih podgrup $\mathcal{H} = \{x \in \mathcal{G} | mx = 0\}, \mathcal{K} = \{ x \in \mathcal{G} | nx = 0\}$
 \end{lemma}
 
 \begin{proof}
@@ -4678,7 +4678,7 @@ Očitno sta $\mathcal{H}, \mathcal{K} \leq \mathcal{G}$\\
 $x^{|\mathcal{G}|} = 1 \forall x \in \mathcal{G} \implies x^{mn} = 0 \forall x \in \mathcal{G}$, torej je $nx \in \mathcal{H}$ in $mx \in \mathcal{K}$, ker sta si tuji, $\exists u,v \in \mathbb{Z}. um + vn = 1$ in $u\underbrace{(mx)}_{\in \mathcal{K}} + v\underbrace{(nx)}_{\in \mathcal{H}} = x \implies \mathcal{G} = \mathcal{H} + \mathcal{K}$, preverimo, še da je presek ničelen $x \in \mathcal{H} \cap \mathcal{K} \implies mx = nx = 0 \implies x = 0$
 \end{proof}
 
-Tako lahko posplošimo: $\mathbb{Z}_mn \cong \mathbb{Z}_m \oplus \mathbb{Z}_n$, kjer sta si $m$ in $n$ tuji števili.
+Tako lahko posplošimo: $\mathbb{Z}_{mn} \cong \mathbb{Z}_m \oplus \mathbb{Z}_n$, kjer sta si $m$ in $n$ tuji števili.
 
 
 
@@ -4693,7 +4693,7 @@ kjer so $\mathcal{H}_i$ $p_i-$ grupe in velja $|\mathcal{H}_i| = p_i^{k_i}$
 Definirajmo: $\mathcal{H}_1 := \{ x \in \mathcal{G} | xp_1^{k_1} = 0\}$ in \\
 $\mathcal{K} =  \{ x \in \mathcal{G} | p_2^{k_2} \dots p_n^{k_n} \}$\\
 Vemo, da $p_1 \nmid | \mathcal{K}|$, saj bi sicer po Cauchyjevem izreku $\mathcal{K}$ vsebovala element reda $p$ in bi zato veljalo $p_1 | p_2^{k_2} \dots p_n^{k_n}$, kar pa je protislovje.
-Tako je edina možnost $|\mathcal{G}| = |\mathcal{H}_1| |\mathcal{K}| = p_1 * p_2^{k_2} \dots p_n^{k_n}$
+Tako je edina možnost $|\mathcal{G}| = |\mathcal{H}_1| |\mathcal{K}| = p_1^{k_1} * p_2^{k_2} \dots p_n^{k_n}$
 \end{proof}
 
 \begin{lemma}
@@ -4752,7 +4752,7 @@ Naj bo $p$ preštevilo. Če za naravna števila $k_1 \geq k_2 \geq \dots \geq k_
 \end{theorem} 
 
 \begin{proof}
-Seveda se vsoti ujemata in sta enaki moči grup. Naj bo $|\mathcal{G}| > p$ in privzemimo, da izrek velja za grupe z manj elementi kot $\mathcal{G}$. Za nako poljubno podgrupo $\mathcal{K}$ pišimo $p\mathcal{K} := \{ px | x \in \mathcal{K} \}$. Tako dobimo $p \mathbb{Z}_{p^m} \cong \mathbb{Z}_{p^{m-1}} (m=1: p\mathbb{Z}_p = \{0\}$ in $\mathcal{G} \cong \mathcal{G}' \implies p\mathcal{G} \cong p\mathcal{G}' \implies \mathbb{Z}_{p^{k_1 - 1}} \oplus \dots \oplus \mathbb{Z}_{p^{k_w - 1}} \cong \mathbb{Z}_{p^{l_1 - 1}} \oplus \dots \oplus \mathbb{Z}_{p^{l_z - 1}}$, kjer je $w$ največji indeks $k_w > 1$ in $z$ največji indeks $k_z > 1$. Po predpsotavki tako dobimo $w = z$ in $k_i - 1 = l_i - 1$, ker pa $k_1 + \dots + k_w - w = l_1 + \dots + l_w - w$ in imata grupi enako moč dobmio $u = v$.
+Seveda se vsoti ujemata in sta enaki moči grup. Naj bo $|\mathcal{G}| > p$ in privzemimo, da izrek velja za grupe z manj elementi kot $\mathcal{G}$. Za neko poljubno podgrupo $\mathcal{K}$ pišimo $p\mathcal{K} := \{ px | x \in \mathcal{K} \}$. Tako dobimo $p \mathbb{Z}_{p^m} \cong \mathbb{Z}_{p^{m-1}} (m=1: p\mathbb{Z}_p = \{0\}$ in $\mathcal{G} \cong \mathcal{G}' \implies p\mathcal{G} \cong p\mathcal{G}' \implies \mathbb{Z}_{p^{k_1 - 1}} \oplus \dots \oplus \mathbb{Z}_{p^{k_w - 1}} \cong \mathbb{Z}_{p^{l_1 - 1}} \oplus \dots \oplus \mathbb{Z}_{p^{l_z - 1}}$, kjer je $w$ največji indeks $k_w > 1$ in $z$ največji indeks $k_z > 1$. Po predpsotavki tako dobimo $w = z$ in $k_i - 1 = l_i - 1$, ker pa $k_1 + \dots + k_w - w = l_1 + \dots + l_w - w$ in imata grupi enako moč dobmio $u = v$.
 
 \end{proof}
 
@@ -4877,7 +4877,7 @@ Zgolj premečemo definicjo.
 V $\mathbb{Z}$ sta si števili asociirani natanko tedaj, ko sta si enaki ali ko velja $n = -m$, saj sta $1$ in $-1$ edina obrnljiva elementa.
 \end{example_case}
 \begin{example_case}
-Obrnljivi elementi v $\mathcal{F}[X]$ so neničelni konstanti polinomi, $f(x) in g(x)$ sta si asociirana $\iff$ $f(X) = ug(X)$ za nek $u \in \mathcal{F} \neq 0$  
+Obrnljivi elementi v $\mathcal{F}[X]$ so neničelni konstanti polinomi, $f(x)$ in $g(x)$ sta si asociirana $\iff$ $f(X) = ug(X)$ za nek $u \in \mathcal{F} \neq 0$  
 \end{example_case}
 \end{example}
 
@@ -4909,7 +4909,7 @@ Elementa $a$ in $b$ sta si \textbf{tuja}, če velja $gcd(a,b) = 1$
 
 
 \begin{statement}
-Naj bo $\mathcal{K}$ komutativen in $a,b \in \mathcal{K}$ ne oba enaka $0$, če je idal $(a,b)$ glavni, potem $\gcd(a,b)$ obstaja in je oblike $d = ax + by$ za neka $x,y \in \mathcal{K}$.
+Naj bo $\mathcal{K}$ komutativen in $a,b \in \mathcal{K}$ ne oba enaka $0$, če je ideal $(a,b)$ glavni, potem $\gcd(a,b)$ obstaja in je oblike $d = ax + by$ za neka $x,y \in \mathcal{K}$.
 \end{statement}
 
 \begin{proof}
@@ -4954,14 +4954,14 @@ $p = ab = ua \implies b=u$ in sledi, da sta si trditvi ekvivalentni.
 Naj bo $\mathcal{F}$ polje in naj bosta $f(X), g(X) \in \mathcal{F}[X]$, Če $g(X) \neq 0$ potem obstajata taka $q(X), r(X) \in \mathcal{F}[X]$, da velja 
 \begin{equation}
 \label{eq:def_fundemantal_theorem_of_polynomial_division}
-f(X)= q(X)g(X) + r(X), r(X) = \lor st(r(X)) < st(g(X))
+f(X)= q(X)g(X) + r(X), r(X) = 0 \lor st(r(X)) < st(g(X))
 \end{equation} 
 \end{theorem}
 
 \begin{proof}
 $n := st(g(X)), m := st(f(X))$, $m < n \implies q(X) = 0, r(X) = f(X)$, torej naj bo $m \geq n$, izrek pa bomo dokazali z indukcijo na $m$.\\
 $m = 0 \implies n = 0$ in trivialno dobimo $r(X) = 0$\\
-$f(X) = aX^n + f_1(X), st(f_1(X)) < m$. $g(X) = bX^n + g_1(X)$, $st(g_1(X)) < n$\\
+$f(X) = aX^m + f_1(X), st(f_1(X)) < m$. $g(X) = bX^n + g_1(X)$, $st(g_1(X)) < n$\\
 $h(X) := f(X)- ab^{-1}X^{m-n}g(X) = \underbrace{f_1(X) - ab^{-1}X^{m-n}g_1(X)}_{\text{stopnja } \ < m}$\\
 Po indukcijski predpostavki velja $h(X) = q_1(X)g(X) + r(X), r=0 \lor st(r(X)) < n$
 $f(X) - ab^{-1}X^{m-n}g(X) = q_1(X)g(X) + r(X) \implies$\\ $f(X) = \underbrace{(ab^{-1}X^{m-n} + q_1(X))}_{q(X)}g(X) + r(X)$
@@ -4999,7 +4999,7 @@ $\sigma(a) = \sigma(ab) \implies b$ je obrnljiv
 \begin{proof}
 $a = qab + r, r= 0 \lor \sigma(r) < \sigma(ab)$. \\
 Če $r = 0 \implies a(1-qb) = 0  \underbrace{\implies}_{a \neq 0} b = q^{-1}$\\
-Če $r \neq 0 \implies r = a(q-qb)$ in zato $\sigma(r) \geq(a)$, kar pa je protislovje.
+Če $r \neq 0 \implies r = a(1-qb)$ in zato $\sigma(r) \geq(a)$, kar pa je protislovje.
 \end{proof}
 
 \begin{remark}
@@ -5012,7 +5012,7 @@ Vsak ideal evklidskega kolobarja je glavni.
 
 
 \begin{proof}
-Naj bo $\mathcal{I} \triangleleft \mathcal{K}$, kjer je $\mathcal{K}$ evklidski. Izberimo si $a \in \mathcal{I} - \{0\}$, da zanj velja $\sigma(a) \leq \sigma(x), x \in \mathcal{I}$ (to lahko naredimo, saj za naravna števila velja načelo dobre urejenosti. Pokazali bomo da velja $\mathcal{I} = (a)$, vemo že da $(a) \subseteq \mathcal{I}$. Vemo tudi $x \in \mathcal{I}. x = qa +r$ Če $r = 0: x = qa \in (a)$, Če pa $\sigma(r) < \sigma(a), r = x- qa \in \mathcal{I}$, kar pa je protislovje.
+Naj bo $\mathcal{I} \triangleleft \mathcal{K}$, kjer je $\mathcal{K}$ evklidski. Izberimo si $a \in \mathcal{I} - \{0\}$, da zanj velja $\sigma(a) \leq \sigma(x), x \in \mathcal{I}$ (to lahko naredimo, saj za naravna števila velja načelo dobre urejenosti). Pokazali bomo da velja $\mathcal{I} = (a)$, vemo že da $(a) \subseteq \mathcal{I}$. Vemo tudi $x \in \mathcal{I}. x = qa +r$ Če $r = 0: x = qa \in (a)$, če pa $\sigma(r) < \sigma(a), r = x- qa \in \mathcal{I}$, kar pa je protislovje.
 \end{proof}
 
 
@@ -5039,7 +5039,7 @@ Naj bo $\mathcal{K}$ evklidski kolobar. Za vsaka $a,b \in \mathcal{K}$, ki nista
 \end{corollary}
 
 \begin{proof}
-Že prej smo dokazali, da je vsak tak kolobar glavni in da temu ustreza.
+Že prej smo dokazali, da je vsak tak ideal glavni in da temu ustreza.
 \end{proof}
 
 \begin{corollary}
@@ -5047,7 +5047,7 @@ Naj bo $\mathcal{K}$ evklidski kolobar in $a,b, p \in \mathcal{K}$. Če je $p$ n
 \end{corollary}
 
 \begin{proof}
-Denimo, da $p \nmid a$, potem sta si $p$ in $a$ tuja, zato po prejšnji posledici velja $ax + py = 1$ za nkea $x,y \in \mathcal{K}$\\
+Denimo, da $p \nmid a$, potem sta si $p$ in $a$ tuja, zato po prejšnji posledici velja $ax + py = 1$ za neka $x,y \in \mathcal{K}$\\
 $abx = bpy = y \implies p(cx+by) = b \implies p\mid b$
 \end{proof}
 
@@ -5097,7 +5097,7 @@ Zato sta $\mathbb{Z}[X]$ in $\mathcal{K}[X,Y] = (\mathcal{K}[X])[Y]$ kolobarja z
 Spomnimo se prejšnjega poglavja in rezultata, da je vsak ideal $\mathcal{F}[X]$ glavni, torej oblike: 
 $$(a(X)) = \{ a(X)f(X) | \ f(X) \in \mathcal{F}[X] \}$$
 
-Za vsaka $a(X), b(X) \in \mathcal{F}[X]$, ki nista oba $0$ obstaja  $\gcd$, ki je oblike: $\gcd(a(X) = d(X) = b(X)) = a(X)f(X) + b(X)g(X)$, z zahtevo da ima $d$ vodilni koeficient $1$ pa je $\gcd$ celo enolično določen.
+Za vsaka $a(X), b(X) \in \mathcal{F}[X]$, ki nista oba $0$ obstaja  $\gcd$, ki je oblike: $\gcd(a(X),b(X)) = d(X) = a(X)f(X) + b(X)g(X)$, z zahtevo da ima $d$ vodilni koeficient $1$ pa je $\gcd$ celo enolično določen.
 
 \begin{lemma}
 Polinom $f(X) \in \mathcal{F}[X]$ ima ničlo v $a \in \mathcal{F}$ natanko tedaj, ko je $f(X)$ deljiv z $(X-a)$ ($f(X) = g(X)(X-a)$).
@@ -5108,7 +5108,7 @@ $f(X) = q(X)(X-a) + r(X)$, kjer je $r(X)$ konstanten polinom izračunamo $f$ v $
 \end{proof}
 
 \begin{corollary}
-Če neničelen in nelinearen polinom $f(X) \in \mathcal{F}[X]$ ima ničlno v $\mathcal{F}$, potem ni razcepen.
+Če neničelen in nelinearen polinom $f(X) \in \mathcal{F}[X]$ ima ničlno v $\mathcal{F}$, potem ni nerazcepen.
 \end{corollary}
 
 \begin{remark}
@@ -5138,7 +5138,7 @@ Produkt dveh primitivnih polinomov je primitiven polinom.
 \end{lemma}
 
 \begin{proof}
-$f(X), g(X)$ sta primitivna, njun produkt $p(X)q(X)$ pa ni. Torej obstaja praštevilo $p$, da $p$ ki deli vse koeficiente $p(X)g(X)$. $p$ lahko obravnavamo ko polinom v $\mathbb{Z}[X]$, vemo da velja $f(X)g(X) \in (p) = \{ pq(X) | \ q(X) \in \mathbb{Z}[X]\}$. Vemo da je $f(X) + \underbrace{p\mathbb{Z}[X]}_{(p)} \in \mathbb{Z}[X]/_{(p)}$ neničelen odsek, saj $p$ ne deli vseh koeficientov $f(X)$. Podoben argument velja za $g(X)$. Tako dobimo $(f(X) + (p))(g(X) + (p)) = f(X) + g(X) + (p) = 0$, kolobar $\mathbb{Z}[X]/_{p\mathbb{Z}[X]}$ ima torej delitelje niča. Ker pa je izomofen $(\mathbb{Z}/_{p\mathbb{Z}})[X] = \mathbb{Z}_p[X]$ in je $\mathbb{Z}_p$ polje je to protislovje.
+$f(X), g(X)$ sta primitivna, njun produkt $f(X)g(X)$ pa ni. Torej obstaja praštevilo $p$, da $p$ ki deli vse koeficiente $f(X)g(X)$. $p$ lahko obravnavamo ko polinom v $\mathbb{Z}[X]$, vemo da velja $f(X)g(X) \in (p) = \{ pq(X) | \ q(X) \in \mathbb{Z}[X]\}$. Vemo da je $f(X) + \underbrace{p\mathbb{Z}[X]}_{(p)} \in \mathbb{Z}[X]/_{(p)}$ neničelen odsek, saj $p$ ne deli vseh koeficientov $f(X)$. Podoben argument velja za $g(X)$. Tako dobimo $(f(X) + (p))(g(X) + (p)) = f(X) + g(X) + (p) = 0$, kolobar $\mathbb{Z}[X]/_{p\mathbb{Z}[X]}$ ima torej delitelje niča. Ker pa je izomofen $(\mathbb{Z}/_{p\mathbb{Z}})[X] = \mathbb{Z}_p[X]$ in je $\mathbb{Z}_p$ polje je to protislovje.
 \end{proof}
 
 
@@ -5158,7 +5158,7 @@ Veljevnost v obratno je trivialna.
 $f(X) = g(X)h(X), g(X),h(X) \in \mathbb{Q}[X]$ Izberemo $k,l \in \mathbb{N}$, da velja $kg(X), lh(X) \in \mathbb{Z}[X]$, dobimo $klf(X) = kg(X)lh(X)$, kjer imajo vsi trije koeficiente v $\mathbb{Z}$.\\
 Zapišemo $hg(X) = d_1g_0(X)$, kjer je $d_1$ največji skupni delitelj koeficientov $hg(X)$. Potem je $g_0$ primitiven. Podobno dobimo: $lh(X) = d_2h_(X), h_0(X)$ je primitiven in $f(X) = df_0(X), f_0(X)$ je primitiven. \\
 $\underbrace{(hld)}_{\in \mathbb{Z}}f_0(X) = \underbrace{(d_1d_2)}_{\in \mathbb{Z}}\underbrace{g_0(X)h_0(X)}_{\text{primitivna po Gaussovi lemi}}$\\
-Največji skupni delitelj $(hld)f(X)$ j3 $kld$, za $(d_1d_2)g_0(X)h_0(X)$ pa $d_1d_2$ torej $kld = d_1d_2$.\\
+Največji skupni delitelj $(hld)f(X)$ je $kld$, za $(d_1d_2)g_0(X)h_0(X)$ pa $d_1d_2$ torej $kld = d_1d_2$.\\
 Pokrajšamo polinoma $f_0(X) = g_0(X)h_0(X) \implies f(X) = df_0(X) = dg_0(X)h_0(X)$, ki pa je nerazcepen v $\mathbb{Z}$. Sledi da je $dg_0(X)$ ali $h_0(X)$ konstanten torej $g(X)$ ali $h(x)$ je konstanten.
  
 \end{proof}
@@ -5232,7 +5232,7 @@ Naj bo $a \in \mathcal{E}$ algebraičen nad $\mathcal{F}$, polinom $p(X) \in \ma
 \begin{itemize}
 \item $p(X) \neq 0$
 \item $p(a) = 0$
-\item vodilni koeficient $p(X)$ je $0$
+\item vodilni koeficient $p(X)$ je $1$
 \item izmed vseh polinomov, ki imajo $a$ za $0$ ima $p(X)$ najmanjšo stopnjo
 \end{itemize}
 \end{definition}
@@ -5242,7 +5242,7 @@ Eksistenca in enoličnost sta očitni
 \end{remark}
 
 \begin{statement}
-Naj bo $a \in \mathcal{E}$ algebraičen nad $\mathcal{F}$ in naj bo $p(X) \in \mathcal{F}[X]$ neničelen polinom, da je njegovo vodilni koeficient $0$ ter $p(a) = 0$. Naslednje trditve so ekvivalentne:
+Naj bo $a \in \mathcal{E}$ algebraičen nad $\mathcal{F}$ in naj bo $p(X) \in \mathcal{F}[X]$ neničelen polinom, da je njegovo vodilni koeficient $1$ ter $p(a) = 0$. Naslednje trditve so ekvivalentne:
 \begin{enumerate}
 \item $p(X)$ je minimalen polinom elementa $a$
 \item $p(X)$ je nerazcepen v $\mathcal{F}[X]$
@@ -5252,7 +5252,7 @@ Naj bo $a \in \mathcal{E}$ algebraičen nad $\mathcal{F}$ in naj bo $p(X) \in \m
 
 \begin{proof}
 (i) $\implies$ (ii):\\
-Naj bo $p(X) = g(X)h(X)$, potem $0 = p(a) = g(a)h(a) \implies g(a) = 0  \lor h(a) = 0$, ker pa je $f(X)$ minimalen, potem $st(g(X)) > st(p(X))$, kar pa je protislovje.\\ % ali je tu stroga neenakost, v definicije piše smo najmanjša stopnja?
+Naj bo $p(X) = g(X)h(X)$, potem $0 = p(a) = g(a)h(a) \implies g(a) = 0  \lor h(a) = 0$, ker pa je $p(X)$ minimalen, potem $st(g(X)) > st(p(X))$, kar pa je protislovje.\\ % ali je tu stroga neenakost, v definicije piše smo najmanjša stopnja?
 (ii) $\implies$ (iii):\\
 naj bo $p(X)$ nerazcepen, $\mathcal{I} := \{ f(X) \  | \ f(a) = 0\}$ je ideal za $\mathcal{F}[X]$, vemo da je $\mathcal{I}$ glavni ideal, tj $\mathcal{I} = (p_1(X))$, torej $p(X) \in \mathcal{I} = p_1(X)g(X)$, ker pa je $p(X)$ nerazcepen je $g(X)$ konstanten polinom in $(p(X)) = (p_1(X))$\\
 (iii) $\implies$ (i):\\
@@ -5325,10 +5325,10 @@ Glede na izbiro polja $\mathcal{E}$ imamo več možnosti:
 
 \subsection{Končne razširitve}
 
-$\mathcal{F} \subseteq \mathcal{E}$, tedaj lahko $\mathcal{E}$ obravanavamo kot vektorski prostor nad $\mathcal{F}$. $\mathcal{E}$ je seveda aditivna grupa, za množenje s skalarji pa vzamemo kar damo množenje v $\mathcal{E}$. Tako so vsi aksiomi za vektorske prostore izpolnjeni.
+$\mathcal{F} \subseteq \mathcal{E}$, tedaj lahko $\mathcal{E}$ obravanavamo kot vektorski prostor nad $\mathcal{F}$. $\mathcal{E}$ je seveda aditivna grupa, za množenje s skalarji pa vzamemo kar dano množenje v $\mathcal{E}$. Tako so vsi aksiomi za vektorske prostore izpolnjeni.
 
 \begin{definition}
-Naj bo $\mathcal{E}$ razširitev $\mathcal{F}$. Rečemo, da je $\mathcal{E}$ končna razširitev $\mathcal{F}$, če je $\mathcal{E}$ končno razsežen vektorski prostor nad $\mathcal{F}$. Dimanziji $\mathcal{E}$ nad $\mathcal{F}$ pravimo stopnja razširitve in jo označujemo z 
+Naj bo $\mathcal{E}$ razširitev $\mathcal{F}$. Rečemo, da je $\mathcal{E}$ končna razširitev $\mathcal{F}$, če je $\mathcal{E}$ končno razsežen vektorski prostor nad $\mathcal{F}$. Dieanziji $\mathcal{E}$ nad $\mathcal{F}$ pravimo stopnja razširitve in jo označujemo z 
 $$[\mathcal{E}: \mathcal{F}] := dim_{\mathcal{F}}(\mathcal{E})$$
 \end{definition}
 
@@ -5337,7 +5337,7 @@ $$[\mathcal{E}: \mathcal{F}] := dim_{\mathcal{F}}(\mathcal{E})$$
 $[\mathbb{C}:\mathbb{R}] = 2$, s standardno bazo: $\{1, i\}$
 \end{example_case}
 \begin{example_case}
-$\mathbb{R} ni končna razširitev \mathbb{Q}$ (Vsaka končna razširitev $\mathcal{Q}$ je števna množica.
+$\mathbb{R}$ ni končna razširitev $\mathbb{Q}$ (Vsaka končna razširitev $\mathcal{Q}$ je števna množica.
 \end{example_case}
 \end{example}
 
@@ -5347,13 +5347,13 @@ $$[\mathcal{E}:\mathcal{F}] = [\mathcal{E}:\mathcal{L}][\mathcal{L}:\mathcal{F}]
 \end{theorem}
 
 \begin{proof}
-Naj bo $\{a_1, \dots a_m\}$ baza $\mathcal{L}$ nad $\mathcal{F}$in $\{b_1, \dots , b_n\}$ baza $\mathcal{E}$ nad $\mathcal{L}$. Trdimo, da je $B := \{ a_ib_j | 1 \leq i \leq m, 1 \leq j \leq n \}$ baza $\mathcal{E}$ nad $\mathcal{F}$. \\
+Naj bo $\{a_1, \dots a_m\}$ baza $\mathcal{L}$ nad $\mathcal{F}$ in $\{b_1, \dots , b_n\}$ baza $\mathcal{E}$ nad $\mathcal{L}$. Trdimo, da je $B := \{ a_ib_j | 1 \leq i \leq m, 1 \leq j \leq n \}$ baza $\mathcal{E}$ nad $\mathcal{F}$. \\
 Preverimo, da je ogrodje: \\
 $x \in \mathcal{E} \implies x = c_1b_1 + \dots + c_nb_n, c_i \in \mathcal{L}$, $c_i = \sum_{j=1}^{m} f_{ij}a_j$\\
 $$x = \sum_{i=1}^n\sum^m_{j=1} f_{ij}a_jb_i$$
 Torej je $B$ ogrodje. Pokažimo, še da je linearno neodvisna.\\
 Denimo $\sum_{i=1}^n\sum^m_{j=1} f_{ij}(a_jb_i) = 0, f_{ij} \in \mathcal{F}$\\
-Potem $\sum_{i=1}^n\underbrace{(\sum^m_{j=1} f_{ij}a_j)}_{\in \mathcal{L}}b_i = 0 \implies \sum f_{ij}a_j = 0$, sa so $b_i$ linearno neodvsini nad $\mathcal{L}$. Prav tako pa so tudi $a_j$ linearno neodvisni in torej $f_{ij} = 0$.
+Potem $\sum_{i=1}^n\underbrace{(\sum^m_{j=1} f_{ij}a_j)}_{\in \mathcal{L}}b_i = 0 \implies \sum f_{ij}a_j = 0$, saj so $b_i$ linearno neodvsini nad $\mathcal{L}$. Prav tako pa so tudi $a_j$ linearno neodvisni in torej $f_{ij} = 0$.
  
 \end{proof}
 
@@ -5366,7 +5366,7 @@ Bralec bo lahko sam razmislil.
 \end{proof}
 
 \begin{definition}
-Polje $\mathcal{E}$ je \textbf{algebraična razširitev} polja $\mathcal{F}$, le je vsak element iz $\mathcal{E}$ algebraičen nad $\mathcal{F}$.
+Polje $\mathcal{E}$ je \textbf{algebraična razširitev} polja $\mathcal{F}$, če je vsak element iz $\mathcal{E}$ algebraičen nad $\mathcal{F}$.
 \end{definition}
 
 
@@ -5413,7 +5413,7 @@ Polje $\mathcal{F}(a)$ imenujemo polje, dobljeno s priključitvijo elementa.
 \end{definition}
 
 \begin{definition}
-$\mathcal{E}$ je enostavna razširitev $\mathcal{F}$, če obstaja tak $a \in \mathcal{E}$, da je $\mathcal{E} = \mathcal{F}(a)$, tedaj ta $a$ imanujemo primitivni element iz razširitve.
+$\mathcal{E}$ je enostavna razširitev $\mathcal{F}$, če obstaja tak $a \in \mathcal{E}$, da je $\mathcal{E} = \mathcal{F}(a)$, tedaj ta $a$ imenujemo primitivni element iz razširitve.
 \end{definition}
 
 \begin{example}
@@ -5427,7 +5427,7 @@ $\mathbb{Q}[i] = \{ f(i) | f(X) \in \mathbb{Q}[X] \} = \{a + bi | a, b \in \math
 \end{example}
 
 \begin{theorem}
-Naj bo polje $\mathcal{E}$ razširitev polja $\mathcal{F}$. Če je $a \in \mathcal{E}$ algebraičen stopnje $n$ nad $\mathcal{F}$, potem je $\mathcal{F}(a) = \mathcal{F}[a] = \{ \lambda_0 + \lambda_1a + \dots + \lambda_{n-1}a^{n-1} \ | \lambda_i \in \mathcal{F} \}$ in velja $[\mathcal{F}(a):\mathcal{F}] = n]$
+Naj bo polje $\mathcal{E}$ razširitev polja $\mathcal{F}$. Če je $a \in \mathcal{E}$ algebraičen stopnje $n$ nad $\mathcal{F}$, potem je $\mathcal{F}(a) = \mathcal{F}[a] = \{ \lambda_0 + \lambda_1a + \dots + \lambda_{n-1}a^{n-1} \ | \lambda_i \in \mathcal{F} \}$ in velja $[\mathcal{F}(a):\mathcal{F}] = n$
 \end{theorem}
 
 \begin{proof}
@@ -5451,7 +5451,7 @@ Tako dobimo $\mathbb{Q}(\sqrt[n]{p}) = \{ \lambda_0 + \lambda_1 \sqrt[n]{p} + \d
 \begin{remark}
 Za nek $a \in \mathcal{E}, \mathcal{F} \subseteq \mathcal{E}$, je $\varphi : \mathcal{F}[X] \to \mathcal{F}[a], f(x) \mapsto f(a)$ surjektivni (evalvacijski) homomorfizem in velja:
 \begin{enumerate}
-\item Če je $a$ algebraičen, potem $\ker(\varphi) = (p(X))$, kjer je $p(X)$ minimalnio polinom za $a$. Te lepo sledi iz izreka o izomorfizmih: 
+\item Če je $a$ algebraičen, potem $\ker(\varphi) = (p(X))$, kjer je $p(X)$ minimalni polinom za $a$. Te lepo sledi iz izreka o izomorfizmih: 
 $$\underbrace{\mathcal{F}[X]/_{(p(X))}}_{\text{je polje, saj je } p(X) \text{nerazcepen}} \cong \mathcal{F}[a]$$
 Tudi od tod bi lahko dobili enakost $\mathcal{F}[a] = \mathcal{F}(a)$
 \item Če je $a$ transcedenten, potem $\ker(\varphi) = \{0\}$ in je zato $\varphi$ izomorfizem in torej $\mathcal{F}[a] \cong \mathcal{F}[X]$ in velja celo $\mathcal{F}(a) = \mathcal{F}(X)$(to preprosto vidimo tako, da poiščemo razširitev preslikave iz zgornje vrstice) in je zato $\mathcal{F}[a] \subsetneq \mathcal{F}(a)$
@@ -5469,7 +5469,7 @@ Naj bo $\mathcal{E}$ razširitev $\mathcal{F}$. Če so $a_1, \dots a_n \in \math
 
 \begin{proof}
 Dokažemo z indukcijo na $n$. Za $n = 1$ je to kar osnovni izrek.\\
-Predpostavimo lahko, da je $\mathcal{L} = \mathcal{F}[a_1, \dots a_{n-1}] = \mathcal{F}(a_1, \dots, a_{n-1}$ končna razširitev $\mathcal{F}$. Ker je $a$ algebraičen nad $\mathcal{F}$, potem je $a$ tudi algebraičen nad $\mathcal{L}$. Po osnevnem izreku je $\mathcal{L}(a_n)$ končna razširitev $\mathcal{L}$ in ker je $\mathcal{L}$ končna razširitev $\mathcal{F}$ je $\mathcal{L}(a_n)$ končna razširitev $\mathcal{F}$ (Končna razširitev končne razširitve je končna razširitev). Pokazati moramo torej $\mathcal{L}(a_n) = \mathcal{F}(a_1, \dots, a_n) = \mathcal{F}[a_1, \dots, a_n]$. Elementi $\mathcal{L}(a_n)$ so oblike $l_0 + l_1a_1 + \dots + l_ka_{k}^k$, vsak $l_i$ pa je oblike $f_i(a_1, \dots, a_{n-1})$ \\
+Predpostavimo lahko, da je $\mathcal{L} = \mathcal{F}[a_1, \dots a_{n-1}] = \mathcal{F}(a_1, \dots, a_{n-1}$ končna razširitev $\mathcal{F}$. Ker je $a$ algebraičen nad $\mathcal{F}$, potem je $a$ tudi algebraičen nad $\mathcal{L}$. Po osnevnem izreku je $\mathcal{L}(a_n)$ končna razširitev $\mathcal{L}$ in ker je $\mathcal{L}$ končna razširitev $\mathcal{F}$ je $\mathcal{L}(a_n)$ končna razširitev $\mathcal{F}$ (končna razširitev končne razširitve je končna razširitev). Pokazati moramo torej $\mathcal{L}(a_n) = \mathcal{F}(a_1, \dots, a_n) = \mathcal{F}[a_1, \dots, a_n]$. Elementi $\mathcal{L}(a_n)$ so oblike $l_0 + l_1a_1 + \dots + l_ka_{k}^k$, vsak $l_i$ pa je oblike $f_i(a_1, \dots, a_{n-1})$ \\
 Sledi: vsak podkolobar, ki vsebuje $\mathcal{F}$ in vse $a$ mora vsebovati $\mathcal{L}(a_n)$, ki je celo polje in ki vsebuje vse $a_i$ in s tem dobimo željeno.
 
 \end{proof}
@@ -5493,7 +5493,7 @@ Vemo da velja $\mathcal{F}(a,b) = \mathcal{F}[a,b]$ končna razširitev $\mathca
 \end{proof}
 
 \begin{remark}
-Poseben primer: \underline{Polje} algebraičnih števol $\mathcal{A}$. To je tudi primer algebraične razširitve, ki ni končna, saj $[\mathbb{Q}(\sqrt[n]{1}):\mathbb{Q}] = n$ in če bi veljalo $[\mathcal{A}:\mathbb{Q}] \leq \infty$, sledilo: $n \mid [\mathcal{A}:\mathbb{Q}]$ za vsk $n$ (pride iz formule $[\mathcal{E}:\mathcal{F}] = [\mathcal{E}:\mathcal{L}][\mathcal{L}:\mathcal{F}]$), kar pa je protislovje.
+Poseben primer: \underline{Polje} algebraičnih števol $\mathcal{A}$. To je tudi primer algebraične razširitve, ki ni končna, saj $[\mathbb{Q}(\sqrt[n]{2}):\mathbb{Q}] = n$ in če bi veljalo $[\mathcal{A}:\mathbb{Q}] \leq \infty$, sledilo: $n \mid [\mathcal{A}:\mathbb{Q}]$ za vssk $n$ (pride iz formule $[\mathcal{E}:\mathcal{F}] = [\mathcal{E}:\mathcal{L}][\mathcal{L}:\mathcal{F}]$), kar pa je protislovje.
 \end{remark}
 
 \subsection{Razpadna polja}
@@ -5514,7 +5514,7 @@ Naj bo $\mathcal{F}$ polje in $f(X) \in \mathcal{F}[X]$ nekonstanten polinom. Po
 \end{theorem}
 
 \begin{proof}
-Naj bo $p(X) \in \mathcal{F}[X]$ nerazcepen polinom, ki deli $f(X)$(ta obstaja, saj vemo, da je $F(X)$ produkt nerazcepnih polinomov). $\mathcal{I} = (p(X))$ in ker je $p(X)$ nerazcepen vemo da je $$\mathcal{E} := \mathcal{F}[X]/_{\mathcal{I}}$$ polje. Tako lahko na $\mathcal{F}$ gledamo kot na podpolje v smislu vložitve $ a \mapsto a + \mathcal{I}$ ($a + \mathcal{I} \neq 0$, saj $\mathcal{I}$ ne vsebuje konstantnih polinomov). Tako lahko poljuben element $a$ identificiramo z $a + \mathcal{I} \in \mathcal{E}$. Vzemimo sedaj $g(X) \in \mathcal{F}[X] (\subseteq \mathcal{E}[X])$. $g(X) = a_0 + a_1X + \dots a_nX, a_i \in \mathcal{F}$ in jih zaradi lažje predstave pišimo kot $a_i + \mathcal{I} \in \mathcal{E}$.\\
+Naj bo $p(X) \in \mathcal{F}[X]$ nerazcepen polinom, ki deli $f(X)$(ta obstaja, saj vemo, da je $f(X)$ produkt nerazcepnih polinomov). $\mathcal{I} = (p(X))$ in ker je $p(X)$ nerazcepen vemo da je $$\mathcal{E} := \mathcal{F}[X]/_{\mathcal{I}}$$ polje. Tako lahko na $\mathcal{F}$ gledamo kot na podpolje v smislu vložitve $ a \mapsto a + \mathcal{I}$ ($a + \mathcal{I} \neq 0$, saj $\mathcal{I}$ ne vsebuje konstantnih polinomov). Tako lahko poljuben element $a$ identificiramo z $a + \mathcal{I} \in \mathcal{E}$. Vzemimo sedaj $g(X) \in \mathcal{F}[X] (\subseteq \mathcal{E}[X])$. $g(X) = a_0 + a_1X + \dots a_nX, a_i \in \mathcal{F}$ in jih zaradi lažje predstave pišimo kot $a_i + \mathcal{I} \in \mathcal{E}$.\\
 $g(X + \mathcal{I})$ je tako vrednost polinoma $g(X) \in \mathcal{E}[X]$ v elementu $X + \mathcal{I} \in \mathcal{E}$. $g(X + \mathcal{I}) = (a_0 + \mathcal{I}) + (a_1 + \mathcal{I})(X + \mathcal{I})  + \dots + (a_n + \mathcal{I})(X + \mathcal{I})^n = (a_0 + \mathcal{I}) + (a_1X + \mathcal{I}) + \dots + (a_nX^n + \mathcal{I}) = g(X) + \mathcal{I}$. Za $g(X) = f(X)$ tako dobimo $f(X + \mathcal{I}) = \underbrace{f(X) + \mathcal{I} = \mathcal{I}}_{f(X) \in \mathcal{I}} = 0$\\
 Tako je $X + \mathcal{I} \in \mathcal{E}$ ničla polinoma $f(X)$.
 \end{proof}
@@ -5533,7 +5533,7 @@ Tako vidimo, da za vsak nekonstanten polinom $f(X) \in \mathcal{F}[X]$ obstaja r
 \end{remark}
 
 \begin{definition}
-Pravimo, da polinom $f(X) \in \mathcal{F}[X]$ razpade v polju $\mathcal{E}$, le je $f(X)$ produkt lineranih polinomov iz $\mathcal{E}[X]$. Če $f(X)$ razpade v $\mathcal{E}$, ne razpade pa v nobenem podpolju $\mathcal{E}$, $\mathcal{E}$ imenujemo \textbf{razpadno polje} $f(X)$.
+Pravimo, da polinom $f(X) \in \mathcal{F}[X]$ razpade v polju $\mathcal{E}$, če je $f(X)$ produkt lineranih polinomov iz $\mathcal{E}[X]$. Če $f(X)$ razpade v $\mathcal{E}$, ne razpade pa v nobenem podpolju $\mathcal{E}$, $\mathcal{E}$ imenujemo \textbf{razpadno polje} $f(X)$.
 \end{definition}
 
 \begin{theorem}
@@ -5574,7 +5574,7 @@ Ni dokaza
 
 \subsection{Algebraično zaprta polja}
 \begin{definition}
-Polje $\mathcal{Z}$ je \textbf{algebrično zaprto}, le ima vsak nekonstanten polinom iz $\mathcal{Z}[X]$ vsaj eno ničlo v $\mathcal{Z}$
+Polje $\mathcal{Z}$ je \textbf{algebrično zaprto}, če ima vsak nekonstanten polinom iz $\mathcal{Z}[X]$ vsaj eno ničlo v $\mathcal{Z}$
 \end{definition}
 
 
@@ -5593,12 +5593,12 @@ Naslednje trditve so si ekvivalentne:
 \end{remark}
 
 \begin{statement}
-Naj bo $\mathcal{L}$ algebraična razširitev $\mathcal{F}$, če je $\mathcal{E}$ razširitev $\mathcal{L}$ i nje $X \in \mathcal{E}$ algebraičen nad $\mathcal{L}$, potem je algebraičen tudi nad $\mathcal{F}$.
+Naj bo $\mathcal{L}$ algebraična razširitev $\mathcal{F}$, če je $\mathcal{E}$ razširitev $\mathcal{L}$ in je $X \in \mathcal{E}$ algebraičen nad $\mathcal{L}$, potem je algebraičen tudi nad $\mathcal{F}$.
 \end{statement}
 
 
 \begin{proof}
-Po predpostavki je $a_0 + a_1X + \dots a_nX^n = $ za neke $a_i \in \mathcal{L}$, ki niso vsi 0. Torej je $X$ algebraičen že nad poljen $\mathcal{F}(a_0, \dots, a_n)$, to polje pa je končna razširitev $\mathcal{F}$, saj so $a_i \in \mathcal{L}$ in so zato algebraični nad $\mathcal{F}$. Po znanen izreku je $(\mathcal{F}(a_0, \dots, a_n))(X)$ končna razširitev $\mathcal{F}(a_0, \dots, a_n)$ in ker je končna razširitev končne razširitve spet končna razširitev, je to tudi končna razširitev $\mathcal{F}$, vsak element iz končne razširitve pa je algebraičen, torej tudi $X$.
+Po predpostavki je $a_0 + a_1X + \dots a_nX^n = 0$ za neke $a_i \in \mathcal{L}$, ki niso vsi 0. Torej je $X$ algebraičen že nad poljen $\mathcal{F}(a_0, \dots, a_n)$, to polje pa je končna razširitev $\mathcal{F}$, saj so $a_i \in \mathcal{L}$ in so zato algebraični nad $\mathcal{F}$. Po znanen izreku je $(\mathcal{F}(a_0, \dots, a_n))(X)$ končna razširitev $\mathcal{F}(a_0, \dots, a_n)$ in ker je končna razširitev končne razširitve spet končna razširitev, je to tudi končna razširitev $\mathcal{F}$, vsak element iz končne razširitve pa je algebraičen, torej tudi $X$.
 \end{proof}
 
 
@@ -5646,8 +5646,8 @@ Iz tega izreka seveda sledi obstoj razpadnega polja posameznih polinomov
 
 Cilj: Klasifikacija vseh končnih polj, od katerih zanekrat poznamo $\mathbb{Z}_p$, kjer je $p$ praštevilo.
 
-Vemo, da ima končno polje končno karakteristiko $p$ vsebuje izomorfno kopijo $\mathbb{Z}_p$, vsako polje s karakteristiko $0$ pa kopijo $\mathbb{Z}$% \mathbb{Q} v zapiskih ?
-, zato smemo predpostaviti, da vsako kočno polje s karakteristiko $p$ vsebuje $\mathbb{Z}_p$
+Vemo, da končno polje s karakteristiko $p$ vsebuje izomorfno kopijo $\mathbb{Z}_p$, vsako polje s karakteristiko $0$ pa kopijo $\mathbb{Z}$% \mathbb{Q} v zapiskih ?
+, zato smemo predpostaviti, da vsako končno polje s karakteristiko $p$ vsebuje $\mathbb{Z}_p$
 
 \begin{lemma}
 Če je $\mathcal{E}$ končno polje s karakteristiko $p$, je $|\mathcal{E}| = p^n, n \in \mathbb{N}$
@@ -5665,7 +5665,7 @@ Razpadna polja polinomov so končne razširitve. Načeloma lahko izberemo kateri
 
 \begin{lemma}
 Če je $\mathcal{E}$ polje s $p^n$ elementi, potem je $\mathcal{E}$  
-razpado polje polinoma $X^{p^n} - X \in \mathbb{Z}_p[X]$ 
+razpadno polje polinoma $X^{p^n} - X \in \mathbb{Z}_p[X]$ 
 \end{lemma}
 
 \begin{proof}
@@ -5707,26 +5707,26 @@ Razpadno polje polinoma $X^{p^n} - X $ nad $\mathbb{Z}_p$ ima $p^n$ elementov.
 
 \begin{proof}
 Naj bo $\mathcal{E}$ razpadno polje, torej najmajše polje, ki vsebuje vse ničle tega polinoma. Naj bo $\mathcal{E}_0 := \{x \in \mathcal{E} | x^{p^n} = x\}$ množica vseh ničel tega polnoma v $\mathcal{E}$.
-$\varrho$ je endomorfizem in $\mathcal{E}_0 = \{ x \in \mathcal{E} | \varrho(x) = x\}$ Pokazati moramo, da je $\mathcal{E}_0$ podpolje $\mathcal{E}$. To preprosto poračunamo: $x, y \in \mathcal{E}_0$ $\varrho(x-y) = x-y, 1 \in \mathcal{E}_0, \varrho(xy) = xy, \varrho(x^{-1}) = x^{-1}$ in ato celo $\mathcal{E} = \mathcal{E}_0$ (saj je $\mathcal{E}$ najmanjše ple, ki vsebuje vse ničle, množica $\mathcal{E}_0$ vseh ničel pa je že polje.) Pokažimo še, da velja $|\mathcal{E}| = |\mathcal{E}_0| = p^n$. Ker ima $X^{p^n} - X$ največ toliko ničel kot je njegova stopnja, torej $p^n$, moramo dokazati, da so vse ničle enostavne. Od tod bo sledilo, da je toliko različnih ničel/elementov v $\mathcal{E}$ kot je spotnja polinoma. Vemo $f(X) = X(X^{p^n-1} - 1)$. $0$ je seva enostavna ničla, saj ni ničla $X^{p^n} - 1$. Naj bo $a \in \mathcal{E}-\{0\}$, pokažimo, da je $a$ enostavna ničla $f(X)$. 
-$a^{p^n} = a \implies a^{p^n-1} = 1$, torej $f(X) = X^{p^n} - X = X(X^{p^n-1} - 1) = X(X^{p^{n-1}} - a^{p^n-1}) = X(X-a) (X^{p^n-2} + X^{p^n-3}a + \dots + Xa^{p^n-3} + a^{p^n - 2}) = (X-a)g(X)$, kjer pa $g(a) = -a^{p^n-1} \neq 0 = -1$ 
+$\varrho$ je endomorfizem in $\mathcal{E}_0 = \{ x \in \mathcal{E} | \varrho(x) = x\}$ Pokazati moramo, da je $\mathcal{E}_0$ podpolje $\mathcal{E}$. To preprosto poračunamo: $x, y \in \mathcal{E}_0$ $\varrho(x-y) = x-y, 1 \in \mathcal{E}_0, \varrho(xy) = xy, \varrho(x^{-1}) = x^{-1}$ in zato celo $\mathcal{E} = \mathcal{E}_0$ (saj je $\mathcal{E}$ najmanjše polje, ki vsebuje vse ničle, množica $\mathcal{E}_0$ vseh ničel pa je že polje.) Pokažimo še, da velja $|\mathcal{E}| = |\mathcal{E}_0| = p^n$. Ker ima $X^{p^n} - X$ največ toliko ničel kot je njegova stopnja, torej $p^n$, moramo dokazati, da so vse ničle enostavne. Od tod bo sledilo, da je toliko različnih ničel/elementov v $\mathcal{E}$ kot je spotnja polinoma. Vemo $f(X) = X(X^{p^n-1} - 1)$. $0$ je seveda enostavna ničla, saj ni ničla $X^{p^n} - 1$. Naj bo $a \in \mathcal{E}-\{0\}$, pokažimo, da je $a$ enostavna ničla $f(X)$. 
+$a^{p^n} = a \implies a^{p^n-1} = 1$, torej $f(X) = X^{p^n} - X = X(X^{p^n-1} - 1) = X(X^{p^{n-1}} - a^{p^n-1}) = X(X-a) (X^{p^n-2} + X^{p^n-3}a + \dots + Xa^{p^n-3} + a^{p^n - 2}) = (X-a)g(X)$, kjer pa $g(a) = -a^{p^n-1} = -1 \neq 0$ 
 \end{proof}
 
 \begin{remark}
-Polje iz zgornje leme (polje z $p^n$ elementi imenujemo \textbf{Galoisevo polje} (s $p^n$ elementi) in ga oznalujemo z $\mathcal{GF}(p^n)$
+Polje iz zgornje leme (polje z $p^n$ elementi imenujemo \textbf{Galoisevo polje} (s $p^n$ elementi) in ga označujemo z $\mathcal{GF}(p^n)$
 \end{remark}
 
-Povzemimo vse z izrekom:
+Povzemimo vse z izrekom:\\
 \begin{theorem}
 Za vsako praštevilo $p$ in vsako naravno število $n$ obstaja polje $\mathcal{GF}(p^n)$ s $p^n$ elementi. Vsako končno polje je izomorfno enemu izmed teh polj.
 \end{theorem}
 
 Za $n=1: \mathcal{GF}(p) = \mathbb{Z}_p$, kako pa računamo v $\mathcal{GF}(p^n)$ za večje $n$? Kot abelova grupa za $+$ je $\mathcal{GF}(p^n) \cong \underbrace{\mathbb{Z}_p \oplus \dots \oplus \mathbb{Z}_p}_{n-\text{krat}}$ 
 
-Izkaže pa se, da je $\mathcal{GF}(p^n)^*$ ko grupa za noženje vseh neničelnih elementov ciklična. Torej je $\mathcal{GF}(p^n) = \{0,1, a, a^2, \dots, a^{p^n-2} \}$
+Izkaže pa se, da je $\mathcal{GF}(p^n)^*$ ko grupa za množenje vseh neničelnih elementov ciklična. Torej je $\mathcal{GF}(p^n) = \{0,1, a, a^2, \dots, a^{p^n-2} \}$
 
 
 \begin{remark}
-Če ima polje karakteristiko $p$ imanjo tudi njegova podpolje in njegove rezširitve karakteristiko $p$.
+Če ima polje karakteristiko $p$ imajo tudi njegova podpolje in njegove razširitve karakteristiko $p$.
 \end{remark}
 
 \subsection{Konstrukcije z ravnilom in šestilom}
@@ -5741,7 +5741,7 @@ Iz stare Grčije so se ohranili trije osnovni problemi s šestilom in ravnilom:
 Odgovor je \textbf{NE} na vsa vprašanja. Prvega in drugaga je podal P. Wantzel leta 1837, tretjega pa F. von Lindemann leta 1882
 
 \begin{definition}
-Ravnilo je neoznačeno, s pomočjo ravnila lahko čez dve že obstoječi točki potegnemo premico. S pomočjo šestila lahko naredimo krožnico s središčem v eni izmed obstoječih točk in radijem, ki je enak oddaljenosti središča do katere druge točke. Tako dobimo kot presečišča krožnic in premic nove točke, ki jih lahko uporabimo za konstrukcije nocih objektov.
+Ravnilo je neoznačeno, s pomočjo ravnila lahko čez dve že obstoječi točki potegnemo premico. S pomočjo šestila lahko naredimo krožnico s središčem v eni izmed obstoječih točk in radijem, ki je enak oddaljenosti središča do katere druge točke. Tako dobimo kot presečišča krožnic in premic nove točke, ki jih lahko uporabimo za konstrukcije novih objektov.
 \end{definition}
 
 Da bi lažje delali naše probleme "preoblečemo". 
@@ -5792,8 +5792,8 @@ Naj bo $\mathcal{T}$ množica točk v ravnini in $\mathcal{F}$ tako podpolje $\m
 \end{theorem}
 
 \begin{proof}
-Naj bo $A$ doblena v prvem koraku kot zgoraj. Dokazali bomo, da obstaja tako polje $\mathcal{L}$, da je $A \in \mathcal{L} \times \mathcal{L}$ in $[\mathcal{L}:\mathcal{F}] \in \{1,2,4\}$ Ko s tem postopkom nadaljujemo v naslednjem koraku dobimo točko $B$ in polje $\mathcal{M}$: $B \in \mathcal{M} \times \mathcal{M}$ in $[\mathcal{M}:\mathcal{L}] \in \{1,2,4\}$ kar nam da $[\mathcal{M}:\mathcal{F}] = 2^u2^v; u,v \in \{0,1,2\}$. Najdaljujmo s postopkom in dobimo polje $\mathcal{E}, Z \in \mathcal{E} \times \mathcal{E}$ in $[\mathcal{E}:\mathcal{F}] = 2^w$. Naj bo $Z(a,b$, $\mathcal{F}(a) \subseteq \mathcal{E}$, ker je $\mathcal{E}$ končna razširitev je $<$ algebraičen nad $\mathcal{F}$ in 
-$$[\mathcal{F}(a):\mathcal{F}] \mid [\mathcal{E}:\mathcal{F}] = 2^w \implies \underbrace{[\mathcal{F}(a):\mathcal{F}]}_{\text{stopnja slgebraičnosti } a} = 2^k$$
+Naj bo $A$ doblena v prvem koraku kot zgoraj. Dokazali bomo, da obstaja tako polje $\mathcal{L}$, da je $A \in \mathcal{L} \times \mathcal{L}$ in $[\mathcal{L}:\mathcal{F}] \in \{1,2,4\}$ Ko s tem postopkom nadaljujemo v naslednjem koraku dobimo točko $B$ in polje $\mathcal{M}$: $B \in \mathcal{M} \times \mathcal{M}$ in $[\mathcal{M}:\mathcal{L}] \in \{1,2,4\}$ kar nam da $[\mathcal{M}:\mathcal{F}] = 2^u2^v; u,v \in \{0,1,2\}$. Najdaljujmo s postopkom in dobimo polje $\mathcal{E}, Z \in \mathcal{E} \times \mathcal{E}$ in $[\mathcal{E}:\mathcal{F}] = 2^w$. Naj bo $Z(a,b$, $\mathcal{F}(a) \subseteq \mathcal{E}$, ker je $\mathcal{E}$ končna razširitev je $a$ algebraičen nad $\mathcal{F}$ in 
+$$[\mathcal{F}(a):\mathcal{F}] \mid [\mathcal{E}:\mathcal{F}] = 2^w \implies \underbrace{[\mathcal{F}(a):\mathcal{F}]}_{\text{stopnja algebraičnosti } a} = 2^k$$
 
 Če je premica dobljena iz $\mathcal{T}$, je njena enačba
 \begin{equation}
